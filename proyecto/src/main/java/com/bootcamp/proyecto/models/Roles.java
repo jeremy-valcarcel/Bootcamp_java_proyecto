@@ -30,6 +30,8 @@ public class Roles {
 	@OneToMany(mappedBy = "rol", fetch = FetchType.LAZY)
 	private List<Usuario> usuario;
 	
+	
+	
 	//constructor
 	public Roles() {}
 
