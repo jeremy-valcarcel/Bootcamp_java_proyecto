@@ -15,7 +15,7 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="iteresesEmpresas")
+@Table(name="interesesEmpresas")
 public class InteresesEmpresas {
 
 	//datos tabla
