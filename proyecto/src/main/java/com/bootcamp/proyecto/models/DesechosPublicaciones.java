@@ -1,6 +1,5 @@
 package com.bootcamp.proyecto.models;
 
-
-public class EstadoDesechos {
+public class DesechosPublicaciones {
 
 }
