@@ -19,37 +19,46 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-
-
 @Entity
-@Table(name="Usuario")
+@Table(name = "Usuario")
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String nombre;
-	
+
 	private String apellido;
-	
+
 	@NotBlank
-	@Email(message="ingrese...")
+	@Email(message = "ingrese...")
 	private String email;
-	
-	@NotBlank(message="Por favor, ingresa el password")
-	@Size(min=8, max=64, message= "Password debe contener minimo 8 caracteres")
+
+	@NotBlank(message = "Por favor, ingresa el password")
+	@Size(min = 8, max = 64, message = "Password debe contener minimo 8 caracteres")
 	private String password;
-	
+
 	@Transient
-	@NotBlank(message="Por favor confirma la contrasenia")
-	@Size(min=8, message= "Password debe contener minimo 8 caracteres")
+	@NotBlank(message = "Por favor confirma la contrasenia")
+	@Size(min = 8, message = "Password debe contener minimo 8 caracteres")
 	private String passwordConfirmation;
-	
+
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
-	
-	
+
+	// N:1 (Roles)
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "rol_id")
+
+	private Roles rol;
+
+	// (Interes)
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "intereses", 
+	joinColumns = @JoinColumn(name = "usuario_id"), 
+	inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
+	private List<CategoriaDesecho> categoriaDesecho;
 
 }
