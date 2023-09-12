@@ -12,10 +12,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="empresas")
+@Table(name = "empresas")
 public class Empresas {
 
 	@Id
@@ -23,17 +24,21 @@ public class Empresas {
 	private Long id;
 
 	private String nombre;
-	
+
 	private String razonSocial;
-	
+
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
-	
-	//intereses
+
+	// intereses
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "intereses", 
-	joinColumns = @JoinColumn(name = "empresas_id"), 
-	inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
+	@JoinTable(name = "intereses", joinColumns = @JoinColumn(name = "empresas_id"), inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
 	private List<CategoriaDesecho> categoriaDesecho;
+
+	// N:1 (Roles)
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "rol_id")
+
+	private Roles rol;
 }

@@ -30,7 +30,9 @@ public class Roles {
 	@OneToMany(mappedBy = "rol", fetch = FetchType.LAZY)
 	private List<Usuario> usuario;
 	
-	
+	//relacion 1:N (Empresas)
+	@OneToMany(mappedBy = "rol", fetch = FetchType.LAZY)
+	private List<Empresas> empresa;
 	
 	//constructor
 	public Roles() {}
