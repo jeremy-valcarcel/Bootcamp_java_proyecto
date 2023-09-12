@@ -13,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -57,15 +58,22 @@ public class Empresas {
 	private Date createdAt;
 	private Date updatedAt;
 
-	// intereses
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "intereses", joinColumns = @JoinColumn(name = "empresas_id"), inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
-	private List<CategoriaDesecho> categoriaDesecho;
-
-	// N:1 (Roles)
+	//relacion n:1 hacia roles
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "rol_id")
 	private Roles rol;
+	
+	
+	// relacion n:m hacia categoriaDesecho
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "intereses", joinColumns = @JoinColumn(name = "empresas_id"), inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
+	private List<CategoriaDesecho> categoriaDesecho;
+	
+	//relacion 1:n hacia comentarios
+	@OneToMany(mappedBy = "empresaCreador", fetch = FetchType.LAZY)
+	private List<Comentarios> comentariosCreador;
+
+
 	
 	
 	
@@ -178,6 +186,15 @@ public class Empresas {
 	@PreUpdate
 	protected void onUpdate() {
 		this.updatedAt = new Date();
+	}
+
+	public List<Comentarios> getComentariosCreador() {
+		return comentariosCreador;
+	}
+
+
+	public void setComentariosCreador(List<Comentarios> comentariosCreador) {
+		this.comentariosCreador = comentariosCreador;
 	}
 	
 	

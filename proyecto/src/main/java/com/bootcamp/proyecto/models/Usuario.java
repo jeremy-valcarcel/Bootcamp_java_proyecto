@@ -14,6 +14,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -23,7 +24,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "Usuario")
+@Table(name = "usuarios")
 public class Usuario {
 
 	//Datos de la tabla
@@ -57,21 +58,26 @@ public class Usuario {
 	private Date createdAt;
 	private Date updatedAt;
 
-	// N:1 (Roles)
+	// relacion n:1 hacia roles
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "rol_id")
 	private Roles rol;
 
-	// (Interes)
+	// relacion n:m hacia categoriaDesecho
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "intereses", 
 	joinColumns = @JoinColumn(name = "usuario_id"), 
 	inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
 	private List<CategoriaDesecho> categoriaDesecho;
 	
+	//relacion 1:n hacia comentarios
+	@OneToMany(mappedBy = "usuarioCreador", fetch = FetchType.LAZY)
+	private List<Comentarios> comentariosUser;
+	
 	//constructor
 	public Usuario() {}
 
+	
 	//set y get
 	public Long getId() {
 		return id;
@@ -170,5 +176,17 @@ public class Usuario {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
+
+
+	public List<Comentarios> getComentariosUser() {
+		return comentariosUser;
+	}
+
+
+	public void setComentariosUser(List<Comentarios> comentariosUser) {
+		this.comentariosUser = comentariosUser;
+	}
+	
+	
 
 }
