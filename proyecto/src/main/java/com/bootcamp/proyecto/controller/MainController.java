@@ -1,4 +1,10 @@
 package com.bootcamp.proyecto.controller;
-public class MainController {
 
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class MainController {
+	
+	
+	
 }
