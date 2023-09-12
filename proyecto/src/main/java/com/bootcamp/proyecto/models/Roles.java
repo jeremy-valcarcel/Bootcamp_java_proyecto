@@ -10,17 +10,24 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name="roles")
 public class Roles {
 	
+	//datos de tabla
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String descripcion;
+	@NotNull
+	@Min(value = 1, message = "por favor, debe elegir  un rol")
+	private Integer rol;
 	
 	@Column(updatable = false)
 	private Date createdAt;
@@ -36,5 +43,65 @@ public class Roles {
 	
 	//constructor
 	public Roles() {}
+
+	
+	//set y get
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getRol() {
+		return rol;
+	}
+
+	public void setRol(Integer rol) {
+		this.rol = rol;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public List<Usuario> getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(List<Usuario> usuario) {
+		this.usuario = usuario;
+	}
+
+	public List<Empresas> getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(List<Empresas> empresa) {
+		this.empresa = empresa;
+	}
+	
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = new Date();
+	}
 
 }

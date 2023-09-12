@@ -1,6 +1,7 @@
 package com.bootcamp.proyecto.models;
 
 import java.util.Date;
+
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -13,6 +14,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Email;
@@ -23,16 +26,22 @@ import jakarta.validation.constraints.Size;
 @Table(name = "Usuario")
 public class Usuario {
 
+	//Datos de la tabla
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotBlank(message=" Por favor ingresa un Nombre")
 	private String nombre;
-
+	
+	@NotBlank(message=" Por favor ingresa un Apellido")
 	private String apellido;
-
-	@NotBlank
-	@Email(message = "ingrese...")
+	
+	@NotBlank(message=" Por favor ingresa un numero de telefono")
+	private String telefono;
+	
+	@NotBlank(message=" Por favor ingresa un correo electronico")
+	@Email(message="El correo ingresado no es correcto")
 	private String email;
 
 	@NotBlank(message = "Por favor, ingresa el password")
@@ -51,7 +60,6 @@ public class Usuario {
 	// N:1 (Roles)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "rol_id")
-
 	private Roles rol;
 
 	// (Interes)
@@ -60,5 +68,107 @@ public class Usuario {
 	joinColumns = @JoinColumn(name = "usuario_id"), 
 	inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
 	private List<CategoriaDesecho> categoriaDesecho;
+	
+	//constructor
+	public Usuario() {}
+
+	//set y get
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getPasswordConfirmation() {
+		return passwordConfirmation;
+	}
+
+	public void setPasswordConfirmation(String passwordConfirmation) {
+		this.passwordConfirmation = passwordConfirmation;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public Roles getRol() {
+		return rol;
+	}
+
+	public void setRol(Roles rol) {
+		this.rol = rol;
+	}
+
+	public List<CategoriaDesecho> getCategoriaDesecho() {
+		return categoriaDesecho;
+	}
+
+	public void setCategoriaDesecho(List<CategoriaDesecho> categoriaDesecho) {
+		this.categoriaDesecho = categoriaDesecho;
+	}
+	
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = new Date();
+	}
 
 }
