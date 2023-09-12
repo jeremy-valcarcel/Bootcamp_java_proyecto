@@ -39,8 +39,13 @@ public class DesechosPublicaciones {
 	
 	// relacion n:1 a usuario
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "usuario_id")
+	@JoinColumn(name = "emisor_id")
 	private Usuario emisor;
+	
+	// relacion n:1 a usuario
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "usuario_id")
+	private Empresas empresaEmisora;
 	
 	//relacion n:1 a categoria desechos
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -102,5 +107,56 @@ public class DesechosPublicaciones {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
+
+
+	public Usuario getEmisor() {
+		return emisor;
+	}
+
+
+	public void setEmisor(Usuario emisor) {
+		this.emisor = emisor;
+	}
+
+
+	public Empresas getEmpresaEmisora() {
+		return empresaEmisora;
+	}
+
+
+	public void setEmpresaEmisora(Empresas empresaEmisora) {
+		this.empresaEmisora = empresaEmisora;
+	}
+
+
+	public CategoriaDesecho getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(CategoriaDesecho categoria) {
+		this.categoria = categoria;
+	}
+
+
+	public List<Comentarios> getComentarios() {
+		return comentarios;
+	}
+
+
+	public void setComentarios(List<Comentarios> comentarios) {
+		this.comentarios = comentarios;
+	}
+
+
+	public EstadoDesechos getEstado() {
+		return estado;
+	}
+
+
+	public void setEstado(EstadoDesechos estado) {
+		this.estado = estado;
+	}
+	
 
 }

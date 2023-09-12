@@ -24,16 +24,16 @@ public class CategoriaDesecho {
 
 	//relacion n:m a usuarios
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "intereses", 
+	@JoinTable(name = "interesesUsuarios", 
 	joinColumns = @JoinColumn(name = "categoria_desecho_id"), 
 	inverseJoinColumns = @JoinColumn(name = "usuario_id"))
 	private List<Usuario> usuario;
 	
 	//relacion n:m a empresas
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "intereses_empresas", 
+	@JoinTable(name = "interesesEmpresas", 
 	joinColumns = @JoinColumn(name = "categoria_desecho_id"), 
-	inverseJoinColumns = @JoinColumn(name = "empresas_id"))
+	inverseJoinColumns = @JoinColumn(name = "empresa_id"))
 	private List<Empresas> empresa;
 	
 	//constructor
