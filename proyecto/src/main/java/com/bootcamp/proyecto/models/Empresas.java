@@ -58,12 +58,6 @@ public class Empresas {
 	private Date createdAt;
 	private Date updatedAt;
 
-	
-	//relacion 1:n hacia comentarios
-	@OneToMany(mappedBy = "empresaEmisora", fetch = FetchType.LAZY)
-	private List<DesechosPublicaciones> publicadosEmpresas;
-	
-	
 	//relacion n:1 hacia roles
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "rol_id")
@@ -72,8 +66,8 @@ public class Empresas {
 	
 	// relacion n:m hacia categoriaDesecho
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "interesesEmpresas",
-	joinColumns = @JoinColumn(name = "empresa_id"),
+	@JoinTable(name = "intereses", 
+	joinColumns = @JoinColumn(name = "empresas_id"), 
 	inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
 	private List<CategoriaDesecho> categoriaDesecho;
 	
@@ -203,16 +197,6 @@ public class Empresas {
 
 	public void setComentariosCreador(List<Comentarios> comentariosCreador) {
 		this.comentariosCreador = comentariosCreador;
-	}
-
-
-	public List<DesechosPublicaciones> getPublicadosEmpresas() {
-		return publicadosEmpresas;
-	}
-
-
-	public void setPublicadosEmpresas(List<DesechosPublicaciones> publicadosEmpresas) {
-		this.publicadosEmpresas = publicadosEmpresas;
 	}
 	
 	
