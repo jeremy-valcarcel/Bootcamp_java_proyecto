@@ -19,11 +19,11 @@ public class MainController {
 	
 	@GetMapping("/")
 	public String bienvenida() {
-		return "nuevoHeader.jsp";
+		return "index.jsp";
 	}
 	@GetMapping("/a")
 	public String viejo() {
-		return "index.jsp";
+		return "nuevoHeader.jsp";
 	}
 	
 

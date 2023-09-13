@@ -21,7 +21,6 @@
 <script type="text/javascript" src="/js/app.js"></script>
 <style>
 /* Estilos personalizados */
-
 header, footer {
 	background-color: #82e462;
 	display: flex;
@@ -30,9 +29,17 @@ header, footer {
 	align-items: center;
 }
 
+.header-green {
+	background: linear-gradient(135deg, #28a745, #e9ecef);
+	background-color: #184e8e;
+	padding-bottom: -50px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
 header img, footer img {
 	height: 80px;
 }
+
 .swiper {
 	width: 100%;
 	padding-top: 50px;
@@ -51,6 +58,7 @@ header img, footer img {
 	display: block;
 	width: 100%;
 }
+
 .dropdown {
 	position: relative;
 	display: inline-block;
@@ -60,7 +68,7 @@ header img, footer img {
 	display: none;
 	position: absolute;
 	background-color: #f9f9f9;
-	min-width: 160px;
+	min-width: 200px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 }
@@ -80,12 +88,11 @@ header img, footer img {
 	background-color: #ddd;
 }
 
-
 .content {
 	padding: 0px;
-	text-align: center;
+	text-align:;
 	color: black;
-	margin: 0;
+	margin: 0px;
 }
 
 .content h1 {
@@ -145,26 +152,47 @@ header img, footer img {
 	height: 300px;
 }
 
-.border-top-bottom {
-	border-top: 2px solid #ccc;
-	border-bottom: 2px solid #ccc;
-	padding: 20px 0;
-}
-
-
 .rounded-image {
 	border-radius: 20px;
+}
 
+.socios-container {
+	background-color: #4d897c; /* Color de fondo para el contenedor */
+	padding: 20px; /* Espaciado interno para el contenedor */
+	text-align: center;
+	/* Centra el contenido del contenedor horizontalmente */
+	color: white; /* Color de texto blanco para el párrafo */
+}
 
+.socios-row {
+	display: flex; /* Crea una fila horizontal */
+	justify-content: space-around;
+	/* Distribuye el espacio entre los socios */
+	align-items: center;
+	/* Centra verticalmente las imágenes y los textos */
+}
 
+.socio {
+	text-align: center; /* Centra el texto dentro de cada socio */
+}
+
+.socio:hover {
+	transform: scale(1.1);
+	/* Aumenta el tamaño del socio al pasar el mouse por encima */
+}
+
+.socio img {
+	max-width: 170px; /* Establece el tamaño máximo para las imágenes */
+}
 </style>
 </head>
-<body style="background-color: #e3f3e4; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+<body
+	style="background-color: #white; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
-	<header>
+	<header class="header-green">
 		<div>
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height:85px">
+				class="d-inline-block" style="height: 85px">
 		</div>
 		<nav class="navbar navbar-expand-lg">
 			<ul class="navbar-nav">
@@ -176,14 +204,14 @@ header img, footer img {
 			<div class="dropdown nav-item">
 				<span>Nosotros</span>
 				<div class="dropdown-content">
-					<a href="/nosotros">¿Quienes somos?</a> 
-					<a href="/preguntasFrecuentes">Preguntas frecuentes</a>
+					<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
+						orgánico</a> <a href="/preguntasFrecuentes">Preguntas frecuentes</a>
 				</div>
 			</div>
 		</nav>
 		<div>
-			<a href="/sesion" class="btn btn">Iniciar Sesión</a> <a href="/registro"
-				class="btn btn">Unirse</a>
+			<a href="/sesion" class="btn btn">Iniciar Sesión</a> <a
+				href="/registro" class="btn btn">Unirse</a>
 		</div>
 	</header>
 
@@ -195,19 +223,24 @@ header img, footer img {
 					class="active"></li>
 				<li data-bs-target="#carouselExample" data-bs-slide-to="1"></li>
 				<li data-bs-target="#carouselExample" data-bs-slide-to="2"></li>
+				<li data-bs-target="#carouselExample" data-bs-slide-to="3"></li>
 			</ol>
 			<div class="carousel-inner">
 				<div class="carousel-item active"
-					style="background-image: url('imgs/diapo3.jpg');">
-					<h1>¿QUIÉNES SOMOS?</h1>
+					style="background-image: url('imgs/contenedores.jpg');">
+					<h1>NOSOTROS</h1>
 				</div>
 				<div class="carousel-item"
 					style="background-image: url('imgs/fondo-compost.jpg');">
-					<h1>RECICLAJE ORGÁNICO</h1>
+					<h1>NUESTRO PROPÓSITO</h1>
 				</div>
 				<div class="carousel-item"
 					style="background-image: url('imgs/diapo1.jpg');">
-					<h1>BENEFICIOS</h1>
+					<h1>NUESTRA MISIÓN</h1>
+				</div>
+				<div class="carousel-item"
+					style="background-image: url('imgs/diapo3.jpg');">
+					<h1>NUESTRO VISIÓN</h1>
 				</div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExample"
@@ -220,162 +253,96 @@ header img, footer img {
 				class="visually-hidden">Siguiente</span>
 			</a>
 		</div>
-		<h2 class="">Razón de ser:</h2>
-		<p class="my-4">Somos una organización que gestiona el reciclaje
-			de los residuos orgánicos generados por empresas y/o personas
-			individuales, trabajando como intermediarios. Trabajamos junto a
-			ciudadanos y empresas, para que el reciclaje orgánico se vuelva una
-			realidad. Queremos impulsar la conciencia medioambiental hasta
-			convertir el reciclaje en un hábito diario para la población,
-			contribuyendo a hacer de este mundo un lugar mejor donde vivir.</p>
-		<h2>Nuestro propósito:</h2>
-		<p>Contribuir al cuidado del medioambiente promoviendo la
-			circularidad de todos los productos orgánicos mediante su
-			reutilización y reciclaje.</p>
-		<div class="mission  border-top-bottom">
-			<h2>Nuestra misión:</h2>
-			<p>Gestionar, desarrollar e intermediar en el sistema de
-				reciclaje de residuos orgánicos de forma eficiente, transparente e
-				innovadora trabajando para los ciudadanos y empresas en colaboración
-				con los mismos.</p>
+
+
+
+		<div class="col">
+			<h2 class="text-center">
+				<span style="color: #2faa4c"><strong>¿Qué es
+						ECORESCATE?</strong></span>
+			</h2>
+			<p class="my-4 text-center">
+				Somos una <strong>empresa que gestiona el reciclaje de los
+					residuos orgánicos</strong> generados por empresas y/o personas
+				individuales, <strong>trabajando como intermediarios.</strong> <br>
+				Trabajamos junto a ciudadanos y empresas, para que el reciclaje
+				orgánico se vuelva una realidad.<br> Queremos impulsar la <strong>conciencia
+					medioambiental</strong> hasta convertir el reciclaje en un hábito diario
+				para la población, contribuyendo a hacer de este<strong>
+					mundo un lugar mejor donde vivir.</strong>
+			</p>
 		</div>
-		<div class="vision  border-top-bottom">
-			<h2>Nuestra Visión:</h2>
-			<p>Consolidar una economía circular eficiente, cercana e
-				involucrativa que priorice el cuidado del medioambiente gracias a
-				una sociedad activa, unas empresas responsables y ciudadanos
-				comprometidos con el reciclaje.</p>
-		</div>
-		<div class="row border-top-bottom m-3">
-			<div class="col-md-6 p-4 ">
-				<h2 class="display-2 my-3"
-					style="text-align: left; color: #5a5a5a; font-size: 30px;">¿Por
-					qué reciclar?</h2>
-				<p style="text-align: left;">Reciclar conlleva ahorrar materias
-					primas, energía, agua y reducir las emisiones de gases de efecto
-					invernadero. Reciclando evitas que los productos y materiales se
-					conviertan en residuos, transformándolos en otros completamente
-					nuevos, alargando su vida útil y ayudando a la preservación de los
-					recursos naturales del planeta.</p>
+
+
+		<div class="row ms-5">
+			<div class="col-md-6">
+				<h2>
+					<span style="color: #2faa4c"><strong>Nuestro
+							propósito</strong></span>
+				</h2>
+				<p>Contribuir al cuidado del medioambiente promoviendo la
+					circularidad de todos los productos orgánicos mediante su
+					reciclaje.</p>
 			</div>
 			<div class="col-md-6">
-				<img alt="reciclar" src="imgs/reciclaje-cartel.jpg"
-					class="d-inline-block rounded-image">
+				<img src="imgs/organico.jpg" alt="organico" class="img-fluid"
+					style="height: 200px">
 			</div>
 		</div>
-
-		<div class="reciclaje"
-			style="background-image: url('imgs/Fondo-verde.jpg');">
-			<h3 class="text-white display-5" style="font-weight: bold;">Nuestro
-				proceso de reciclaje</h3>
-		</div>
-
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-8 text-center">
-					<p class="m-5">Este es el proceso que siguen nuestros desechos
-						desde que se publican hasta su reciclaje.</p>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-8 text-center">
-					<img alt="logo" src="imgs/proceso_de_reciclaje-removebg-preview.png"
-						class="img-fluid" style="max-width: 100%;">
-				</div>
-			</div>
-		</div>
-
-
-		<!-- BENEFICIOS DE RECICLAJE -->
-
-		<div class="container mt-5">
-			<h2 class="text-center mb-4">Beneficios del Reciclaje</h2>
-			<div class="row">
-				<!-- BENEFICIO 1 -->
-				<div class="col-md-4 mb-4">
-					<div class="card h-100 text-center">
-						<img src="imgs/planta-removebg-preview.png" alt="Imagen 1"
-							class="card-img-top mt-5">
-						<div class="card-body">
-							<h5 class="card-title mt-5">Conservación de Recursos</h5>
-							<p class="card-text">Reduce la demanda de recursos naturales
-								al reciclar materiales orgánicos.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- BENEFICIO 2 -->
-				<div class="col-md-4 mb-4">
-					<div class="card h-100 text-center">
-						<img src="imgs/pulmones-removebg-preview.png" alt="Imagen 2"
-							class="card-img-top mt-5">
-						<div class="card-body">
-							<h5 class="card-title mt-5">Mejora del Medio Ambiente</h5>
-							<p class="card-text">La gestión adecuada de residuos
-								orgánicos mejora la calidad del aire y del agua.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- BENEFICIO 3 -->
-				<div class="col-md-4 mb-4">
-					<div class="card h-100 text-center">
-						<img src="imgs/organic-removebg-preview.png" alt="Imagen 3"
-							class="card-img-top">
-						<div class="card-body">
-							<h5 class="card-title">Generación de Ingresos</h5>
-							<p class="card-text">La venta de productos reciclados puede
-								generar ingresos adicionales.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- BENEFICIO 4 -->
-				<div class="col-md-4 mb-4">
-					<div class="card h-100 text-center">
-						<img src="imgs/economiaCircular2-removebg-preview.png"
-							alt="Imagen 4" class="card-img-top">
-						<div class="card-body">
-							<h5 class="card-title">Economía Circular</h5>
-							<p class="card-text">Promueve la creación de empresas que
-								utilizan materiales reciclados de manera efectiva.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- BENEFICIO 5 -->
-				<div class="col-md-4 mb-4">
-					<div class="card h-100 text-center">
-						<img src="imgs/contenedores-removebg-preview.png" alt="Imagen 5"
-							class="card-img-top mt-5">
-						<div class="card-body">
-							<h5 class="card-title mt-5">Reducción de Residuos</h5>
-							<p class="card-text">El reciclaje orgánico reduce la cantidad
-								de residuos en vertederos y mitiga el cambio climático.</p>
-						</div>
-					</div>
-				</div>
-
-				<!-- BENEFICIO 6 -->
-				<div class="col-md-4 mb-4">
-					<div class="card h-100 text-center">
-						<img src="imgs/personasTierra-removebg-preview.png" alt="Imagen 6"
-							class="card-img-top mt-5">
-						<div class="card-body">
-							<h5 class="card-title mt-5">Educación y Concienciación</h5>
-							<p class="card-text">El reciclaje orgánico fomenta la
-								educación ambiental y la concienciación sobre la importancia de
-								reducir, reutilizar y reciclar, lo que puede llevar a una mayor
-								participación en prácticas sostenibles en general.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
 	</div>
 
+	<div class="ms-5">
 
+		<h2>
+			<span style="color: #2faa4c"><strong>Misión</strong></span>
+		</h2>
+		<p>Gestionar, desarrollar e intermediar en el sistema de reciclaje
+			de residuos orgánicos de forma eficiente, transparente e innovadora
+			trabajando para los ciudadanos y empresas en colaboración con los
+			mismos.</p>
+	</div>
+
+	<div class="m-5">
+
+		<h2>
+			<span style="color: #2faa4c"><strong>Visión</strong></span>
+		</h2>
+		<p>Consolidar una economía circular eficiente, cercana e
+			involucrativa que priorice el cuidado del medioambiente gracias a una
+			sociedad activa, unas empresas responsables y ciudadanos
+			comprometidos con el reciclaje.</p>
+	</div>
+
+	<div class="socios-container">
+		<h3 class="my-4 mb-5">Socios</h3>
+		<div class="socios-row">
+			<div class="socio">
+				<img src="imgs/socio1.jpg" alt="Socio 1">
+				<p style="background-color: white; color: #626262;">Jeremy
+					Valcarcel</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio2.jpg" alt="Socio 2">
+				<p style="background-color: white; color: #626262;">Maria
+					Alderetes</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio3.jpg" alt="Socio 3">
+				<p style="background-color: white; color: #626262;">Thiago
+					Acosta</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio4.jpg" alt="Socio 4">
+				<p style="background-color: white; color: #626262;">Romina
+					Carbajal</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio5.jpg" alt="Socio 5">
+				<p style="background-color: white; color: #626262;">Alvaro
+					Cardozo</p>
+			</div>
+		</div>
+	</div>
 
 
 	<footer

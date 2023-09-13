@@ -322,9 +322,9 @@
 								<div class="dropdown-menu" role="menu">
 									<a class="dropdown-item" role="presentation" href="/nosotros">¿Quienes
 										somos?</a> <a class="dropdown-item" role="presentation"
-										href="/reciclaje">Reciclaje Orgánico</a> <a
+										href="/reciclaje">Reciclaje orgánico</a> <a
 										class="dropdown-item" role="presentation"
-										href="/preguntasFrecuentes">Preguntas Frecuentes</a>
+										href="/preguntasFrecuentes">Preguntas frecuentes</a>
 								</div></li>
 						</ul>
 						<form class="form-inline mr-auto" target="_self">
