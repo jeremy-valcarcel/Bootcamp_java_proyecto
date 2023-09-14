@@ -26,25 +26,6 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <style>
-/* Estilos personalizados */
-header, footer {
-	background-color: #82e462;
-	display: flex;
-	justify-content: space-between;
-	padding: 5px 10px;
-	align-items: center;
-}
-
-header img, footer img {
-	height: 80px;
-}
-
-.header-green {
-	background: linear-gradient(135deg, #28a745, #e9ecef);
-	background-color: #184e8e;
-	padding-bottom: -50px;
-	font-family: 'Source Sans Pro', sans-serif;
-}
 
 .swiper {
 	width: 100%;
@@ -129,7 +110,6 @@ header img, footer img {
 	justify-content: center;
 	align-items: center;
 	margin: 0;
-	background-image: url('imgs/fondo-compost.jpg');
 	background-size: cover;
 	background-position: center;
 	font-size: 50px;
@@ -167,45 +147,247 @@ header img, footer img {
 .rounded-image {
 	border-radius: 20px;
 }
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-color: #f7f7f7;
+}
+
+.navbar {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 5px;
+}
+
+/*
+headeer top
+*/
+.topbar {
+	background-color: rgb(16, 71, 36);
+	padding: 0;
+}
+
+.topbar .container .row {
+	margin: -7px;
+	padding: 0;
+}
+
+.topbar .container .row .col-md-12 {
+	padding: 0;
+}
+
+.topbar p {
+	margin: 0;
+	display: inline-block;
+	font-size: 13px;
+	color: #f1f6ff;
+}
+
+.topbar p>i {
+	margin-right: 5px;
+}
+
+.topbar p:last-child {
+	text-align: right;
+}
+
+header .navbar {
+	margin-bottom: 0;
+}
+
+.topbar li.topbar {
+	display: inline;
+	padding-right: 18px;
+	line-height: 52px;
+	transition: all .3s linear;
+}
+
+.topbar li.topbar:hover {
+	color: #1bbde8;
+}
+
+.topbar ul.info i {
+	color: #131313;
+	font-style: normal;
+	margin-right: 8px;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+}
+
+.topbar ul.info li {
+	float: right;
+	padding-left: 30px;
+	color: #ffffff;
+	font-size: 13px;
+	line-height: 44px;
+}
+
+.topbar ul.info i span {
+	color: #aaa;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 50px;
+	padding-left: 18px;
+}
+
+ul.social-network {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.social-network li {
+	border: none;
+	margin: 0;
+}
+
+ul.social-network li i {
+	margin: 0;
+}
+
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+	border: 0px solid #2D2D2D;
+	padding: 5px 0 0;
+	width: 32px;
+	display: inline-block;
+	text-align: center;
+	height: 32px;
+	vertical-align: baseline;
+	color: #000;
+}
+
+ul.social-network {
+	list-style: none;
+	margin: 5px 0 10px -25px;
+	float: right;
+}
+
+.waves-effect {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	vertical-align: middle;
+	z-index: 1;
+	will-change: opacity, transform;
+	transition: .3s ease-out;
+	color: #fff;
+}
+
+a {
+	color: #0a0a0a;
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+.bg-image-full {
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+.bg-dark {
+	background-color: #222 !important;
+}
+
+.mx-background-top-linear {
+	background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+	/* 	background: -webkit-linear-gradient(left, #208946 48%, #208946 48%); */
+	background: linear-gradient(45deg, #44b15e 48%, rgb(16 71 36) 48%);
+}
+
+.logo-image {
+	max-height: 65px; /* Establece una altura máxima para la imagen */
+	width: auto; /* Permite que el ancho se ajuste automáticamente */
+}
 </style>
 </head>
 <body>
-	<header class="header-green">
-		<div>
-			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height: 85px">
-		</div>
-		<nav class="navbar navbar-expand-lg">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="/">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link" href="/publicaciones">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a></li>
-			</ul>
-			<div class="dropdown nav-item">
-				<span>Nosotros</span>
-				<div class="dropdown-content">
-					<a href="/nosotros">¿Quienes somos?</a> <a href="/nosotros">Reciclaje
-						orgánico</a> <a href="/preguntasFrecuentes">Preguntas frecuentes</a>
-				</div>
-			</div>
-		</nav>
-		<div>
-			<a href="/sesion" class="btn btn">Iniciar Sesión</a> <a
-				href="/registro" class="btn btn">Unirse</a>
-		</div>
-	</header>
+	<div class="fixed-top">
+		<header class="topbar">
+			<nav
+				class="navbar navbar-expand-lg navbar-dark mx-background-top-linear"
+				style="background-color: #104724d1;">
+				<div class="container mt-1">
+					<div class="d-flex align-items-center">
+						<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
+							class="d-inline-block logo-image">
+						<p style="font-size: 20px;">
+							<strong>ECORESCATE</strong>
+						</p>
+					</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarResponsive" aria-controls="navbarResponsive"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarResponsive"
+						style="margin-left: 500px">
 
-	<div class="content">
-		<h2 class="text-center" style="color: #2faa4c; font-size: 50px;">RECICLAJE DE
-			RESIDUOS ORGÁNICOS</h2>
+						<ul class="navbar-nav ml-auto">
+
+							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
+
+							<li class="nav-item"><a class="nav-link"
+								href="/publicaciones">Publicaciones</a></li>
+
+							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
+							</li>
+
+
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> Nosotros </a>
+								<div class="dropdown-content" style="color: black;" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/nosotros">¿Quienes somos?</a> <a
+										class="dropdown-item" href="/reciclaje">Reciclaje orgánico</a>
+									<a class="dropdown-item" href="/preguntasFrecuentes">Preguntas
+										frecuentes</a>
+								</div></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div>
+
+	<div class="content" style="margin-top: 150px">
+		<h2 class="text-center mt-5" style="color: #2faa4c; font-size: 50px;">RECICLAJE
+			DE RESIDUOS ORGÁNICOS</h2>
 		<div class="col p-3">
 			<h2 class="display-2 my-3 text-center"
 				style="text-align: left; color: #5a5a5a; font-size: 30px;">¿Qué
 				son los residuos orgánicos?</h2>
-			<p class="text-center" style="text-align: left;">Son todo desecho o residuo de origen
-				vegetal y/o animal, que alguna vez estuvo vivo o fue parte de un ser
-				vivo y que es susceptible de degradarse biológicamente.</p>
+			<p class="text-center" style="text-align: left;">Son todo desecho
+				o residuo de origen vegetal y/o animal, que alguna vez estuvo vivo o
+				fue parte de un ser vivo y que es susceptible de degradarse
+				biológicamente.</p>
 		</div>
 		<div class="row border-top-bottom m-3">
 			<div class="col-md-6 p-4 ">
@@ -225,8 +407,7 @@ header img, footer img {
 			</div>
 		</div>
 
-		<div class="reciclaje"
-			style="background-image: url('imgs/Fondo-verde.jpg');">
+		<div class="reciclaje" style="background-color: #1047247a;">
 			<h3 class="text-white display-5" style="font-weight: bold;">Nuestro
 				proceso de reciclaje</h3>
 		</div>
