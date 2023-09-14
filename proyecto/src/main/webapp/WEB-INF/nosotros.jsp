@@ -157,7 +157,7 @@ header img, footer img {
 }
 
 .socios-container {
-	background-color: #4d897c; /* Color de fondo para el contenedor */
+	background-color: #1047247a; /* Color de fondo para el contenedor */
 	padding: 20px; /* Espaciado interno para el contenedor */
 	text-align: center;
 	/* Centra el contenido del contenedor horizontalmente */
@@ -199,7 +199,7 @@ header img, footer img {
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="/">Inicio</a></li>
 				<li class="nav-item"><a class="nav-link" href="/publicaciones">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link" href="/empresa">Empresas</a></li>
+				<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a></li>
 			</ul>
 			<div class="dropdown nav-item">
 				<span>Nosotros</span>
@@ -346,7 +346,7 @@ header img, footer img {
 
 
 	<footer
-		style="background-color: #152C49; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
+		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
 		<div style="display: flex; align-items: center;">
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 				class="d-inline-block" style="height: 100px;">

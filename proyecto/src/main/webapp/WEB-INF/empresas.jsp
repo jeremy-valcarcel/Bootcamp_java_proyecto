@@ -58,14 +58,50 @@ header img, footer img {
 .swiper-slide img {
 	display: block;
 	width: 100%;
-}</style>
+}
+
+.header-green {
+	background: linear-gradient(135deg, #28a745, #e9ecef);
+	background-color: #184e8e;
+	padding-bottom: -50px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* Estilos para los enlaces del menú */
+.dropdown-content a {
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+</style>
 
 </head>
 <body
 	style="background-color: #e7f4fc; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
 
-	<header>
+	<header class="header-green">
 		<div>
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 				class="d-inline-block" style="height: 85px">
@@ -75,17 +111,15 @@ header img, footer img {
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="/">Inicio</a></li>
 				<li class="nav-item"><a class="nav-link" href="/publicaciones">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link" href="/empresa">Empresas</a></li>
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="/nosotros"
-					id="nosotrosDropdown" role="button" data-bs-toggle="dropdown"
-					aria-expanded="false">Nosotros</a>
-					<ul class="dropdown-menu" aria-labelledby="nosotrosDropdown">
-
-						<li><a class="dropdown-item"
-							href="/nosotros/preguntasFrecuentes">Preguntas frecuentes</a></li>
-					</ul></li>
+				<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a></li>
 			</ul>
+			<div class="dropdown nav-item">
+				<span>Nosotros</span>
+				<div class="dropdown-content">
+					<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
+						orgánico</a> <a href="/preguntasFrecuentes">Preguntas frecuentes</a>
+				</div>
+			</div>
 		</nav>
 		<div>
 			<a href="/sesion" class="btn btn">Iniciar Sesión</a> <a
@@ -548,7 +582,7 @@ header img, footer img {
 
 
 	<footer
-		style="background-color: #152C49; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
+		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
 		<div style="display: flex; align-items: center;">
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 				class="d-inline-block" style="height: 100px;">

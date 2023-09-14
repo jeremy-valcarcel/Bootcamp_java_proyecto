@@ -313,7 +313,7 @@
 
 .register {
 	position: absolute;
-	 right: 20px;
+	right: 20px;
 }
 </style>
 </head>
@@ -432,19 +432,14 @@
 
 						<h3>Personas</h3>
 
-						<p>Las personas desempeñan un papel crucial en la construcción
-							de un mundo más sostenible. Como generadores de residuos
-							orgánicos, cada uno de ustedes es esencial en este proceso. Cada
-							vez que separas tus desechos orgánicos y los publicas en nuestra
-							plataforma, estás dando un paso importante hacia la reducción de
-							residuos y la creación de compost de alta calidad. Tus acciones
-							no solo ayudan a disminuir la cantidad de desechos en vertederos,
-							sino que también contribuyen a la generación de recursos valiosos
-							para la agricultura y la jardinería. Juntos, como comunidad
-							comprometida con el medio ambiente, están marcando la diferencia
-							y trabajando para un futuro más limpio y sostenible..</p>
+						<p>
+							Las personas desempeñan un papel crucial en la construcción de un
+							mundo más sostenible. Como generadores de residuos orgánicos,
+							cada uno de ustedes es esencial en este proceso. <br>
+							!Enterate cómo!
+						</p>
 
-						<a href="/info/personas" class="btn btn-dark">Ver más</a>
+						<a href="/personas" class="btn btn-dark">Ver más</a>
 
 					</article>
 
@@ -453,21 +448,14 @@
 
 						<h3>Empresas</h3>
 
-						<p>Las empresas tienen un papel vital en nuestra plataforma de
-							reciclaje orgánico. Como recolectores de residuos orgánicos,
-							ustedes son la columna vertebral de esta comunidad. Al recoger
-							los desechos orgánicos de los generadores y darles un destino
-							adecuado, están contribuyendo al ciclo sostenible de reciclaje
-							orgánico. Su labor no solo beneficia al medio ambiente, sino que
-							también fomenta la economía circular al crear oportunidades de
-							negocio en torno al reciclaje orgánico. Cada empresa, ya sea una
-							especializada en recolección o una que busca reducir su huella
-							ecológica, desempeña un papel esencial en la preservación del
-							planeta y en la construcción de un futuro más verde y saludable
-							para todos. ¡Gracias por ser parte de esta comunidad comprometida
-							con la sostenibilidad!</p>
+						<p>
+							Las empresas tienen un papel vital en nuestra plataforma de
+							reciclaje orgánico. Tanto como recolectores de residuos
+							orgánicos, como de generadores de residuos. Ustedes son la
+							columna vertebral de esta comunidad. <br> !Enterate cómo!
+						</p>
 
-						<a href="/info/empresas" class="btn btn-dark">Ver más</a>
+						<a href="/empresa" class="btn btn-dark">Ver más</a>
 
 					</article>
 				</section>
@@ -477,7 +465,7 @@
 	</div>
 
 	<footer
-		style="background-color: #152C49; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
+		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
 		<div style="display: flex; align-items: center;">
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 				class="d-inline-block" style="height: 120px;">
