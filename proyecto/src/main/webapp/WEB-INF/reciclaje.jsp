@@ -26,6 +26,24 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <style>
+header, footer {
+	background-color: #82e462;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 10px;
+	align-items: center;
+}
+
+.header-green {
+	background: linear-gradient(135deg, #28a745, #e9ecef);
+	background-color: #184e8e;
+	padding-bottom: -50px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+header img, footer img {
+	height: 80px;
+}
 
 .swiper {
 	width: 100%;
@@ -77,9 +95,9 @@
 
 .content {
 	padding: 0px;
-	text-align: center;
+	text-align:;
 	color: black;
-	margin: 0;
+	margin: 0px;
 }
 
 .content h1 {
@@ -136,12 +154,6 @@
 	background-size: cover;
 	background-position: center;
 	height: 300px;
-}
-
-.border-top-bottom {
-	border-top: 2px solid #ccc;
-	border-bottom: 2px solid #ccc;
-	padding: 20px 0;
 }
 
 .rounded-image {
@@ -327,7 +339,8 @@ li {
 }
 </style>
 </head>
-<body>
+<body
+	style="background-color: #white; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 	<div class="fixed-top">
 		<header class="topbar">
 			<nav
@@ -364,7 +377,8 @@ li {
 								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 								role="button" data-toggle="dropdown" aria-haspopup="true"
 								aria-expanded="false"> Nosotros </a>
-								<div class="dropdown-content" style="color: black;" aria-labelledby="navbarDropdown">
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
 									<a class="dropdown-item" href="/nosotros">¿Quienes somos?</a> <a
 										class="dropdown-item" href="/reciclaje">Reciclaje orgánico</a>
 									<a class="dropdown-item" href="/preguntasFrecuentes">Preguntas
@@ -407,7 +421,7 @@ li {
 			</div>
 		</div>
 
-		<div class="reciclaje" style="background-color: #1047247a;">
+		<div class="reciclaje" style="background-color: #44b15e;">
 			<h3 class="text-white display-5" style="font-weight: bold;">Nuestro
 				proceso de reciclaje</h3>
 		</div>
