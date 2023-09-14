@@ -27,10 +27,17 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<style>
+.header-green {
+	background: linear-gradient(135deg, #28a745, #e9ecef);
+	background-color: #184e8e;
+	padding-bottom: 80px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+</style>
 </head>
 <body>
-<section class="vh-100" style="background-color: #99f5f8;">
+<section class="vh-100 header-green"  style="background-color: #99f5f8;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">

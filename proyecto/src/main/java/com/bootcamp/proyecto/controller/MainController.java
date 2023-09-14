@@ -9,7 +9,7 @@ public class MainController {
 	
 	@GetMapping("/sesion")
 	public String sesion() {
-		return "sesion.jsp";
+		return "sesion_v2.jsp";
 	}
 	
 	@GetMapping("/registro")
@@ -34,7 +34,7 @@ public class MainController {
 	
 	@GetMapping("/perfil")
 	public String perfil() {
-		return "perfil.jsp";
+		return "perfil_v2.jsp";
 	}
 	
 	@GetMapping("/personas")

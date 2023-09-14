@@ -68,10 +68,17 @@ header, footer {
 header img, footer img {
 	height: 80px;
 }
+
+.rounded-image {
+	border-radius: 50%;
+	/* Establece el radio para hacer la imagen redonda */
+	width: 400px; /* Establece el ancho de la imagen */
+	height: 400px; /* Establece la altura de la imagen */
+}
 </style>
 </head>
 <body
-	style="background-color: #e7f4fc; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+	style="background-color: #ffffff; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
 
 	<header class="header-green">
@@ -104,173 +111,132 @@ header img, footer img {
 		</div>
 	</header>
 
+	<div class="container mt-5">
+		<h2></h2>
+		<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+			<!-- Indicadores -->
+			<ol class="carousel-indicators">
+				<li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+				<li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+				<!-- Agrega más indicadores según la cantidad de imágenes -->
+			</ol>
 
-
-	<!-- Main -->
-	<div class="carousel-item ">
-		<svg class="bd-placeholder-img" width="100%" height="100%"
-			xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-			preserveAspectRatio="xMidYMid slice" focusable="false">
-			<rect width="100%" height="100%" fill="#777" /></svg>
-		<div class="container">
-			<div class="carousel-caption">
-				<h1>Otro titular de ejemplo.</h1>
-				<p>Algo de contenido placeholder representativo para la segunda
-					diapositiva del carrusel.</p>
-				<p>
-					<a class="btn btn-lg btn-primary" href="#">Más información</a>
-				</p>
+			<!-- Imágenes del carrusel -->
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<img src="imgs/basuraOrgánica.webp" alt="Imagen 1"
+								style="height: 400px" class="rounded-image">
+							<h3 class="m-2">Importancia de tu residuo</h3>
+							<p>¿Sabías que con la cantidad de residuos que genera una
+								persona es escencial que forme parte en este proceso?</p>
+							<a href="#masInformacion" class="btn btn-primary">Ver más</a>
+						</div>
+						<div class="col-md-6 text-center">
+							<img src="imgs/personasManos.avif" alt="Imagen 2"
+								style="height: 400px" class="rounded-image">
+							<h3 class="m-2">Roles</h3>
+							<p>¿Sabías los roles puede tener una persona?</p>
+							<a href="#masInformacion2" class="btn btn-primary">Ver más</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<img src="imgs/basuraOrgánica2.jpg" alt="Imagen 3"
+								style="height: 400px" class="rounded-image">
+							<h3 class="m-2">Título 3</h3>
+							<p>Descripción o párrafo corto sobre la imagen 3.</p>
+							<a href="#masInformacion3" class="btn btn-primary">Ver más</a>
+						</div>
+						<div class="col-md-6 text-center">
+							<img src="imgs/basuraOrgánica.webp" alt="Imagen 4"
+								style="height: 400px" class="rounded-image">
+							<h3 class="m-2">Título 4</h3>
+							<p>Descripción o párrafo corto sobre la imagen 4.</p>
+							<a href="#masInformacion4" class="btn btn-primary">Ver más</a>
+						</div>
+					</div>
+				</div>
 			</div>
+		</div>
+
+		<!-- Controles de navegación -->
+		<a class="carousel-control-prev" href="#myCarousel" role="button"
+			data-bs-slide="prev"> <span class="carousel-control-prev-icon"
+			aria-hidden="true"></span> <span class="visually-hidden">Anterior</span>
+		</a> <a class="carousel-control-next" href="#myCarousel" role="button"
+			data-bs-slide="next"> <span class="carousel-control-next-icon"
+			aria-hidden="true"></span> <span class="visually-hidden">Siguiente</span>
+		</a>
+	</div>
+
+	<!-- Sección de información "ver más" -->
+	<div id="masInformacion" class=" row featurette mt-5">
+		<div class="col-md-7 border border-light border-2 rounded">
+			<h2 class="featurette-heading">
+				Encabezado del primer reportaje. <span class="text-muted">Te
+					dejará boquiabierto.</span>
+			</h2>
+			<p class="lead">Aquí puedes encontrar más información sobre las
+				imágenes.</p>
+		</div>
+		<div class="col-md-5">
+			<img alt="scsc" src="imgs/contenedores.jpg">
 		</div>
 	</div>
-	<div class="carousel-item bg-red">
-		<svg class="bd-placeholder-img" width="100%" height="100%"
-			xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-			preserveAspectRatio="xMidYMid slice" focusable="false">
-			<rect width="100%" height="100%" fill="#777" /></svg>
-		<div class="container">
-			<div class="carousel-caption text-end">
-				<h1>Uno más por si acaso.</h1>
-				<p>Algo de contenido placeholder representativo para la tercera
-					diapositiva de este carrusel.</p>
-				<p>
-					<a class="btn btn-lg btn-primary" href="#">Explorar galería</a>
-				</p>
-			</div>
+
+	<hr class="featurette-divider">
+	<div id="masInformacion2" class="row featurette">
+		<div class="col-md-7 order-md-2 border border-light border-2 rounded">
+			<h2 class="featurette-heading">
+				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
+					mismo.</span>
+			</h2>
+			<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
+				marcador de posición aquí para darle una idea de cómo funcionaría
+				este diseño con algún contenido del mundo real en su lugar.</p>
+		</div>
+		<div class="col-md-5 order-md-1">
+			<img alt="c" src="imgs/cocacola.png">
 		</div>
 	</div>
+
+	<hr class="featurette-divider">
+	<div id="masInformacion3" class="row featurette "
+		style="margin-botton: 10%">
+		<div class="col-md-7 border border-light border-2 rounded">
+			<h2 class="featurette-heading">
+				Y por último, este. <span class="text-muted">Jaque mate.</span>
+			</h2>
+			<p class="lead">Y sí, este es el último bloque de contenido de
+				marcador de posición representativo. Una vez más, no está destinado
+				a ser leído realmente, simplemente aquí para darle una mejor vista
+				de cómo se vería esto con algún contenido real. Tu contenido.</p>
+		</div>
+		<div class="col-md-5 ">
+			<img alt="cc" src="imgs/amazon.png">
+		</div>
 	</div>
-	<button class="carousel-control-prev" type="button"
-		data-bs-target="#myCarousel" data-bs-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="visually-hidden">Anterior</span>
-	</button>
-	<button class="carousel-control-next" type="button"
-		data-bs-target="#myCarousel" data-bs-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="visually-hidden">Siguiente</span>
-	</button>
+
+	<hr class="featurette-divider">
+	<div id="masInformacion4" class="row featurette">
+		<div class="col-md-7 order-md-2 border border-light border-2 rounded">
+			<h2 class="featurette-heading">
+				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
+					mismo.</span>
+			</h2>
+			<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
+				marcador de posición aquí para darle una idea de cómo funcionaría
+				este diseño con algún contenido del mundo real en su lugar.</p>
+		</div>
+		<div class="col-md-5 order-md-1">
+			<img alt="c" src="imgs/cocacola.png">
+		</div>
 	</div>
 
-
-	<div class="container marketing mt-3">
-
-		<div class="row">
-			<div class="col-lg-4 border border-light border-2 rounded">
-				<svg class="bd-placeholder-img rounded-circle" width="140"
-					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
-					aria-label="Placeholder: 140x140"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-					<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#777" />
-					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-				<h2>Encabezado</h2>
-				<p>Algo de contenidoplaceholder representativo para las tres
-					columnas de texto debajo del carrusel. Esta es la primera columna.</p>
-				<p>
-					<a class="btn btn-secondary" href="#">Ver detalles &raquo;</a>
-				</p>
-			</div>
-			<div class="col-lg-4 border border-light border-2 rounded">
-				<svg class="bd-placeholder-img rounded-circle" width="140"
-					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
-					aria-label="Placeholder: 140x140"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-					<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#777" />
-					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-				<h2>Encabezado</h2>
-				<p>Otro fragmento emocionante de contenidoplaceholder
-					representativo. Esta vez, pasamos a la segunda columna.</p>
-				<p>
-					<a class="btn btn-secondary" href="#">Ver detalles &raquo;</a>
-				</p>
-			</div>
-			<div class="col-lg-4 border border-light border-2 rounded">
-				<svg class="bd-placeholder-img rounded-circle" width="140"
-					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
-					aria-label="Placeholder: 140x140"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-					<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#777" />
-					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-				<h2>Encabezado</h2>
-				<p>Y, por último, esta, la tercera columna de
-					contenidoplaceholder representativo.</p>
-				<p>
-					<a class="btn btn-secondary" href="#">Ver detalles &raquo;</a>
-				</p>
-			</div>
-		</div>
-
-		<hr class="featurette-divider">
-		<div class="row featurette">
-			<div class="col-md-7 border border-light border-2 rounded">
-				<h2 class="featurette-heading">
-					Encabezado del primer reportaje. <span class="text-muted">Te
-						dejará boquiabierto.</span>
-				</h2>
-				<p class="lead">Excelente contenido de marcador de posición para
-					el primer artículo aquí. Imagina algo de prosa emocionante aquí.</p>
-			</div>
-			<div class="col-md-5">
-				<svg
-					class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto border border-light border-2 rounded"
-					width="500" height="500" xmlns="http://www.w3.org/2000/svg"
-					role="img" aria-label="Placeholder: 500x500"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-					<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#eee" />
-					<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-			</div>
-		</div>
-		<hr class="featurette-divider">
-		<div class="row featurette">
-			<div class="col-md-7 order-md-2 border border-light border-2 rounded">
-				<h2 class="featurette-heading">
-					Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
-						mismo.</span>
-				</h2>
-				<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
-					marcador de posición aquí para darle una idea de cómo funcionaría
-					este diseño con algún contenido del mundo real en su lugar.</p>
-			</div>
-			<div class="col-md-5 order-md-1">
-				<svg
-					class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto border border-light border-2 rounded"
-					width="500" height="500" xmlns="http://www.w3.org/2000/svg"
-					role="img" aria-label="Placeholder: 500x500"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-					<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#eee" />
-					<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-			</div>
-		</div>
-		<hr class="featurette-divider">
-		<div class="row featurette " style="margin-botton: 10%">
-			<div class="col-md-7 border border-light border-2 rounded">
-				<h2 class="featurette-heading">
-					Y por último, este. <span class="text-muted">Jaque mate.</span>
-				</h2>
-				<p class="lead">Y sí, este es el último bloque de contenido de
-					marcador de posición representativo. Una vez más, no está destinado
-					a ser leído realmente, simplemente aquí para darle una mejor vista
-					de cómo se vería esto con algún contenido real. Tu contenido.</p>
-			</div>
-			<div class="col-md-5 ">
-				<svg
-					class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto border border-light border-2 rounded"
-					width="500" height="500" xmlns="http://www.w3.org/2000/svg"
-					role="img" aria-label="Placeholder: 500x500"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-					<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#eee" />
-					<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-			</div>
-		</div>
-		<hr class="featurette-divider">
-
-	</div>
 
 	<!-- Footer -->
 	<footer
