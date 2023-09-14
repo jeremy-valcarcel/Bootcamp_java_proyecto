@@ -18,7 +18,8 @@ import jakarta.persistence.Table;
 @Table(name="interesesUsuarios")
 public class InteresesModel {
 
-	//datos tabla
+	//DatosTabla-----------------------------------------------------------------------------------
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -26,6 +27,8 @@ public class InteresesModel {
 	@Column(updatable=false)
     private Date createdAt;
     private Date updatedAt;
+    
+    //RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
     
     //relacion n:1 categoriaDesechos
     @ManyToOne(fetch = FetchType.LAZY)
@@ -37,9 +40,30 @@ public class InteresesModel {
     @JoinColumn(name="usuario_id")
     private Usuario usuario;
     
-    //constructor
+    //ConstructorVacio-----------------------------------------------------------------------------------------------
+    
     public InteresesModel () {}
 
+    //SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
+    
+	public CategoriaDesecho getCategoriaDesecho() {
+		return categoriaDesecho;
+	}
+
+	public void setCategoriaDesecho(CategoriaDesecho categoriaDesecho) {
+		this.categoriaDesecho = categoriaDesecho;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	//SetterYGetterDeDatosTabla--------------------------------------------------------------------------------------
+	
 	public Long getId() {
 		return id;
 	}
@@ -62,22 +86,6 @@ public class InteresesModel {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
-	}
-
-	public CategoriaDesecho getCategoriaDesecho() {
-		return categoriaDesecho;
-	}
-
-	public void setCategoriaDesecho(CategoriaDesecho categoriaDesecho) {
-		this.categoriaDesecho = categoriaDesecho;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
     
 	@PrePersist

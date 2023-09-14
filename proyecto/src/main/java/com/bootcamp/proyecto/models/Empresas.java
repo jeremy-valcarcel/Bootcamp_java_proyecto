@@ -26,7 +26,8 @@ import jakarta.validation.constraints.Size;
 @Table(name = "empresas")
 public class Empresas {
 
-	//Datos de la tabla
+	//DatosTabla-----------------------------------------------------------------------------------
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -47,22 +48,23 @@ public class Empresas {
 	@Email(message="El correo ingresado no es correcto")
 	private String email;
 	
-	@Size(min=8, max=64, message= "Por favor ingresa el password")
+	@Size(min=8, max=64, message= "Por favor ingresa la contraseña")
 	private String password;
 	
 	@Transient
-	@Size(min=8, message= "Por favor confirma el password")
+	@Size(min=8, message= "Por favor confirma la contraseña ")
 	private String passwordConfirmation;
 	
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
 
+	//RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
+	
 	//relacion n:1 hacia roles
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "rol_id")
-	private Roles rol;
-	
+	private Roles rol;	
 	
 	// relacion n:m hacia categoriaDesecho
 	@ManyToMany(fetch = FetchType.LAZY)
@@ -73,17 +75,40 @@ public class Empresas {
 	
 	//relacion 1:n hacia comentarios
 	@OneToMany(mappedBy = "empresaCreador", fetch = FetchType.LAZY)
-	private List<Comentarios> comentariosCreador;
-
-
+	private List<Comentarios> comentariosCreador;	
 	
+	//ConstructorVacio-----------------------------------------------------------------------------------------------
 	
-	
-	//constructor
 	public Empresas() {}
 
+	//SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
 	
-	//set y get
+	public List<Comentarios> getComentariosCreador() {
+		return comentariosCreador;
+	}
+
+	public void setComentariosCreador(List<Comentarios> comentariosCreador) {
+		this.comentariosCreador = comentariosCreador;
+	}
+	
+	public List<CategoriaDesecho> getCategoriaDesecho() {
+		return categoriaDesecho;
+	}
+
+	public void setCategoriaDesecho(List<CategoriaDesecho> categoriaDesecho) {
+		this.categoriaDesecho = categoriaDesecho;
+	}
+
+	public Roles getRol() {
+		return rol;
+	}
+
+	public void setRol(Roles rol) {
+		this.rol = rol;
+	}
+	
+	//SetterYGetterDeDatosTabla--------------------------------------------------------------------------------------
+	
 	public Long getId() {
 		return id;
 	}
@@ -163,22 +188,6 @@ public class Empresas {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
-	public List<CategoriaDesecho> getCategoriaDesecho() {
-		return categoriaDesecho;
-	}
-
-	public void setCategoriaDesecho(List<CategoriaDesecho> categoriaDesecho) {
-		this.categoriaDesecho = categoriaDesecho;
-	}
-
-	public Roles getRol() {
-		return rol;
-	}
-
-	public void setRol(Roles rol) {
-		this.rol = rol;
-	}
 	
 	@PrePersist
 	protected void onCreate() {
@@ -189,15 +198,5 @@ public class Empresas {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
-
-	public List<Comentarios> getComentariosCreador() {
-		return comentariosCreador;
-	}
-
-
-	public void setComentariosCreador(List<Comentarios> comentariosCreador) {
-		this.comentariosCreador = comentariosCreador;
-	}
-	
 	
 }

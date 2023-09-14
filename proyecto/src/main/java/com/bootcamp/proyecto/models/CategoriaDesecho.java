@@ -10,7 +10,8 @@ import jakarta.validation.constraints.NotBlank;
 @Table(name = "categoriaDesechos")
 public class CategoriaDesecho {
 
-	//datos de tabla
+	//DatosTabla-----------------------------------------------------------------------------------
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -21,6 +22,8 @@ public class CategoriaDesecho {
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
+	
+	//RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
 
 	//relacion n:m a usuarios
 	@ManyToMany(fetch = FetchType.LAZY)
@@ -36,11 +39,30 @@ public class CategoriaDesecho {
 	inverseJoinColumns = @JoinColumn(name = "empresa_id"))
 	private List<Empresas> empresa;
 	
-	//constructor
+	//ConstructorVacio-----------------------------------------------------------------------------------------------
+	
 	public CategoriaDesecho () {}
 
+	//SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
 	
-	//set y get
+	public List<Usuario> getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(List<Usuario> usuario) {
+		this.usuario = usuario;
+	}
+
+	public List<Empresas> getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(List<Empresas> empresa) {
+		this.empresa = empresa;
+	}
+	
+	//SetterYGetterDeDatosTabla--------------------------------------------------------------------------------------
+	
 	public Long getId() {
 		return id;
 	}
@@ -72,22 +94,6 @@ public class CategoriaDesecho {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
-	public List<Usuario> getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(List<Usuario> usuario) {
-		this.usuario = usuario;
-	}
-
-	public List<Empresas> getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(List<Empresas> empresa) {
-		this.empresa = empresa;
-	}
 	
 	@PrePersist
 	protected void onCreate() {
@@ -98,4 +104,5 @@ public class CategoriaDesecho {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
+	
 }

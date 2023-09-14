@@ -19,7 +19,8 @@ import jakarta.validation.constraints.NotBlank;
 @Table(name="comentarios")
 public class Comentarios {
 
-	//Datos de la tabla
+	//DatosTabla-----------------------------------------------------------------------------------
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -30,6 +31,8 @@ public class Comentarios {
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
+	
+	//RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
 	
 	//relacion n:1 hacia publicaciones
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -46,27 +49,12 @@ public class Comentarios {
 	@JoinColumn(name = "empresa_id")
 	private Empresas empresaCreador;
 	
-	//constructor
+	//ConstructorVacio-----------------------------------------------------------------------------------------------
+	
 	public Comentarios () {}
 
+	//SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
 	
-	//set y get
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getContenido() {
-		return contenido;
-	}
-
-	public void setContenido(String contenido) {
-		this.contenido = contenido;
-	}
-
 	public DesechosPublicaciones getCreador() {
 		return creador;
 	}
@@ -89,6 +77,24 @@ public class Comentarios {
 
 	public void setEmpresaCreador(Empresas empresaCreador) {
 		this.empresaCreador = empresaCreador;
+	}
+	
+	//SetterYGetterDeDatosTabla--------------------------------------------------------------------------------------
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getContenido() {
+		return contenido;
+	}
+
+	public void setContenido(String contenido) {
+		this.contenido = contenido;
 	}
 	
 	public Date getCreatedAt() {

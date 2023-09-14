@@ -62,13 +62,20 @@ header img, footer img {
 	display: block;
 	width: 100%;
 }
+
 .contenedor {
-    font-family: Poppins;
-    height: 30vh;
-    padding: 32px;
-    display: grid;
-    place-items: center;
-    background-color: #e3f3e4;
+	font-family: Poppins;
+	height: 30vh;
+	padding: 32px;
+	display: grid;
+	place-items: center;
+	background-color: #e3f3e4;
+}
+.header-green {
+	background: linear-gradient(135deg, #28a745, #e9ecef);
+	background-color: #184e8e;
+	padding-bottom: -50px;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 </style>
 
@@ -76,7 +83,7 @@ header img, footer img {
 	style="background-color: #e3f3e4; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
 
-	<header>
+	<header class="header-green">
 		<div>
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 				class="d-inline-block" style="height: 85px">
@@ -87,16 +94,14 @@ header img, footer img {
 					aria-current="page" href="/">Inicio</a></li>
 				<li class="nav-item"><a class="nav-link" href="/publicaciones">Publicaciones</a></li>
 				<li class="nav-item"><a class="nav-link" href="/empresa">Empresas</a></li>
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="/nosotros"
-					id="nosotrosDropdown" role="button" data-bs-toggle="dropdown"
-					aria-expanded="false">Nosotros</a>
-					<ul class="dropdown-menu" aria-labelledby="nosotrosDropdown">
-
-						<li><a class="dropdown-item"
-							href="/nosotros/preguntasFrecuentes">Preguntas frecuentes</a></li>
-					</ul></li>
 			</ul>
+			<div class="dropdown nav-item">
+				<span>Nosotros</span>
+				<div class="dropdown-content">
+					<a href="/nosotros">¿Quienes somos?</a> <a href="/nosotros">Reciclaje
+						orgánico</a> <a href="/preguntasFrecuentes">Preguntas frecuentes</a>
+				</div>
+			</div>
 		</nav>
 		<div>
 			<a href="/sesion" class="btn btn">Iniciar Sesión</a> <a
@@ -265,7 +270,7 @@ header img, footer img {
 
 
 	<footer
-		style="background-color: #152C49; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
+		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
 		<div style="display: flex; align-items: center;">
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 				class="d-inline-block" style="height: 100px;">

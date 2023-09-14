@@ -21,20 +21,10 @@ public class MainController {
 	public String bienvenida() {
 		return "index.jsp";
 	}
-	@GetMapping("/a")
-	public String viejo() {
-		return "nuevoHeader.jsp";
-	}
-	
 
 	@GetMapping("/empresas")
 	public String empresas() {
 		return "empresas.jsp";
-	}
-	
-	@GetMapping("/empresa")
-	public String empresasMuestra() {
-		return "empresaMuestra.jsp";
 	}
 
 	@GetMapping("/publicaciones")
@@ -47,12 +37,12 @@ public class MainController {
 		return "perfil.jsp";
 	}
 	
-	@GetMapping("/info/personas")
+	@GetMapping("/personas")
 	public String infoPersonas() {
 		return "InfoPersonas.jsp";
 	}
 	
-	@GetMapping("/info/empresas")
+	@GetMapping("/empresa")
 	public String infoEmpresas() {
 		return "InfoEmpresas.jsp";
 	}

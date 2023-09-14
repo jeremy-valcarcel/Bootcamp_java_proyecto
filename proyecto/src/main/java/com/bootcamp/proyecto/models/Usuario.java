@@ -27,7 +27,8 @@ import jakarta.validation.constraints.Size;
 @Table(name = "usuarios")
 public class Usuario {
 
-	//Datos de la tabla
+	//DatosTabla-----------------------------------------------------------------------------------
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -45,19 +46,20 @@ public class Usuario {
 	@Email(message="El correo ingresado no es correcto")
 	private String email;
 
-	@NotBlank(message = "Por favor, ingresa el password")
-	@Size(min = 8, max = 64, message = "Password debe contener minimo 8 caracteres")
+	//@NotBlank(message = "Por favor, ingresa el password")
+	@Size(min = 8, max = 64, message = "Por favor, ingresa una contraseña")
 	private String password;
 
 	@Transient
-	@NotBlank(message = "Por favor confirma la contrasenia")
-	@Size(min = 8, message = "Password debe contener minimo 8 caracteres")
+	//@NotBlank(message = "Por favor confirma la contrasenia")
+	@Size(min = 8, message = "Por favor confirma la contraseña")
 	private String passwordConfirmation;
 
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
 
+	//RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
 	
 	//relacion 1:n hacia comentarios
 	@OneToMany(mappedBy = "emisor", fetch = FetchType.LAZY)
@@ -79,11 +81,46 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuarioCreador", fetch = FetchType.LAZY)
 	private List<Comentarios> comentariosUser;
 	
-	//constructor
+	//ConstructorVacio-----------------------------------------------------------------------------------------------
+	
 	public Usuario() {}
 
+	//SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
 	
-	//set y get
+	public List<Comentarios> getComentariosUser() {
+		return comentariosUser;
+	}
+
+	public void setComentariosUser(List<Comentarios> comentariosUser) {
+		this.comentariosUser = comentariosUser;
+	}
+
+	public List<DesechosPublicaciones> getPublicadosUsuarios() {
+		return publicadosUsuarios;
+	}
+
+	public void setPublicadosUsuarios(List<DesechosPublicaciones> publicadosUsuarios) {
+		this.publicadosUsuarios = publicadosUsuarios;
+	}
+	
+	public Roles getRol() {
+		return rol;
+	}
+
+	public void setRol(Roles rol) {
+		this.rol = rol;
+	}
+
+	public List<CategoriaDesecho> getCategoriaDesecho() {
+		return categoriaDesecho;
+	}
+
+	public void setCategoriaDesecho(List<CategoriaDesecho> categoriaDesecho) {
+		this.categoriaDesecho = categoriaDesecho;
+	}
+	
+	//SetterYGetterDeDatosTabla--------------------------------------------------------------------------------------
+	
 	public Long getId() {
 		return id;
 	}
@@ -155,22 +192,6 @@ public class Usuario {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
-	public Roles getRol() {
-		return rol;
-	}
-
-	public void setRol(Roles rol) {
-		this.rol = rol;
-	}
-
-	public List<CategoriaDesecho> getCategoriaDesecho() {
-		return categoriaDesecho;
-	}
-
-	public void setCategoriaDesecho(List<CategoriaDesecho> categoriaDesecho) {
-		this.categoriaDesecho = categoriaDesecho;
-	}
 	
 	@PrePersist
 	protected void onCreate() {
@@ -180,30 +201,6 @@ public class Usuario {
 	@PreUpdate
 	protected void onUpdate() {
 		this.updatedAt = new Date();
-	}
-
-
-	public List<Comentarios> getComentariosUser() {
-		return comentariosUser;
-	}
-
-
-	public void setComentariosUser(List<Comentarios> comentariosUser) {
-		this.comentariosUser = comentariosUser;
-	}
-
-
-	public List<DesechosPublicaciones> getPublicadosUsuarios() {
-		return publicadosUsuarios;
-	}
-
-
-	public void setPublicadosUsuarios(List<DesechosPublicaciones> publicadosUsuarios) {
-		this.publicadosUsuarios = publicadosUsuarios;
-	}
-	
-	
-	
-	
+	}	
 
 }

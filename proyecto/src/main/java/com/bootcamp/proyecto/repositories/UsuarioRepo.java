@@ -10,8 +10,10 @@ import com.bootcamp.proyecto.models.Usuario;
 @Repository
 public interface UsuarioRepo extends CrudRepository<Usuario, Long>{
 	
+	//UsuariosPorSuEmail---------------------------------------------------------------------------------------
 	Usuario findByEmail(String email);
 	
+	//TodosUsuarios-----------------------------------------------------------------------------------------
 	List<Usuario> findAll();
 
 }

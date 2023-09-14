@@ -51,37 +51,76 @@ header img, footer img {
 	display: block;
 	width: 100%;
 }
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* Estilos para los enlaces del menú */
+.dropdown-content a {
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.header-green {
+	background: linear-gradient(135deg, #28a745, #e9ecef);
+	background-color: #184e8e;
+	padding-bottom: -50px;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+}
 </style>
 </head>
 <body
 	style="background-color: #e7f4fc; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
 
-	<header>
+	<header class="header-green">
+
 		<div>
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 				class="d-inline-block" style="height: 85px">
 		</div>
 		<nav class="navbar navbar-expand-lg">
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active"
+				<li class="nav-item"><a class="nav-link active text-white"
 					aria-current="page" href="/">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link" href="/publicaciones">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link" href="/empresa">Empresas</a></li>
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="/nosotros"
-					id="nosotrosDropdown" role="button" data-bs-toggle="dropdown"
-					aria-expanded="false">Nosotros</a>
-					<ul class="dropdown-menu" aria-labelledby="nosotrosDropdown">
+				<li class="nav-item"><a class="nav-link text-white"
+					href="/publicaciones">Publicaciones</a></li>
+				<li class="nav-item"><a class="nav-link text-white"
+					href="/empresas">Empresas</a></li>
 
-						<li><a class="dropdown-item"
-							href="/nosotros/preguntasFrecuentes">Preguntas frecuentes</a></li>
-					</ul></li>
 			</ul>
+			<div class="dropdown nav-item">
+				<span>Nosotros</span>
+				<div class="dropdown-content">
+					<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
+						orgánico</a> <a href="/preguntasFrecuentes">Preguntas frecuentes</a>
+				</div>
+			</div>
 		</nav>
 		<div>
-			<a href="/sesion" class="btn btn">Iniciar Sesión</a> <a
-				href="/registro" class="btn btn">Unirse</a>
+			<a href="/sesion" class="btn btn text-white">Iniciar Sesión</a> <a
+				href="/registro" class="btn btn text-white">Unirse</a>
 		</div>
 	</header>
 
@@ -101,25 +140,29 @@ header img, footer img {
 			</aside>
 			<section class="col-8">
 				<article style="border: solid; 1px;">
-				
-				<h2 style="background-color: #12a903" class="text-center">publicaciones De Empresas</h2>
 
-					<p class="border">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						Optio numquam, saepe repellat perspiciatis rerum magnam, sapiente
-						vel molestiae cum beatae error corporis eum atque eveniet!</p>
+					<h2 style="background-color: #12a903" class="text-center">publicaciones
+						De Empresas</h2>
+
+					<p class="border">Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Optio numquam, saepe repellat perspiciatis rerum
+						magnam, sapiente vel molestiae cum beatae error corporis eum atque
+						eveniet!</p>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Facere mollitia vero odio quos error dolorem numquam, nemo
 						explicabo modi similique! Eveniet porro exercitationem autem
 						ratione.</p>
 				</article>
 
-				<article style="border: solid; 1px; margin: 4em 0em">
-				
-				<h2 style="background-color: #12a903" class="text-center">publicaciones De Personas</h2>
+				<article style="border: solid; 1 px; margin: 4em 0em">
 
-					<p class="border">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-						Optio numquam, saepe repellat perspiciatis rerum magnam, sapiente
-						vel molestiae cum beatae error corporis eum atque eveniet!</p>
+					<h2 style="background-color: #12a903" class="text-center">publicaciones
+						De Personas</h2>
+
+					<p class="border">Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Optio numquam, saepe repellat perspiciatis rerum
+						magnam, sapiente vel molestiae cum beatae error corporis eum atque
+						eveniet!</p>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Facere mollitia vero odio quos error dolorem numquam, nemo
 						explicabo modi similique! Eveniet porro exercitationem autem
@@ -132,35 +175,24 @@ header img, footer img {
 	</main>
 
 
-	 <footer style="background-color: #152C49; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
+	<footer
+		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
 		<div style="display: flex; align-items: center;">
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 				class="d-inline-block" style="height: 100px;">
 			<p class="text-white ml-2 mb-0">EcoRescate</p>
 		</div>
-		
-		<div class="my-1 mx-auto ">
-				<ul class="nav">
-				<li class="nav-item"> 
-					<a class="nav-link  text-white"aria-current="page" href="#">Ir arriba</a>
-					<a class="nav-link text-white" href="#">¿Cómo son sus vidas?</a>
-					<a class="nav-link text-white" href="#">¿Cómo son sus vidas?</a>
+
+		<div class="my-auto">
+			<ul class="nav">
+				<li class="nav-item"><a class="nav-link active text-white"
+					aria-current="page" href="#">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link text-white" href="#">Publicaciones</a>
-					<a class="nav-link text-white" href="#">¿Cómo son sus vidas?</a>
-					<a class="nav-link text-white" href="#">¿Cómo son sus vidas?</a>
+				<li class="nav-item "><a class="nav-link text-white" href="#">Empresas</a>
 				</li>
-				<li class="nav-item ">
-					<a class="nav-link text-white" href="#">Empresas</a>
-					<a class="nav-link text-white" href="#">¿Cómo son sus vidas?</a>
-					<a class="nav-link text-white" href="#">¿Cómo son sus vidas?</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled text-white" aria-disabled="true">Nosotros</a>
-					<a class="nav-link text-white" href="#">¿Cómo son sus vidas?</a>
-					<a class="nav-link text-white" href="#">¿Cómo son sus vidas?</a>
-				</li>
+				<li class="nav-item"><a class="nav-link disabled text-white"
+					aria-disabled="true">Nosotros</a></li>
 			</ul>
 		</div>
 	</footer>
