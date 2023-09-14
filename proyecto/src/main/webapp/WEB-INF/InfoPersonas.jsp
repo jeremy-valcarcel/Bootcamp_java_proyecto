@@ -111,7 +111,7 @@ header img, footer img {
 		</div>
 	</header>
 
-	<div class="container mt-5">
+	<div class="container mt-5" >
 		<h2></h2>
 		<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
 			<!-- Indicadores -->
@@ -137,7 +137,7 @@ header img, footer img {
 							<img src="imgs/personasManos.avif" alt="Imagen 2"
 								style="height: 400px" class="rounded-image">
 							<h3 class="m-2">Roles</h3>
-							<p>¿Sabías los roles puede tener una persona?</p>
+							<p>¿Sabías los roles que puede tener una persona?</p>
 							<a href="#masInformacion2" class="btn btn-primary">Ver más</a>
 						</div>
 					</div>

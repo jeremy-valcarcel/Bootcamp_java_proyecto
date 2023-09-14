@@ -338,8 +338,6 @@
 					<div class="collapse navbar-collapse" id="navcol-1">
 						<ul class="nav navbar-nav">
 							<li class="nav-item" role="presentation"><a class="nav-link"
-								href="/">Inicio</a></li>
-							<li class="nav-item" role="presentation"><a class="nav-link"
 								href="/publicaciones">Publicaciones</a></li>
 							<li class="nav-item" role="presentation"><a class="nav-link"
 								href="/empresas">Empresas</a></li>

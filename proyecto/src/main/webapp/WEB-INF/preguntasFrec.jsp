@@ -33,7 +33,6 @@ header, footer {
 	background-color: #184e8e;
 	padding-bottom: -50px;
 	font-family: 'Source Sans Pro', sans-serif;
-	color: white;
 }
 
 header img, footer img {
@@ -87,6 +86,74 @@ header img, footer img {
 .dropdown-content a:hover {
 	background-color: #ddd;
 }
+
+.content {
+	padding: 0px;
+	text-align:;
+	color: black;
+	margin: 0px;
+}
+
+.content h1 {
+	height: 300px;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background-size: cover;
+	background-position: center;
+	font-size: 50px;
+}
+
+.content h2 {
+	font-size: 24px;
+	margin-top: 20px;
+}
+
+.content p {
+	margin-bottom: 20px;
+}
+
+.reciclaje {
+	height: 250px;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background-size: cover;
+	background-position: center;
+	font-size: 50px;
+}
+
+.btn-custom {
+	background-color: #007fffa1;
+	color: white;
+	border: none;
+}
+
+.btn-custom:hover {
+	background-color: #0056b3;
+}
+
+.mission, .vision {
+	display: inline-block;
+	width: 48%;
+	vertical-align: top;
+	margin: 10px;
+}
+
+.carousel-item {
+	background-size: cover;
+	background-position: center;
+	height: 300px;
+}
+
+.rounded-image {
+	border-radius: 20px;
+}
+
 body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -267,7 +334,7 @@ li {
 </style>
 </head>
 <body
-	style="background-color: #e3f3e4; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+	style=" display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
 	<div class="fixed-top">
 		<header class="topbar">
@@ -318,8 +385,8 @@ li {
 			</nav>
 		</header>
 	</div>
-	<div class="content col-12 my-1" >
-		<h3 class="text-left">Preguntas Frecuentes</h3>
+	<div class="content" style="margin-top: 100px; margin-bottom: 20px;">
+		<h2 class="text-center mt-5 mb-3" style="color: #2faa4c; font-size: 50px;">PREGUNTAS FRECUENTES</h2>
 
 		<div class="accordion" id="faqAccordion">
 			<!-- PREGUNTA UNO -->
@@ -426,7 +493,7 @@ li {
 				</div>
 			</div>
 
-			<!-- PREGUNTA SEIS -->
+			<!-- PREGUNTA SIETE -->
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="faqHeading6">
 					<button class="accordion-button collapsed" type="button"
@@ -447,7 +514,7 @@ li {
 				</div>
 			</div>
 
-			<!-- PREGUNTA SEIS -->
+			<!-- PREGUNTA OCHO -->
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="faqHeading6">
 					<button class="accordion-button collapsed" type="button"
@@ -468,7 +535,27 @@ li {
 				</div>
 			</div>
 
-			<!-- PREGUNTA SEIS -->
+			<!-- PREGUNTA NUEVE -->
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="faqHeading6">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#faqCollapse6"
+						aria-expanded="false" aria-controls="faqCollapse6">¿Cómo
+						puedo promover el reciclaje orgánico en mi empresa o lugar de
+						trabajo?</button>
+				</h2>
+				<div id="faqCollapse6" class="accordion-collapse collapse"
+					aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
+					<div class="accordion-body">Para promover el reciclaje
+						orgánico en tu empresa, puedes asegurarte de que haya contenedores
+						específicos para materiales orgánicos en áreas de almuerzo y
+						cocina, fomentar la reducción de desperdicios orgánicos y
+						considerar implementar un sistema de recompensas o reconocimiento
+						para motivar a los empleados a participar activamente en el
+						reciclaje orgánico.</div>
+				</div>
+			</div>
+			<!-- PREGUNTA DIEZ -->
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="faqHeading6">
 					<button class="accordion-button collapsed" type="button"
