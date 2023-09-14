@@ -53,7 +53,7 @@
                 <form method="POST" action="/sesion" modelAttribute="usuario">
                 
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">
-                    	<p>¡Bienvenido a <span class="logo-font text-success">Eco</span>Rescate!</p>
+                    	<p>¡Bienvenido a <span class="logo-font text-success">ECO</span>RESCATE!</p>
                   </h5>
 
                   <div class="form-outline mb-4">
