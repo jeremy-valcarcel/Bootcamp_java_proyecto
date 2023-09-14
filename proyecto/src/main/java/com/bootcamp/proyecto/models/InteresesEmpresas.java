@@ -18,7 +18,8 @@ import jakarta.persistence.Table;
 @Table(name="interesesEmpresas")
 public class InteresesEmpresas {
 
-	//datos tabla
+	//DatosTabla-----------------------------------------------------------------------------------
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -26,6 +27,8 @@ public class InteresesEmpresas {
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
+	
+	//RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
 	
     //relacion n:1 hacia categoriaDesechos
     @ManyToOne(fetch = FetchType.LAZY)
@@ -37,11 +40,30 @@ public class InteresesEmpresas {
     @JoinColumn(name="empresa_id")
     private Empresas empresa;
     
-    //constructor
+    //ConstructorVacio-----------------------------------------------------------------------------------------------
+    
     public InteresesEmpresas () {}
 
+    //SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
     
-    //set y  get
+	public CategoriaDesecho getCategoriaDesecho() {
+		return categoriaDesecho;
+	}
+
+	public void setCategoriaDesecho(CategoriaDesecho categoriaDesecho) {
+		this.categoriaDesecho = categoriaDesecho;
+	}
+
+	public Empresas getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresas empresa) {
+		this.empresa = empresa;
+	}
+    
+	//SetterYGetterDeDatosTabla--------------------------------------------------------------------------------------
+	
 	public Long getId() {
 		return id;
 	}
@@ -65,22 +87,6 @@ public class InteresesEmpresas {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
-	public CategoriaDesecho getCategoriaDesecho() {
-		return categoriaDesecho;
-	}
-
-	public void setCategoriaDesecho(CategoriaDesecho categoriaDesecho) {
-		this.categoriaDesecho = categoriaDesecho;
-	}
-
-	public Empresas getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(Empresas empresa) {
-		this.empresa = empresa;
-	}
     
 	@PrePersist
 	protected void onCreate() {
@@ -92,5 +98,4 @@ public class InteresesEmpresas {
 		this.updatedAt = new Date();
 	}
     
-	
 }

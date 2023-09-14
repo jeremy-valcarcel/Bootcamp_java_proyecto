@@ -12,64 +12,66 @@ import com.bootcamp.proyecto.repositories.UsuarioRepo;
 
 @Service
 public class UsuarioService {
+	
+	//Repositories------------------------------------------------------------------------------------------------
 	private final UsuarioRepo userRepo;
 	public UsuarioService(UsuarioRepo uR) {
 		this.userRepo = uR;
 	}
 	
-	// Encontrar usuario a traves de email
-		public Usuario encontrarPorEmail(String email) {
-			return userRepo.findByEmail(email);
+	//EncontrarUsuarioTravesEmail-----------------------------------------------------------------------------------
+	public Usuario encontrarPorEmail(String email) {
+		return userRepo.findByEmail(email);
+	}
+	
+	public List<Usuario> todosUsuarios(){
+		return userRepo.findAll();
+	}
+	
+	public Usuario encontrarUserPorId(Long id) {
+		Optional<Usuario> user = userRepo.findById(id);
+		if(user.isPresent()) {
+			return user.get();
 		}
-		
-		public List<Usuario> todosUsuarios(){
-			return userRepo.findAll();
+		return null;
+	}
+
+	//RegistrarUsuario-----------------------------------------------------------------------------------------------------
+	public Usuario registroUsuario(Usuario user, BindingResult resultado) {
+
+		Usuario usuarioRegistrado = userRepo.findByEmail(user.getEmail());
+
+		if (usuarioRegistrado != null) {
+			resultado.rejectValue("email", "Matches", "Correo electronico ya existe");
 		}
-		
-		public Usuario encontrarUserPorId(Long id) {
-			Optional<Usuario> user = userRepo.findById(id);
-			if(user.isPresent()) {
-				return user.get();
-			}
+		if (!user.getPassword().equals(user.getPasswordConfirmation())) {
+			resultado.rejectValue("password", "Matches", "Password no coincide");
+		}
+		if (resultado.hasErrors()) {
 			return null;
 		}
+		String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+		user.setPassword(hashed);
+		return userRepo.save(user);
 
-		// registar al usuario
-		public Usuario registroUsuario(Usuario user, BindingResult resultado) {
+	}
 
-			Usuario usuarioRegistrado = userRepo.findByEmail(user.getEmail());
+	//AutenticacionUsuario(LOGIN)-------------------------------------------------------------------------------------------------
+	public boolean authenthicateUser(String email, String password, BindingResult resultado) {
 
-			if (usuarioRegistrado != null) {
-				resultado.rejectValue("email", "Matches", "Correo electronico ya existe");
-			}
-			if (!user.getPassword().equals(user.getPasswordConfirmation())) {
-				resultado.rejectValue("password", "Matches", "Password no coincide");
-			}
-			if (resultado.hasErrors()) {
-				return null;
-			}
-			String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
-			user.setPassword(hashed);
-			return userRepo.save(user);
+		Usuario usuarioRegistrado = userRepo.findByEmail(email);
 
-		}
-
-		// Autenticacion del usuario (LOGIN)
-		public boolean authenthicateUser(String email, String password, BindingResult resultado) {
-
-			Usuario usuarioRegistrado = userRepo.findByEmail(email);
-
-			if (usuarioRegistrado == null) {
-				resultado.rejectValue("email", "Matches", "Email no valido");
-				return false;
+		if (usuarioRegistrado == null) {
+			resultado.rejectValue("email", "Matches", "Email no valido");
+			return false;
+		} else {
+			if (BCrypt.checkpw(password, usuarioRegistrado.getPassword())) {
+				return true;
 			} else {
-				if (BCrypt.checkpw(password, usuarioRegistrado.getPassword())) {
-					return true;
-				} else {
-					resultado.rejectValue("password", "Matches", "Password no valido");
-					return false;
-				}
+				resultado.rejectValue("password", "Matches", "Password no valido");
+				return false;
 			}
 		}
+	}
 
 }

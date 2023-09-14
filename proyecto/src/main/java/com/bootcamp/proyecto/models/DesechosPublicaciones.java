@@ -22,7 +22,8 @@ import jakarta.validation.constraints.NotNull;
 @Table(name="desechosPublicaciones")
 public class DesechosPublicaciones {
 	
-	//datos de tabla
+	//DatosTabla-----------------------------------------------------------------------------------
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -37,12 +38,14 @@ public class DesechosPublicaciones {
 	private Date createdAt;
 	private Date updatedAt;
 	
+	//RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
+	
 	// relacion n:1 a usuario
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "emisor_id")
 	private Usuario emisor;
 	
-	// relacion n:1 a usuario
+	// relacion n:1 a empresas
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "usuario_id")
 	private Empresas empresaEmisora;
@@ -52,7 +55,7 @@ public class DesechosPublicaciones {
 	@JoinColumn(name = "categoria_desecho_id")
 	private CategoriaDesecho categoria;
 	
-	//Relacion 1:n hacia TaskModel
+	//Relacion 1:n hacia comentarios
 	@OneToMany(mappedBy="creador", fetch=FetchType.LAZY)
 	private List<Comentarios> comentarios;
 	
@@ -61,54 +64,13 @@ public class DesechosPublicaciones {
 	@JoinColumn(name = "estado_desecho_id")
 	private EstadoDesechos estado;
 	
-	//constructor
+	//ConstructorVacio-----------------------------------------------------------------------------------------------
+	
 	public DesechosPublicaciones() {
 	}
 	
+	//SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
 	
-	//set y get
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getDescripcion() {
-		return descripcion;
-	}
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-	public Integer getTamaño() {
-		return tamaño;
-	}
-	public void setTamaño(Integer tamaño) {
-		this.tamaño = tamaño;
-	}
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-	
-	@PrePersist
-	protected void onCreate() {
-		this.createdAt = new Date();
-	}
-
-	@PreUpdate
-	protected void onUpdate() {
-		this.updatedAt = new Date();
-	}
-
-
 	public Usuario getEmisor() {
 		return emisor;
 	}
@@ -158,5 +120,56 @@ public class DesechosPublicaciones {
 		this.estado = estado;
 	}
 	
+	//SetterYGetterDeDatosTabla--------------------------------------------------------------------------------------
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+	
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	public Integer getTamaño() {
+		return tamaño;
+	}
+	
+	public void setTamaño(Integer tamaño) {
+		this.tamaño = tamaño;
+	}
+	
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+	
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
 
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = new Date();
+	}
+	
 }

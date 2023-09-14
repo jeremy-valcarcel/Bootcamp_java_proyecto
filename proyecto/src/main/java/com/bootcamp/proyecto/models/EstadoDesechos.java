@@ -20,7 +20,8 @@ import jakarta.validation.constraints.NotNull;
 @Table(name = "estadosDesechos")
 public class EstadoDesechos {
 	
-	//Datos de la tabla
+	//DatosTabla-----------------------------------------------------------------------------------
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -33,13 +34,28 @@ public class EstadoDesechos {
 	private Date createdAt;
 	private Date updatedAt;
 	
+	//RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
+	
 	//relacion 1:n hacia desechosPublicados
 	@OneToMany(mappedBy = "estado", fetch = FetchType.LAZY)
 	private List<DesechosPublicaciones> DesechosPublicaciones;
 	
-	//constructor
+	//ConstructorVacio-----------------------------------------------------------------------------------------------
+	
 	public EstadoDesechos () {}
 
+	//SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
+	
+	public List<DesechosPublicaciones> getDesechosPublicaciones() {
+		return DesechosPublicaciones;
+	}
+
+	public void setDesechosPublicaciones(List<DesechosPublicaciones> desechosPublicaciones) {
+		DesechosPublicaciones = desechosPublicaciones;
+	}
+	
+	//SetterYGetterDeDatosTabla--------------------------------------------------------------------------------------
+	
 	public Long getId() {
 		return id;
 	}
@@ -70,14 +86,6 @@ public class EstadoDesechos {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
-	}
-
-	public List<DesechosPublicaciones> getDesechosPublicaciones() {
-		return DesechosPublicaciones;
-	}
-
-	public void setDesechosPublicaciones(List<DesechosPublicaciones> desechosPublicaciones) {
-		DesechosPublicaciones = desechosPublicaciones;
 	}
 	
 	@PrePersist
