@@ -31,7 +31,6 @@ header, footer {
 }
 /* ESTILO HEADER/FOOTER */
 
-
 /* ESTILO DESPLIEGE HEADER */
 .dropdown {
 	position: relative;
@@ -61,9 +60,6 @@ header, footer {
 	background-color: #ddd;
 }
 /* ESTILO DESPLIEGE HEADER */
-
-
-
 .content h1 {
 	height: 300px;
 	display: flex;
@@ -81,7 +77,6 @@ header, footer {
 	margin-top: 20px;
 }
 
-
 .mission, .vision {
 	display: inline-block;
 	width: 48%;
@@ -94,7 +89,6 @@ header, footer {
 	background-position: center;
 	height: 300px;
 }
-
 
 /* ESTILO PARA SOCIOS */
 .socios-container {
@@ -124,7 +118,6 @@ header, footer {
 }
 /* ESTILO PARA SOCIOS */
 
-
 /* ESTILOS BODY */
 body {
 	background-color: #white;
@@ -133,7 +126,6 @@ body {
 	grid-template-row: auto 1fr auto;
 }
 /* ESTILOS BODY */
-
 
 /* ESTILO HEADER */
 .navbar {
@@ -194,8 +186,17 @@ body {
 
 							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
 
-							<li class="nav-item"><a class="nav-link"
-								href="/publicaciones">Publicaciones</a></li>
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Publicaciones</a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/publicacionesPersonas">Publicaciones
+										de personas</a> <a class="dropdown-item"
+										href="/publicacionesEmpresas">Publicaciones de empresas</a>
+
+								</div></li>
 
 							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
 							</li>

@@ -334,7 +334,7 @@ li {
 </style>
 </head>
 <body
-	style=" display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+	style="display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
 	<div class="fixed-top">
 		<header class="topbar">
@@ -361,8 +361,17 @@ li {
 
 							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
 
-							<li class="nav-item"><a class="nav-link"
-								href="/publicaciones">Publicaciones</a></li>
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Publicaciones</a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/publicacionesPersonas">Publicaciones
+										de personas</a> <a class="dropdown-item"
+										href="/publicacionesEmpresas">Publicaciones de empresas</a>
+
+								</div></li>
 
 							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
 							</li>
@@ -386,7 +395,8 @@ li {
 		</header>
 	</div>
 	<div class="content" style="margin-top: 100px; margin-bottom: 20px;">
-		<h2 class="text-center mt-5 mb-3" style="color: #2faa4c; font-size: 50px;">PREGUNTAS FRECUENTES</h2>
+		<h2 class="text-center mt-5 mb-3"
+			style="color: #2faa4c; font-size: 50px;">PREGUNTAS FRECUENTES</h2>
 
 		<div class="accordion" id="faqAccordion">
 			<!-- PREGUNTA UNO -->
