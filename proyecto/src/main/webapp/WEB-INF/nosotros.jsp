@@ -20,7 +20,8 @@
 <link rel="stylesheet" href="/css/main.css">
 <script type="text/javascript" src="/js/app.js"></script>
 <style>
-/* Estilos personalizados */
+
+/* ESTILO HEADER/FOOTER */
 header, footer {
 	background-color: #82e462;
 	display: flex;
@@ -28,37 +29,10 @@ header, footer {
 	padding: 5px 10px;
 	align-items: center;
 }
+/* ESTILO HEADER/FOOTER */
 
-.header-green {
-	background: linear-gradient(135deg, #28a745, #e9ecef);
-	background-color: #184e8e;
-	padding-bottom: -50px;
-	font-family: 'Source Sans Pro', sans-serif;
-}
 
-header img, footer img {
-	height: 80px;
-}
-
-.swiper {
-	width: 100%;
-	padding-top: 50px;
-	padding-bottom: 50px;
-}
-
-.swiper-slide {
-	background-position: center;
-	background-size: cover;
-	width: 300px;
-	height: 300px;
-	border: 2px solid #181212;
-}
-
-.swiper-slide img {
-	display: block;
-	width: 100%;
-}
-
+/* ESTILO DESPLIEGE HEADER */
 .dropdown {
 	position: relative;
 	display: inline-block;
@@ -77,7 +51,6 @@ header img, footer img {
 	display: block;
 }
 
-/* Estilos para los enlaces del menú */
 .dropdown-content a {
 	padding: 12px 16px;
 	text-decoration: none;
@@ -87,13 +60,9 @@ header img, footer img {
 .dropdown-content a:hover {
 	background-color: #ddd;
 }
+/* ESTILO DESPLIEGE HEADER */
 
-.content {
-	padding: 0px;
-	text-align:;
-	color: black;
-	margin: 0px;
-}
+
 
 .content h1 {
 	height: 300px;
@@ -112,32 +81,6 @@ header img, footer img {
 	margin-top: 20px;
 }
 
-.content p {
-	margin-bottom: 20px;
-}
-
-.reciclaje {
-	height: 250px;
-	display: flex;
-	color: white;
-	justify-content: center;
-	align-items: center;
-	margin: 0;
-	background-image: url('imgs/fondo-compost.jpg');
-	background-size: cover;
-	background-position: center;
-	font-size: 50px;
-}
-
-.btn-custom {
-	background-color: #007fffa1;
-	color: white;
-	border: none;
-}
-
-.btn-custom:hover {
-	background-color: #0056b3;
-}
 
 .mission, .vision {
 	display: inline-block;
@@ -152,28 +95,23 @@ header img, footer img {
 	height: 300px;
 }
 
-.rounded-image {
-	border-radius: 20px;
-}
 
+/* ESTILO PARA SOCIOS */
 .socios-container {
-	background-color: #1047247a; /* Color de fondo para el contenedor */
-	padding: 20px; /* Espaciado interno para el contenedor */
+	background-color: #1047247a;
+	padding: 20px;
 	text-align: center;
-	/* Centra el contenido del contenedor horizontalmente */
-	color: white; /* Color de texto blanco para el párrafo */
+	color: white;
 }
 
 .socios-row {
-	display: flex; /* Crea una fila horizontal */
+	display: flex;
 	justify-content: space-around;
-	/* Distribuye el espacio entre los socios */
 	align-items: center;
-	/* Centra verticalmente las imágenes y los textos */
 }
 
 .socio {
-	text-align: center; /* Centra el texto dentro de cada socio */
+	text-align: center;
 }
 
 .socio:hover {
@@ -182,189 +120,54 @@ header img, footer img {
 }
 
 .socio img {
-	max-width: 170px; /* Establece el tamaño máximo para las imágenes */
+	max-width: 170px
 }
-body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, sans-serif;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	background-color: #f7f7f7;
-}
+/* ESTILO PARA SOCIOS */
 
+
+/* ESTILOS BODY */
+body {
+	background-color: #white;
+	display: grid;
+	min-height: 100vh;
+	grid-template-row: auto 1fr auto;
+}
+/* ESTILOS BODY */
+
+
+/* ESTILO HEADER */
 .navbar {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	-ms-flex-align: center;
-	align-items: center;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
 	padding: 5px;
 }
 
-/*
-headeer top
-*/
 .topbar {
 	background-color: rgb(16, 71, 36);
 	padding: 0;
 }
 
-.topbar .container .row {
-	margin: -7px;
-	padding: 0;
+.mx-background-top-linear {
+	background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+	background: linear-gradient(45deg, #44b15e 48%, rgb(16 71 36) 48%);
 }
 
-.topbar .container .row .col-md-12 {
-	padding: 0;
+.logo-image {
+	max-height: 65px;
+	width: auto;
 }
+/* ESTILO HEADER */
 
+/* ESTILO ECORESCATE */
 .topbar p {
 	margin: 0;
 	display: inline-block;
 	font-size: 13px;
 	color: #f1f6ff;
 }
-
-.topbar p>i {
-	margin-right: 5px;
-}
-
-.topbar p:last-child {
-	text-align: right;
-}
-
-header .navbar {
-	margin-bottom: 0;
-}
-
-.topbar li.topbar {
-	display: inline;
-	padding-right: 18px;
-	line-height: 52px;
-	transition: all .3s linear;
-}
-
-.topbar li.topbar:hover {
-	color: #1bbde8;
-}
-
-.topbar ul.info i {
-	color: #131313;
-	font-style: normal;
-	margin-right: 8px;
-	display: inline-block;
-	position: relative;
-	top: 4px;
-}
-
-.topbar ul.info li {
-	float: right;
-	padding-left: 30px;
-	color: #ffffff;
-	font-size: 13px;
-	line-height: 44px;
-}
-
-.topbar ul.info i span {
-	color: #aaa;
-	font-size: 13px;
-	font-weight: 400;
-	line-height: 50px;
-	padding-left: 18px;
-}
-
-ul.social-network {
-	border: none;
-	margin: 0;
-	padding: 0;
-}
-
-ul.social-network li {
-	border: none;
-	margin: 0;
-}
-
-ul.social-network li i {
-	margin: 0;
-}
-
-ul.social-network li {
-	display: inline;
-	margin: 0 5px;
-	border: 0px solid #2D2D2D;
-	padding: 5px 0 0;
-	width: 32px;
-	display: inline-block;
-	text-align: center;
-	height: 32px;
-	vertical-align: baseline;
-	color: #000;
-}
-
-ul.social-network {
-	list-style: none;
-	margin: 5px 0 10px -25px;
-	float: right;
-}
-
-.waves-effect {
-	position: relative;
-	cursor: pointer;
-	display: inline-block;
-	overflow: hidden;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	-webkit-tap-highlight-color: transparent;
-	vertical-align: middle;
-	z-index: 1;
-	will-change: opacity, transform;
-	transition: .3s ease-out;
-	color: #fff;
-}
-
-a {
-	color: #0a0a0a;
-	text-decoration: none;
-}
-
-li {
-	list-style-type: none;
-}
-
-.bg-image-full {
-	background-position: center center;
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	-o-background-size: cover;
-}
-
-.bg-dark {
-	background-color: #222 !important;
-}
-
-.mx-background-top-linear {
-	background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
-	/* 	background: -webkit-linear-gradient(left, #208946 48%, #208946 48%); */
-	background: linear-gradient(45deg, #44b15e 48%, rgb(16 71 36) 48%);
-}
-
-.logo-image {
-	max-height: 65px; /* Establece una altura máxima para la imagen */
-	width: auto; /* Permite que el ancho se ajuste automáticamente */
-}
+/* ESTILO ECORESCATE */
 </style>
 </head>
 <body
-	style="background-color: #white; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+	style="background-color: #white; display: grid; grid-template-row: auto 1fr auto;">
 
 	<div class="fixed-top">
 		<header class="topbar">
@@ -547,7 +350,7 @@ li {
 
 
 	<footer
-		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
+		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
 		<div style="display: flex; align-items: center;">
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 				class="d-inline-block" style="height: 100px;">

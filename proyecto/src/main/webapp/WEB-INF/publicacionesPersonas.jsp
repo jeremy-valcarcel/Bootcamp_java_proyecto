@@ -12,41 +12,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>ECORESCATE-Personas</title>
+<title>AQUI EL TITULO DE TU PLNATILLA</title>
 <!-- BOOTSTRAP  -->
-<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+<script type="text/javascript" src="/js/app.js"></script>
 <!-- cambiar para que coincida con Tu archivo/estructura de nombres -->
 <link rel="stylesheet" href="/css/main.css">
 <script type="text/javascript" src="/js/app.js"></script>
 <style>
-
-/* DESPLIEGE HEADER*/
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 200px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-.dropdown:hover .dropdown-content {
-	display: block;
-}
-.dropdown-content a {
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-}
-.dropdown-content a:hover {
-	background-color: #ddd;
-}
-
-
 header, footer {
 	background-color: #82e462;
 	display: flex;
@@ -55,13 +29,65 @@ header, footer {
 	align-items: center;
 }
 
-/* IMAGEN REDONDA */
-/* .rounded-image { */
-/* 	border-radius: 50%; */
-/* 	/* Establece el radio para hacer la imagen redonda */ */
-/* 	width: 400px; /* Establece el ancho de la imagen */ */
-/* 	height: 400px; /* Establece la altura de la imagen */ */
-/* } */
+header img, footer img {
+	height: 80px;
+}
+
+.swiper {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+	border: 2px solid #181212;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 200px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* Estilos para los enlaces del menú */
+.dropdown-content a {
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.header-green {
+	background: linear-gradient(135deg, #28a745, #e9ecef);
+	background-color: #184e8e;
+	padding-bottom: -50px;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+}
 
 body {
 	margin: 0;
@@ -85,6 +111,9 @@ body {
 	padding: 5px;
 }
 
+/*
+headeer top
+*/
 .topbar {
 	background-color: rgb(16, 71, 36);
 	padding: 0;
@@ -240,7 +269,8 @@ li {
 </style>
 </head>
 <body
-	style="background-color: #ffffff; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+	style="background-color: #e7f4fc; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+
 	<div class="fixed-top">
 		<header class="topbar">
 			<nav
@@ -292,139 +322,61 @@ li {
 	</div>
 
 
-	<div class="content" style="margin-top:150px;">
-		<h2></h2>
-		<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-			<!-- Indicadores -->
-			<ol class="carousel-indicators">
-				<li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-				<li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-				<!-- Agrega más indicadores según la cantidad de imágenes -->
-			</ol>
+	<main class="container">
+		<img alt="fondo" src="img/fondo-perfil.png" style="width: 100%;">
+		<img alt="foto perfil" src="img/perfil.jpeg"
+			style="border-radius: 300px; height: 13em; position: relative; top: -10em">
 
-			<!-- Imágenes del carrusel -->
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<div class="row">
-						<div class="col-md-6 text-center">
-							<img src="imgs/basuraOrgánica.webp" alt="Imagen 1"
-								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Importancia de tu residuo</h3>
-							<p>¿Sabías que con la cantidad de residuos que genera una
-								persona es escencial que forme parte en este proceso?</p>
-							<a href="#masInformacion" class="btn btn-primary">Ver más</a>
-						</div>
-						<div class="col-md-6 text-center">
-							<img src="imgs/personasManos.avif" alt="Imagen 2"
-								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Roles</h3>
-							<p>¿Sabías los roles que puede tener una persona?</p>
-							<a href="#masInformacion2" class="btn btn-primary">Ver más</a>
-						</div>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<div class="row">
-						<div class="col-md-6 text-center">
-							<img src="imgs/basuraOrgánica2.jpg" alt="Imagen 3"
-								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Título 3</h3>
-							<p>Descripción o párrafo corto sobre la imagen 3.</p>
-							<a href="#masInformacion3" class="btn btn-primary">Ver más</a>
-						</div>
-						<div class="col-md-6 text-center">
-							<img src="imgs/basuraOrgánica.webp" alt="Imagen 4"
-								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Título 4</h3>
-							<p>Descripción o párrafo corto sobre la imagen 4.</p>
-							<a href="#masInformacion4" class="btn btn-primary">Ver más</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="row">
 
-		<!-- Controles de navegación -->
-		<a class="carousel-control-prev" href="#myCarousel" role="button"
-			data-bs-slide="prev"> <span class="carousel-control-prev-icon"
-			aria-hidden="true"></span> <span class="visually-hidden">Anterior</span>
-		</a> <a class="carousel-control-next" href="#myCarousel" role="button"
-			data-bs-slide="next"> <span class="carousel-control-next-icon"
-			aria-hidden="true"></span> <span class="visually-hidden">Siguiente</span>
-		</a>
-	</div>
+			<aside class="col-4">
+				<h2>Nombre del negocio</h2>
 
-	<!-- Sección de información "ver más" -->
-	<div id="masInformacion" class=" row featurette mt-5">
-		<div class="col-md-7 border border-light border-2 rounded">
-			<h2 class="featurette-heading">
-				Encabezado del primer reportaje. <span class="text-muted">Te
-					dejará boquiabierto.</span>
-			</h2>
-			<p class="lead">Aquí puedes encontrar más información sobre las
-				imágenes.</p>
-		</div>
-		<div class="col-md-5">
-			<img alt="scsc" src="imgs/contenedores.jpg">
-		</div>
-	</div>
+				<h4>Donde estamos</h4>
+				<img alt="locacion" src="img/locacion.jpg" style="width: 20em">
+			</aside>
+			<section class="col-8">
+				<article style="border: solid; 1px;">
 
-	<hr class="featurette-divider">
-	<div id="masInformacion2" class="row featurette">
-		<div class="col-md-7 order-md-2 border border-light border-2 rounded">
-			<h2 class="featurette-heading">
-				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
-					mismo.</span>
-			</h2>
-			<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
-				marcador de posición aquí para darle una idea de cómo funcionaría
-				este diseño con algún contenido del mundo real en su lugar.</p>
-		</div>
-		<div class="col-md-5 order-md-1">
-			<img alt="c" src="imgs/cocacola.png">
-		</div>
-	</div>
+					<h2 style="background-color: #12a903" class="text-center">publicaciones
+						De Empresas</h2>
 
-	<hr class="featurette-divider">
-	<div id="masInformacion3" class="row featurette "
-		style="margin-botton: 10%">
-		<div class="col-md-7 border border-light border-2 rounded">
-			<h2 class="featurette-heading">
-				Y por último, este. <span class="text-muted">Jaque mate.</span>
-			</h2>
-			<p class="lead">Y sí, este es el último bloque de contenido de
-				marcador de posición representativo. Una vez más, no está destinado
-				a ser leído realmente, simplemente aquí para darle una mejor vista
-				de cómo se vería esto con algún contenido real. Tu contenido.</p>
-		</div>
-		<div class="col-md-5 ">
-			<img alt="cc" src="imgs/amazon.png">
-		</div>
-	</div>
+					<p class="border">Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Optio numquam, saepe repellat perspiciatis rerum
+						magnam, sapiente vel molestiae cum beatae error corporis eum atque
+						eveniet!</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Facere mollitia vero odio quos error dolorem numquam, nemo
+						explicabo modi similique! Eveniet porro exercitationem autem
+						ratione.</p>
+				</article>
 
-	<hr class="featurette-divider">
-	<div id="masInformacion4" class="row featurette">
-		<div class="col-md-7 order-md-2 border border-light border-2 rounded">
-			<h2 class="featurette-heading">
-				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
-					mismo.</span>
-			</h2>
-			<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
-				marcador de posición aquí para darle una idea de cómo funcionaría
-				este diseño con algún contenido del mundo real en su lugar.</p>
-		</div>
-		<div class="col-md-5 order-md-1">
-			<img alt="c" src="imgs/cocacola.png">
-		</div>
-	</div>
+				<article style="border: solid; 1 px; margin: 4em 0em">
+
+					<h2 style="background-color: #12a903" class="text-center">publicaciones
+						De Personas</h2>
+
+					<p class="border">Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Optio numquam, saepe repellat perspiciatis rerum
+						magnam, sapiente vel molestiae cum beatae error corporis eum atque
+						eveniet!</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Facere mollitia vero odio quos error dolorem numquam, nemo
+						explicabo modi similique! Eveniet porro exercitationem autem
+						ratione.</p>
+				</article>
+			</section>
 
 
-	<!-- Footer -->
+		</div>
+	</main>
+
+
 	<footer
 		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
 		<div style="display: flex; align-items: center;">
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height: 120px;">
+				class="d-inline-block" style="height: 100px;">
 			<p class="text-white ml-2 mb-0">EcoRescate</p>
 		</div>
 
@@ -432,15 +384,15 @@ li {
 			<ul class="nav">
 				<li class="nav-item"><a class="nav-link active text-white"
 					aria-current="page" href="#">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">Empresas</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a>
+				</li>
+				<li class="nav-item "><a class="nav-link text-white" href="#">Empresas</a>
+				</li>
 				<li class="nav-item"><a class="nav-link disabled text-white"
 					aria-disabled="true">Nosotros</a></li>
 			</ul>
 		</div>
 	</footer>
-
-
 
 
 </body>

@@ -20,6 +20,44 @@
 <link rel="stylesheet" href="/css/main.css">
 <script type="text/javascript" src="/js/app.js"></script>
 <style>
+header, footer {
+	background-color: #82e462;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 10px;
+	align-items: center;
+}
+
+.header-green {
+	background: linear-gradient(135deg, #28a745, #e9ecef);
+	background-color: #184e8e;
+	padding-bottom: -50px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+header img, footer img {
+	height: 80px;
+}
+
+.swiper {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+	border: 2px solid #181212;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+}
+
 .dropdown {
 	position: relative;
 	display: inline-block;
@@ -49,24 +87,71 @@
 	background-color: #ddd;
 }
 
-.header-green {
-	background: linear-gradient(135deg, #28a745, #e9ecef);
-	background-color: #184e8e;
-	padding-bottom: -50px;
-	font-family: 'Source Sans Pro', sans-serif;
-	color: white;
+.content {
+	padding: 0px;
+	text-align:;
+	color: black;
+	margin: 0px;
 }
 
-header, footer {
-	background-color: #82e462;
+.content h1 {
+	height: 300px;
 	display: flex;
-	justify-content: space-between;
-	padding: 5px 10px;
+	color: white;
+	justify-content: center;
 	align-items: center;
+	margin: 0;
+	background-size: cover;
+	background-position: center;
+	font-size: 50px;
 }
 
-header img, footer img {
-	height: 80px;
+.content h2 {
+	font-size: 24px;
+	margin-top: 20px;
+}
+
+.content p {
+	margin-bottom: 20px;
+}
+
+.reciclaje {
+	height: 250px;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background-size: cover;
+	background-position: center;
+	font-size: 50px;
+}
+
+.btn-custom {
+	background-color: #007fffa1;
+	color: white;
+	border: none;
+}
+
+.btn-custom:hover {
+	background-color: #0056b3;
+}
+
+.mission, .vision {
+	display: inline-block;
+	width: 48%;
+	vertical-align: top;
+	margin: 10px;
+}
+
+.carousel-item {
+	background-size: cover;
+	background-position: center;
+	height: 300px;
+}
+
+.rounded-image {
+	border-radius: 20px;
 }
 
 body {
@@ -301,14 +386,14 @@ li {
 
 
 	<!-- Main -->
-	<div class="carousel-item ">
+	<div class="carousel-item" style="margin-top: 200px;">
 		<svg class="bd-placeholder-img" width="100%" height="100%"
 			xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
 			preserveAspectRatio="xMidYMid slice" focusable="false">
 		<rect width="100%" height="100%" fill="#777" /></svg>
 		<div class="container">
 			<div class="carousel-caption">
-				<h1 >Otro titular de ejemplo.</h1>
+				<h1>Otro titular de ejemplo.</h1>
 				<p>Algo de contenido placeholder representativo para la segunda
 					diapositiva del carrusel.</p>
 				<p>

@@ -271,54 +271,54 @@ li {
 <body
 	style="background-color: #e7f4fc; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
+	<div class="fixed-top">
+		<header class="topbar">
+			<nav
+				class="navbar navbar-expand-lg navbar-dark mx-background-top-linear"
+				style="background-color: #104724d1;">
+				<div class="container mt-1">
+					<div class="d-flex align-items-center">
+						<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
+							class="d-inline-block logo-image">
+						<p style="font-size: 20px;">
+							<strong>ECORESCATE</strong>
+						</p>
+					</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarResponsive" aria-controls="navbarResponsive"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarResponsive"
+						style="margin-left: 500px">
 
-	<header class="topbar">
-		<nav
-			class="navbar navbar-expand-lg navbar-dark mx-background-top-linear"
-			style="background-color: #104724d1;">
-			<div class="container mt-1">
-				<div class="d-flex align-items-center">
-					<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-						class="d-inline-block logo-image">
-					<p style="font-size: 20px;">
-						<strong>ECORESCATE</strong>
-					</p>
+						<ul class="navbar-nav ml-auto">
+
+							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
+
+							<li class="nav-item"><a class="nav-link"
+								href="/publicaciones">Publicaciones</a></li>
+
+							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
+							</li>
+
+
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> Nosotros </a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/nosotros">¿Quienes somos?</a> <a
+										class="dropdown-item" href="/reciclaje">Reciclaje orgánico</a>
+									<a class="dropdown-item" href="/preguntasFrecuentes">Preguntas
+										frecuentes</a>
+								</div></li>
+						</ul>
+					</div>
 				</div>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarResponsive" aria-controls="navbarResponsive"
-					aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive"
-					style="margin-left: 500px">
-
-					<ul class="navbar-nav ml-auto">
-
-						<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
-
-						<li class="nav-item"><a class="nav-link"
-							href="/publicaciones">Publicaciones</a></li>
-
-						<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
-						</li>
-
-
-						<li class="dropdown nav-item"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> Nosotros </a>
-							<div class="dropdown-content" style="color: black;"
-								aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="/nosotros">¿Quienes somos?</a> <a
-									class="dropdown-item" href="/reciclaje">Reciclaje orgánico</a>
-								<a class="dropdown-item" href="/preguntasFrecuentes">Preguntas
-									frecuentes</a>
-							</div></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
+			</nav>
+		</header>
 	</div>
 
 
