@@ -27,14 +27,13 @@ header, footer {
 	padding: 5px 10px;
 	align-items: center;
 }
+
 .header-green {
 	background: linear-gradient(135deg, #28a745, #e9ecef);
 	background-color: #184e8e;
 	padding-bottom: -50px;
 	font-family: 'Source Sans Pro', sans-serif;
-	color: white;
 }
-
 
 header img, footer img {
 	height: 80px;
@@ -87,40 +86,317 @@ header img, footer img {
 .dropdown-content a:hover {
 	background-color: #ddd;
 }
+
+.content {
+	padding: 0px;
+	text-align:;
+	color: black;
+	margin: 0px;
+}
+
+.content h1 {
+	height: 300px;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background-size: cover;
+	background-position: center;
+	font-size: 50px;
+}
+
+.content h2 {
+	font-size: 24px;
+	margin-top: 20px;
+}
+
+.content p {
+	margin-bottom: 20px;
+}
+
+.reciclaje {
+	height: 250px;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background-size: cover;
+	background-position: center;
+	font-size: 50px;
+}
+
+.btn-custom {
+	background-color: #007fffa1;
+	color: white;
+	border: none;
+}
+
+.btn-custom:hover {
+	background-color: #0056b3;
+}
+
+.mission, .vision {
+	display: inline-block;
+	width: 48%;
+	vertical-align: top;
+	margin: 10px;
+}
+
+.carousel-item {
+	background-size: cover;
+	background-position: center;
+	height: 300px;
+}
+
+.rounded-image {
+	border-radius: 20px;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-color: #f7f7f7;
+}
+
+.navbar {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 5px;
+}
+
+/*
+headeer top
+*/
+.topbar {
+	background-color: rgb(16, 71, 36);
+	padding: 0;
+}
+
+.topbar .container .row {
+	margin: -7px;
+	padding: 0;
+}
+
+.topbar .container .row .col-md-12 {
+	padding: 0;
+}
+
+.topbar p {
+	margin: 0;
+	display: inline-block;
+	font-size: 13px;
+	color: #f1f6ff;
+}
+
+.topbar p>i {
+	margin-right: 5px;
+}
+
+.topbar p:last-child {
+	text-align: right;
+}
+
+header .navbar {
+	margin-bottom: 0;
+}
+
+.topbar li.topbar {
+	display: inline;
+	padding-right: 18px;
+	line-height: 52px;
+	transition: all .3s linear;
+}
+
+.topbar li.topbar:hover {
+	color: #1bbde8;
+}
+
+.topbar ul.info i {
+	color: #131313;
+	font-style: normal;
+	margin-right: 8px;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+}
+
+.topbar ul.info li {
+	float: right;
+	padding-left: 30px;
+	color: #ffffff;
+	font-size: 13px;
+	line-height: 44px;
+}
+
+.topbar ul.info i span {
+	color: #aaa;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 50px;
+	padding-left: 18px;
+}
+
+ul.social-network {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.social-network li {
+	border: none;
+	margin: 0;
+}
+
+ul.social-network li i {
+	margin: 0;
+}
+
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+	border: 0px solid #2D2D2D;
+	padding: 5px 0 0;
+	width: 32px;
+	display: inline-block;
+	text-align: center;
+	height: 32px;
+	vertical-align: baseline;
+	color: #000;
+}
+
+ul.social-network {
+	list-style: none;
+	margin: 5px 0 10px -25px;
+	float: right;
+}
+
+.waves-effect {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	vertical-align: middle;
+	z-index: 1;
+	will-change: opacity, transform;
+	transition: .3s ease-out;
+	color: #fff;
+}
+
+a {
+	color: #0a0a0a;
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+.bg-image-full {
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+.bg-dark {
+	background-color: #222 !important;
+}
+
+.mx-background-top-linear {
+	background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+	/* 	background: -webkit-linear-gradient(left, #208946 48%, #208946 48%); */
+	background: linear-gradient(45deg, #44b15e 48%, rgb(16 71 36) 48%);
+}
+
+.logo-image {
+	max-height: 65px; /* Establece una altura máxima para la imagen */
+	width: auto; /* Permite que el ancho se ajuste automáticamente */
+}
 </style>
 </head>
 <body
-	style="background-color: #e3f3e4; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+	style="display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
-	<header class="header-green">
+	<div class="fixed-top">
+		<header class="topbar">
+			<nav
+				class="navbar navbar-expand-lg navbar-dark mx-background-top-linear"
+				style="background-color: #104724d1;">
+				<div class="container mt-1">
+					<div class="d-flex align-items-center">
+						<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
+							class="d-inline-block logo-image">
+						<p style="font-size: 20px;">
+							<strong>ECORESCATE</strong>
+						</p>
+					</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarResponsive" aria-controls="navbarResponsive"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarResponsive"
+						style="margin-left: 500px">
 
-		<div>
-			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height: 85px">
-		</div>
-		<nav class="navbar navbar-expand-lg">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active text-white"
-					aria-current="page" href="/">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="/publicaciones">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="/empresas">Empresas</a></li>
+						<ul class="navbar-nav ml-auto">
 
-			</ul>
-			<div class="dropdown nav-item">
-				<span>Nosotros</span>
-				<div class="dropdown-content">
-					<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
-						orgánico</a> <a href="/preguntasFrecuentes">Preguntas frecuentes</a>
+							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
+
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Publicaciones</a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/publicacionesPersonas">Publicaciones
+										de personas</a> <a class="dropdown-item"
+										href="/publicacionesEmpresas">Publicaciones de empresas</a>
+
+								</div></li>
+
+							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
+							</li>
+
+
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> Nosotros </a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/nosotros">¿Quienes somos?</a> <a
+										class="dropdown-item" href="/reciclaje">Reciclaje orgánico</a>
+									<a class="dropdown-item" href="/preguntasFrecuentes">Preguntas
+										frecuentes</a>
+								</div></li>
+						</ul>
+					</div>
 				</div>
-			</div>
-		</nav>
-		<div>
-			<a href="/sesion" class="btn btn text-white">Iniciar Sesión</a> <a
-				href="/registro" class="btn btn text-white">Unirse</a>
-		</div>
-	</header>
-	<div class="col-12 m-3">
-		<h3 class="text-left">Preguntas Frecuentes</h3>
+			</nav>
+		</header>
+	</div>
+	<div class="content" style="margin-top: 100px; margin-bottom: 20px;">
+		<h2 class="text-center mt-5 mb-3"
+			style="color: #2faa4c; font-size: 50px;">PREGUNTAS FRECUENTES</h2>
 
 		<div class="accordion" id="faqAccordion">
 			<!-- PREGUNTA UNO -->
@@ -227,7 +503,7 @@ header img, footer img {
 				</div>
 			</div>
 
-			<!-- PREGUNTA SEIS -->
+			<!-- PREGUNTA SIETE -->
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="faqHeading6">
 					<button class="accordion-button collapsed" type="button"
@@ -248,7 +524,7 @@ header img, footer img {
 				</div>
 			</div>
 
-			<!-- PREGUNTA SEIS -->
+			<!-- PREGUNTA OCHO -->
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="faqHeading6">
 					<button class="accordion-button collapsed" type="button"
@@ -269,7 +545,27 @@ header img, footer img {
 				</div>
 			</div>
 
-			<!-- PREGUNTA SEIS -->
+			<!-- PREGUNTA NUEVE -->
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="faqHeading6">
+					<button class="accordion-button collapsed" type="button"
+						data-bs-toggle="collapse" data-bs-target="#faqCollapse6"
+						aria-expanded="false" aria-controls="faqCollapse6">¿Cómo
+						puedo promover el reciclaje orgánico en mi empresa o lugar de
+						trabajo?</button>
+				</h2>
+				<div id="faqCollapse6" class="accordion-collapse collapse"
+					aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
+					<div class="accordion-body">Para promover el reciclaje
+						orgánico en tu empresa, puedes asegurarte de que haya contenedores
+						específicos para materiales orgánicos en áreas de almuerzo y
+						cocina, fomentar la reducción de desperdicios orgánicos y
+						considerar implementar un sistema de recompensas o reconocimiento
+						para motivar a los empleados a participar activamente en el
+						reciclaje orgánico.</div>
+				</div>
+			</div>
+			<!-- PREGUNTA DIEZ -->
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="faqHeading6">
 					<button class="accordion-button collapsed" type="button"

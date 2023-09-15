@@ -62,10 +62,15 @@ public class MainController {
 		return "empresas.jsp";
 	}
 
-	@GetMapping("/publicaciones")
-	public String publicaciones() {
-		return "publicaciones.jsp";
+	@GetMapping("/publicacionesPersonas")
+	public String publicacionesPersonas() {
+		return "publicacionesPersonas.jsp";
 	}
+	@GetMapping("/publicacionesEmpresas")
+	public String publicacionesEmpresas() {
+		return "publicacionesEmpresas.jsp";
+	}
+	
 	
 	@GetMapping("/personas")
 	public String infoPersonas() {

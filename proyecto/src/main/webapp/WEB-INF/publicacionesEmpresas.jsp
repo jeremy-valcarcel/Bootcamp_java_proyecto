@@ -1,24 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
+<!-- c:out ; c:forEach etc. -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<!-- Formateo fechas (dates) -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
+<!-- Formulario form:form -->
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<!-- para errores de renderizado en rutas PUT -->
 <%@ page isErrorPage="true"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Perfil</title>
-
+<title>AQUI EL TITULO DE TU PLNATILLA</title>
+<!-- BOOTSTRAP  -->
 <link rel="stylesheet"
 	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
 <script type="text/javascript" src="/js/app.js"></script>
-
+<!-- cambiar para que coincida con Tu archivo/estructura de nombres -->
 <link rel="stylesheet" href="/css/main.css">
 <script type="text/javascript" src="/js/app.js"></script>
 <style>
@@ -118,7 +117,6 @@ body {
 /* ESTILO ECORESCATE */
 </style>
 </head>
-
 <body
 	style="background-color: #e7f4fc; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
@@ -181,89 +179,56 @@ body {
 		</header>
 	</div>
 
-	<main class="container" style="margin-top: 100px;">
-		<div class="row mt-4">
-			<div class="col-sm-3">
-				<img alt="foto perfil" src="img/perfil.jpeg"
-					style="border-radius: 300px; height: 13em; position: relative;">
-			</div>
-			<div class="col mt-5 ml-2">
-				<h2 class="text-secondary">Usuario Usuario</h2>
-				<p class="text-secondary">Empresa/recolector</p>
-				<p class="text-secondary">Argentina/Uruguay</p>
 
-			</div>
+	<main class="container">
+		<img alt="fondo" src="img/fondo-perfil.png" style="width: 100%;">
+		<img alt="foto perfil" src="img/perfil.jpeg"
+			style="border-radius: 300px; height: 13em; position: relative; top: -10em">
 
-		</div>
+		<div class="row">
 
-		<div class="row mb-4">
-			<div class="col-sm-3 mt-4">
-				<aside class="col">
-					<p class="btn btn-success d-block col-6" style="width: 210px">Editar
-						Perfil</p>
-					<p class="btn btn-success d-block col-6" style="width: 210px">Nuevo
-						Aviso</p>
-					<p class="btn btn-success d-block col-6" style="width: 210px">Cancelar
-						Aviso</p>
-					<p class="btn btn-success d-block col-6" style="width: 210px">Cerrar
-						Sesion</p>
-				</aside>
-			</div>
-			<div class="col mt-4">
-				<section style="height: 400px">
-					<h3 class="text-center text-secondary">Tus Publicaciones:</h3>
-					<article
-						class="border border-dark p-4 overflow-auto position-absolute"
-						style="height: 320px; width: 880px">
-						<div class="row">
-							<h4 class="text-secondary col-4">Title</h4>
-							<p class=" col mx-2 text-end">00/00/00 00:00</p>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry. Lorem Ipsum has been the industry's
-								standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type
-								specimen book. It has survived not only five centuries, but also
-								the leap into electronic typesetting, remaining essentially
-								unchanged. It was popularised in the 1960s with the release of
-								Letraset sheets containing Lorem Ipsum passages, and more
-								recently with desktop publishing software like Aldus PageMaker
-								including versions of Lorem Ipsum.</p>
-						</div>
-						<hr>
-						<div class="row">
-							<h4 class="text-secondary col-4">Title</h4>
-							<p class=" col mx-2 text-end">00/00/00 00:00</p>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry. Lorem Ipsum has been the industry's
-								standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type
-								specimen book. It has survived not only five centuries, but also
-								the leap into electronic typesetting, remaining essentially
-								unchanged. It was popularised in the 1960s with the release of
-								Letraset sheets containing Lorem Ipsum passages, and more
-								recently with desktop publishing software like Aldus PageMaker
-								including versions of Lorem Ipsum.</p>
-						</div>
-						<hr>
-						<div class="row">
-							<h4 class="text-secondary col-4">Title</h4>
-							<p class=" col mx-2 text-end">00/00/00 00:00</p>
-							<p>Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry. Lorem Ipsum has been the industry's
-								standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type
-								specimen book. It has survived not only five centuries, but also
-								the leap into electronic typesetting, remaining essentially
-								unchanged. It was popularised in the 1960s with the release of
-								Letraset sheets containing Lorem Ipsum passages, and more
-								recently with desktop publishing software like Aldus PageMaker
-								including versions of Lorem Ipsum.</p>
-						</div>
-					</article>
-				</section>
-			</div>
+			<aside class="col-4">
+				<h2>Nombre del negocio</h2>
+
+				<h4>Donde estamos</h4>
+				<img alt="locacion" src="img/locacion.jpg" style="width: 20em">
+			</aside>
+			<section class="col-8">
+				<article style="border: solid; 1px;">
+
+					<h2 style="background-color: #12a903" class="text-center">publicaciones
+						De Empresas</h2>
+
+					<p class="border">Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Optio numquam, saepe repellat perspiciatis rerum
+						magnam, sapiente vel molestiae cum beatae error corporis eum atque
+						eveniet!</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Facere mollitia vero odio quos error dolorem numquam, nemo
+						explicabo modi similique! Eveniet porro exercitationem autem
+						ratione.</p>
+				</article>
+
+				<article style="border: solid; 1 px; margin: 4em 0em">
+
+					<h2 style="background-color: #12a903" class="text-center">publicaciones
+						De Personas</h2>
+
+					<p class="border">Lorem ipsum dolor sit amet, consectetur
+						adipisicing elit. Optio numquam, saepe repellat perspiciatis rerum
+						magnam, sapiente vel molestiae cum beatae error corporis eum atque
+						eveniet!</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Facere mollitia vero odio quos error dolorem numquam, nemo
+						explicabo modi similique! Eveniet porro exercitationem autem
+						ratione.</p>
+				</article>
+			</section>
+
+
 		</div>
 	</main>
+
 
 	<footer
 		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
@@ -277,12 +242,16 @@ body {
 			<ul class="nav">
 				<li class="nav-item"><a class="nav-link active text-white"
 					aria-current="page" href="#">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">Empresas</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a>
+				</li>
+				<li class="nav-item "><a class="nav-link text-white" href="#">Empresas</a>
+				</li>
 				<li class="nav-item"><a class="nav-link disabled text-white"
 					aria-disabled="true">Nosotros</a></li>
 			</ul>
 		</div>
 	</footer>
+
+
 </body>
 </html>

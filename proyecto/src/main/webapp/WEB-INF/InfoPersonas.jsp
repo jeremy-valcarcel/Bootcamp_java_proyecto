@@ -20,6 +20,8 @@
 <link rel="stylesheet" href="/css/main.css">
 <script type="text/javascript" src="/js/app.js"></script>
 <style>
+
+/* DESPLIEGE HEADER*/
 .dropdown {
 	position: relative;
 	display: inline-block;
@@ -38,7 +40,6 @@
 	display: block;
 }
 
-/* Estilos para los enlaces del menú */
 .dropdown-content a {
 	padding: 12px 16px;
 	text-decoration: none;
@@ -49,14 +50,6 @@
 	background-color: #ddd;
 }
 
-.header-green {
-	background: linear-gradient(135deg, #28a745, #e9ecef);
-	background-color: #184e8e;
-	padding-bottom: -50px;
-	font-family: 'Source Sans Pro', sans-serif;
-	color: white;
-}
-
 header, footer {
 	background-color: #82e462;
 	display: flex;
@@ -65,53 +58,253 @@ header, footer {
 	align-items: center;
 }
 
-header img, footer img {
-	height: 80px;
-}
-
+/* IMAGEN REDONDA */
 .rounded-image {
-	border-radius: 50%;
+	border-radius: 5%;
 	/* Establece el radio para hacer la imagen redonda */
 	width: 400px; /* Establece el ancho de la imagen */
 	height: 400px; /* Establece la altura de la imagen */
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-color: #f7f7f7;
+}
+
+.navbar {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 5px;
+}
+
+.topbar {
+	background-color: rgb(16, 71, 36);
+	padding: 0;
+}
+
+.topbar .container .row {
+	margin: -7px;
+	padding: 0;
+}
+
+.topbar .container .row .col-md-12 {
+	padding: 0;
+}
+
+.topbar p {
+	margin: 0;
+	display: inline-block;
+	font-size: 13px;
+	color: #f1f6ff;
+}
+
+.topbar p>i {
+	margin-right: 5px;
+}
+
+.topbar p:last-child {
+	text-align: right;
+}
+
+header .navbar {
+	margin-bottom: 0;
+}
+
+.topbar li.topbar {
+	display: inline;
+	padding-right: 18px;
+	line-height: 52px;
+	transition: all .3s linear;
+}
+
+.topbar li.topbar:hover {
+	color: #1bbde8;
+}
+
+.topbar ul.info i {
+	color: #131313;
+	font-style: normal;
+	margin-right: 8px;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+}
+
+.topbar ul.info li {
+	float: right;
+	padding-left: 30px;
+	color: #ffffff;
+	font-size: 13px;
+	line-height: 44px;
+}
+
+.topbar ul.info i span {
+	color: #aaa;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 50px;
+	padding-left: 18px;
+}
+
+ul.social-network {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.social-network li {
+	border: none;
+	margin: 0;
+}
+
+ul.social-network li i {
+	margin: 0;
+}
+
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+	border: 0px solid #2D2D2D;
+	padding: 5px 0 0;
+	width: 32px;
+	display: inline-block;
+	text-align: center;
+	height: 32px;
+	vertical-align: baseline;
+	color: #000;
+}
+
+ul.social-network {
+	list-style: none;
+	margin: 5px 0 10px -25px;
+	float: right;
+}
+
+.waves-effect {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	vertical-align: middle;
+	z-index: 1;
+	will-change: opacity, transform;
+	transition: .3s ease-out;
+	color: #fff;
+}
+
+a {
+	color: #0a0a0a;
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+.bg-image-full {
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+.bg-dark {
+	background-color: #222 !important;
+}
+
+.mx-background-top-linear {
+	background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+	/* 	background: -webkit-linear-gradient(left, #208946 48%, #208946 48%); */
+	background: linear-gradient(45deg, #44b15e 48%, rgb(16 71 36) 48%);
+}
+
+.logo-image {
+	max-height: 65px; /* Establece una altura máxima para la imagen */
+	width: auto; /* Permite que el ancho se ajuste automáticamente */
 }
 </style>
 </head>
 <body
 	style="background-color: #ffffff; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+	<div class="fixed-top">
+		<header class="topbar">
+			<nav
+				class="navbar navbar-expand-lg navbar-dark mx-background-top-linear"
+				style="background-color: #104724d1;">
+				<div class="container mt-1">
+					<div class="d-flex align-items-center">
+						<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
+							class="d-inline-block logo-image">
+						<p style="font-size: 20px;">
+							<strong>ECORESCATE</strong>
+						</p>
+					</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarResponsive" aria-controls="navbarResponsive"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarResponsive"
+						style="margin-left: 500px">
+
+						<ul class="navbar-nav ml-auto">
+
+							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
+
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Publicaciones</a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/publicacionesPersonas">Publicaciones
+										de personas</a> <a class="dropdown-item"
+										href="/publicacionesEmpresas">Publicaciones de empresas</a>
+
+								</div></li>
+
+							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
+							</li>
 
 
-	<header class="header-green">
-
-		<div>
-			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height: 85px">
-		</div>
-		<nav class="navbar navbar-expand-lg">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active text-white"
-					aria-current="page" href="/">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link text-white"
-					href="/publicaciones">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link text-white"
-					href="/empresas">Empresas</a></li>
-
-			</ul>
-			<div class="dropdown nav-item">
-				<span>Nosotros</span>
-				<div class="dropdown-content">
-					<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
-						orgánico</a> <a href="/preguntasFrecuentes">Preguntas frecuentes</a>
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> Nosotros </a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/nosotros">¿Quienes somos?</a> <a
+										class="dropdown-item" href="/reciclaje">Reciclaje orgánico</a>
+									<a class="dropdown-item" href="/preguntasFrecuentes">Preguntas
+										frecuentes</a>
+								</div></li>
+						</ul>
+					</div>
 				</div>
-			</div>
-		</nav>
-		<div>
-			<a href="/sesion" class="btn btn text-white">Iniciar Sesión</a> <a
-				href="/registro" class="btn btn text-white">Unirse</a>
-		</div>
-	</header>
+			</nav>
+		</header>
+	</div>
 
-	<div class="container mt-5">
+
+	<div class="content" style="margin-top: 150px;">
 		<h2></h2>
 		<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
 			<!-- Indicadores -->
@@ -131,14 +324,16 @@ header img, footer img {
 							<h3 class="m-2">Importancia de tu residuo</h3>
 							<p>¿Sabías que con la cantidad de residuos que genera una
 								persona es escencial que forme parte en este proceso?</p>
-							<a href="#masInformacion" class="btn btn-primary">Ver más</a>
+							<a href="#masInformacion" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 						<div class="col-md-6 text-center">
 							<img src="imgs/personasManos.avif" alt="Imagen 2"
 								style="height: 400px" class="rounded-image">
 							<h3 class="m-2">Roles</h3>
-							<p>¿Sabías los roles puede tener una persona?</p>
-							<a href="#masInformacion2" class="btn btn-primary">Ver más</a>
+							<p>¿Sabías los roles que puede tener una persona?</p>
+							<a href="#masInformacion2" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 					</div>
 				</div>
@@ -149,14 +344,16 @@ header img, footer img {
 								style="height: 400px" class="rounded-image">
 							<h3 class="m-2">Título 3</h3>
 							<p>Descripción o párrafo corto sobre la imagen 3.</p>
-							<a href="#masInformacion3" class="btn btn-primary">Ver más</a>
+							<a href="#masInformacion3" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 						<div class="col-md-6 text-center">
 							<img src="imgs/basuraOrgánica.webp" alt="Imagen 4"
 								style="height: 400px" class="rounded-image">
 							<h3 class="m-2">Título 4</h3>
 							<p>Descripción o párrafo corto sobre la imagen 4.</p>
-							<a href="#masInformacion4" class="btn btn-primary">Ver más</a>
+							<a href="#masInformacion4" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 					</div>
 				</div>
@@ -174,8 +371,8 @@ header img, footer img {
 	</div>
 
 	<!-- Sección de información "ver más" -->
-	<div id="masInformacion" class=" row featurette mt-5">
-		<div class="col-md-7 border border-light border-2 rounded">
+	<div id="masInformacion" class=" row m-0 featurette mt-5">
+		<div class="col border border-light border-2 rounded">
 			<h2 class="featurette-heading">
 				Encabezado del primer reportaje. <span class="text-muted">Te
 					dejará boquiabierto.</span>
@@ -183,14 +380,14 @@ header img, footer img {
 			<p class="lead">Aquí puedes encontrar más información sobre las
 				imágenes.</p>
 		</div>
-		<div class="col-md-5">
+		<div class="col">
 			<img alt="scsc" src="imgs/contenedores.jpg">
 		</div>
 	</div>
 
 	<hr class="featurette-divider">
-	<div id="masInformacion2" class="row featurette">
-		<div class="col-md-7 order-md-2 border border-light border-2 rounded">
+	<div id="masInformacion2" class="row m-0 featurette">
+		<div class="col order-md-2 border border-light border-2 rounded">
 			<h2 class="featurette-heading">
 				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
 					mismo.</span>
@@ -199,15 +396,15 @@ header img, footer img {
 				marcador de posición aquí para darle una idea de cómo funcionaría
 				este diseño con algún contenido del mundo real en su lugar.</p>
 		</div>
-		<div class="col-md-5 order-md-1">
+		<div class="col order-md-1">
 			<img alt="c" src="imgs/cocacola.png">
 		</div>
 	</div>
 
 	<hr class="featurette-divider">
-	<div id="masInformacion3" class="row featurette "
+	<div id="masInformacion3" class="row m-0 featurette "
 		style="margin-botton: 10%">
-		<div class="col-md-7 border border-light border-2 rounded">
+		<div class="col border border-light border-2 rounded">
 			<h2 class="featurette-heading">
 				Y por último, este. <span class="text-muted">Jaque mate.</span>
 			</h2>
@@ -216,14 +413,14 @@ header img, footer img {
 				a ser leído realmente, simplemente aquí para darle una mejor vista
 				de cómo se vería esto con algún contenido real. Tu contenido.</p>
 		</div>
-		<div class="col-md-5 ">
+		<div class="col ">
 			<img alt="cc" src="imgs/amazon.png">
 		</div>
 	</div>
 
 	<hr class="featurette-divider">
-	<div id="masInformacion4" class="row featurette">
-		<div class="col-md-7 order-md-2 border border-light border-2 rounded">
+	<div id="masInformacion4" class="row m-0 featurette">
+		<div class="col order-md-2 border border-light border-2 rounded">
 			<h2 class="featurette-heading">
 				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
 					mismo.</span>
@@ -232,7 +429,7 @@ header img, footer img {
 				marcador de posición aquí para darle una idea de cómo funcionaría
 				este diseño con algún contenido del mundo real en su lugar.</p>
 		</div>
-		<div class="col-md-5 order-md-1">
+		<div class="col order-md-1">
 			<img alt="c" src="imgs/cocacola.png">
 		</div>
 	</div>

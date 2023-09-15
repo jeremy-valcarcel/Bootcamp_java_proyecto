@@ -20,7 +20,8 @@
 <link rel="stylesheet" href="/css/main.css">
 <script type="text/javascript" src="/js/app.js"></script>
 <style>
-/* Estilos personalizados */
+
+/* ESTILO HEADER/FOOTER */
 header, footer {
 	background-color: #82e462;
 	display: flex;
@@ -28,37 +29,9 @@ header, footer {
 	padding: 5px 10px;
 	align-items: center;
 }
+/* ESTILO HEADER/FOOTER */
 
-.header-green {
-	background: linear-gradient(135deg, #28a745, #e9ecef);
-	background-color: #184e8e;
-	padding-bottom: -50px;
-	font-family: 'Source Sans Pro', sans-serif;
-}
-
-header img, footer img {
-	height: 80px;
-}
-
-.swiper {
-	width: 100%;
-	padding-top: 50px;
-	padding-bottom: 50px;
-}
-
-.swiper-slide {
-	background-position: center;
-	background-size: cover;
-	width: 300px;
-	height: 300px;
-	border: 2px solid #181212;
-}
-
-.swiper-slide img {
-	display: block;
-	width: 100%;
-}
-
+/* ESTILO DESPLIEGE HEADER */
 .dropdown {
 	position: relative;
 	display: inline-block;
@@ -77,7 +50,6 @@ header img, footer img {
 	display: block;
 }
 
-/* Estilos para los enlaces del menú */
 .dropdown-content a {
 	padding: 12px 16px;
 	text-decoration: none;
@@ -87,14 +59,7 @@ header img, footer img {
 .dropdown-content a:hover {
 	background-color: #ddd;
 }
-
-.content {
-	padding: 0px;
-	text-align:;
-	color: black;
-	margin: 0px;
-}
-
+/* ESTILO DESPLIEGE HEADER */
 .content h1 {
 	height: 300px;
 	display: flex;
@@ -112,33 +77,6 @@ header img, footer img {
 	margin-top: 20px;
 }
 
-.content p {
-	margin-bottom: 20px;
-}
-
-.reciclaje {
-	height: 250px;
-	display: flex;
-	color: white;
-	justify-content: center;
-	align-items: center;
-	margin: 0;
-	background-image: url('imgs/fondo-compost.jpg');
-	background-size: cover;
-	background-position: center;
-	font-size: 50px;
-}
-
-.btn-custom {
-	background-color: #007fffa1;
-	color: white;
-	border: none;
-}
-
-.btn-custom:hover {
-	background-color: #0056b3;
-}
-
 .mission, .vision {
 	display: inline-block;
 	width: 48%;
@@ -152,28 +90,22 @@ header img, footer img {
 	height: 300px;
 }
 
-.rounded-image {
-	border-radius: 20px;
-}
-
+/* ESTILO PARA SOCIOS */
 .socios-container {
-	background-color: #1047247a; /* Color de fondo para el contenedor */
-	padding: 20px; /* Espaciado interno para el contenedor */
+	background-color: #1047247a;
+	padding: 20px;
 	text-align: center;
-	/* Centra el contenido del contenedor horizontalmente */
-	color: white; /* Color de texto blanco para el párrafo */
+	color: white;
 }
 
 .socios-row {
-	display: flex; /* Crea una fila horizontal */
+	display: flex;
 	justify-content: space-around;
-	/* Distribuye el espacio entre los socios */
 	align-items: center;
-	/* Centra verticalmente las imágenes y los textos */
 }
 
 .socio {
-	text-align: center; /* Centra el texto dentro de cada socio */
+	text-align: center;
 }
 
 .socio:hover {
@@ -182,40 +114,113 @@ header img, footer img {
 }
 
 .socio img {
-	max-width: 170px; /* Establece el tamaño máximo para las imágenes */
+	max-width: 170px
 }
+/* ESTILO PARA SOCIOS */
+
+/* ESTILOS BODY */
+body {
+	background-color: #white;
+	display: grid;
+	min-height: 100vh;
+	grid-template-row: auto 1fr auto;
+}
+/* ESTILOS BODY */
+
+/* ESTILO HEADER */
+.navbar {
+	padding: 5px;
+}
+
+.topbar {
+	background-color: rgb(16, 71, 36);
+	padding: 0;
+}
+
+.mx-background-top-linear {
+	background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+	background: linear-gradient(45deg, #44b15e 48%, rgb(16 71 36) 48%);
+}
+
+.logo-image {
+	max-height: 65px;
+	width: auto;
+}
+/* ESTILO HEADER */
+
+/* ESTILO ECORESCATE */
+.topbar p {
+	margin: 0;
+	display: inline-block;
+	font-size: 13px;
+	color: #f1f6ff;
+}
+/* ESTILO ECORESCATE */
 </style>
 </head>
 <body
-	style="background-color: #white; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+	style="background-color: #white; display: grid; grid-template-row: auto 1fr auto;">
 
-	<header class="header-green">
-		<div>
-			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height: 85px">
-		</div>
-		<nav class="navbar navbar-expand-lg">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="/">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link" href="/publicaciones">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a></li>
-			</ul>
-			<div class="dropdown nav-item">
-				<span>Nosotros</span>
-				<div class="dropdown-content">
-					<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
-						orgánico</a> <a href="/preguntasFrecuentes">Preguntas frecuentes</a>
+	<div class="fixed-top">
+		<header class="topbar">
+			<nav
+				class="navbar navbar-expand-lg navbar-dark mx-background-top-linear"
+				style="background-color: #104724d1;">
+				<div class="container mt-1">
+					<div class="d-flex align-items-center">
+						<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
+							class="d-inline-block logo-image">
+						<p style="font-size: 20px;">
+							<strong>ECORESCATE</strong>
+						</p>
+					</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarResponsive" aria-controls="navbarResponsive"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarResponsive"
+						style="margin-left: 500px">
+
+						<ul class="navbar-nav ml-auto">
+
+							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
+
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Publicaciones</a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/publicacionesPersonas">Publicaciones
+										de personas</a> <a class="dropdown-item"
+										href="/publicacionesEmpresas">Publicaciones de empresas</a>
+
+								</div></li>
+
+							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
+							</li>
+
+
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> Nosotros </a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/nosotros">¿Quienes somos?</a> <a
+										class="dropdown-item" href="/reciclaje">Reciclaje orgánico</a>
+									<a class="dropdown-item" href="/preguntasFrecuentes">Preguntas
+										frecuentes</a>
+								</div></li>
+						</ul>
+					</div>
 				</div>
-			</div>
-		</nav>
-		<div>
-			<a href="/sesion" class="btn btn">Iniciar Sesión</a> <a
-				href="/registro" class="btn btn">Unirse</a>
-		</div>
-	</header>
+			</nav>
+		</header>
+	</div>
 
-	<div class="content">
+	<div class="content" style="margin-top: 75px;">
 		<div id="carouselExample" class="carousel slide"
 			data-bs-ride="carousel">
 			<ol class="carousel-indicators">
@@ -346,7 +351,7 @@ header img, footer img {
 
 
 	<footer
-		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
+		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
 		<div style="display: flex; align-items: center;">
 			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 				class="d-inline-block" style="height: 100px;">
