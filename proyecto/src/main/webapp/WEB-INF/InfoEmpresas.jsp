@@ -59,13 +59,12 @@ header, footer {
 }
 
 /* IMAGEN REDONDA */
-/* .rounded-image { */
-/* 	border-radius: 50%; */
-/* 	/* Establece el radio para hacer la imagen redonda */
-* /
-	/* 	width: 400px; /* Establece el ancho de la imagen */ * /
-	/* 	height: 400px; /* Establece la altura de la imagen */ * /
-	/* } */   
+.rounded-image {
+	border-radius: 5%;
+	/* Establece el radio para hacer la imagen redonda */
+	width: 400px; /* Establece el ancho de la imagen */
+	height: 400px; /* Establece la altura de la imagen */
+}
 
 body {
 	margin: 0;
