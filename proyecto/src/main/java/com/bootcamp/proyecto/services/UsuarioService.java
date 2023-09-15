@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import com.bootcamp.proyecto.models.Usuario;
+import com.bootcamp.proyecto.repositories.EmpresaRepo;
 import com.bootcamp.proyecto.repositories.UsuarioRepo;
 
 @Service
@@ -15,7 +16,7 @@ public class UsuarioService {
 	
 	//Repositories------------------------------------------------------------------------------------------------
 	private final UsuarioRepo userRepo;
-	public UsuarioService(UsuarioRepo uR) {
+	public UsuarioService(UsuarioRepo uR ) {
 		this.userRepo = uR;
 	}
 	
@@ -24,10 +25,12 @@ public class UsuarioService {
 		return userRepo.findByEmail(email);
 	}
 	
+	//TodosUsuarios-----------------------------------------------------------------------------------------------
 	public List<Usuario> todosUsuarios(){
 		return userRepo.findAll();
 	}
 	
+	//UsuarioPorId-----------------------------------------------------------------------------------------------
 	public Usuario encontrarUserPorId(Long id) {
 		Optional<Usuario> user = userRepo.findById(id);
 		if(user.isPresent()) {

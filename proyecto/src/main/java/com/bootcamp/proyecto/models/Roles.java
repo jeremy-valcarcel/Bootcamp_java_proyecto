@@ -15,6 +15,14 @@ import jakarta.validation.constraints.NotNull;
 @Table(name="roles")
 public class Roles {
 	
+	
+	/*InsertarRolesSQL---------------------------------------------------------------------------------------
+	 
+	INSERT INTO `roles` (name) VALUES ('Recolector');
+	INSERT INTO `roles` (name) VALUES ('Generador');
+	
+	*/
+	
 	//DatosTabla-----------------------------------------------------------------------------------
 	
 	@Id

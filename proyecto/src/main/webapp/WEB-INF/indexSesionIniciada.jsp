@@ -328,7 +328,7 @@
 						<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
 							class="d-inline-block" style="height: 95px">
 					</div>
-					<a class="navbar-brand" href="/Login">ECORESCATE</a>
+					<a class="navbar-brand" href="/">ECORESCATE</a>
 					<button data-toggle="collapse" class="navbar-toggler"
 						data-target="#navcol-1">
 						<span class="sr-only">Toggle navigation</span><span
@@ -338,15 +338,15 @@
 					<div class="collapse navbar-collapse" id="navcol-1">
 						<ul class="nav navbar-nav">
 							<li class="nav-item" role="presentation"><a class="nav-link"
-								href="/Login">Inicio</a></li>
+								href="/">Inicio</a></li>
 							<li class="nav-item" role="presentation"><a class="nav-link"
-								href="/Login">Publicaciones</a></li>
+								href="/publicaciones">Publicaciones</a></li>
 							<li class="nav-item" role="presentation"><a class="nav-link"
-								href="/Login">Empresas</a></li>
-							<li class="dropdown nav-item"><a class="nav-link" href="Login" >Nosotros</a>
+								href="/empresas">Empresas</a></li>
+							<li class="dropdown nav-item"><a class="nav-link" href="#">Nosotros</a>
 								<div class="dropdown-content">
-									<a href="/Login">¿Quienes somos?</a> <a href="/Login">Reciclaje
-										orgánico</a> <a href="/Login">Preguntas
+									<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
+										orgánico</a> <a href="/preguntasFrecuentes">Preguntas
 										frecuentes</a>
 								</div></li>
 						</ul>
@@ -359,7 +359,12 @@
 							</div>
 						</form>
 						<div class="register">
-							<span class="navbar-text"></span> <a class="btn btn-light action-button" role="button" href="/Login">Iniciar Sesión</a>
+							<a href="/logout">Cerrar sesion</a>
+							<a href="/perfil" class="d-inline-block my-auto me-2">
+								<img alt="Usuario" src="img/usuario.png" class="d-inline-block"
+									style="height: 60px;">
+							</a>
+
 						</div>
 					</div>
 				</div>
@@ -372,7 +377,7 @@
 						<p>
 							Desbloquea el potencial de los residuos orgánicos.<br>
 						</p>
-						<a href="/Login" class="btn btn-light btn-lg action-button"
+						<a href="/nosotros" class="btn btn-light btn-lg action-button"
 							role="button"> Conoce más <i
 							class="fa fa-long-arrow-right ml-2"></i>
 						</a>
@@ -436,7 +441,7 @@
 							!Enterate cómo!
 						</p>
 
-						<a href="/Login" class="btn btn-dark">Ver más</a>
+						<a href="/personas" class="btn btn-dark">Ver más</a>
 
 					</article>
 
@@ -452,7 +457,7 @@
 							columna vertebral de esta comunidad. <br> !Enterate cómo!
 						</p>
 
-						<a href="/Login" class="btn btn-dark">Ver más</a>
+						<a href="/empresa" class="btn btn-dark">Ver más</a>
 
 					</article>
 				</section>
@@ -472,10 +477,11 @@
 		<div class="my-auto">
 			<ul class="nav">
 				<li class="nav-item"><a class="nav-link active text-white"
-					aria-current="page" href="Login">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="Login">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="Login">Empresas</a></li>
-				<li class="nav-item"><a class="nav-link disabled text-white" href="Login">Nosotros</a></li>
+					aria-current="page" href="#">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="#">Empresas</a></li>
+				<li class="nav-item"><a class="nav-link disabled text-white"
+					aria-disabled="true">Nosotros</a></li>
 			</ul>
 		</div>
 	</footer>
