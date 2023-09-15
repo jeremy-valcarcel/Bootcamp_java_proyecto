@@ -337,10 +337,16 @@
 
 					<div class="collapse navbar-collapse" id="navcol-1">
 						<ul class="nav navbar-nav">
+
+							<li class="dropdown nav-item"><a class="nav-link" href="#">Publicaciones</a>
+
+								<div class="dropdown-content">
+									<a href="/publicacionesPersonas">Publicaciones de personas</a>
+									<a href="/publicacionesEmpresas">Publicaciones de empresas</a>
+								</div></li>
+
 							<li class="nav-item" role="presentation"><a class="nav-link"
-								href="/publicaciones">Publicaciones</a></li>
-							<li class="nav-item" role="presentation"><a class="nav-link"
-								href="/empresas">Empresas</a></li>
+								href="/Login">Empresas</a></li>
 							<li class="dropdown nav-item"><a class="nav-link" href="#">Nosotros</a>
 								<div class="dropdown-content">
 									<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
@@ -357,10 +363,11 @@
 							</div>
 						</form>
 						<div class="register">
-						<a class="btn btn-light action-button" role="button" href="/logout">Cerrar sesión</a>
-							<a href="/perfil" class="d-inline-block my-auto me-2">
-								<img alt="Usuario" src="img/usuario.png" class="d-inline-block"
-									style="height: 60px;">
+							<a class="btn btn-light action-button" role="button"
+								href="/logout">Cerrar sesión</a> <a href="/perfil"
+								class="d-inline-block my-auto me-2"> <img alt="Usuario"
+								src="img/usuario.png" class="d-inline-block"
+								style="height: 60px;">
 							</a>
 
 						</div>
