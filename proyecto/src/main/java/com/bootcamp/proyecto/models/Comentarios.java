@@ -52,19 +52,34 @@ public class Comentarios {
 	//ConstructorVacio-----------------------------------------------------------------------------------------------
 	
 	public Comentarios () {}
+	
+	public Comentarios(Usuario usuario, DesechosPublicaciones publicacion, String comentario) {
+		this.usuarioCreador = usuario;
+		this.creador = publicacion;
+		this.contenido = comentario;
+	}
+	
+	public Comentarios(Empresas empresa, DesechosPublicaciones publicacion, String comentario) {
+		this.empresaCreador = empresa;
+		this.creador = publicacion;
+		this.contenido = comentario;
+	}
 
 	//SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
 	
+
+
+	public Usuario getUsuarioCreador() {
+		return usuarioCreador;
+	}
+
+
 	public DesechosPublicaciones getCreador() {
 		return creador;
 	}
 
 	public void setCreador(DesechosPublicaciones creador) {
 		this.creador = creador;
-	}
-
-	public Usuario getUsuarioCreador() {
-		return usuarioCreador;
 	}
 
 	public void setUsuarioCreador(Usuario usuarioCreador) {
