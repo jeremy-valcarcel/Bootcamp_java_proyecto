@@ -338,8 +338,6 @@
 					<div class="collapse navbar-collapse" id="navcol-1">
 						<ul class="nav navbar-nav">
 							<li class="nav-item" role="presentation"><a class="nav-link"
-								href="/">Inicio</a></li>
-							<li class="nav-item" role="presentation"><a class="nav-link"
 								href="/publicaciones">Publicaciones</a></li>
 							<li class="nav-item" role="presentation"><a class="nav-link"
 								href="/empresas">Empresas</a></li>
@@ -359,7 +357,7 @@
 							</div>
 						</form>
 						<div class="register">
-							<a href="/logout">Cerrar sesion</a>
+						<a class="btn btn-light action-button" role="button" href="/logout">Cerrar sesión</a>
 							<a href="/perfil" class="d-inline-block my-auto me-2">
 								<img alt="Usuario" src="img/usuario.png" class="d-inline-block"
 									style="height: 60px;">
