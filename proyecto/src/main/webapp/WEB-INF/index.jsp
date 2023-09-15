@@ -232,21 +232,18 @@
 					<div class="collapse navbar-collapse" id="navcol-1">
 						<ul class="nav navbar-nav">
 
-							<li class="nav-item" role="presentation"><a class="nav-link"
-								href="/Login">Inicio</a></li>
-
 							<li class="dropdown nav-item"><a class="nav-link" href="#">Publicaciones</a>
 								<div class="dropdown-content">
-									<a href="/publicacionesPersonas">Publicaciones de personas</a> 
-									<a href="/publicacionesEmpresas">Publicaciones de empresas</a>
+									<a href="/Login">Publicaciones de personas</a> 
+									<a href="/Login">Publicaciones de empresas</a>
 								</div></li>
 
 							<li class="nav-item" role="presentation"><a class="nav-link"
 								href="/Login">Empresas</a></li>
-							<li class="dropdown nav-item"><a class="nav-link" href="Login" >Nosotros</a>
+							<li class="dropdown nav-item"><a class="nav-link" href="#" >Nosotros</a>
 								<div class="dropdown-content">
-									<a href="/Login">¿Quienes somos?</a> <a href="/Login">Reciclaje
-										orgánico</a> <a href="/Login">Preguntas
+									<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
+										orgánico</a> <a href="/preguntasFrecuentes">Preguntas
 										frecuentes</a>
 								</div></li>
 						</ul>
@@ -272,7 +269,7 @@
 						<p>
 							Desbloquea el potencial de los residuos orgánicos.<br>
 						</p>
-						<a href="/Login" class="btn btn-light btn-lg action-button"
+						<a href="/nosotros" class="btn btn-light btn-lg action-button"
 							role="button"> Conoce más <i
 							class="fa fa-long-arrow-right ml-2"></i>
 						</a>
