@@ -26,6 +26,7 @@
 	position: relative;
 	display: inline-block;
 }
+
 .dropdown-content {
 	display: none;
 	position: absolute;
@@ -34,18 +35,20 @@
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 }
+
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+
 .dropdown-content a {
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
 }
+
 .dropdown-content a:hover {
 	background-color: #ddd;
 }
-
 
 header, footer {
 	background-color: #82e462;
@@ -58,10 +61,11 @@ header, footer {
 /* IMAGEN REDONDA */
 /* .rounded-image { */
 /* 	border-radius: 50%; */
-/* 	/* Establece el radio para hacer la imagen redonda */ */
-/* 	width: 400px; /* Establece el ancho de la imagen */ */
-/* 	height: 400px; /* Establece la altura de la imagen */ */
-/* } */
+/* 	/* Establece el radio para hacer la imagen redonda */
+* /
+	/* 	width: 400px; /* Establece el ancho de la imagen */ * /
+	/* 	height: 400px; /* Establece la altura de la imagen */ * /
+	/* } */   
 
 body {
 	margin: 0;
@@ -266,8 +270,17 @@ li {
 
 							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
 
-							<li class="nav-item"><a class="nav-link"
-								href="/publicaciones">Publicaciones</a></li>
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Publicaciones</a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/publicacionesPersonas">Publicaciones
+										de personas</a> <a class="dropdown-item"
+										href="/publicacionesEmpresas">Publicaciones de empresas</a>
+
+								</div></li>
 
 							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
 							</li>
@@ -292,7 +305,7 @@ li {
 	</div>
 
 
-	<div class="content" style="margin-top:150px;">
+	<div class="content" style="margin-top: 150px;">
 		<h2></h2>
 		<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
 			<!-- Indicadores -->
@@ -312,14 +325,16 @@ li {
 							<h3 class="m-2">Importancia de tu residuo</h3>
 							<p>¿Sabías que con la cantidad de residuos que genera una
 								persona es escencial que forme parte en este proceso?</p>
-							<a href="#masInformacion" class="btn btn-primary">Ver más</a>
+							<a href="#masInformacion" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 						<div class="col-md-6 text-center">
 							<img src="imgs/personasManos.avif" alt="Imagen 2"
 								style="height: 400px" class="rounded-image">
 							<h3 class="m-2">Roles</h3>
 							<p>¿Sabías los roles que puede tener una persona?</p>
-							<a href="#masInformacion2" class="btn btn-primary">Ver más</a>
+							<a href="#masInformacion2" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 					</div>
 				</div>
@@ -330,14 +345,16 @@ li {
 								style="height: 400px" class="rounded-image">
 							<h3 class="m-2">Título 3</h3>
 							<p>Descripción o párrafo corto sobre la imagen 3.</p>
-							<a href="#masInformacion3" class="btn btn-primary">Ver más</a>
+							<a href="#masInformacion3" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 						<div class="col-md-6 text-center">
 							<img src="imgs/basuraOrgánica.webp" alt="Imagen 4"
 								style="height: 400px" class="rounded-image">
 							<h3 class="m-2">Título 4</h3>
 							<p>Descripción o párrafo corto sobre la imagen 4.</p>
-							<a href="#masInformacion4" class="btn btn-primary">Ver más</a>
+							<a href="#masInformacion4" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 					</div>
 				</div>
@@ -355,8 +372,8 @@ li {
 	</div>
 
 	<!-- Sección de información "ver más" -->
-	<div id="masInformacion" class=" row featurette mt-5">
-		<div class="col-md-7 border border-light border-2 rounded">
+	<div id="masInformacion" class=" row m-0 featurette mt-5">
+		<div class="col border border-light border-2 rounded">
 			<h2 class="featurette-heading">
 				Encabezado del primer reportaje. <span class="text-muted">Te
 					dejará boquiabierto.</span>
@@ -364,14 +381,14 @@ li {
 			<p class="lead">Aquí puedes encontrar más información sobre las
 				imágenes.</p>
 		</div>
-		<div class="col-md-5">
+		<div class="col">
 			<img alt="scsc" src="imgs/contenedores.jpg">
 		</div>
 	</div>
 
 	<hr class="featurette-divider">
-	<div id="masInformacion2" class="row featurette">
-		<div class="col-md-7 order-md-2 border border-light border-2 rounded">
+	<div id="masInformacion2" class="row m-0 featurette">
+		<div class="col order-md-2 border border-light border-2 rounded">
 			<h2 class="featurette-heading">
 				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
 					mismo.</span>
@@ -380,15 +397,15 @@ li {
 				marcador de posición aquí para darle una idea de cómo funcionaría
 				este diseño con algún contenido del mundo real en su lugar.</p>
 		</div>
-		<div class="col-md-5 order-md-1">
+		<div class="col order-md-1">
 			<img alt="c" src="imgs/cocacola.png">
 		</div>
 	</div>
 
 	<hr class="featurette-divider">
-	<div id="masInformacion3" class="row featurette "
+	<div id="masInformacion3" class="row m-0 featurette "
 		style="margin-botton: 10%">
-		<div class="col-md-7 border border-light border-2 rounded">
+		<div class="col border border-light border-2 rounded">
 			<h2 class="featurette-heading">
 				Y por último, este. <span class="text-muted">Jaque mate.</span>
 			</h2>
@@ -397,14 +414,14 @@ li {
 				a ser leído realmente, simplemente aquí para darle una mejor vista
 				de cómo se vería esto con algún contenido real. Tu contenido.</p>
 		</div>
-		<div class="col-md-5 ">
+		<div class="col ">
 			<img alt="cc" src="imgs/amazon.png">
 		</div>
 	</div>
 
 	<hr class="featurette-divider">
-	<div id="masInformacion4" class="row featurette">
-		<div class="col-md-7 order-md-2 border border-light border-2 rounded">
+	<div id="masInformacion4" class="row m-0 featurette">
+		<div class="col order-md-2 border border-light border-2 rounded">
 			<h2 class="featurette-heading">
 				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
 					mismo.</span>
@@ -413,7 +430,7 @@ li {
 				marcador de posición aquí para darle una idea de cómo funcionaría
 				este diseño con algún contenido del mundo real en su lugar.</p>
 		</div>
-		<div class="col-md-5 order-md-1">
+		<div class="col order-md-1">
 			<img alt="c" src="imgs/cocacola.png">
 		</div>
 	</div>

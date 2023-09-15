@@ -20,44 +20,8 @@
 <link rel="stylesheet" href="/css/main.css">
 <script type="text/javascript" src="/js/app.js"></script>
 <style>
-header, footer {
-	background-color: #82e462;
-	display: flex;
-	justify-content: space-between;
-	padding: 5px 10px;
-	align-items: center;
-}
 
-.header-green {
-	background: linear-gradient(135deg, #28a745, #e9ecef);
-	background-color: #184e8e;
-	padding-bottom: -50px;
-	font-family: 'Source Sans Pro', sans-serif;
-}
-
-header img, footer img {
-	height: 80px;
-}
-
-.swiper {
-	width: 100%;
-	padding-top: 50px;
-	padding-bottom: 50px;
-}
-
-.swiper-slide {
-	background-position: center;
-	background-size: cover;
-	width: 300px;
-	height: 300px;
-	border: 2px solid #181212;
-}
-
-.swiper-slide img {
-	display: block;
-	width: 100%;
-}
-
+/* DESPLIEGE HEADER*/
 .dropdown {
 	position: relative;
 	display: inline-block;
@@ -76,7 +40,6 @@ header img, footer img {
 	display: block;
 }
 
-/* Estilos para los enlaces del menú */
 .dropdown-content a {
 	padding: 12px 16px;
 	text-decoration: none;
@@ -87,72 +50,22 @@ header img, footer img {
 	background-color: #ddd;
 }
 
-.content {
-	padding: 0px;
-	text-align:;
-	color: black;
-	margin: 0px;
-}
-
-.content h1 {
-	height: 300px;
+header, footer {
+	background-color: #82e462;
 	display: flex;
-	color: white;
-	justify-content: center;
+	justify-content: space-between;
+	padding: 5px 10px;
 	align-items: center;
-	margin: 0;
-	background-size: cover;
-	background-position: center;
-	font-size: 50px;
 }
 
-.content h2 {
-	font-size: 24px;
-	margin-top: 20px;
-}
-
-.content p {
-	margin-bottom: 20px;
-}
-
-.reciclaje {
-	height: 250px;
-	display: flex;
-	color: white;
-	justify-content: center;
-	align-items: center;
-	margin: 0;
-	background-size: cover;
-	background-position: center;
-	font-size: 50px;
-}
-
-.btn-custom {
-	background-color: #007fffa1;
-	color: white;
-	border: none;
-}
-
-.btn-custom:hover {
-	background-color: #0056b3;
-}
-
-.mission, .vision {
-	display: inline-block;
-	width: 48%;
-	vertical-align: top;
-	margin: 10px;
-}
-
-.carousel-item {
-	background-size: cover;
-	background-position: center;
-	height: 300px;
-}
-
-.rounded-image {
-	border-radius: 20px;
-}
+/* IMAGEN REDONDA */
+/* .rounded-image { */
+/* 	border-radius: 50%; */
+/* 	/* Establece el radio para hacer la imagen redonda */
+* /
+	/* 	width: 400px; /* Establece el ancho de la imagen */ * /
+	/* 	height: 400px; /* Establece la altura de la imagen */ * /
+	/* } */   
 
 body {
 	margin: 0;
@@ -176,9 +89,6 @@ body {
 	padding: 5px;
 }
 
-/*
-headeer top
-*/
 .topbar {
 	background-color: rgb(16, 71, 36);
 	padding: 0;
@@ -333,7 +243,8 @@ li {
 }
 </style>
 </head>
-<body>
+<body
+	style="background-color: #ffffff; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 	<div class="fixed-top">
 		<header class="topbar">
 			<nav
@@ -394,171 +305,135 @@ li {
 	</div>
 
 
-	<!-- Main -->
-	<div class="carousel-item" style="margin-top: 200px;">
-		<svg class="bd-placeholder-img" width="100%" height="100%"
-			xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-			preserveAspectRatio="xMidYMid slice" focusable="false">
-		<rect width="100%" height="100%" fill="#777" /></svg>
-		<div class="container">
-			<div class="carousel-caption">
-				<h1>Otro titular de ejemplo.</h1>
-				<p>Algo de contenido placeholder representativo para la segunda
-					diapositiva del carrusel.</p>
-				<p>
-					<a class="btn btn-lg btn-primary" href="#">Más información</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	<div class="carousel-item bg-red">
-		<svg class="bd-placeholder-img" width="100%" height="100%"
-			xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-			preserveAspectRatio="xMidYMid slice" focusable="false">
-		<rect width="100%" height="100%" fill="#777" /></svg>
-		<div class="container">
-			<div class="carousel-caption text-end">
-				<h1>Uno más por si acaso.</h1>
-				<p>Algo de contenido placeholder representativo para la tercera
-					diapositiva de este carrusel.</p>
-				<p>
-					<a class="btn btn-lg btn-primary" href="#">Explorar galería</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	</div>
-	<button class="carousel-control-prev" type="button"
-		data-bs-target="#myCarousel" data-bs-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="visually-hidden">Anterior</span>
-	</button>
-	<button class="carousel-control-next" type="button"
-		data-bs-target="#myCarousel" data-bs-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="visually-hidden">Siguiente</span>
-	</button>
-	</div>
+	<div class="content" style="margin-top: 150px;">
+		<h2></h2>
+		<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+			<!-- Indicadores -->
+			<ol class="carousel-indicators">
+				<li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+				<li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+				<!-- Agrega más indicadores según la cantidad de imágenes -->
+			</ol>
 
-
-	<div class="container marketing mt-3">
-
-		<div class="row">
-			<div class="col-lg-4 border border-light border-2 rounded">
-				<svg class="bd-placeholder-img rounded-circle" width="140"
-					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
-					aria-label="Placeholder: 140x140"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-				<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#777" />
-				<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-				<h2>Encabezado</h2>
-				<p>Algo de contenidoplaceholder representativo para las tres
-					columnas de texto debajo del carrusel. Esta es la primera columna.</p>
-				<p>
-					<a class="btn btn-secondary" href="#">Ver detalles &raquo;</a>
-				</p>
-			</div>
-			<div class="col-lg-4 border border-light border-2 rounded">
-				<svg class="bd-placeholder-img rounded-circle" width="140"
-					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
-					aria-label="Placeholder: 140x140"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-				<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#777" />
-				<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-				<h2>Encabezado</h2>
-				<p>Otro fragmento emocionante de contenidoplaceholder
-					representativo. Esta vez, pasamos a la segunda columna.</p>
-				<p>
-					<a class="btn btn-secondary" href="#">Ver detalles &raquo;</a>
-				</p>
-			</div>
-			<div class="col-lg-4 border border-light border-2 rounded">
-				<svg class="bd-placeholder-img rounded-circle" width="140"
-					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
-					aria-label="Placeholder: 140x140"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-				<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#777" />
-				<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-				<h2>Encabezado</h2>
-				<p>Y, por último, esta, la tercera columna de
-					contenidoplaceholder representativo.</p>
-				<p>
-					<a class="btn btn-secondary" href="#">Ver detalles &raquo;</a>
-				</p>
+			<!-- Imágenes del carrusel -->
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<img src="imgs/restauranteResiduo2.jpg" alt="Imagen 1"
+								style="height: 400px" class="rounded-image">
+							<h3 class="m-2">Titulo 1</h3>
+							<p>Parrafo 1</p>
+							<a href="#masInformacion" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
+						</div>
+						<div class="col-md-6 text-center">
+							<img src="imgs/empresasResiduos.jpg" alt="Imagen 2"
+								style="height: 400px" class="rounded-image">
+							<h3 class="m-2">Titulo 2</h3>
+							<p>Parrafo 2</p>
+							<a href="#masInformacion2" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<img src="imgs/restauranteResiduo.jpg" alt="Imagen 3"
+								style="height: 400px" class="rounded-image">
+							<h3 class="m-2">Título 3</h3>
+							<p>Descripción o párrafo corto sobre la imagen 3.</p>
+							<a href="#masInformacion3" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
+						</div>
+						<div class="col-md-6 text-center">
+							<img src="imgs/empresasResiduos2.jpg" alt="Imagen 4"
+								style="height: 400px" class="rounded-image">
+							<h3 class="m-2">Título 4</h3>
+							<p>Descripción o párrafo corto sobre la imagen 4.</p>
+							<a href="#masInformacion4" class="btn"
+								style="background-color: #44b15e; color: white;">Ver más</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<hr class="featurette-divider">
-		<div class="row featurette">
-			<div class="col-md-7 border border-light border-2 rounded">
-				<h2 class="featurette-heading">
-					Encabezado del primer reportaje. <span class="text-muted">Te
-						dejará boquiabierto.</span>
-				</h2>
-				<p class="lead">Excelente contenido de marcador de posición para
-					el primer artículo aquí. Imagina algo de prosa emocionante aquí.</p>
-			</div>
-			<div class="col-md-5">
-				<svg
-					class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto border border-light border-2 rounded"
-					width="500" height="500" xmlns="http://www.w3.org/2000/svg"
-					role="img" aria-label="Placeholder: 500x500"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-				<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#eee" />
-				<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-			</div>
-		</div>
-		<hr class="featurette-divider">
-		<div class="row featurette">
-			<div class="col-md-7 order-md-2 border border-light border-2 rounded">
-				<h2 class="featurette-heading">
-					Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
-						mismo.</span>
-				</h2>
-				<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
-					marcador de posición aquí para darle una idea de cómo funcionaría
-					este diseño con algún contenido del mundo real en su lugar.</p>
-			</div>
-			<div class="col-md-5 order-md-1">
-				<svg
-					class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto border border-light border-2 rounded"
-					width="500" height="500" xmlns="http://www.w3.org/2000/svg"
-					role="img" aria-label="Placeholder: 500x500"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-				<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#eee" />
-				<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-			</div>
-		</div>
-		<hr class="featurette-divider">
-		<div class="row featurette " style="margin-botton: 10%">
-			<div class="col-md-7 border border-light border-2 rounded">
-				<h2 class="featurette-heading">
-					Y por último, este. <span class="text-muted">Jaque mate.</span>
-				</h2>
-				<p class="lead">Y sí, este es el último bloque de contenido de
-					marcador de posición representativo. Una vez más, no está destinado
-					a ser leído realmente, simplemente aquí para darle una mejor vista
-					de cómo se vería esto con algún contenido real. Tu contenido.</p>
-			</div>
-			<div class="col-md-5 ">
-				<svg
-					class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto border border-light border-2 rounded"
-					width="500" height="500" xmlns="http://www.w3.org/2000/svg"
-					role="img" aria-label="Placeholder: 500x500"
-					preserveAspectRatio="xMidYMid slice" focusable="false">
-				<title>Placeholder</title><rect width="100%" height="100%"
-						fill="#eee" />
-				<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-			</div>
-		</div>
-		<hr class="featurette-divider">
-
+		<!-- Controles de navegación -->
+		<a class="carousel-control-prev" href="#myCarousel" role="button"
+			data-bs-slide="prev"> <span class="carousel-control-prev-icon"
+			aria-hidden="true"></span> <span class="visually-hidden">Anterior</span>
+		</a> <a class="carousel-control-next" href="#myCarousel" role="button"
+			data-bs-slide="next"> <span class="carousel-control-next-icon"
+			aria-hidden="true"></span> <span class="visually-hidden">Siguiente</span>
+		</a>
 	</div>
+
+	<!-- Sección de información "ver más" -->
+	<div id="masInformacion" class=" row m-0 featurette mt-5">
+		<div class="col border border-light border-2 rounded">
+			<h2 class="featurette-heading">
+				Encabezado del primer reportaje. <span class="text-muted">Te
+					dejará boquiabierto.</span>
+			</h2>
+			<p class="lead">Aquí puedes encontrar más información sobre las
+				imágenes.</p>
+		</div>
+		<div class="col">
+			<img alt="scsc" src="imgs/contenedores.jpg">
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+	<div id="masInformacion2" class="row m-0 featurette">
+		<div class="col order-md-2 border border-light border-2 rounded">
+			<h2 class="featurette-heading">
+				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
+					mismo.</span>
+			</h2>
+			<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
+				marcador de posición aquí para darle una idea de cómo funcionaría
+				este diseño con algún contenido del mundo real en su lugar.</p>
+		</div>
+		<div class="col order-md-1">
+			<img alt="c" src="imgs/cocacola.png">
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+	<div id="masInformacion3" class="row m-0 featurette "
+		style="margin-botton: 10%">
+		<div class="col border border-light border-2 rounded">
+			<h2 class="featurette-heading">
+				Y por último, este. <span class="text-muted">Jaque mate.</span>
+			</h2>
+			<p class="lead">Y sí, este es el último bloque de contenido de
+				marcador de posición representativo. Una vez más, no está destinado
+				a ser leído realmente, simplemente aquí para darle una mejor vista
+				de cómo se vería esto con algún contenido real. Tu contenido.</p>
+		</div>
+		<div class="col ">
+			<img alt="cc" src="imgs/amazon.png">
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+	<div id="masInformacion4" class="row m-0 featurette">
+		<div class="col order-md-2 border border-light border-2 rounded">
+			<h2 class="featurette-heading">
+				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
+					mismo.</span>
+			</h2>
+			<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
+				marcador de posición aquí para darle una idea de cómo funcionaría
+				este diseño con algún contenido del mundo real en su lugar.</p>
+		</div>
+		<div class="col order-md-1">
+			<img alt="c" src="imgs/cocacola.png">
+		</div>
+	</div>
+
 
 	<!-- Footer -->
 	<footer
@@ -580,5 +455,9 @@ li {
 			</ul>
 		</div>
 	</footer>
+
+
+
+
 </body>
 </html>
