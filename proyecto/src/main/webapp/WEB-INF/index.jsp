@@ -235,10 +235,10 @@
 							<li class="nav-item" role="presentation"><a class="nav-link"
 								href="/Login">Inicio</a></li>
 
-							<li class="dropdown nav-item"><a class="nav-link" href="#">Publicaciones</a>
+							<li class="dropdown nav-item"><a class="nav-link" href="/Login">Publicaciones</a>
 								<div class="dropdown-content">
-									<a href="/publicacionesPersonas">Publicaciones de personas</a> 
-									<a href="/publicacionesEmpresas">Publicaciones de empresas</a>
+									<a href="/Login">Publicaciones de personas</a> 
+									<a href="/Login">Publicaciones de empresas</a>
 								</div></li>
 
 							<li class="nav-item" role="presentation"><a class="nav-link"

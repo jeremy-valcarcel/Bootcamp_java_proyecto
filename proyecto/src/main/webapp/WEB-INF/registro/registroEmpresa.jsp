@@ -63,7 +63,7 @@
 					<div class="form-group">
 						<form:errors class="text-danger form-control is-invalid"
 							path="direccion" />
-						<form:label path="direccion" class="col-lg-4 control-label">Name:</form:label>
+						<form:label path="direccion" class="col-lg-4 control-label">Direccion:</form:label>
 						<form:input path="direccion" class="col-lg-4 form-control"
 							placeholder="Direccion" />
 					</div>
