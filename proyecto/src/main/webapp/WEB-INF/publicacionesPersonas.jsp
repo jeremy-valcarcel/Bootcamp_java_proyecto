@@ -151,9 +151,10 @@ body {
 								aria-expanded="false">Publicaciones</a>
 								<div class="dropdown-content" style="color: black;"
 									aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="/publicacionesPersonas">Publicaciones de personas</a> <a
-										class="dropdown-item" href="/publicacionesEmpresas">Publicaciones de empresas</a>
-						
+									<a class="dropdown-item" href="/publicacionesPersonas">Publicaciones
+										de personas</a> <a class="dropdown-item"
+										href="/publicacionesEmpresas">Publicaciones de empresas</a>
+
 								</div></li>
 
 							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
@@ -172,6 +173,15 @@ body {
 										frecuentes</a>
 								</div></li>
 						</ul>
+					</div>
+					<div class="register">
+						<a class="btn btn-light action-button" role="button"
+							href="/logout">Cerrar sesión</a> <a href="/perfil"
+							class="d-inline-block my-auto me-2"> <img alt="Usuario"
+							src="img/usuario.png" class="d-inline-block"
+							style="height: 60px;">
+						</a>
+
 					</div>
 				</div>
 			</nav>

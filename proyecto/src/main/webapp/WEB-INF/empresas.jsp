@@ -66,6 +66,7 @@ header img, footer img {
 	padding-bottom: -50px;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+
 .dropdown {
 	position: relative;
 	display: inline-block;
@@ -121,9 +122,13 @@ header img, footer img {
 				</div>
 			</div>
 		</nav>
-		<div>
-			<a href="/sesion" class="btn btn">Iniciar Sesión</a> <a
-				href="/registro" class="btn btn">Unirse</a>
+		<div class="register">
+			<a class="btn btn-light action-button" role="button" href="/logout">Cerrar
+				sesión</a> <a href="/perfil" class="d-inline-block my-auto me-2"> <img
+				alt="Usuario" src="img/usuario.png" class="d-inline-block"
+				style="height: 60px;">
+			</a>
+
 		</div>
 	</header>
 

@@ -297,6 +297,15 @@ li {
 								</div></li>
 						</ul>
 					</div>
+					<div class="register">
+						<a class="btn btn-light action-button" role="button"
+							href="/logout">Cerrar sesión</a> <a href="/perfil"
+							class="d-inline-block my-auto me-2"> <img alt="Usuario"
+							src="img/usuario.png" class="d-inline-block"
+							style="height: 60px;">
+						</a>
+
+					</div>
 				</div>
 			</nav>
 		</header>
