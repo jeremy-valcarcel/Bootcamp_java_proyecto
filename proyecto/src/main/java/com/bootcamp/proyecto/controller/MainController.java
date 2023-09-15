@@ -46,6 +46,15 @@ public class MainController {
 	public String preguntasFrecuentesSinSesion() {
 		return"/sinLogin/preguntasFrecSin.jsp";
 	}
+	@GetMapping("/personasSinSesion")
+	public String personasSinSesion() {
+		return "/sinLogin/InfoPersonasSinSesion.jsp";
+	}
+	
+	@GetMapping("/infoEmpresasSinSesion")
+	public String infoEmpresasSinSesion() {
+		return"/sinLogin/InfoEmpresasSinSesion.jsp";
+	}
 	
 	//PaginaPrincipalConInicioDeSesion-------------------------------------------------------------------------
 	@GetMapping("/Inicio")

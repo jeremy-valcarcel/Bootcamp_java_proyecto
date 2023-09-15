@@ -334,7 +334,7 @@
 							!Enterate cómo!
 						</p>
 
-						<a href="/Login" class="btn btn-dark">Ver más</a>
+						<a href="/personasSinSesion" class="btn btn-dark">Ver más</a>
 
 					</article>
 
@@ -350,7 +350,7 @@
 							columna vertebral de esta comunidad. <br> !Enterate cómo!
 						</p>
 
-						<a href="/Login" class="btn btn-dark">Ver más</a>
+						<a href="/infoEmpresasSinSesion" class="btn btn-dark">Ver más</a>
 
 					</article>
 				</section>
