@@ -341,16 +341,18 @@ li {
 						<div class="col-md-6 text-center">
 							<img src="imgs/basuraOrgánica2.jpg" alt="Imagen 3"
 								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Título 3</h3>
-							<p>Descripción o párrafo corto sobre la imagen 3.</p>
+							<h3 class="m-2">Cantidad de desechosa</h3>
+							<p>¿Hasta cuántos desechos puedo pedir siendo
+								persona-recolector?</p>
 							<a href="#masInformacion3" class="btn"
 								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 						<div class="col-md-6 text-center">
 							<img src="imgs/basuraOrgánica.webp" alt="Imagen 4"
 								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Título 4</h3>
-							<p>Descripción o párrafo corto sobre la imagen 4.</p>
+							<h3 class="m-2">A quién ayudar</h3>
+							<p>Siendo generador de residuos, ¿A qué entidades puedo
+								ayudar?</p>
 							<a href="#masInformacion4" class="btn"
 								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
@@ -427,13 +429,17 @@ li {
 	<div id="masInformacion3" class="row m-0 featurette "
 		style="margin-botton: 10%">
 		<div class="col border border-light border-2 rounded">
-			<h2 class="featurette-heading">
-				Y por último, este. <span class="text-muted">Jaque mate.</span>
+			<h2 class="featurette-heading mt-5">
+
+				<span style="color: #2faa4c"><strong>CANTIDAD MÁXIMA
+						DE RESIDUOS PERMITIDOS </strong></span><br> <span class="text-muted"
+					style="font-size: 25px;">¿Si soy recolector, puedo pedir
+					tanta cantidad de residuos como quiera?</span>
 			</h2>
-			<p class="lead">Y sí, este es el último bloque de contenido de
-				marcador de posición representativo. Una vez más, no está destinado
-				a ser leído realmente, simplemente aquí para darle una mejor vista
-				de cómo se vería esto con algún contenido real. Tu contenido.</p>
+			<p class="lead">Una <strong>persona recolector</strong> puede demandar hasta <strong>7kg</strong>
+				de residuos por aviso. Si requieres más de 7kg te invitamos a
+				registrarte como empresa, donde no hay una demanda máxima de
+				residuos, puedes recolectar cuantos quieras!</p>
 		</div>
 		<div class="col ">
 			<img alt="cc" src="imgs/amazon.png">
@@ -444,12 +450,17 @@ li {
 	<div id="masInformacion4" class="row m-0 featurette">
 		<div class="col order-md-2 border border-light border-2 rounded">
 			<h2 class="featurette-heading">
-				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
-					mismo.</span>
+				<span style="color: #2faa4c"><strong>A QUIEN AYUDAR</strong></span><br>
+				<span class="text-muted" style="font-size: 25px;">¿A que
+					entidades recolectoras puedo ayudar siendo generador de residuos?</span>
 			</h2>
-			<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
-				marcador de posición aquí para darle una idea de cómo funcionaría
-				este diseño con algún contenido del mundo real en su lugar.</p>
+			<p class="lead">
+				Las <strong>personas generadoras</strong> de residuos pueden ayudar
+				tanto a <strong>personas recolectoras</strong> como también a <strong>empresas
+					recolectoras</strong>. Puedes llevar tus resiudos a otras <strong>empresas
+					generadoras</strong> de residuos o puedes contactarte directamente con <strong>personas
+					recolectoras</strong>.
+			</p>
 		</div>
 		<div class="col order-md-1">
 			<img alt="c" src="imgs/cocacola.png">
