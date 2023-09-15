@@ -1,6 +1,7 @@
 package com.bootcamp.proyecto.controller;
 
 import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import com.bootcamp.proyecto.models.Empresas;
 import com.bootcamp.proyecto.models.Usuario;
 import com.bootcamp.proyecto.services.EmpresaService;
-import com.bootcamp.proyecto.services.RolesServices;
 import com.bootcamp.proyecto.services.UsuarioService;
 
 import jakarta.servlet.http.HttpSession;
@@ -20,11 +20,9 @@ public class MainController {
 	//Services ------------------------------------------------------------------------------------
 	private final UsuarioService userServ;
 	private final EmpresaService empresaServ;
-	private final RolesServices rolesServices;
-	public MainController(UsuarioService uS, EmpresaService eS , RolesServices rS) {
+	public MainController(UsuarioService uS, EmpresaService eS) {
 		this.userServ = uS;
 		this.empresaServ = eS;
-		this.rolesServices = rS;
 	}
 	
 	//PaginaPrincipalSinInicioDeSesion-------------------------------------------------------------------------
@@ -44,10 +42,14 @@ public class MainController {
 		if(userId == null && empresasId == null ) {
 			return "redirect:/";
 		}
+		else if(userId != null) {
+			Usuario usuario = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuario);
+			return "indexSesionIniciada.jsp";
+		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
-		Usuario usuario = userServ.encontrarUserPorId(userId);
 		viewModel.addAttribute("empresa", empresa);
-		viewModel.addAttribute("usuario", usuario);
+		
 		
 		return "indexSesionIniciada.jsp";
 	}

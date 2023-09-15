@@ -1,6 +1,7 @@
 package com.bootcamp.proyecto.services;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -8,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import com.bootcamp.proyecto.models.Usuario;
-import com.bootcamp.proyecto.repositories.EmpresaRepo;
 import com.bootcamp.proyecto.repositories.UsuarioRepo;
 
 @Service
