@@ -192,13 +192,13 @@ body {
 								aria-expanded="false">Publicaciones</a>
 								<div class="dropdown-content" style="color: black;"
 									aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="/publicacionesPersonas">Publicaciones
-										de personas</a> <a class="dropdown-item"
-										href="/publicacionesEmpresas">Publicaciones de empresas</a>
+									<a class="dropdown-item" href="/Login">Publicaciones de
+										personas</a> <a class="dropdown-item" href="/Login">Publicaciones
+										de empresas</a>
 
 								</div></li>
 
-							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
+							<li class="nav-item"><a class="nav-link" href="/Login">Empresas</a>
 							</li>
 
 
@@ -208,21 +208,17 @@ body {
 								aria-expanded="false"> Nosotros </a>
 								<div class="dropdown-content" style="color: black;"
 									aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="/nosotros">¿Quienes somos?</a> <a
-										class="dropdown-item" href="/reciclaje">Reciclaje orgánico</a>
-									<a class="dropdown-item" href="/preguntasFrecuentes">Preguntas
-										frecuentes</a>
+									<a class="dropdown-item" href="/nosotrosSinSesion">¿Quienes
+										somos?</a> <a class="dropdown-item" href="/reciclajeSinSesion">Reciclaje
+										orgánico</a> <a class="dropdown-item"
+										href="preguntasFrecuentesSinSesion">Preguntas frecuentes</a>
 								</div></li>
 						</ul>
-					</div>
-					<div class="register">
-						<a class="btn btn-light action-button" role="button"
-							href="/logout">Cerrar sesión</a> <a href="/perfil"
-							class="d-inline-block my-auto me-2"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
-						</a>
-
+						<div class="register">
+							<span class="navbar-text"></span> <a
+								class="btn btn-light action-button" role="button" href="/Login">Iniciar
+								Sesión</a>
+						</div>
 					</div>
 				</div>
 			</nav>
@@ -370,9 +366,10 @@ body {
 		<div class="my-auto">
 			<ul class="nav">
 				<li class="nav-item"><a class="nav-link active text-white"
-					aria-current="page" href="#">Inicio</a></li>
+					aria-current="page" href="/">Inicio</a></li>
 				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">Empresas</a></li>
+				<li class="nav-item"><a class="nav-link text-white"
+					href="/Login">Empresas</a></li>
 				<li class="nav-item"><a class="nav-link disabled text-white"
 					aria-disabled="true">Nosotros</a></li>
 			</ul>
