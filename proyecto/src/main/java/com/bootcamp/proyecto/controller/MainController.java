@@ -24,10 +24,36 @@ public class MainController {
 		this.empresaServ = eS;
 	}
 	
-	//PaginaPrincipalSinInicioDeSesion-------------------------------------------------------------------------
+	//PaginasSinInicioDeSesion------------------------------------------------------------------------
+	
+	//Inicio
 	@GetMapping("/")
 	public String IndexGeneral() {
-		return "index.jsp";
+		return "/sinLogin/index.jsp";
+	}
+	
+	@GetMapping("/nosotrosSinSesion")
+	public String nosotrosSinSesion() {
+		return"/sinLogin/nosotrosSin.jsp";
+	}
+	
+	@GetMapping("/reciclajeSinSesion")
+	public String reciclajeSinSesion() {
+		return "/sinLogin/reciclajeSin.jsp";
+	}
+	
+	@GetMapping("/preguntasFrecuentesSinSesion")
+	public String preguntasFrecuentesSinSesion() {
+		return"/sinLogin/preguntasFrecSin.jsp";
+	}
+	@GetMapping("/personasSinSesion")
+	public String personasSinSesion() {
+		return "/sinLogin/InfoPersonasSinSesion.jsp";
+	}
+	
+	@GetMapping("/infoEmpresasSinSesion")
+	public String infoEmpresasSinSesion() {
+		return"/sinLogin/InfoEmpresasSinSesion.jsp";
 	}
 	
 	//PaginaPrincipalConInicioDeSesion-------------------------------------------------------------------------
@@ -97,6 +123,9 @@ public class MainController {
 	public String preguntasFrecuentes() {
 		return"preguntasFrec.jsp";
 	}
+	
+	
+	
 	
 	
 	

@@ -298,13 +298,9 @@ li {
 						</ul>
 					</div>
 					<div class="register">
-						<a class="btn btn-light action-button" role="button"
-							href="/logout">Cerrar sesión</a> <a href="/perfil"
-							class="d-inline-block my-auto me-2"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
-						</a>
-
+						<span class="navbar-text"></span> <a
+							class="btn btn-light action-button" role="button" href="/Login">Iniciar
+							Sesión</a>
 					</div>
 				</div>
 			</nav>
@@ -445,10 +441,12 @@ li {
 					style="font-size: 25px;">¿Si soy recolector, puedo pedir
 					tanta cantidad de residuos como quiera?</span>
 			</h2>
-			<p class="lead">Una <strong>persona recolector</strong> puede demandar hasta <strong>7kg</strong>
+			<p class="lead">
+				Una <strong>persona recolector</strong> puede demandar hasta <strong>7kg</strong>
 				de residuos por aviso. Si requieres más de 7kg te invitamos a
 				registrarte como empresa, donde no hay una demanda máxima de
-				residuos, puedes recolectar cuantos quieras!</p>
+				residuos, puedes recolectar cuantos quieras!
+			</p>
 		</div>
 		<div class="col ">
 			<img alt="cc" src="imgs/amazon.png">

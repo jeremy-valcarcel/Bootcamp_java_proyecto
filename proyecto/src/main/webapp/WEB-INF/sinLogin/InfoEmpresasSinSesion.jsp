@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>ECORESCATE-Personas</title>
+<title>ECORESCATE-Empresas</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -232,12 +232,13 @@ li {
 
 .mx-background-top-linear {
 	background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+	/* 	background: -webkit-linear-gradient(left, #208946 48%, #208946 48%); */
 	background: linear-gradient(45deg, #44b15e 48%, rgb(16 71 36) 48%);
 }
 
 .logo-image {
-	max-height: 65px;
-	width: auto;
+	max-height: 65px; /* Establece una altura máxima para la imagen */
+	width: auto; /* Permite que el ancho se ajuste automáticamente */
 }
 </style>
 </head>
@@ -298,13 +299,9 @@ li {
 						</ul>
 					</div>
 					<div class="register">
-						<a class="btn btn-light action-button" role="button"
-							href="/logout">Cerrar sesión</a> <a href="/perfil"
-							class="d-inline-block my-auto me-2"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
-						</a>
-
+						<span class="navbar-text"></span> <a
+							class="btn btn-light action-button" role="button" href="/Login">Iniciar
+							Sesión</a>
 					</div>
 				</div>
 			</nav>
@@ -327,19 +324,18 @@ li {
 				<div class="carousel-item active">
 					<div class="row">
 						<div class="col-md-6 text-center">
-							<img src="imgs/basuraOrgánica.webp" alt="Imagen 1"
+							<img src="imgs/restauranteResiduo2.jpg" alt="Imagen 1"
 								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Importancia de tu residuo</h3>
-							<p>¿Sabías que con la cantidad de residuos que genera una
-								persona es escencial que forme parte en este proceso?</p>
+							<h3 class="m-2">Titulo 1</h3>
+							<p>Parrafo 1</p>
 							<a href="#masInformacion" class="btn"
 								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 						<div class="col-md-6 text-center">
-							<img src="imgs/personasManos.avif" alt="Imagen 2"
+							<img src="imgs/empresasResiduos.jpg" alt="Imagen 2"
 								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Roles</h3>
-							<p>¿Sabías los roles que puede tener una persona?</p>
+							<h3 class="m-2">Titulo 2</h3>
+							<p>Parrafo 2</p>
 							<a href="#masInformacion2" class="btn"
 								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
@@ -348,20 +344,18 @@ li {
 				<div class="carousel-item">
 					<div class="row">
 						<div class="col-md-6 text-center">
-							<img src="imgs/basuraOrgánica2.jpg" alt="Imagen 3"
+							<img src="imgs/restauranteResiduo.jpg" alt="Imagen 3"
 								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Cantidad de desechosa</h3>
-							<p>¿Hasta cuántos desechos puedo pedir siendo
-								persona-recolector?</p>
+							<h3 class="m-2">Título 3</h3>
+							<p>Descripción o párrafo corto sobre la imagen 3.</p>
 							<a href="#masInformacion3" class="btn"
 								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 						<div class="col-md-6 text-center">
-							<img src="imgs/basuraOrgánica.webp" alt="Imagen 4"
+							<img src="imgs/empresasResiduos2.jpg" alt="Imagen 4"
 								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">A quién ayudar</h3>
-							<p>Siendo generador de residuos, ¿A qué entidades puedo
-								ayudar?</p>
+							<h3 class="m-2">Título 4</h3>
+							<p>Descripción o párrafo corto sobre la imagen 4.</p>
 							<a href="#masInformacion4" class="btn"
 								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
@@ -383,72 +377,45 @@ li {
 	<!-- Sección de información "ver más" -->
 	<div id="masInformacion" class=" row m-0 featurette mt-5">
 		<div class="col border border-light border-2 rounded">
-			<h2 class="featurette-heading mt-5">
-				<span style="color: #2faa4c"><strong>IMPORTANCIA DE
-						TU RESIDUO</strong></span><br> <span class="text-muted"
-					style="font-size: 25px;">Cantidad de residuos generados por
-					una persona:</span>
+			<h2 class="featurette-heading">
+				Encabezado del primer reportaje. <span class="text-muted">Te
+					dejará boquiabierto.</span>
 			</h2>
-			<p class="lead mt-4">
-				En promedio, una persona puede generar alrededor de 0.5 kilogramos
-				de residuos orgánicos por día. <br> A lo largo de un mes, una
-				sola persona puede evitar que entre 10 y 18 kilogramos de residuos
-				orgánicos se conviertan en una carga para nuestro planeta. Imagina
-				el impacto que podemos lograr si todos nos unimos a esta causa.
-			</p>
+			<p class="lead">Aquí puedes encontrar más información sobre las
+				imágenes.</p>
 		</div>
 		<div class="col">
-			<img alt="imagen" src="imgs/importancia-residuo.webp"
-				style="height: 500px;">
+			<img alt="scsc" src="imgs/contenedores.jpg">
 		</div>
 	</div>
 
 	<hr class="featurette-divider">
 	<div id="masInformacion2" class="row m-0 featurette">
-		<div class="col border border-light border-2 rounded">
-			<h2 class="featurette-heading text-center">
-				<span style="color: #2faa4c"><strong>ROLES</strong></span><br>
-				<span class="text-muted" style="font-size: 25px;">¿Sabias que
-					puedes formar parte como RECOLECTOR o GENEREADOR de residuos?</span>
+		<div class="col order-md-2 border border-light border-2 rounded">
+			<h2 class="featurette-heading">
+				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
+					mismo.</span>
 			</h2>
-			<table style="border-collapse: collapse;">
-				<tr>
-					<td style="border: 1px solid #2faa4c; padding: 20px;"><span
-						style="color: #2faa4c">RECOLECTOR:</span> Se dedican a reunir una
-						variedad de residuos orgánicos con el propósito de transformarlos
-						en nuevos productos útiles. Su labor no solo reduce la cantidad de
-						residuos que terminan en vertederos, sino que también contribuye a
-						la creación de recursos valiosos. Desempeñan un rol invaluable en
-						la promoción de la sostenibilidad y la gestión responsable de
-						residuos orgánicos.</td>
-					<td style="border: 1px solid #2faa4c; padding: 20px;"><span
-						style="color: #2faa4c">GENERADOR:</span> Son un componente
-						esencial y un punto de partida clave. Son responsables de producir
-						los residuos orgánicos que posteriormente se reciclan y
-						transforman en nuevos recursos valiosos. Su papel en el ciclo de
-						vida de los desechos es fundamental para fomentar prácticas de
-						gestión sostenible y reducir el impacto ambiental.</td>
-				</tr>
-			</table>
+			<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
+				marcador de posición aquí para darle una idea de cómo funcionaría
+				este diseño con algún contenido del mundo real en su lugar.</p>
 		</div>
-
+		<div class="col order-md-1">
+			<img alt="c" src="imgs/cocacola.png">
+		</div>
 	</div>
 
 	<hr class="featurette-divider">
 	<div id="masInformacion3" class="row m-0 featurette "
 		style="margin-botton: 10%">
 		<div class="col border border-light border-2 rounded">
-			<h2 class="featurette-heading mt-5">
-
-				<span style="color: #2faa4c"><strong>CANTIDAD MÁXIMA
-						DE RESIDUOS PERMITIDOS </strong></span><br> <span class="text-muted"
-					style="font-size: 25px;">¿Si soy recolector, puedo pedir
-					tanta cantidad de residuos como quiera?</span>
+			<h2 class="featurette-heading">
+				Y por último, este. <span class="text-muted">Jaque mate.</span>
 			</h2>
-			<p class="lead">Una <strong>persona recolector</strong> puede demandar hasta <strong>7kg</strong>
-				de residuos por aviso. Si requieres más de 7kg te invitamos a
-				registrarte como empresa, donde no hay una demanda máxima de
-				residuos, puedes recolectar cuantos quieras!</p>
+			<p class="lead">Y sí, este es el último bloque de contenido de
+				marcador de posición representativo. Una vez más, no está destinado
+				a ser leído realmente, simplemente aquí para darle una mejor vista
+				de cómo se vería esto con algún contenido real. Tu contenido.</p>
 		</div>
 		<div class="col ">
 			<img alt="cc" src="imgs/amazon.png">
@@ -459,17 +426,12 @@ li {
 	<div id="masInformacion4" class="row m-0 featurette">
 		<div class="col order-md-2 border border-light border-2 rounded">
 			<h2 class="featurette-heading">
-				<span style="color: #2faa4c"><strong>A QUIEN AYUDAR</strong></span><br>
-				<span class="text-muted" style="font-size: 25px;">¿A que
-					entidades recolectoras puedo ayudar siendo generador de residuos?</span>
+				Oh, sí, es tan bueno. <span class="text-muted">Míralo tú
+					mismo.</span>
 			</h2>
-			<p class="lead">
-				Las <strong>personas generadoras</strong> de residuos pueden ayudar
-				tanto a <strong>personas recolectoras</strong> como también a <strong>empresas
-					recolectoras</strong>. Puedes llevar tus resiudos a otras <strong>empresas
-					generadoras</strong> de residuos o puedes contactarte directamente con <strong>personas
-					recolectoras</strong>.
-			</p>
+			<p class="lead">¿Otro reportaje? Por supuesto. Más contenido de
+				marcador de posición aquí para darle una idea de cómo funcionaría
+				este diseño con algún contenido del mundo real en su lugar.</p>
 		</div>
 		<div class="col order-md-1">
 			<img alt="c" src="imgs/cocacola.png">

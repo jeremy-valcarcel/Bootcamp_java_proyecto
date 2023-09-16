@@ -243,8 +243,8 @@
 								href="/Login">Empresas</a></li>
 							<li class="dropdown nav-item"><a class="nav-link" href="#" >Nosotros</a>
 								<div class="dropdown-content">
-									<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
-										orgánico</a> <a href="/preguntasFrecuentes">Preguntas
+									<a href="nosotrosSinSesion">¿Quienes somos?</a> <a href="reciclajeSinSesion">Reciclaje
+										orgánico</a> <a href="preguntasFrecuentesSinSesion">Preguntas
 										frecuentes</a>
 								</div></li>
 						</ul>
@@ -270,7 +270,7 @@
 						<p>
 							Desbloquea el potencial de los residuos orgánicos.<br>
 						</p>
-						<a href="/nosotros" class="btn btn-light btn-lg action-button"
+						<a href="nosotrosSinSesion" class="btn btn-light btn-lg action-button"
 							role="button"> Conoce más <i
 							class="fa fa-long-arrow-right ml-2"></i>
 						</a>
@@ -334,7 +334,7 @@
 							!Enterate cómo!
 						</p>
 
-						<a href="/Login" class="btn btn-dark">Ver más</a>
+						<a href="/personasSinSesion" class="btn btn-dark">Ver más</a>
 
 					</article>
 
@@ -350,7 +350,7 @@
 							columna vertebral de esta comunidad. <br> !Enterate cómo!
 						</p>
 
-						<a href="/Login" class="btn btn-dark">Ver más</a>
+						<a href="/infoEmpresasSinSesion" class="btn btn-dark">Ver más</a>
 
 					</article>
 				</section>
