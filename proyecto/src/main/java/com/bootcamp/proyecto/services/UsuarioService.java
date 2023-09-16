@@ -76,5 +76,15 @@ public class UsuarioService {
 			}
 		}
 	}
+	
+	// EditarUsuario---------------------------------------------------------------------------------------------------------
+	public Usuario actualizarUsuario(Usuario Usuario) {
+		return userRepo.save(Usuario);
+	}
+	
+	//EliminarUsuario-------------------------------------------------------------------------------------------------------
+	public void borrarUsuario(Long id) {
+		userRepo.deleteById(id);
+	}
 
 }

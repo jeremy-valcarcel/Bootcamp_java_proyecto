@@ -196,26 +196,67 @@ body {
 				<img alt="foto perfil" src="img/perfil.jpeg"
 					style="border-radius: 300px; height: 13em; position: relative;">
 			</div>
-			<div class="col mt-5 ml-2">
-				<h2 class="text-secondary">Usuario Usuario</h2>
-				<p class="text-secondary">Empresa/recolector</p>
-				<p class="text-secondary">Argentina/Uruguay</p>
-
-			</div>
-
+			<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+				<div class="col mt-5 ml-2">
+					<h2 class="text-secondary">
+						Hola
+						<c:out value="${usuario.nombre}"></c:out>
+						<c:out value="${usuario.apellido}"></c:out>
+					</h2>
+					<p class="text-secondary">
+						Email:
+						<c:out value="${usuario.email}"></c:out>
+					</p>
+					<p class="text-secondary">
+						Contacto:
+						<c:out value="${usuario.telefono}"></c:out>
+					</p>
+					<p class="text-secondary">
+						Tipo de cuenta:
+						<c:out value="${usuario.rol.name}"></c:out>
+					</p>
+				</div>
+			</c:if>
+			<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+				<div class="col mt-5 ml-2">
+					<h2 class="text-secondary">
+						Hola
+						<c:out value="${empresa.nombre}"></c:out>
+					</h2>
+					<p class="text-secondary">
+						Email:
+						<c:out value="${empresa.email}"></c:out>
+					</p>
+					<p class="text-secondary">
+						Contacto:
+						<c:out value="${empresa.telefono}"></c:out>
+					</p>
+					<p class="text-secondary">
+						Direccion:
+						<c:out value="${empresa.direccion}"></c:out>
+					</p>
+					<p class="text-secondary">
+						Razon social:
+						<c:out value="${empresa.razonSocial}"></c:out>
+					</p>
+					<p class="text-secondary">
+						Tipo de cuenta:
+						<c:out value="${empresa.rol.name}"></c:out>
+					</p>
+				</div>
+			</c:if>
 		</div>
+		
 
 		<div class="row mb-4">
 			<div class="col-sm-3 mt-4">
 				<aside class="col">
-					<p class="btn btn-success d-block col-6" style="width: 210px">Editar
-						Perfil</p>
-					<p class="btn btn-success d-block col-6" style="width: 210px">Nuevo
-						Aviso</p>
-					<p class="btn btn-success d-block col-6" style="width: 210px">Cancelar
-						Aviso</p>
-					<p class="btn btn-success d-block col-6" style="width: 210px">Cerrar
-						Sesion</p>
+					<a href="#" class="btn btn-success d-block col-6 mb-2" style="width: 210px">Editar
+						Perfil</a>
+					<a href="/crear/publicacion" class="btn btn-success d-block col-6 mt-2 mb-2" style="width: 210px">Nuevo
+						publicaion</a>
+					<a href="/logout" class="btn btn-success d-block col-6 mt-2" style="width: 210px">Cerrar
+						Sesion</a>
 				</aside>
 			</div>
 			<div class="col mt-4">

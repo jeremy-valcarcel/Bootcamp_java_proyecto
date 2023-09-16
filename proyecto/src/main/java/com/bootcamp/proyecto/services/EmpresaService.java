@@ -1,6 +1,7 @@
 package com.bootcamp.proyecto.services;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -76,4 +77,14 @@ public class EmpresaService {
 		}
 	}
 
+	// EditarEmpresa---------------------------------------------------------------------------------------------------------
+	public Empresas actualizarEmpresa(Empresas Empresas) {
+		return empresaRepo.save(Empresas);
+	}
+	
+	//EliminarEmpresa-------------------------------------------------------------------------------------------------------
+	public void borrarEmpresa(Long id) {
+		empresaRepo.deleteById(id);
+	}
+	
 }

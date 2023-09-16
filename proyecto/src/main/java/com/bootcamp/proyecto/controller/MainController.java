@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.bootcamp.proyecto.models.DesechosPublicaciones;
 import com.bootcamp.proyecto.models.Empresas;
@@ -14,6 +16,7 @@ import com.bootcamp.proyecto.services.EmpresaService;
 import com.bootcamp.proyecto.services.UsuarioService;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 
 @Controller
 public class MainController {
@@ -72,7 +75,7 @@ public class MainController {
 		Long userId = (Long) sesion.getAttribute("userID");
 		if (userId == null && empresasId == null) {
 			return "redirect:/";
-		} else if (userId != null) {
+		} else if (userId != null && userId != empresasId) {
 			Usuario usuario = userServ.encontrarUserPorId(userId);
 			viewModel.addAttribute("usuario", usuario);
 			return "indexSesionIniciada.jsp";
@@ -83,16 +86,30 @@ public class MainController {
 		return "indexSesionIniciada.jsp";
 	}
 
-	// Perfil-------------------------------------------------------------------------
+	//Perfil-------------------------------------------------------------------------
 	@GetMapping("/perfil")
-	public String perfil() {
+	public String perfil(@ModelAttribute("Usuario") Usuario Usuario,
+			@ModelAttribute("empresa") Empresas Empresas, BindingResult resultado, HttpSession sesion,
+			Model viewModel) {
+		
+		// validar si la sesion del usuario o empresa esta activa
+		Long empresasId = (Long) sesion.getAttribute("empresaID");
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null && empresasId == null) {
+			return "redirect:/";
+		} else if (userId != null && userId != empresasId) {
+			Usuario usuario = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuario);
+			return "perfil_v2.jsp";
+		}
+			Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
+			viewModel.addAttribute("empresa", empresa);	
+			
 		return "perfil_v2.jsp";
 	}
+	
+	
 
-	@GetMapping("/empresas")
-	public String empresas() {
-		return "empresas.jsp";
-	}
 
 	@GetMapping("/publicacionesPersonas")
 	public String publicacionesPersonas(@ModelAttribute("publicacionUsario") DesechosPublicaciones publicacionE,
@@ -135,6 +152,11 @@ public class MainController {
 
 	}
 
+	@GetMapping("/empresas")
+	public String empresas() {
+		return "empresas.jsp";
+	}
+	
 	@GetMapping("/personas")
 	public String infoPersonas() {
 		return "InfoPersonas.jsp";
