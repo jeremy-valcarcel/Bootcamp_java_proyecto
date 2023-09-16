@@ -38,14 +38,23 @@
 	padding-bottom: 80px;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+/* BOTÓN DE REGISTRO */
+.inicio .action-button {
+ 	background : transparent; 
+	border: 1px solid rgb(255, 255, 255);
+	border-radius: 40px; 
+	color: #fff;
+}
+/* BOTÓN DE REGISTRO */
 </style>
 </head>
 <body>
 	<section class="vh-100 header-green" style="background-color: #99f5f8;">
-		<div class="text-end">
-			<a href="/">Volver a inicio</a>
+		<div class="inicio text-end m-3">
+			<span class="navbar-text"></span> <a
+				class="btn btn-light action-button" role="button" href="/">Volver a inicio</a>
 		</div>
-		<div class="container py-5 h-100"> 
+		<div class="container py-5 h-100">
 			<div
 				class="row d-flex justify-content-center align-items-center h-100">
 				<div class="col col-xl-10">
@@ -86,11 +95,18 @@
 										</div>
 
 										<div class="mb-4">
-											<input class="btn btn-success w-100" type="submit" value="Iniciar sesión" />
+											<input class="btn btn-success w-100" type="submit"
+												value="Iniciar sesión" />
 										</div>
 
-										<p class="text">Sino tiene una cuenta aun <a href="/Registro/Usuario">Registrese usuarios</a></p>
-										<p class="text">Sino tiene una cuenta aun <a href="/Registro/Empresa">Registrese empresas</a></p>
+										<p class="text">
+											Sino tiene una cuenta aún <a href="/Registro/Usuario">Registrese
+												como usuario</a>
+										</p>
+										<p class="text">
+											Sino tiene una cuenta aún <a href="/Registro/Empresa">Registrese
+												como empresa</a>
+										</p>
 									</form:form>
 								</div>
 							</div>
