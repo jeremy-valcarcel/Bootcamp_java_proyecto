@@ -239,6 +239,19 @@ li {
 	max-height: 65px;
 	width: auto;
 }
+/* BOTÓN DE REGISTRO */
+.register .action-button {
+	position: absolute;
+	right: -400px;
+	bottom: 20px; 
+	background : transparent;
+	border: 1px solid rgb(255, 255, 255);
+	border-radius: 40px;
+	color: #fff;
+	padding: .3rem .8rem;
+	background: transparent;
+}
+/* BOTÓN DE REGISTRO */
 </style>
 </head>
 <body
@@ -346,14 +359,14 @@ li {
 						<div class="col-md-6 text-center">
 							<img src="imgs/basuraOrgánica2.jpg" alt="Imagen 3"
 								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Cantidad de desechosa</h3>
-							<p>¿Hasta cuántos desechos puedo pedir siendo
+							<h3 class="m-2">Cantidad de desechos</h3>
+							<p>¿Hasta cuántos desechos puedo solicitar siendo
 								persona-recolector?</p>
 							<a href="#masInformacion3" class="btn"
 								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 						<div class="col-md-6 text-center">
-							<img src="imgs/basuraOrgánica.webp" alt="Imagen 4"
+							<img src="imgs/chicos-de-reciclaje.jpg" alt="Imagen 4"
 								style="height: 400px" class="rounded-image">
 							<h3 class="m-2">A quién ayudar</h3>
 							<p>Siendo generador de residuos, ¿A qué entidades puedo
@@ -449,7 +462,7 @@ li {
 			</p>
 		</div>
 		<div class="col ">
-			<img alt="cc" src="imgs/amazon.png">
+			<img alt="cc" src="imgs/bolsaBasura.png">
 		</div>
 	</div>
 
@@ -469,8 +482,8 @@ li {
 					recolectoras</strong>.
 			</p>
 		</div>
-		<div class="col order-md-1">
-			<img alt="c" src="imgs/cocacola.png">
+		<div class="col order-md-1" style="margin-bottom: 30px;">
+			<img alt="c" src="imgs/solidaridad.jpg" style="height: 400px;">
 		</div>
 	</div>
 
