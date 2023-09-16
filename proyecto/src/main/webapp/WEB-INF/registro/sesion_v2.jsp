@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Sesion</title>
+<title>Inicio de sesión</title>
 
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -62,9 +62,7 @@
 									<form:form method="POST" action="/Login" modelAttribute="login">
 
 										<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">
-											<p>
-												¡Bienvenido a <span class="logo-font text-success">ECO</span>RESCATE!
-											</p>
+											¡Bienvenido a <span class="text-success">ECO</span>RESCATE!
 										</h5>
 
 										<div class="form-outline mb-4">
@@ -87,18 +85,12 @@
 												placeholder="ingresa tu contraseña" />
 										</div>
 
-										<div class="pt-1 mb-4">
-											<input type="submit" value="Login!" />
+										<div class="mb-4">
+											<input class="btn btn-success w-100" type="submit" value="Iniciar sesión" />
 										</div>
 
-										<p class="text-center">
-											Sino tiene una cuenta aun <a href="/Registro/Usuario">
-												Registrese usuarios</a>
-										</p>
-										<p class="text-center">
-											Sino tiene una cuenta aun <a href="/Registro/Empresa">
-												Registrese empresas</a>
-										</p>
+										<p class="text">Sino tiene una cuenta aun <a href="/Registro/Usuario">Registrese usuarios</a></p>
+										<p class="text">Sino tiene una cuenta aun <a href="/Registro/Empresa">Registrese empresas</a></p>
 									</form:form>
 								</div>
 							</div>
