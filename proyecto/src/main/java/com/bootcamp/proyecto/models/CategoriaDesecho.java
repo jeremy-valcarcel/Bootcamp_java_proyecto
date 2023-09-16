@@ -18,7 +18,7 @@ public class CategoriaDesecho {
 
 	@NotBlank(message=" Por favor ingresa una descripcion")
 	private String descripcion;
-
+	
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;

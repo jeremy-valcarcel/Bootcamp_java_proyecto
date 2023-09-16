@@ -1,5 +1,7 @@
 package com.bootcamp.proyecto.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.bootcamp.proyecto.models.Comentarios;
@@ -27,6 +29,21 @@ public class DesechosPublicacionesService {
 	public DesechosPublicaciones actualizarPublicacion(DesechosPublicaciones publicacion) {
 		return desechosPR.save(publicacion);
 	}
+	
+//	Todas las publicaciones 
+	public List<DesechosPublicaciones> todasPublicaciones() {
+		return desechosPR.findAll();
+	}
+	
+//	Desechos con tamaño menor a 7
+	public List<DesechosPublicaciones> desechosUsuario(){
+		return desechosPR.desechosTamañoMenor();
+	}
+	
+//	Desechos con tamaño mayor a 7
+	public List<DesechosPublicaciones> desechosEmpresas(){
+		return desechosPR.desechosTamañoMayor();
+	}
 
 //	Borrar publicacion
 	public void borrarPublicacion(Long id) {
@@ -34,7 +51,7 @@ public class DesechosPublicacionesService {
 	}
 	
 //	mostar una publicacion
-	public DesechosPublicaciones unEvento(Long id) {
+	public DesechosPublicaciones unaPublicacion(Long id) {
 		return desechosPR.findById(id).orElse(null);
 	}
 	
@@ -49,7 +66,6 @@ public class DesechosPublicacionesService {
 		Comentarios mensaje = new Comentarios(empresa, publicacion, comentario);
 		comentarioRepo.save(mensaje);
 	}
-	
 	
 	
 	

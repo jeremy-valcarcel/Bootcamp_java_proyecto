@@ -15,6 +15,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -32,7 +33,8 @@ public class DesechosPublicaciones {
 	private String descripcion;
 	
 	@NotNull(message="Por favor indeque un tamaño")
-	private Integer tamaño;
+	@Min(value=1, message="El tamaño debe ser mayor de 0")
+	private int tamano;
 	
 	@Column(updatable = false)
 	private Date createdAt;
@@ -42,12 +44,12 @@ public class DesechosPublicaciones {
 	
 	// relacion n:1 a usuario
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "emisor_id")
+	@JoinColumn(name = "usuario_id")
 	private Usuario emisor;
 	
 	// relacion n:1 a empresas
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "usuario_id")
+	@JoinColumn(name = "empresa_id")
 	private Empresas empresaEmisora;
 	
 	//relacion n:1 a categoria desechos
@@ -130,22 +132,23 @@ public class DesechosPublicaciones {
 		this.id = id;
 	}
 	
+	
 	public String getDescripcion() {
 		return descripcion;
 	}
-	
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
-	public Integer getTamaño() {
-		return tamaño;
+
+	public int getTamano() {
+		return tamano;
 	}
-	
-	public void setTamaño(Integer tamaño) {
-		this.tamaño = tamaño;
+
+	public void setTamano(int tamano) {
+		this.tamano = tamano;
 	}
-	
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}
