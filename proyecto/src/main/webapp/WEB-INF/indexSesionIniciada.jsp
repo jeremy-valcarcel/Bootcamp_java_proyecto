@@ -342,6 +342,16 @@
 	max-height: 100%;
 	overflow-y: auto;
 }
+/* Estilo para cerrar el modal */
+.cerrar {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 /* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
 .perfil-imagen {
@@ -411,8 +421,7 @@
 										class="perfil-imagen">
 									<h2 class="text-black">
 										¡Hola,
-										<c:out value="${usuario.nombre} ${usuario.apellido}">!</c:out>
-										!
+										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
 									</h2>
 									<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
 										style="width: 350px">Ir a perfil</a> <a href="/logout"

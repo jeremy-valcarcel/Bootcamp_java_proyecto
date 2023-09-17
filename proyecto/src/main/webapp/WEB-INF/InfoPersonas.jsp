@@ -266,6 +266,16 @@ li {
 	max-height: 100%;
 	overflow-y: auto;
 }
+/* Estilo para cerrar el modal */
+.cerrar {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 /* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
 .perfil-imagen {
@@ -343,7 +353,7 @@ li {
 
 						<div id="perfilModal" class="modal">
 							<div class="modal-content">
-								<p class="text-black">
+								<p class="text-black my-2">
 									<c:out value="${usuario.email}"></c:out>
 								</p>
 								<span class="cerrar" id="cerrarPerfil">&times;</span> <img
@@ -351,8 +361,7 @@ li {
 									class="perfil-imagen">
 								<h2>
 									¡Hola,
-									<c:out value="${usuario.nombre} ${usuario.apellido}"></c:out>
-									!
+									<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
 								</h2>
 								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
 									style="width: 350px">Ir a perfil</a> <a href="/logout"
@@ -386,7 +395,7 @@ li {
 						<div class="col-md-6 text-center">
 							<img src="imgs/basuraOrgánica.webp" alt="Imagen 1"
 								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Importancia de tu residuo</h3>
+							<h3 class="m-2">Importancia del residuo</h3>
 							<p>¿Sabías que con la cantidad de residuos que genera una
 								persona es escencial que forme parte en este proceso?</p>
 							<a href="#masInformacion" class="btn"
@@ -407,7 +416,7 @@ li {
 						<div class="col-md-6 text-center">
 							<img src="imgs/basuraOrgánica2.jpg" alt="Imagen 3"
 								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Cantidad de desechosa</h3>
+							<h3 class="m-2">Cantidad de desechos</h3>
 							<p>¿Hasta cuántos desechos puedo pedir siendo
 								persona-recolector?</p>
 							<a href="#masInformacion3" class="btn"
