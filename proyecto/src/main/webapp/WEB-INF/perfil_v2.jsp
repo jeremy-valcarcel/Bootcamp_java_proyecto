@@ -150,6 +150,10 @@ body {
 	height: 200px;
 	border-radius: 500%;
 }
+.register {
+	position: absolute;
+	right: -420px;
+}
 </style>
 </head>
 

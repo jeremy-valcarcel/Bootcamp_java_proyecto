@@ -240,6 +240,44 @@ li {
 	max-height: 65px; /* Establece una altura máxima para la imagen */
 	width: auto; /* Permite que el ancho se ajuste automáticamente */
 }
+/* Estilo del modal */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 1100px;
+	width: auto;
+	max-width: 80%;
+	height: auto;
+	max-height: 80%;
+	background-color: transparent; /* Cambiamos el fondo a transparente */
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.5s;
+}
+
+/* Contenido del modal */
+.modal-content {
+	background-color: #fff;
+	margin: 10% auto;
+	padding: 20px;
+	text-align: center;
+	border-radius: 5px;
+	max-height: 100%;
+	overflow-y: auto;
+}
+
+/* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
+.perfil-imagen {
+	height: 200px;
+	border-radius: 500%;
+}
+
+.register {
+	position: absolute;
+	right: -420px;
+}
 </style>
 </head>
 <body
@@ -267,7 +305,7 @@ li {
 
 						<ul class="navbar-nav ml-auto">
 
-							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
+							<li class="nav-item active"><a class="nav-link" href="/Inicio">Inicio</a></li>
 
 							<li class="dropdown nav-item"><a
 								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -299,12 +337,31 @@ li {
 						</ul>
 					</div>
 					<div class="register">
-						<a class="btn btn-light action-button" role="button"
-							href="/logout">Cerrar sesión</a> <a href="/perfil"
-							class="d-inline-block my-auto me-2"> <img alt="Usuario"
+						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
 							src="img/usuario.png" class="d-inline-block"
 							style="height: 60px;">
 						</a>
+
+						<div id="perfilModal" class="modal">
+							<div class="modal-content">
+								<p class="text-black">
+									<c:out value="${usuario.email}"></c:out>
+								</p>
+								<span class="cerrar" id="cerrarPerfil">&times;</span> <img
+									alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									class="perfil-imagen">
+								<h2>
+									¡Hola,
+									<c:out value="${usuario.nombre} ${usuario.apellido}"></c:out>
+									!
+								</h2>
+								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
+									style="width: 350px">Ir a perfil</a> <a href="/logout"
+									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
+									Sesión</a>
+
+							</div>
+						</div>
 
 					</div>
 				</div>
@@ -465,7 +522,29 @@ li {
 	</footer>
 
 
+	<script>
+		// Obtener elementos del DOM
+		var mostrarPerfil = document.getElementById("mostrarPerfil");
+		var perfilModal = document.getElementById("perfilModal");
+		var cerrarPerfil = document.getElementById("cerrarPerfil");
 
+		// Mostrar el modal al hacer clic en la imagen
+		mostrarPerfil.addEventListener("click", function() {
+			perfilModal.style.display = "block";
+		});
+
+		// Cerrar el modal al hacer clic en la "X"
+		cerrarPerfil.addEventListener("click", function() {
+			perfilModal.style.display = "none";
+		});
+
+		// Cerrar el modal al hacer clic fuera de él
+		window.addEventListener("click", function(event) {
+			if (event.target === perfilModal) {
+				perfilModal.style.display = "none";
+			}
+		});
+	</script>
 
 </body>
 </html>

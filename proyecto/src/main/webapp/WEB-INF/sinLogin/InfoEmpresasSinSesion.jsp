@@ -253,6 +253,7 @@ li {
 	background: transparent;
 }
 /* BOTÓN DE REGISTRO */
+
 </style>
 </head>
 <body

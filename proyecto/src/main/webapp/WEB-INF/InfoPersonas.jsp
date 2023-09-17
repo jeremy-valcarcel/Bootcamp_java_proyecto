@@ -239,6 +239,44 @@ li {
 	max-height: 65px;
 	width: auto;
 }
+/* Estilo del modal */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 1100px;
+	width: auto;
+	max-width: 80%;
+	height: auto;
+	max-height: 80%;
+	background-color: transparent; /* Cambiamos el fondo a transparente */
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.5s;
+}
+
+/* Contenido del modal */
+.modal-content {
+	background-color: #fff;
+	margin: 10% auto;
+	padding: 20px;
+	text-align: center;
+	border-radius: 5px;
+	max-height: 100%;
+	overflow-y: auto;
+}
+
+/* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
+.perfil-imagen {
+	height: 200px;
+	border-radius: 500%;
+}
+
+.register {
+	position: absolute;
+	right: -420px;
+}
 </style>
 </head>
 <body
@@ -266,7 +304,7 @@ li {
 
 						<ul class="navbar-nav ml-auto">
 
-							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
+							<li class="nav-item active"><a class="nav-link" href="/Inicio">Inicio</a></li>
 
 							<li class="dropdown nav-item"><a
 								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -298,12 +336,31 @@ li {
 						</ul>
 					</div>
 					<div class="register">
-						<a class="btn btn-light action-button" role="button"
-							href="/logout">Cerrar sesión</a> <a href="/perfil"
-							class="d-inline-block my-auto me-2"> <img alt="Usuario"
+						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
 							src="img/usuario.png" class="d-inline-block"
 							style="height: 60px;">
 						</a>
+
+						<div id="perfilModal" class="modal">
+							<div class="modal-content">
+								<p class="text-black">
+									<c:out value="${usuario.email}"></c:out>
+								</p>
+								<span class="cerrar" id="cerrarPerfil">&times;</span> <img
+									alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									class="perfil-imagen">
+								<h2>
+									¡Hola,
+									<c:out value="${usuario.nombre} ${usuario.apellido}"></c:out>
+									!
+								</h2>
+								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
+									style="width: 350px">Ir a perfil</a> <a href="/logout"
+									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
+									Sesión</a>
+
+							</div>
+						</div>
 
 					</div>
 				</div>
@@ -357,7 +414,7 @@ li {
 								style="background-color: #44b15e; color: white;">Ver más</a>
 						</div>
 						<div class="col-md-6 text-center">
-							<img src="imgs/basuraOrgánica.webp" alt="Imagen 4"
+							<img src="imgs/chicos-de-reciclaje.jpg" alt="Imagen 4"
 								style="height: 400px" class="rounded-image">
 							<h3 class="m-2">A quién ayudar</h3>
 							<p>Siendo generador de residuos, ¿A qué entidades puedo
@@ -382,7 +439,7 @@ li {
 
 	<!-- Sección de información "ver más" -->
 	<div id="masInformacion" class=" row m-0 featurette mt-5">
-		<div class="col border border-light border-2 rounded">
+		<div class="col-8 border border-light border-2 rounded">
 			<h2 class="featurette-heading mt-5">
 				<span style="color: #2faa4c"><strong>IMPORTANCIA DE
 						TU RESIDUO</strong></span><br> <span class="text-muted"
@@ -399,7 +456,7 @@ li {
 		</div>
 		<div class="col">
 			<img alt="imagen" src="imgs/importancia-residuo.webp"
-				style="height: 500px;">
+				style="height: 350px;">
 		</div>
 	</div>
 
@@ -437,7 +494,7 @@ li {
 	<hr class="featurette-divider">
 	<div id="masInformacion3" class="row m-0 featurette "
 		style="margin-botton: 10%">
-		<div class="col border border-light border-2 rounded">
+		<div class="col-8 border border-light border-2 rounded">
 			<h2 class="featurette-heading mt-5">
 
 				<span style="color: #2faa4c"><strong>CANTIDAD MÁXIMA
@@ -445,18 +502,20 @@ li {
 					style="font-size: 25px;">¿Si soy recolector, puedo pedir
 					tanta cantidad de residuos como quiera?</span>
 			</h2>
-			<p class="lead">Una <strong>persona recolector</strong> puede demandar hasta <strong>7kg</strong>
+			<p class="lead">
+				Una <strong>persona recolector</strong> puede demandar hasta <strong>7kg</strong>
 				de residuos por aviso. Si requieres más de 7kg te invitamos a
 				registrarte como empresa, donde no hay una demanda máxima de
-				residuos, puedes recolectar cuantos quieras!</p>
+				residuos, puedes recolectar cuantos quieras!
+			</p>
 		</div>
 		<div class="col ">
-			<img alt="cc" src="imgs/amazon.png">
+			<img alt="cc" src="imgs/bolsaBasura.png" style="height: 400px;">
 		</div>
 	</div>
 
 	<hr class="featurette-divider">
-	<div id="masInformacion4" class="row m-0 featurette">
+	<div id="masInformacion4" class="row m-0 my-3 featurette">
 		<div class="col order-md-2 border border-light border-2 rounded">
 			<h2 class="featurette-heading">
 				<span style="color: #2faa4c"><strong>A QUIEN AYUDAR</strong></span><br>
@@ -472,7 +531,7 @@ li {
 			</p>
 		</div>
 		<div class="col order-md-1">
-			<img alt="c" src="imgs/cocacola.png">
+			<img alt="c" src="imgs/chicos-de-reciclaje.jpg">
 		</div>
 	</div>
 
@@ -498,8 +557,29 @@ li {
 		</div>
 	</footer>
 
+	<script>
+		// Obtener elementos del DOM
+		var mostrarPerfil = document.getElementById("mostrarPerfil");
+		var perfilModal = document.getElementById("perfilModal");
+		var cerrarPerfil = document.getElementById("cerrarPerfil");
 
+		// Mostrar el modal al hacer clic en la imagen
+		mostrarPerfil.addEventListener("click", function() {
+			perfilModal.style.display = "block";
+		});
 
+		// Cerrar el modal al hacer clic en la "X"
+		cerrarPerfil.addEventListener("click", function() {
+			perfilModal.style.display = "none";
+		});
 
+		// Cerrar el modal al hacer clic fuera de él
+		window.addEventListener("click", function(event) {
+			if (event.target === perfilModal) {
+				perfilModal.style.display = "none";
+			}
+		});
+	</script>
+	
 </body>
 </html>

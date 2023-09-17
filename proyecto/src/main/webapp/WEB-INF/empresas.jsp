@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>AQUI EL TITULO DE TU PLNATILLA</title>
+<title>Empresas</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet"
 	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
+/* ESTILOS HEADER/FOOTER */
 header, footer {
 	background-color: #82e462;
 	display: flex;
@@ -36,37 +37,9 @@ header, footer {
 	padding: 5px 10px;
 	align-items: center;
 }
+/* ESTILOS HEADER/FOOTER */
 
-header img, footer img {
-	height: 80px;
-}
-
-.swiper {
-	width: 100%;
-	padding-top: 50px;
-	padding-bottom: 50px;
-}
-
-.swiper-slide {
-	background-position: center;
-	background-size: cover;
-	width: 300px;
-	height: 300px;
-	border: 2px solid #181212;
-}
-
-.swiper-slide img {
-	display: block;
-	width: 100%;
-}
-
-.header-green {
-	background: linear-gradient(135deg, #28a745, #e9ecef);
-	background-color: #184e8e;
-	padding-bottom: -50px;
-	font-family: 'Source Sans Pro', sans-serif;
-}
-
+/* ESTILO DESPLIEGE HEADER */
 .dropdown {
 	position: relative;
 	display: inline-block;
@@ -85,7 +58,6 @@ header img, footer img {
 	display: block;
 }
 
-/* Estilos para los enlaces del menú */
 .dropdown-content a {
 	padding: 12px 16px;
 	text-decoration: none;
@@ -95,42 +67,217 @@ header img, footer img {
 .dropdown-content a:hover {
 	background-color: #ddd;
 }
+/* ESTILO DESPLIEGE HEADER */
+
+/* ESTILOS CONTENIDO */
+.content h1 {
+	height: 300px;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background-size: cover;
+	background-position: center;
+	font-size: 50px;
+}
+
+.content h2 {
+	font-size: 24px;
+	margin-top: 20px;
+}
+
+.content p {
+	margin-bottom: 20px;
+}
+/* ESTILOS CONTENIDO */
+
+/* PROCESO DE RECICLAJE */
+.reciclaje {
+	height: 250px;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background-size: cover;
+	background-position: center;
+	font-size: 50px;
+}
+/* PROCESO DE RECICLAJE */
+.rounded-image {
+	border-radius: 20px;
+}
+
+/* ESTILOS BODY */
+body {
+	background-color: #white;
+	display: grid;
+	min-height: 100vh;
+	grid-template-row: auto 1fr auto;
+}
+/* ESTILOS BODY */
+
+/* ESTILO HEADER */
+.navbar {
+	padding: 5px;
+}
+
+.topbar {
+	background-color: rgb(16, 71, 36);
+	padding: 0;
+}
+
+.mx-background-top-linear {
+	background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+	background: linear-gradient(45deg, #44b15e 48%, rgb(16 71 36) 48%);
+}
+
+.logo-image {
+	max-height: 65px;
+	width: auto;
+}
+/* ESTILO HEADER */
+
+/* ESTILO ECORESCATE */
+.topbar p {
+	margin: 0;
+	display: inline-block;
+	font-size: 13px;
+	color: #f1f6ff;
+}
+/* ESTILO ECORESCATE */
+
+/* Estilo del modal */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 1100px;
+	width: auto;
+	max-width: 80%;
+	height: auto;
+	max-height: 80%;
+	background-color: transparent; /* Cambiamos el fondo a transparente */
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.5s;
+}
+
+/* Contenido del modal */
+.modal-content {
+	background-color: #fff;
+	margin: 10% auto;
+	padding: 20px;
+	text-align: center;
+	border-radius: 5px;
+	max-height: 100%;
+	overflow-y: auto;
+}
+
+/* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
+.perfil-imagen {
+	height: 200px;
+	border-radius: 500%;
+}
+
+.register {
+	position: absolute;
+	right: -420px;
+}
 </style>
 
 </head>
-<body
-	style="background-color: #e7f4fc; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+<body>
+
+	<div class="fixed-top">
+		<header class="topbar">
+			<nav
+				class="navbar navbar-expand-lg navbar-dark mx-background-top-linear"
+				style="background-color: #104724d1;">
+				<div class="container mt-1">
+					<div class="d-flex align-items-center">
+						<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
+							class="d-inline-block logo-image">
+						<p style="font-size: 20px;">
+							<strong>ECORESCATE</strong>
+						</p>
+					</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarResponsive" aria-controls="navbarResponsive"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarResponsive"
+						style="margin-left: 500px">
+
+						<ul class="navbar-nav ml-auto">
+
+							<li class="nav-item active"><a class="nav-link"
+								href="/Inicio">Inicio</a></li>
+
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Publicaciones</a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/publicacionesPersonas">Publicaciones
+										de personas</a> <a class="dropdown-item"
+										href="/publicacionesEmpresas">Publicaciones de empresas</a>
+
+								</div></li>
+
+							<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a>
+							</li>
 
 
-	<header class="header-green">
-		<div>
-			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height: 85px">
-		</div>
-		<nav class="navbar navbar-expand-lg">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="/">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link" href="/publicaciones">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link" href="/empresas">Empresas</a></li>
-			</ul>
-			<div class="dropdown nav-item">
-				<span>Nosotros</span>
-				<div class="dropdown-content">
-					<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
-						orgánico</a> <a href="/preguntasFrecuentes">Preguntas frecuentes</a>
+							<li class="dropdown nav-item"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> Nosotros </a>
+								<div class="dropdown-content" style="color: black;"
+									aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/nosotros">¿Quienes somos?</a> <a
+										class="dropdown-item" href="/reciclaje">Reciclaje orgánico</a>
+									<a class="dropdown-item" href="/preguntasFrecuentes">Preguntas
+										frecuentes</a>
+								</div></li>
+						</ul>
+					</div>
+					<div class="register">
+						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
+							src="img/usuario.png" class="d-inline-block"
+							style="height: 60px;">
+						</a>
+
+						<div id="perfilModal" class="modal">
+							<div class="modal-content">
+								<p class="text-black">
+									<c:out value="${usuario.email}"></c:out>
+								</p>
+								<span class="cerrar" id="cerrarPerfil">&times;</span> <img
+									alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									class="perfil-imagen">
+								<h2>
+									¡Hola,
+									<c:out value="${usuario.nombre} ${usuario.apellido}"></c:out>
+									!
+								</h2>
+								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
+									style="width: 350px">Ir a perfil</a> <a href="/logout"
+									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
+									Sesión</a>
+
+							</div>
+						</div>
+
+					</div>
 				</div>
-			</div>
-		</nav>
-		<div class="register">
-			<a class="btn btn-light action-button" role="button" href="/logout">Cerrar
-				sesión</a> <a href="/perfil" class="d-inline-block my-auto me-2"> <img
-				alt="Usuario" src="img/usuario.png" class="d-inline-block"
-				style="height: 60px;">
-			</a>
-
-		</div>
-	</header>
+			</nav>
+		</header>
+	</div>
 
 
 	<main style="display: flex; justify-content: space-around;"
@@ -607,6 +754,28 @@ header img, footer img {
 			</ul>
 		</div>
 	</footer>
+	<script>
+		// Obtener elementos del DOM
+		var mostrarPerfil = document.getElementById("mostrarPerfil");
+		var perfilModal = document.getElementById("perfilModal");
+		var cerrarPerfil = document.getElementById("cerrarPerfil");
 
+		// Mostrar el modal al hacer clic en la imagen
+		mostrarPerfil.addEventListener("click", function() {
+			perfilModal.style.display = "block";
+		});
+
+		// Cerrar el modal al hacer clic en la "X"
+		cerrarPerfil.addEventListener("click", function() {
+			perfilModal.style.display = "none";
+		});
+
+		// Cerrar el modal al hacer clic fuera de él
+		window.addEventListener("click", function(event) {
+			if (event.target === perfilModal) {
+				perfilModal.style.display = "none";
+			}
+		});
+	</script>
 </body>
 </html>

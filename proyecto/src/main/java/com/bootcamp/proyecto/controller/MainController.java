@@ -32,36 +32,37 @@ public class MainController {
 		this.empresaServ = eS;
 		this.desechosPServ = dPS;
 	}
-	
-	//PaginasSinInicioDeSesion------------------------------------------------------------------------
-	
+
+	// PaginasSinInicioDeSesion------------------------------------------------------------------------
+
 	@GetMapping("/")
 	public String IndexGeneral() {
 		return "/sinLogin/index.jsp";
 	}
-	
+
 	@GetMapping("/nosotrosSinSesion")
 	public String nosotrosSinSesion() {
-		return"/sinLogin/nosotrosSin.jsp";
+		return "/sinLogin/nosotrosSin.jsp";
 	}
-	
+
 	@GetMapping("/reciclajeSinSesion")
 	public String reciclajeSinSesion() {
 		return "/sinLogin/reciclajeSin.jsp";
 	}
-	
+
 	@GetMapping("/preguntasFrecuentesSinSesion")
 	public String preguntasFrecuentesSinSesion() {
-		return"/sinLogin/preguntasFrecSin.jsp";
+		return "/sinLogin/preguntasFrecSin.jsp";
 	}
+
 	@GetMapping("/personasSinSesion")
 	public String personasSinSesion() {
 		return "/sinLogin/InfoPersonasSinSesion.jsp";
 	}
-	
+
 	@GetMapping("/infoEmpresasSinSesion")
 	public String infoEmpresasSinSesion() {
-		return"/sinLogin/InfoEmpresasSinSesion.jsp";
+		return "/sinLogin/InfoEmpresasSinSesion.jsp";
 	}
 
 	// PaginaPrincipalConInicioDeSesion-------------------------------------------------------------------------
@@ -86,12 +87,11 @@ public class MainController {
 		return "indexSesionIniciada.jsp";
 	}
 
-	//Perfil-------------------------------------------------------------------------
+	// Perfil-------------------------------------------------------------------------
 	@GetMapping("/perfil")
-	public String perfil(@ModelAttribute("Usuario") Usuario Usuario,
-			@ModelAttribute("empresa") Empresas Empresas, BindingResult resultado, HttpSession sesion,
-			Model viewModel) {
-		
+	public String perfil(@ModelAttribute("Usuario") Usuario Usuario, @ModelAttribute("empresa") Empresas Empresas,
+			BindingResult resultado, HttpSession sesion, Model viewModel) {
+
 		// validar si la sesion del usuario o empresa esta activa
 		Long empresasId = (Long) sesion.getAttribute("empresaID");
 		Long userId = (Long) sesion.getAttribute("userID");
@@ -102,14 +102,11 @@ public class MainController {
 			viewModel.addAttribute("usuario", usuario);
 			return "perfil_v2.jsp";
 		}
-			Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
-			viewModel.addAttribute("empresa", empresa);	
-			
+		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
+		viewModel.addAttribute("empresa", empresa);
+
 		return "perfil_v2.jsp";
 	}
-	
-	
-
 
 	@GetMapping("/publicacionesPersonas")
 	public String publicacionesPersonas(@ModelAttribute("publicacionUsario") DesechosPublicaciones publicacionE,
@@ -126,7 +123,7 @@ public class MainController {
 		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
-		
+
 		viewModel.addAttribute("publicacionUsario", desechosPServ.desechosUsuario());
 		return "publicacionesPersonas.jsp";
 	}
@@ -146,39 +143,106 @@ public class MainController {
 		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
-		
+
 		viewModel.addAttribute("publicacionEmpresa", desechosPServ.todasPublicaciones());
 		return "publicacionesEmpresas.jsp";
 
 	}
 
 	@GetMapping("/empresas")
-	public String empresas() {
+	public String empresas(@ModelAttribute("Usuario") Usuario Usuario, BindingResult resultado,
+			HttpSession sesion, Model viewModel) {
+		// validar si la sesion del usuario o empresa esta activa
+		Long empresasId = (Long) sesion.getAttribute("empresaID");
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null && empresasId == null) {
+			return "redirect:/";
+		} else if (userId != null && userId != empresasId) {
+			Usuario usuario = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuario);
+			return "empresas.jsp";
+		}
 		return "empresas.jsp";
 	}
-	
+
 	@GetMapping("/personas")
-	public String infoPersonas() {
+	public String infoPersonas(@ModelAttribute("Usuario") Usuario Usuario, BindingResult resultado,
+			HttpSession sesion, Model viewModel) {
+		// validar si la sesion del usuario o empresa esta activa
+				Long empresasId = (Long) sesion.getAttribute("empresaID");
+				Long userId = (Long) sesion.getAttribute("userID");
+				if (userId == null && empresasId == null) {
+					return "redirect:/";
+				} else if (userId != null && userId != empresasId) {
+					Usuario usuario = userServ.encontrarUserPorId(userId);
+					viewModel.addAttribute("usuario", usuario);
+					return "InfoPersonas.jsp";
+				}
 		return "InfoPersonas.jsp";
 	}
 
 	@GetMapping("/empresa")
-	public String infoEmpresas() {
+	public String infoEmpresas(@ModelAttribute("Usuario") Usuario Usuario, BindingResult resultado,
+			HttpSession sesion, Model viewModel) {
+		// validar si la sesion del usuario o empresa esta activa
+		Long empresasId = (Long) sesion.getAttribute("empresaID");
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null && empresasId == null) {
+			return "redirect:/";
+		} else if (userId != null && userId != empresasId) {
+			Usuario usuario = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuario);
+			return "InfoEmpresas.jsp";
+		}
 		return "InfoEmpresas.jsp";
 	}
 
 	@GetMapping("/nosotros")
-	public String nosotros() {
+	public String nosotros(@ModelAttribute("Usuario") Usuario Usuario, BindingResult resultado,
+			HttpSession sesion, Model viewModel) {
+		// validar si la sesion del usuario o empresa esta activa
+		Long empresasId = (Long) sesion.getAttribute("empresaID");
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null && empresasId == null) {
+			return "redirect:/";
+		} else if (userId != null && userId != empresasId) {
+			Usuario usuario = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuario);
+			return "nosotros.jsp";
+		}
 		return "nosotros.jsp";
 	}
 
 	@GetMapping("/reciclaje")
-	public String reciclaje() {
+	public String reciclaje(@ModelAttribute("Usuario") Usuario Usuario, BindingResult resultado,
+			HttpSession sesion, Model viewModel) {
+		// validar si la sesion del usuario o empresa esta activa
+		Long empresasId = (Long) sesion.getAttribute("empresaID");
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null && empresasId == null) {
+			return "redirect:/";
+		} else if (userId != null && userId != empresasId) {
+			Usuario usuario = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuario);
+			return "reciclaje.jsp";
+		}
 		return "reciclaje.jsp";
 	}
 
 	@GetMapping("/preguntasFrecuentes")
-	public String preguntasFrecuentes() {
+	public String preguntasFrecuentes(@ModelAttribute("Usuario") Usuario Usuario, BindingResult resultado,
+			HttpSession sesion, Model viewModel) {
+		// validar si la sesion del usuario o empresa esta activa
+		Long empresasId = (Long) sesion.getAttribute("empresaID");
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null && empresasId == null) {
+			return "redirect:/";
+		} else if (userId != null && userId != empresasId) {
+			Usuario usuario = userServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuario);
+			return "preguntasFrec.jsp";
+		}
+
 		return "preguntasFrec.jsp";
 	}
 
