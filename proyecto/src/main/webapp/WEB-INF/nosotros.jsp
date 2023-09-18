@@ -356,8 +356,7 @@ body {
 		</div>
 
 
-		<div class="row ms-5">
-			<div class="col-md-6">
+		<div class="ms-5">
 				<h2>
 					<span style="color: #2faa4c"><strong>Nuestro
 							propósito</strong></span>
@@ -365,12 +364,6 @@ body {
 				<p>Contribuir al cuidado del medioambiente promoviendo la
 					circularidad de todos los productos orgánicos mediante su
 					reciclaje.</p>
-			</div>
-			<div class="col-md-6">
-				<img src="imgs/organico.jpg" alt="organico" class="img-fluid"
-					style="height: 200px">
-			</div>
-		</div>
 	</div>
 
 	<div class="ms-5">
