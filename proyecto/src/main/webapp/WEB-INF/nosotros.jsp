@@ -156,21 +156,24 @@ body {
 	color: #f1f6ff;
 }
 /* ESTILO ECORESCATE */
-
+.register {
+	position: absolute;
+	right: -35%;
+}
 /* Estilo del modal */
 .modal {
 	display: none;
 	position: fixed;
 	z-index: 1;
 	top: 0;
-	left: 1100px;
+	left: 70%;
 	width: auto;
 	max-width: 80%;
 	height: auto;
 	max-height: 80%;
 	background-color: transparent; /* Cambiamos el fondo a transparente */
 	overflow-x: hidden;
-	padding-top: 60px;
+	padding-top: 50px;
 	transition: 0.5s;
 }
 
@@ -184,28 +187,22 @@ body {
 	max-height: 100%;
 	overflow-y: auto;
 }
+/* Estilo para cerrar el modal */
+.cerrar {
+	color: #aaa;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
 
 /* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
 .perfil-imagen {
 	height: 200px;
 	border-radius: 500%;
 }
-/* Estilo para cerrar el modal */
-.cerrar {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.register {
-	position: absolute;
-	right: -420px;
-}
-
 </style>
 </head>
 <body
@@ -234,7 +231,8 @@ body {
 
 						<ul class="navbar-nav ml-auto">
 
-							<li class="nav-item active"><a class="nav-link" href="/Inicio">Inicio</a></li>
+							<li class="nav-item active"><a class="nav-link"
+								href="/Inicio">Inicio</a></li>
 
 							<li class="dropdown nav-item"><a
 								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -357,112 +355,111 @@ body {
 
 
 		<div class="ms-5">
-				<h2>
-					<span style="color: #2faa4c"><strong>Nuestro
-							propósito</strong></span>
-				</h2>
-				<p>Contribuir al cuidado del medioambiente promoviendo la
-					circularidad de todos los productos orgánicos mediante su
-					reciclaje.</p>
-	</div>
-
-	<div class="ms-5">
-
-		<h2>
-			<span style="color: #2faa4c"><strong>Misión</strong></span>
-		</h2>
-		<p>Gestionar, desarrollar e intermediar en el sistema de reciclaje
-			de residuos orgánicos de forma eficiente, transparente e innovadora
-			trabajando para los ciudadanos y empresas en colaboración con los
-			mismos.</p>
-	</div>
-
-	<div class="m-5">
-
-		<h2>
-			<span style="color: #2faa4c"><strong>Visión</strong></span>
-		</h2>
-		<p>Consolidar una economía circular eficiente, cercana e
-			involucrativa que priorice el cuidado del medioambiente gracias a una
-			sociedad activa, unas empresas responsables y ciudadanos
-			comprometidos con el reciclaje.</p>
-	</div>
-
-	<div class="socios-container">
-		<h3 class="my-4 mb-5">Socios</h3>
-		<div class="socios-row">
-			<div class="socio">
-				<img src="imgs/socio1.jpg" alt="Socio 1">
-				<p style="background-color: white; color: #626262;">Jeremy
-					Valcarcel</p>
-			</div>
-			<div class="socio">
-				<img src="imgs/socio2.jpg" alt="Socio 2">
-				<p style="background-color: white; color: #626262;">Maria
-					Alderetes</p>
-			</div>
-			<div class="socio">
-				<img src="imgs/socio3.jpg" alt="Socio 3">
-				<p style="background-color: white; color: #626262;">Thiago
-					Acosta</p>
-			</div>
-			<div class="socio">
-				<img src="imgs/socio4.jpg" alt="Socio 4">
-				<p style="background-color: white; color: #626262;">Romina
-					Carbajal</p>
-			</div>
-			<div class="socio">
-				<img src="imgs/socio5.jpg" alt="Socio 5">
-				<p style="background-color: white; color: #626262;">Alvaro
-					Cardozo</p>
-			</div>
-		</div>
-	</div>
-
-
-	<footer
-		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
-		<div style="display: flex; align-items: center;">
-			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height: 100px;">
-			<p class="text-white ml-2 mb-0">EcoRescate</p>
+			<h2>
+				<span style="color: #2faa4c"><strong>Nuestro
+						propósito</strong></span>
+			</h2>
+			<p>Contribuir al cuidado del medioambiente promoviendo la
+				circularidad de todos los productos orgánicos mediante su reciclaje.</p>
 		</div>
 
-		<div class="my-auto">
-			<ul class="nav">
-				<li class="nav-item"><a class="nav-link active text-white"
-					aria-current="page" href="#">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">Empresas</a></li>
-				<li class="nav-item"><a class="nav-link disabled text-white"
-					aria-disabled="true">Nosotros</a></li>
-			</ul>
+		<div class="ms-5">
+
+			<h2>
+				<span style="color: #2faa4c"><strong>Misión</strong></span>
+			</h2>
+			<p>Gestionar, desarrollar e intermediar en el sistema de
+				reciclaje de residuos orgánicos de forma eficiente, transparente e
+				innovadora trabajando para los ciudadanos y empresas en colaboración
+				con los mismos.</p>
 		</div>
-	</footer>
+
+		<div class="m-5">
+
+			<h2>
+				<span style="color: #2faa4c"><strong>Visión</strong></span>
+			</h2>
+			<p>Consolidar una economía circular eficiente, cercana e
+				involucrativa que priorice el cuidado del medioambiente gracias a
+				una sociedad activa, unas empresas responsables y ciudadanos
+				comprometidos con el reciclaje.</p>
+		</div>
+
+		<div class="socios-container">
+			<h3 class="my-4 mb-5">Socios</h3>
+			<div class="socios-row">
+				<div class="socio">
+					<img src="imgs/socio1.jpg" alt="Socio 1">
+					<p style="background-color: white; color: #626262;">Jeremy
+						Valcarcel</p>
+				</div>
+				<div class="socio">
+					<img src="imgs/socio2.jpg" alt="Socio 2">
+					<p style="background-color: white; color: #626262;">Maria
+						Alderetes</p>
+				</div>
+				<div class="socio">
+					<img src="imgs/socio3.jpg" alt="Socio 3">
+					<p style="background-color: white; color: #626262;">Thiago
+						Acosta</p>
+				</div>
+				<div class="socio">
+					<img src="imgs/socio4.jpg" alt="Socio 4">
+					<p style="background-color: white; color: #626262;">Romina
+						Carbajal</p>
+				</div>
+				<div class="socio">
+					<img src="imgs/socio5.jpg" alt="Socio 5">
+					<p style="background-color: white; color: #626262;">Alvaro
+						Cardozo</p>
+				</div>
+			</div>
+		</div>
 
 
-	<script>
-		// Obtener elementos del DOM
-		var mostrarPerfil = document.getElementById("mostrarPerfil");
-		var perfilModal = document.getElementById("perfilModal");
-		var cerrarPerfil = document.getElementById("cerrarPerfil");
+		<footer
+			style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+			<div style="display: flex; align-items: center;">
+				<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
+					class="d-inline-block" style="height: 100px;">
+				<p class="text-white ml-2 mb-0">EcoRescate</p>
+			</div>
 
-		// Mostrar el modal al hacer clic en la imagen
-		mostrarPerfil.addEventListener("click", function() {
-			perfilModal.style.display = "block";
-		});
+			<div class="my-auto">
+				<ul class="nav">
+					<li class="nav-item"><a class="nav-link active text-white"
+						aria-current="page" href="#">Inicio</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a></li>
+					<li class="nav-item"><a class="nav-link text-white" href="#">Empresas</a></li>
+					<li class="nav-item"><a class="nav-link disabled text-white"
+						aria-disabled="true">Nosotros</a></li>
+				</ul>
+			</div>
+		</footer>
 
-		// Cerrar el modal al hacer clic en la "X"
-		cerrarPerfil.addEventListener("click", function() {
-			perfilModal.style.display = "none";
-		});
 
-		// Cerrar el modal al hacer clic fuera de él
-		window.addEventListener("click", function(event) {
-			if (event.target === perfilModal) {
+		<script>
+			// Obtener elementos del DOM
+			var mostrarPerfil = document.getElementById("mostrarPerfil");
+			var perfilModal = document.getElementById("perfilModal");
+			var cerrarPerfil = document.getElementById("cerrarPerfil");
+
+			// Mostrar el modal al hacer clic en la imagen
+			mostrarPerfil.addEventListener("click", function() {
+				perfilModal.style.display = "block";
+			});
+
+			// Cerrar el modal al hacer clic en la "X"
+			cerrarPerfil.addEventListener("click", function() {
 				perfilModal.style.display = "none";
-			}
-		});
-	</script>
+			});
+
+			// Cerrar el modal al hacer clic fuera de él
+			window.addEventListener("click", function(event) {
+				if (event.target === perfilModal) {
+					perfilModal.style.display = "none";
+				}
+			});
+		</script>
 </body>
 </html>

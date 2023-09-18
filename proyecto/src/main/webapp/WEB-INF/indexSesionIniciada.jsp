@@ -40,9 +40,7 @@
 	height: 300px;
 	border: 2px solid #181212;
 	display: inline-block;
-	/* Hace que los elementos se muestren en línea */
 	width: 30%;
-	/* Ajusta el ancho de cada elemento según tus necesidades */
 	margin: 10px;
 }
 
@@ -52,10 +50,9 @@
 }
 
 .titulo-destacado {
-	text-align: center; /* Centra el texto horizontalmente */
-	font-weight: bold; /* Hace que el texto sea negrita */
+	text-align: center;
+	font-weight: bold;
 	margin-bottom: 20px;
-	/* Agrega espacio inferior para separar del contenido */
 }
 
 .header-blue {

@@ -341,20 +341,24 @@ li {
 	width: auto; /* Permite que el ancho se ajuste automáticamente */
 }
 
+.register {
+	position: absolute;
+	right: -35%;
+}
 /* Estilo del modal */
 .modal {
 	display: none;
 	position: fixed;
 	z-index: 1;
 	top: 0;
-	left: 1100px;
+	left: 70%;
 	width: auto;
 	max-width: 80%;
 	height: auto;
 	max-height: 80%;
 	background-color: transparent; /* Cambiamos el fondo a transparente */
 	overflow-x: hidden;
-	padding-top: 60px;
+	padding-top: 50px;
 	transition: 0.5s;
 }
 
@@ -368,7 +372,6 @@ li {
 	max-height: 100%;
 	overflow-y: auto;
 }
-
 /* Estilo para cerrar el modal */
 .cerrar {
 	color: #aaa;
@@ -379,15 +382,11 @@ li {
 	font-weight: bold;
 	cursor: pointer;
 }
+
 /* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
 .perfil-imagen {
 	height: 200px;
 	border-radius: 500%;
-}
-
-.register {
-	position: absolute;
-	right: -420px;
 }
 </style>
 
@@ -484,11 +483,12 @@ li {
 		</header>
 	</div>
 
-	<main style="display: flex; justify-content: space-around; margin-top:200px;"
-		class="container " >
+	<main
+		style="display: flex; justify-content: space-around; margin-top: 200px;"
+		class="container ">
 
 
-		<div class="container" >
+		<div class="container">
 			<div class="profile-wrapper">
 				<div class="profile">
 					<div class="profile-image">
