@@ -101,7 +101,7 @@
 
 										<p class="text">
 											Sino tiene una cuenta aún <a href="/Registro/Usuario">Registrese
-												como usuario</a>
+												como persona</a>
 										</p>
 										<p class="text">
 											Sino tiene una cuenta aún <a href="/Registro/Empresa">Registrese

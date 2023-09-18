@@ -313,7 +313,7 @@
 
 .register {
 	position: absolute;
-	right: 20px;
+	right: 5%;
 }
 /* Estilo del modal */
 .modal {
@@ -321,7 +321,7 @@
 	position: fixed;
 	z-index: 1;
 	top: 0;
-	left: 1100px;
+	left: 65%;
 	width: auto;
 	max-width: 80%;
 	height: auto;
@@ -342,16 +342,7 @@
 	max-height: 100%;
 	overflow-y: auto;
 }
-/* Estilo para cerrar el modal */
-.cerrar {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
+
 
 /* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
 .perfil-imagen {
