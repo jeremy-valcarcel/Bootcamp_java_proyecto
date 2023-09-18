@@ -328,7 +328,7 @@ body {
 			<div class="row justify-content-center">
 				<div class="col-md-8 text-center">
 					<img alt="logo"
-						src="imgs/proceso_de_reciclaje-removebg-preview.png"
+						src="imgs/proceso_de_reciclaje.png"
 						class="img-fluid" style="max-width: 100%;">
 				</div>
 			</div>

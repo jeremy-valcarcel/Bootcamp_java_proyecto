@@ -21,7 +21,6 @@
 <link rel="stylesheet" href="/css/main.css">
 <script type="text/javascript" src="/js/app.js"></script>
 <style>
-/* ESTILO HEADER/FOOTER */
 header, footer {
 	background-color: #82e462;
 	display: flex;
@@ -29,9 +28,37 @@ header, footer {
 	padding: 5px 10px;
 	align-items: center;
 }
-/* ESTILO HEADER/FOOTER */
 
-/* ESTILO DESPLIEGE HEADER */
+.header-green {
+	background: linear-gradient(135deg, #28a745, #e9ecef);
+	background-color: #184e8e;
+	padding-bottom: -50px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+header img, footer img {
+	height: 80px;
+}
+
+.swiper {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+	border: 2px solid #181212;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+}
+
 .dropdown {
 	position: relative;
 	display: inline-block;
@@ -50,6 +77,7 @@ header, footer {
 	display: block;
 }
 
+/* Estilos para los enlaces del menú */
 .dropdown-content a {
 	padding: 12px 16px;
 	text-decoration: none;
@@ -59,7 +87,14 @@ header, footer {
 .dropdown-content a:hover {
 	background-color: #ddd;
 }
-/* ESTILO DESPLIEGE HEADER */
+
+.content {
+	padding: 0px;
+	text-align:;
+	color: black;
+	margin: 0px;
+}
+
 .content h1 {
 	height: 300px;
 	display: flex;
@@ -77,48 +112,279 @@ header, footer {
 	margin-top: 20px;
 }
 
-/* ESTILOS BODY */
-body {
-	background-color: #white;
-	display: grid;
-	min-height: 100vh;
-	grid-template-row: auto 1fr auto;
+.content p {
+	margin-bottom: 20px;
 }
-/* ESTILOS BODY */
 
-/* ESTILO HEADER */
+.reciclaje {
+	height: 250px;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	background-size: cover;
+	background-position: center;
+	font-size: 50px;
+}
+
+.btn-custom {
+	background-color: #007fffa1;
+	color: white;
+	border: none;
+}
+
+.btn-custom:hover {
+	background-color: #0056b3;
+}
+
+.mission, .vision {
+	display: inline-block;
+	width: 48%;
+	vertical-align: top;
+	margin: 10px;
+}
+
+.carousel-item {
+	background-size: cover;
+	background-position: center;
+	height: 300px;
+}
+
+.rounded-image {
+	border-radius: 20px;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-color: #f7f7f7;
+}
+
 .navbar {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 	padding: 5px;
 }
 
+/*
+headeer top
+*/
 .topbar {
 	background-color: rgb(16, 71, 36);
 	padding: 0;
 }
 
-.mx-background-top-linear {
-	background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
-	background: linear-gradient(45deg, #44b15e 48%, rgb(16 71 36) 48%);
+.topbar .container .row {
+	margin: -7px;
+	padding: 0;
 }
 
-.logo-image {
-	max-height: 65px;
-	width: auto;
+.topbar .container .row .col-md-12 {
+	padding: 0;
 }
-/* ESTILO HEADER */
 
-/* ESTILO ECORESCATE */
 .topbar p {
 	margin: 0;
 	display: inline-block;
 	font-size: 13px;
 	color: #f1f6ff;
 }
-/* ESTILO ECORESCATE */
+
+.topbar p>i {
+	margin-right: 5px;
+}
+
+.topbar p:last-child {
+	text-align: right;
+}
+
+header .navbar {
+	margin-bottom: 0;
+}
+
+.topbar li.topbar {
+	display: inline;
+	padding-right: 18px;
+	line-height: 52px;
+	transition: all .3s linear;
+}
+
+.topbar li.topbar:hover {
+	color: #1bbde8;
+}
+
+.topbar ul.info i {
+	color: #131313;
+	font-style: normal;
+	margin-right: 8px;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+}
+
+.topbar ul.info li {
+	float: right;
+	padding-left: 30px;
+	color: #ffffff;
+	font-size: 13px;
+	line-height: 44px;
+}
+
+.topbar ul.info i span {
+	color: #aaa;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 50px;
+	padding-left: 18px;
+}
+
+ul.social-network {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.social-network li {
+	border: none;
+	margin: 0;
+}
+
+ul.social-network li i {
+	margin: 0;
+}
+
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+	border: 0px solid #2D2D2D;
+	padding: 5px 0 0;
+	width: 32px;
+	display: inline-block;
+	text-align: center;
+	height: 32px;
+	vertical-align: baseline;
+	color: #000;
+}
+
+ul.social-network {
+	list-style: none;
+	margin: 5px 0 10px -25px;
+	float: right;
+}
+
+.waves-effect {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	vertical-align: middle;
+	z-index: 1;
+	will-change: opacity, transform;
+	transition: .3s ease-out;
+	color: #fff;
+}
+
+a {
+	color: #0a0a0a;
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+.bg-image-full {
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+.bg-dark {
+	background-color: #222 !important;
+}
+
+.mx-background-top-linear {
+	background: -webkit-linear-gradient(45deg, #54d400 48%, #1b1e21 48%);
+	/* 	background: -webkit-linear-gradient(left, #208946 48%, #208946 48%); */
+	background: linear-gradient(45deg, #44b15e 48%, rgb(16 71 36) 48%);
+}
+
+.logo-image {
+	max-height: 65px; /* Establece una altura máxima para la imagen */
+	width: auto; /* Permite que el ancho se ajuste automáticamente */
+}
+
+/* Estilo del modal */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 1100px;
+	width: auto;
+	max-width: 80%;
+	height: auto;
+	max-height: 80%;
+	background-color: transparent; /* Cambiamos el fondo a transparente */
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.5s;
+}
+
+/* Contenido del modal */
+.modal-content {
+	background-color: #fff;
+	margin: 10% auto;
+	padding: 20px;
+	text-align: center;
+	border-radius: 5px;
+	max-height: 100%;
+	overflow-y: auto;
+}
+
+/* Estilo para cerrar el modal */
+.cerrar {
+	color: #aaa;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+/* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
+.perfil-imagen {
+	height: 200px;
+	border-radius: 500%;
+}
+
+.register {
+	position: absolute;
+	right: -420px;
+}
 </style>
 </head>
 <body
-	style="background-color: #e7f4fc; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+	style="display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
 	<div class="fixed-top">
 		<header class="topbar">
@@ -143,7 +409,8 @@ body {
 
 						<ul class="navbar-nav ml-auto">
 
-							<li class="nav-item active"><a class="nav-link" href="/">Inicio</a></li>
+							<li class="nav-item active"><a class="nav-link"
+								href="/Inicio">Inicio</a></li>
 
 							<li class="dropdown nav-item"><a
 								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -174,16 +441,40 @@ body {
 								</div></li>
 						</ul>
 					</div>
+
+					<div class="register">
+						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
+							src="img/usuario.png" class="d-inline-block"
+							style="height: 60px;">
+						</a>
+
+						<div id="perfilModal" class="modal">
+							<div class="modal-content">
+								<p class="text-black my-2">
+									<c:out value="${usuario.email}"></c:out>
+								</p>
+								<span class="cerrar" id="cerrarPerfil">&times;</span> <img
+									alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									class="perfil-imagen">
+								<h2>
+									¡Hola,
+									<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+								</h2>
+								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
+									style="width: 350px">Ir a perfil</a> <a href="/logout"
+									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
+									Sesión</a>
+
+							</div>
+						</div>
+
+					</div>
+
 				</div>
 			</nav>
 		</header>
 	</div>
-
-	<main class="container">
-		<img alt="fondo" src="img/fondo-perfil.png" style="width: 100%;">
-		<img alt="foto perfil" src="img/perfil.jpeg"
-			style="border-radius: 300px; height: 13em; position: relative; top: -10em">
-
+	<main class="container" style="margin-top: 250px;">
 		<div class="row">
 
 			<aside class="col-4" style="height: 100vh">
@@ -249,6 +540,28 @@ body {
 		</div>
 	</footer>
 
+	<script>
+		// Obtener elementos del DOM
+		var mostrarPerfil = document.getElementById("mostrarPerfil");
+		var perfilModal = document.getElementById("perfilModal");
+		var cerrarPerfil = document.getElementById("cerrarPerfil");
 
+		// Mostrar el modal al hacer clic en la imagen
+		mostrarPerfil.addEventListener("click", function() {
+			perfilModal.style.display = "block";
+		});
+
+		// Cerrar el modal al hacer clic en la "X"
+		cerrarPerfil.addEventListener("click", function() {
+			perfilModal.style.display = "none";
+		});
+
+		// Cerrar el modal al hacer clic fuera de él
+		window.addEventListener("click", function(event) {
+			if (event.target === perfilModal) {
+				perfilModal.style.display = "none";
+			}
+		});
+	</script>
 </body>
 </html>

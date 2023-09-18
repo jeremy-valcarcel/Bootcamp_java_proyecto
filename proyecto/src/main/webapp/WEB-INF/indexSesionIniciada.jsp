@@ -495,7 +495,7 @@
 							Las personas desempeñan un papel crucial en la construcción de un
 							mundo más sostenible. Como generadores de residuos orgánicos,
 							cada uno de ustedes es esencial en este proceso. <br>
-							!Enterate cómo!
+							¡Enterate cómo!
 						</p>
 
 						<a href="/personas" class="btn btn-dark">Ver más</a>
@@ -511,7 +511,7 @@
 							Las empresas tienen un papel vital en nuestra plataforma de
 							reciclaje orgánico. Tanto como recolectores de residuos
 							orgánicos, como de generadores de residuos. Ustedes son la
-							columna vertebral de esta comunidad. <br> !Enterate cómo!
+							columna vertebral de esta comunidad. <br> ¡Enterate cómo!
 						</p>
 
 						<a href="/empresa" class="btn btn-dark">Ver más</a>
