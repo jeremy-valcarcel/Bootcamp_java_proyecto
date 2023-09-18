@@ -174,20 +174,10 @@ body {
 								</div></li>
 						</ul>
 					</div>
-					<div class="register">
-						<a class="btn btn-light action-button" role="button"
-							href="/logout">Cerrar sesión</a> <a href="/perfil"
-							class="d-inline-block my-auto me-2"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
-						</a>
-
-					</div>
 				</div>
 			</nav>
 		</header>
 	</div>
-
 
 	<main class="container">
 		<img alt="fondo" src="img/fondo-perfil.png" style="width: 100%;">
@@ -196,46 +186,44 @@ body {
 
 		<div class="row">
 
-			<aside class="col-4">
+			<aside class="col-4" style="height: 100vh">
 				<h2>Nombre del negocio</h2>
 
 				<h4>Donde estamos</h4>
 				<img alt="locacion" src="img/locacion.jpg" style="width: 20em">
 			</aside>
+
 			<section class="col-8">
-				<article style="border: solid; 1px;">
+				<div class="col mt-4">
+					<section style="height: 100vh" class="p-2">
+						<h3 class="text-center text-secondary">Publicaciones:</h3>
+						<article class="border border-dark p-4 overflow-auto"
+							style="height: 80vh; width: 880px">
+							<div class="row">
 
-					<h2 style="background-color: #12a903" class="text-center">publicaciones
-						De Empresas</h2>
-
-					<p class="border">Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Optio numquam, saepe repellat perspiciatis rerum
-						magnam, sapiente vel molestiae cum beatae error corporis eum atque
-						eveniet!</p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Facere mollitia vero odio quos error dolorem numquam, nemo
-						explicabo modi similique! Eveniet porro exercitationem autem
-						ratione.</p>
-				</article>
-
-				<article style="border: solid; 1 px; margin: 4em 0em">
-
-					<h2 style="background-color: #12a903" class="text-center">publicaciones
-						De Personas</h2>
-
-					<p class="border">Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Optio numquam, saepe repellat perspiciatis rerum
-						magnam, sapiente vel molestiae cum beatae error corporis eum atque
-						eveniet!</p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Facere mollitia vero odio quos error dolorem numquam, nemo
-						explicabo modi similique! Eveniet porro exercitationem autem
-						ratione.</p>
-				</article>
+								<c:forEach items="${publicacionEmpresa }" var="publicacion">
+									<h4 class="text-secondary col-4">Title</h4>
+									<p class=" col mx-2 text-end">
+										<fmt:formatDate value="${publicacion.createdAt }"
+											pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
+										<c:out value="${fechaFormateada }"></c:out>
+									</p>
+									<p>
+										<c:out value="${publicacion.descripcion }"></c:out>
+									</p>
+									<p>
+										<c:out value="${publicacion.tamano }"></c:out>
+									</p>
+									<a href="publicaciones/${publicacion.id}">comentario</a>
+								</c:forEach>
+							</div>
+							<hr>
+						</article>
+					</section>
+				</div>
 			</section>
-
-
 		</div>
+
 	</main>
 
 

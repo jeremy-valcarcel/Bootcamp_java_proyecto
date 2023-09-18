@@ -23,6 +23,8 @@
 </head>
 <body>
 
+
+
 	<div class="container row">
 
 		<a href="/perfil"> Go back</a>
@@ -36,12 +38,30 @@
 			<c:out value="${publicacion.descripcion }"></c:out>
 		</h1>
 		
-		<div class="col-6">
+		
+		<div class="col-7">
+		<c:forEach items="${publicacion.comentarios }" var="comenta">
+		
+<!-- 		Nombre de la persona que comenta -->
+		<p>comentado por: 
+		<c:out value="${comenta.usuarioCreador.nombre }"></c:out>
+		<c:out value="${comenta.empresaCreador.nombre }"></c:out>
+		</p>
+<!-- 		----------------------- -->
+
+<!-- 			contenido del comentario -->
+		<p> <c:out value="${comenta.contenido }"></c:out>
+		<br>
+		-----------------------------------------
+		 </p>
+<!-- 			-------------------------- -->
+
+		</c:forEach>
+		</div>
+		
+		
+		<div class="col-7">
 			<h3>Message wall</h3>
-<!-- 			<div> -->
-<%-- 			<c:foreach items=> --%>
-<%-- 			</c:foreach> --%>
-<!-- 			</div> -->
 			
 			<form action="/publicaciones/${publicacion.id }/comentario" method="post"> 
 			<div class="form-group">
@@ -53,12 +73,7 @@
 
 		</div>
 		
-		<div class="col-6">
-		<c:forEach items="${publicacion.comentarios }" var="comenta">
-		<p> <c:out value="${comenta.contenido }"></c:out> </p>
-		</c:forEach>
-		</div>
-
+		
 
 	</div>
 

@@ -46,13 +46,25 @@ public class PublicacionesController {
 			return "redirect:/";
 		} else if (userId != null) {
 			Usuario usuario = usuarioServ.encontrarUserPorId(userId);
-			viewModel.addAttribute("usuario", usuario);
-			return "/publicaciones/newDesechoPubli.jsp";
+
+			// Verificar si el usuario actual es generador
+			boolean esGenerador = usuario.getRol().getId().equals(2L);
+			if (esGenerador) {
+				viewModel.addAttribute("usuario", usuario);
+				return "/publicaciones/newDesechoPubli.jsp";
+			} else {
+				return "redirect:/Inicio";
+			}
 		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
-		viewModel.addAttribute("empresa", empresa);
-
-		return "/publicaciones/newDesechoPubli.jsp";
+		// Verificar si la empresa actual es generadora
+		boolean esGenerador = empresa.getRol().getId().equals(2L);
+		if (esGenerador) {
+			viewModel.addAttribute("empresa", empresa);
+			return "/publicaciones/newDesechoPubli.jsp";
+		} else {
+			return "redirect:/Inicio";
+		}
 	}
 
 	@PostMapping("/crear/publicacion")
@@ -65,6 +77,7 @@ public class PublicacionesController {
 		if (userId == null && empresaId == null) {
 			return "redirect:/Login";
 		} else if (userId != null) {
+
 			if (resultado.hasErrors()) {
 				Usuario usuario = usuarioServ.encontrarUserPorId(userId);
 				viewModel.addAttribute("usuario", usuario);
@@ -99,20 +112,31 @@ public class PublicacionesController {
 				return "redirect:/perfil";
 			}
 			Usuario usuario = usuarioServ.encontrarUserPorId(userId);
-			viewModel.addAttribute("usuario", usuario);
-			viewModel.addAttribute("publicacion", unaPublicacion);
+			// Verificar si el usuario actual es el creador
+			boolean esAutor = unaPublicacion.getEmisor().getId().equals(usuario.getId());
+			if (esAutor) {
+				viewModel.addAttribute("usuario", usuario);
+				viewModel.addAttribute("publicacion", unaPublicacion);
+				return "publicaciones/editarPublicacion.jsp";
+			} else {
+				return "redirect:/inicio";
+			}
 
-			return "publicaciones/editarPublicacion.jsp";
 		}
 		DesechosPublicaciones unaPublicacion = desechosPServ.unaPublicacion(idPublicacion);
 		if (unaPublicacion == null) {
 			return "redirect:/perfil";
 		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresaId);
-		viewModel.addAttribute("empresa", empresa);
-		viewModel.addAttribute("publicacion", unaPublicacion);
-
-		return "publicaciones/editarPublicacion.jsp";
+		// Verificar si la empresa actual es el creador
+		boolean esAutor = unaPublicacion.getEmpresaEmisora().getId().equals(empresa.getId());
+		if (esAutor) {
+			viewModel.addAttribute("empresa", empresa);
+			viewModel.addAttribute("publicacion", unaPublicacion);
+			return "publicaciones/editarPublicacion.jsp";
+		} else {
+			return "redirect:/inicio";
+		}
 
 	}
 
@@ -143,10 +167,11 @@ public class PublicacionesController {
 		return "redirect:/perfil";
 	}
 
-//	MOSTRAR PUBLICACIONES DE EMPRESA Y USUARIO POVICIONAL
+//	MOSTRAR PUBLICACIONES DE USUARIO 
 
-	@GetMapping("/publicaciones/vistas")
-	public String vista(@ModelAttribute("publicacionEmpresa") DesechosPublicaciones publicacion,
+	@GetMapping("/publicacionesPersonas")
+
+	public String publicacionesPersonas(@ModelAttribute("publicacionEmpresa") DesechosPublicaciones publicacion,
 			BindingResult resultado, HttpSession sesion, Model viewModel) {
 		// validar si la sesion del usuario o empresa esta activa
 		Long empresasId = (Long) sesion.getAttribute("empresaID");
@@ -157,14 +182,39 @@ public class PublicacionesController {
 			Usuario usuario = usuarioServ.encontrarUserPorId(userId);
 			viewModel.addAttribute("usuario", usuario);
 			viewModel.addAttribute("publicacionEmpresa", desechosPServ.desechosUsuario());
-			return "/publicaciones/vista.jsp";
+			return "/publicaciones/publicacionesPersonas.jsp";
+		}
+
+		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
+		viewModel.addAttribute("empresa", empresa);
+		viewModel.addAttribute("publicacionEmpresa", desechosPServ.desechosUsuario());
+		return "/publicaciones/publicacionesPersonas.jsp";
+	}
+
+	
+//	MOSTRAR PUBLICACIONES DE EMPRESA 
+	
+	@GetMapping("/publicacionesEmpresas")
+
+	public String publicacionesEmpresas(@ModelAttribute("publicacionEmpresa") DesechosPublicaciones publicacion,
+			BindingResult resultado, HttpSession sesion, Model viewModel) {
+		// validar si la sesion del usuario o empresa esta activa
+		Long empresasId = (Long) sesion.getAttribute("empresaID");
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null && empresasId == null) {
+			return "redirect:/";
+		} else if (userId != null) {
+			Usuario usuario = usuarioServ.encontrarUserPorId(userId);
+			viewModel.addAttribute("usuario", usuario);
+			viewModel.addAttribute("publicacionEmpresa", desechosPServ.desechosEmpresas());
+			return "/publicaciones/publicacionesEmpresas.jsp";
 		}
 
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
 		viewModel.addAttribute("publicacionEmpresa", desechosPServ.desechosEmpresas());
+		return "/publicaciones/publicacionesEmpresas.jsp";
 
-		return "/publicaciones/vista.jsp";
 	}
 
 //	MOSTRAR UNA PUBLICACION PARA PODER AGREGAR COMENTARIO
@@ -219,7 +269,7 @@ public class PublicacionesController {
 
 			desechosPServ.comentarioUsuario(usuario, unaPublicacion, comentario);
 
-			return "redirect:/events/" + idPublicacion;
+			return "redirect:/publicaciones/" + idPublicacion;
 		}
 		if (comentario.isEmpty() || comentario.isBlank()) {
 			errores.addFlashAttribute("error", "Por favor no envias comentarios vacios");
