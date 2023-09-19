@@ -83,7 +83,7 @@ public class RegistroController {
 		
 		List<Roles> rol = RolesServices.todosRoles();
 		viewModel.addAttribute("roles", rol);
-		return "registro/registroUser.jsp";
+		return "registro/registroUser_v2.jsp";
 	}
 	
 	@PostMapping("/Registro/Usuario")
@@ -93,14 +93,14 @@ public class RegistroController {
 			List<Roles> rol = RolesServices.todosRoles();
 			viewModel.addAttribute("roles", rol);
 			
-			return "registro/registroUser.jsp";
+			return "registro/registroUser_v2.jsp";
 		}
 		Usuario usuarioRegistrado = userServ.registroUsuario(usuario, resultado);
 		viewModel.addAttribute("login", new LogReg());
 		if(usuarioRegistrado != null) {
 			return "redirect:/Login";
 		}
-		return "registro/registroUser.jsp";
+		return "registro/registroUser_v2.jsp";
 	}
 	
 	//RegistroEmpresas ------------------------------------------------------------------------------------
@@ -110,7 +110,7 @@ public class RegistroController {
 		
 		List<Roles> rol = RolesServices.todosRoles();
 		viewModel.addAttribute("roles", rol);
-		return "registro/registroEmpresa.jsp";
+		return "registro/registroEmpresa_v2.jsp";
 	}
 	
 	@PostMapping("/Registro/Empresa")
@@ -120,13 +120,13 @@ public class RegistroController {
 			List<Roles> rol = RolesServices.todosRoles();
 			viewModel.addAttribute("roles", rol);
 			
-			return "registro/registroEmpresa.jsp";
+			return "registro/registroEmpresa_v2.jsp";
 		}
 		Empresas empresaRegistrado = empresaServ.registroEmpresa(emrpresa, resultado);
 		if(empresaRegistrado != null) {
 			return "redirect:/Login"; 
 		}
-		return "registro/registroEmpresa.jsp";
+		return "registro/registroEmpresa_v2.jsp";
 	}
 	
 	//CerrarSesion ------------------------------------------------------------------------------------

@@ -40,9 +40,7 @@
 	height: 300px;
 	border: 2px solid #181212;
 	display: inline-block;
-	/* Hace que los elementos se muestren en línea */
 	width: 30%;
-	/* Ajusta el ancho de cada elemento según tus necesidades */
 	margin: 10px;
 }
 
@@ -52,10 +50,9 @@
 }
 
 .titulo-destacado {
-	text-align: center; /* Centra el texto horizontalmente */
-	font-weight: bold; /* Hace que el texto sea negrita */
+	text-align: center;
+	font-weight: bold;
 	margin-bottom: 20px;
-	/* Agrega espacio inferior para separar del contenido */
 }
 
 .header-blue {
@@ -313,7 +310,7 @@
 
 .register {
 	position: absolute;
-	right: 20px;
+	right: 5%;
 }
 /* Estilo del modal */
 .modal {
@@ -321,7 +318,7 @@
 	position: fixed;
 	z-index: 1;
 	top: 0;
-	left: 1100px;
+	left: 65%;
 	width: auto;
 	max-width: 80%;
 	height: auto;
@@ -341,16 +338,6 @@
 	border-radius: 5px;
 	max-height: 100%;
 	overflow-y: auto;
-}
-/* Estilo para cerrar el modal */
-.cerrar {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 /* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
@@ -413,16 +400,30 @@
 
 							<div id="perfilModal" class="modal">
 								<div class="modal-content">
-									<p class="text-black">
-										<c:out value="${usuario.email} "></c:out>
-									</p>
-									<span class="cerrar" id="cerrarPerfil">&times;</span> <img
-										alt="Usuario" src="img/usuario.png" style="weight: 1000px"
-										class="perfil-imagen">
-									<h2 class="text-black">
-										¡Hola,
-										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
-									</h2>
+									<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+										<p class="text-black my-2">
+											<c:out value="${usuario.email}"></c:out>
+										</p>
+										<span class="cerrar" id="cerrarPerfil">&times;</span>
+										<img alt="Usuario" src="img/usuario.png"
+											style="weight: 1000px" class="perfil-imagen">
+										<h2 class="text-black">
+											¡Hola,
+											<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+										</h2>
+									</c:if>
+									<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+										<p class="text-black my-2">
+											<c:out value="${empresa.email}"></c:out>
+										</p>
+										<span class="cerrar" id="cerrarPerfil">&times;</span>
+										<img alt="Usuario" src="img/usuario.png"
+											style="weight: 1000px" class="perfil-imagen">
+										<h2 class="text-black">
+											¡Hola,
+											<c:out value="${empresa.nombre}!"></c:out>
+										</h2>
+									</c:if>
 									<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
 										style="width: 350px">Ir a perfil</a> <a href="/logout"
 										class="btn btn-success d-block col-6 mb-2"
@@ -504,7 +505,7 @@
 							Las personas desempeñan un papel crucial en la construcción de un
 							mundo más sostenible. Como generadores de residuos orgánicos,
 							cada uno de ustedes es esencial en este proceso. <br>
-							!Enterate cómo!
+							¡Enterate cómo!
 						</p>
 
 						<a href="/personas" class="btn btn-dark">Ver más</a>
@@ -520,7 +521,7 @@
 							Las empresas tienen un papel vital en nuestra plataforma de
 							reciclaje orgánico. Tanto como recolectores de residuos
 							orgánicos, como de generadores de residuos. Ustedes son la
-							columna vertebral de esta comunidad. <br> !Enterate cómo!
+							columna vertebral de esta comunidad. <br> ¡Enterate cómo!
 						</p>
 
 						<a href="/empresa" class="btn btn-dark">Ver más</a>
@@ -573,7 +574,6 @@
 				el : ".swiper-pagination",
 			},
 		});
-		
 
 		// Obtener elementos del DOM
 		var mostrarPerfil = document.getElementById("mostrarPerfil");
@@ -596,7 +596,6 @@
 				perfilModal.style.display = "none";
 			}
 		});
-
 	</script>
 </body>
 </html>

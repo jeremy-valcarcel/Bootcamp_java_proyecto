@@ -118,19 +118,24 @@ body {
 /* ESTILO ECORESCATE */
 
 /* Estilo del modal */
+.register {
+	position: absolute;
+	right: -35%;
+}
+/* Estilo del modal */
 .modal {
 	display: none;
 	position: fixed;
 	z-index: 1;
 	top: 0;
-	left: 1100px;
+	left: 65%;
 	width: auto;
 	max-width: 80%;
 	height: auto;
 	max-height: 80%;
 	background-color: transparent; /* Cambiamos el fondo a transparente */
 	overflow-x: hidden;
-	padding-top: 60px;
+	padding-top: 45px;
 	transition: 0.5s;
 }
 
@@ -144,25 +149,21 @@ body {
 	max-height: 100%;
 	overflow-y: auto;
 }
+/* Estilo para cerrar el modal */
+.cerrar {
+	color: #aaa;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
 
 /* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
 .perfil-imagen {
 	height: 200px;
-	border-radius: 500%;
-}
-/* Estilo para cerrar el modal */
-.cerrar {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.register {
-	position: absolute;
-	right: -420px;
+	border-radius: 550%;
 }
 </style>
 </head>
@@ -232,16 +233,30 @@ body {
 
 						<div id="perfilModal" class="modal">
 							<div class="modal-content">
-								<p class="text-black my-2">
-									<c:out value="${usuario.email}"></c:out>
-								</p>
-								<span class="cerrar" id="cerrarPerfil">&times;</span> <img
-									alt="Usuario" src="img/usuario.png" style="weight: 1000px"
-									class="perfil-imagen">
-								<h2>
-									¡Hola,
-									<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
-								</h2>
+								<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+									<p class="text-black my-2">
+										<c:out value="${usuario.email}"></c:out>
+									</p>
+									<span class="cerrar" id="cerrarPerfil">&times;</span>
+									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+										class="perfil-imagen">
+									<h2>
+										¡Hola,
+										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+									</h2>
+								</c:if>
+								<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+									<p class="text-black my-2">
+										<c:out value="${empresa.email}"></c:out>
+									</p>
+									<span class="cerrar" id="cerrarPerfil">&times;</span>
+									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+										class="perfil-imagen">
+									<h2>
+										¡Hola,
+										<c:out value="${empresa.nombre}!"></c:out>
+									</h2>
+								</c:if>
 								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
 									style="width: 350px">Ir a perfil</a> <a href="/logout"
 									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
@@ -265,7 +280,7 @@ body {
 			<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 				<div class="col mt-5 ml-2">
 					<h2 class="text-secondary">
-						¡Hola, 
+						¡Hola,
 						<c:out value="${usuario.nombre}"></c:out>
 						<c:out value="${usuario.apellido}!"></c:out>
 					</h2>
@@ -286,7 +301,7 @@ body {
 			<c:if test="${empresa.id == empresa.id && usuario.id == null}">
 				<div class="col mt-5 ml-2">
 					<h2 class="text-secondary">
-						¡Hola, 
+						¡Hola,
 						<c:out value="${empresa.nombre}!"></c:out>
 					</h2>
 					<p class="text-secondary">
