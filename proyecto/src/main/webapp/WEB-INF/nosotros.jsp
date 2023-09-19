@@ -271,16 +271,30 @@ body {
 
 						<div id="perfilModal" class="modal">
 							<div class="modal-content">
-								<p class="text-black my-2">
-									<c:out value="${usuario.email}"></c:out>
-								</p>
-								<span class="cerrar" id="cerrarPerfil">&times;</span> <img
-									alt="Usuario" src="img/usuario.png" style="weight: 1000px"
-									class="perfil-imagen">
-								<h2>
-									¡Hola,
-									<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
-								</h2>
+								<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+									<p class="text-black my-2">
+										<c:out value="${usuario.email}"></c:out>
+									</p>
+									<span class="cerrar" id="cerrarPerfil">&times;</span>
+									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+										class="perfil-imagen">
+									<h2>
+										¡Hola,
+										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+									</h2>
+								</c:if>
+								<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+									<p class="text-black my-2">
+										<c:out value="${empresa.email}"></c:out>
+									</p>
+									<span class="cerrar" id="cerrarPerfil">&times;</span>
+									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+										class="perfil-imagen">
+									<h2>
+										¡Hola,
+										<c:out value="${empresa.nombre}!"></c:out>
+									</h2>
+								</c:if>
 								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
 									style="width: 350px">Ir a perfil</a> <a href="/logout"
 									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
@@ -415,51 +429,52 @@ body {
 				</div>
 			</div>
 		</div>
+	</div>
 
 
-		<footer
-			style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
-			<div style="display: flex; align-items: center;">
-				<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-					class="d-inline-block" style="height: 100px;">
-				<p class="text-white ml-2 mb-0">EcoRescate</p>
-			</div>
+	<footer
+		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+		<div style="display: flex; align-items: center;">
+			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
+				class="d-inline-block" style="height: 100px;">
+			<p class="text-white ml-2 mb-0">EcoRescate</p>
+		</div>
 
-			<div class="my-auto">
-				<ul class="nav">
-					<li class="nav-item"><a class="nav-link active text-white"
-						aria-current="page" href="#">Inicio</a></li>
-					<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a></li>
-					<li class="nav-item"><a class="nav-link text-white" href="#">Empresas</a></li>
-					<li class="nav-item"><a class="nav-link disabled text-white"
-						aria-disabled="true">Nosotros</a></li>
-				</ul>
-			</div>
-		</footer>
+		<div class="my-auto">
+			<ul class="nav">
+				<li class="nav-item"><a class="nav-link active text-white"
+					aria-current="page" href="#">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="#">Empresas</a></li>
+				<li class="nav-item"><a class="nav-link disabled text-white"
+					aria-disabled="true">Nosotros</a></li>
+			</ul>
+		</div>
+	</footer>
 
 
-		<script>
-			// Obtener elementos del DOM
-			var mostrarPerfil = document.getElementById("mostrarPerfil");
-			var perfilModal = document.getElementById("perfilModal");
-			var cerrarPerfil = document.getElementById("cerrarPerfil");
+	<script>
+		// Obtener elementos del DOM
+		var mostrarPerfil = document.getElementById("mostrarPerfil");
+		var perfilModal = document.getElementById("perfilModal");
+		var cerrarPerfil = document.getElementById("cerrarPerfil");
 
-			// Mostrar el modal al hacer clic en la imagen
-			mostrarPerfil.addEventListener("click", function() {
-				perfilModal.style.display = "block";
-			});
+		// Mostrar el modal al hacer clic en la imagen
+		mostrarPerfil.addEventListener("click", function() {
+			perfilModal.style.display = "block";
+		});
 
-			// Cerrar el modal al hacer clic en la "X"
-			cerrarPerfil.addEventListener("click", function() {
+		// Cerrar el modal al hacer clic en la "X"
+		cerrarPerfil.addEventListener("click", function() {
+			perfilModal.style.display = "none";
+		});
+
+		// Cerrar el modal al hacer clic fuera de él
+		window.addEventListener("click", function(event) {
+			if (event.target === perfilModal) {
 				perfilModal.style.display = "none";
-			});
-
-			// Cerrar el modal al hacer clic fuera de él
-			window.addEventListener("click", function(event) {
-				if (event.target === perfilModal) {
-					perfilModal.style.display = "none";
-				}
-			});
-		</script>
+			}
+		});
+	</script>
 </body>
 </html>

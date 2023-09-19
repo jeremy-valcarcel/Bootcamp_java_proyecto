@@ -268,13 +268,13 @@ li {
 }
 /* Estilo para cerrar el modal */
 .cerrar {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+	color: #aaa;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 /* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
@@ -314,7 +314,8 @@ li {
 
 						<ul class="navbar-nav ml-auto">
 
-							<li class="nav-item active"><a class="nav-link" href="/Inicio">Inicio</a></li>
+							<li class="nav-item active"><a class="nav-link"
+								href="/Inicio">Inicio</a></li>
 
 							<li class="dropdown nav-item"><a
 								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -345,32 +346,38 @@ li {
 								</div></li>
 						</ul>
 					</div>
-					<div class="register">
-						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
-						</a>
-
-						<div id="perfilModal" class="modal">
-							<div class="modal-content">
+					<div id="perfilModal" class="modal">
+						<div class="modal-content">
+							<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 								<p class="text-black my-2">
 									<c:out value="${usuario.email}"></c:out>
 								</p>
-								<span class="cerrar" id="cerrarPerfil">&times;</span> <img
-									alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+								<span class="cerrar" id="cerrarPerfil">&times;</span>
+								<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
 									class="perfil-imagen">
 								<h2>
 									¡Hola,
 									<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
 								</h2>
-								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
-									style="width: 350px">Ir a perfil</a> <a href="/logout"
-									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
-									Sesión</a>
+							</c:if>
+							<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+								<p class="text-black my-2">
+									<c:out value="${empresa.email}"></c:out>
+								</p>
+								<span class="cerrar" id="cerrarPerfil">&times;</span>
+								<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									class="perfil-imagen">
+								<h2>
+									¡Hola,
+									<c:out value="${empresa.nombre}!"></c:out>
+								</h2>
+							</c:if>
+							<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
+								style="width: 350px">Ir a perfil</a> <a href="/logout"
+								class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
+								Sesión</a>
 
-							</div>
 						</div>
-
 					</div>
 				</div>
 			</nav>
@@ -589,6 +596,6 @@ li {
 			}
 		});
 	</script>
-	
+
 </body>
 </html>

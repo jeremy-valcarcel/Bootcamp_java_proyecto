@@ -340,7 +340,6 @@
 	overflow-y: auto;
 }
 
-
 /* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
 .perfil-imagen {
 	height: 200px;
@@ -401,16 +400,30 @@
 
 							<div id="perfilModal" class="modal">
 								<div class="modal-content">
-									<p class="text-black">
-										<c:out value="${usuario.email} "></c:out>
-									</p>
-									<span class="cerrar" id="cerrarPerfil">&times;</span> <img
-										alt="Usuario" src="img/usuario.png" style="weight: 1000px"
-										class="perfil-imagen">
-									<h2 class="text-black">
-										¡Hola,
-										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
-									</h2>
+									<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+										<p class="text-black my-2">
+											<c:out value="${usuario.email}"></c:out>
+										</p>
+										<span class="cerrar" id="cerrarPerfil">&times;</span>
+										<img alt="Usuario" src="img/usuario.png"
+											style="weight: 1000px" class="perfil-imagen">
+										<h2 class="text-black">
+											¡Hola,
+											<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+										</h2>
+									</c:if>
+									<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+										<p class="text-black my-2">
+											<c:out value="${empresa.email}"></c:out>
+										</p>
+										<span class="cerrar" id="cerrarPerfil">&times;</span>
+										<img alt="Usuario" src="img/usuario.png"
+											style="weight: 1000px" class="perfil-imagen">
+										<h2 class="text-black">
+											¡Hola,
+											<c:out value="${empresa.nombre}!"></c:out>
+										</h2>
+									</c:if>
 									<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
 										style="width: 350px">Ir a perfil</a> <a href="/logout"
 										class="btn btn-success d-block col-6 mb-2"
@@ -561,7 +574,6 @@
 				el : ".swiper-pagination",
 			},
 		});
-		
 
 		// Obtener elementos del DOM
 		var mostrarPerfil = document.getElementById("mostrarPerfil");
@@ -584,7 +596,6 @@
 				perfilModal.style.display = "none";
 			}
 		});
-
 	</script>
 </body>
 </html>
