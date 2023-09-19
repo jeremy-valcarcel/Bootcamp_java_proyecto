@@ -474,6 +474,7 @@ li {
 		</header>
 	</div>
 	<main class="container" style="margin-top: 250px;">
+			<a href="crear/publicacion">CREA TU AVISO!</a>
 		<div class="row">
 
 			<aside class="col-4" style="height: 100vh">

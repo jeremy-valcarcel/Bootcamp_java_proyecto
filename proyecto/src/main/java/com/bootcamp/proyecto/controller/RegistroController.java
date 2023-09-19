@@ -110,7 +110,7 @@ public class RegistroController {
 		
 		List<Roles> rol = RolesServices.todosRoles();
 		viewModel.addAttribute("roles", rol);
-		return "registro/registroEmpresa.jsp";
+		return "registro/registroEmpresa_v2.jsp";
 	}
 	
 	@PostMapping("/Registro/Empresa")
@@ -120,13 +120,13 @@ public class RegistroController {
 			List<Roles> rol = RolesServices.todosRoles();
 			viewModel.addAttribute("roles", rol);
 			
-			return "registro/registroEmpresa.jsp";
+			return "registro/registroEmpresa_v2.jsp";
 		}
 		Empresas empresaRegistrado = empresaServ.registroEmpresa(emrpresa, resultado);
 		if(empresaRegistrado != null) {
 			return "redirect:/Login"; 
 		}
-		return "registro/registroEmpresa.jsp";
+		return "registro/registroEmpresa_v2.jsp";
 	}
 	
 	//CerrarSesion ------------------------------------------------------------------------------------
