@@ -29,7 +29,7 @@ public class Roles {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
+	@NotNull(message = "Elegir rol")
 	private String name;
 	
 	//RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
