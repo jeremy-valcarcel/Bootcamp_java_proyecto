@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>AQUI EL TITULO DE TU PLNATILLA</title>
+<title>Publicaciones personas</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet"
 	href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -343,14 +343,14 @@ li {
 	position: fixed;
 	z-index: 1;
 	top: 0;
-	left: 70%;
+	left: 65%;
 	width: auto;
 	max-width: 80%;
 	height: auto;
 	max-height: 80%;
 	background-color: transparent; /* Cambiamos el fondo a transparente */
 	overflow-x: hidden;
-	padding-top: 50px;
+	padding-top: 45px;
 	transition: 0.5s;
 }
 

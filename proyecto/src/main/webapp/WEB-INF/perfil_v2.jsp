@@ -118,19 +118,24 @@ body {
 /* ESTILO ECORESCATE */
 
 /* Estilo del modal */
+.register {
+	position: absolute;
+	right: -35%;
+}
+/* Estilo del modal */
 .modal {
 	display: none;
 	position: fixed;
 	z-index: 1;
 	top: 0;
-	left: 1100px;
+	left: 65%;
 	width: auto;
 	max-width: 80%;
 	height: auto;
 	max-height: 80%;
 	background-color: transparent; /* Cambiamos el fondo a transparente */
 	overflow-x: hidden;
-	padding-top: 60px;
+	padding-top: 45px;
 	transition: 0.5s;
 }
 
@@ -144,12 +149,6 @@ body {
 	max-height: 100%;
 	overflow-y: auto;
 }
-
-/* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
-.perfil-imagen {
-	height: 200px;
-	border-radius: 500%;
-}
 /* Estilo para cerrar el modal */
 .cerrar {
 	color: #aaa;
@@ -161,9 +160,10 @@ body {
 	cursor: pointer;
 }
 
-.register {
-	position: absolute;
-	right: -420px;
+/* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
+.perfil-imagen {
+	height: 200px;
+	border-radius: 550%;
 }
 </style>
 </head>
