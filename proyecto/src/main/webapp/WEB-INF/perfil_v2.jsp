@@ -317,7 +317,7 @@ body {
 		<div class="row mb-4">
 			<div class="col-sm-3 mt-4">
 				<aside class="col">
-					<a href="#" class="btn btn-success d-block col-6 mb-2"
+					<a href="/perfil/${usuario.id}/edit" class="btn btn-success d-block col-6 mb-2"
 						style="width: 210px">Editar Perfil</a> <a
 						href="/crear/publicacion"
 						class="btn btn-success d-block col-6 mt-2 mb-2"
