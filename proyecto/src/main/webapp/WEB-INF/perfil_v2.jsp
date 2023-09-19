@@ -336,7 +336,7 @@ body {
 						style="width: 210px">Editar Perfil</a> <a
 						href="/crear/publicacion"
 						class="btn btn-success d-block col-6 mt-2 mb-2"
-						style="width: 210px">Nuevo publicaion</a> <a href="/logout"
+						style="width: 210px">Nueva publicacion</a> <a href="/logout"
 						class="btn btn-success d-block col-6 mt-2" style="width: 210px">Cerrar
 						Sesion</a>
 				</aside>

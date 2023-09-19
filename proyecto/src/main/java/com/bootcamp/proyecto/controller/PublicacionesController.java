@@ -33,8 +33,7 @@ public class PublicacionesController {
 		this.empresaServ = eS;
 	}
 
-//	CREAR PUBLICACION
-
+    //CREAR PUBLICACION
 	@GetMapping("/crear/publicacion")
 	public String nuevaPublicacionEmpresa(@ModelAttribute("publicacion") DesechosPublicaciones publicacion,
 			BindingResult resultado, HttpSession sesion, Model viewModel) {
@@ -96,7 +95,6 @@ public class PublicacionesController {
 	}
 
 	// EDITAR PUBLICACION
-
 	@GetMapping("/Publicacion/{idPublicacion}/edicion")
 	public String editarpublicacion(@PathVariable("idPublicacion") Long idPublicacion,
 			@ModelAttribute("publicacion") DesechosPublicaciones publicacion, HttpSession sesion, Model viewModel) {
