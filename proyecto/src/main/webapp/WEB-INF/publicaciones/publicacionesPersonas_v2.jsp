@@ -505,115 +505,52 @@ li {
 						<article class="border border-dark p-4 overflow-auto"
 							style="height: 100vh;">
 							<div class="row">
+<%-- 								<c:forEach items="${publicacionEmpresa }" var="publicacion"> --%>
+<!-- 									<h4 class="text-secondary col-4">Title</h4> -->
+<!-- 									<p class=" col mx-2 text-end"> -->
+<%-- 										<fmt:formatDate value="${publicacion.createdAt }" --%>
+<%-- 											pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" /> --%>
+<%-- 										<c:out value="${fechaFormateada }"></c:out> --%>
+<!-- 									</p> -->
+<!-- 									<p> -->
+<%-- 										<c:out value="${publicacion.descripcion }"></c:out> --%>
+<!-- 									</p> -->
+<!-- 									<p> -->
+<%-- 										<c:out value="${publicacion.tamano }"></c:out> --%>
+<!-- 									</p> -->
+<%-- 									<a href="publicaciones/${publicacion.id}">comentario</a> --%>
+<%-- 								</c:forEach> --%>
+								<div class="row mt-4 mb-4">
 								<c:forEach items="${publicacionEmpresa }" var="publicacion">
-									<h4 class="text-secondary col-4">Title</h4>
-									<p class=" col mx-2 text-end">
-										<fmt:formatDate value="${publicacion.createdAt }"
+									<div class="row m-0 mb-2">
+										<div class="col" style="height: 52px">
+											<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg" style="border-radius: 300px; height: 50px; width:50px; margin-left: -10px; position: static">
+											<p class="float-end p-2"><fmt:formatDate value="${publicacion.createdAt }"
 											pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
-										<c:out value="${fechaFormateada }"></c:out>
-									</p>
-									<p>
+										<c:out value="${fechaFormateada }"></c:out></p>
+											<div style="display: inline-block; margin-left: 10px">
+												<h5 class="m-0">Usuario</h5>
+												<p class="text-secondary" style="margin-top: -3px">barrio, ciudad</p>
+											</div>
+										</div>
+									</div>
+									
+									<div class="row">
+									<h4 class="text-secondary mt-2">Title</h4>
+										<p>
 										<c:out value="${publicacion.descripcion }"></c:out>
 									</p>
 									<p>
 										<c:out value="${publicacion.tamano }"></c:out>
 									</p>
-									<a href="publicaciones/${publicacion.id}">comentario</a>
-								</c:forEach>
-								<div class="row mt-4 mb-4">
-									<div class="row m-0 mb-2">
-										<div class="col" style="height: 52px">
-											<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg" style="border-radius: 300px; height: 50px; width:50px; margin-left: -10px; position: static">
-											<p class="float-end p-2">00/00/00 00:00</p>
-											<div style="display: inline-block; margin-left: 10px">
-												<h5 class="m-0">Usuario</h5>
-												<p class="text-secondary" style="margin-top: -3px">barrio, ciudad</p>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-									<h4 class="text-secondary mt-2">Title</h4>
-										<p style="text-align: justify">Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only five centuries, but also
-										the leap into electronic typesetting, remaining essentially
-										unchanged. It was popularised in the 1960s with the release of
-										Letraset sheets containing Lorem Ipsum passages, and more
-										recently with desktop publishing software like Aldus PageMaker
-										including versions of Lorem Ipsum.</p>
 									</div>
 									<div class="row mb-4" style="height: 40px">
 										<div class="col mx-0 m-0" style="display: inline-block">
-											<input type="submit" class="p-2" value="comentar" style="width: 309px"/>
-											<input type="submit" class="p-2" value="ver comentarios" style="width: 309px"/>										
-										</div>
-									</div>
-								</div>
-								<hr>
-								<div class="row mt-4 mb-4">
-									<div class="row m-0 mb-2">
-										<div class="col" style="height: 52px">
-											<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg" style="border-radius: 300px; height: 50px; width:50px; margin-left: -10px; position: static">
-											<p class="float-end p-2">00/00/00 00:00</p>
-											<div style="display: inline-block; margin-left: 10px">
-												<h5 class="m-0">Usuario</h5>
-												<p class="text-secondary" style="margin-top: -3px">barrio, ciudad</p>
+										<a class="p-2 btn btn-primary" style="width: 309px" href="publicaciones/${publicacion.id}">comentarios</a>
+										<a class="p-2 btn btn-primary"  style="width: 309px" href="publicaciones/${publicacion.id}">comentar</a>
 											</div>
-										</div>
 									</div>
-									<div class="row">
-									<h4 class="text-secondary mt-2">Title</h4>
-										<p style="text-align: justify">Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only five centuries, but also
-										the leap into electronic typesetting, remaining essentially
-										unchanged. It was popularised in the 1960s with the release of
-										Letraset sheets containing Lorem Ipsum passages, and more
-										recently with desktop publishing software like Aldus PageMaker
-										including versions of Lorem Ipsum.</p>
-									</div>
-									<div class="row mb-4" style="height: 40px">
-										<div class="col mx-0 m-0" style="display: inline-block">
-											<input type="submit" class="p-2" value="comentar" style="width: 309px"/>
-											<input type="submit" class="p-2" value="ver comentarios" style="width: 309px"/>										
-										</div>
-									</div>
-								</div>
-								<hr>
-								<div class="row mt-4 mb-4">
-									<div class="row m-0 mb-2">
-										<div class="col" style="height: 52px">
-											<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg" style="border-radius: 300px; height: 50px; width:50px; margin-left: -10px; position: static">
-											<p class="float-end p-2">00/00/00 00:00</p>
-											<div style="display: inline-block; margin-left: 10px">
-												<h5 class="m-0">Usuario</h5>
-												<p class="text-secondary" style="margin-top: -3px">barrio, ciudad</p>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-									<h4 class="text-secondary mt-2">Title</h4>
-										<p style="text-align: justify">Lorem Ipsum is simply dummy text of the printing and
-										typesetting industry. Lorem Ipsum has been the industry's
-										standard dummy text ever since the 1500s, when an unknown
-										printer took a galley of type and scrambled it to make a type
-										specimen book. It has survived not only five centuries, but also
-										the leap into electronic typesetting, remaining essentially
-										unchanged. It was popularised in the 1960s with the release of
-										Letraset sheets containing Lorem Ipsum passages, and more
-										recently with desktop publishing software like Aldus PageMaker
-										including versions of Lorem Ipsum.</p>
-									</div>
-									<div class="row mb-4" style="height: 40px">
-										<div class="col mx-0 m-0" style="display: inline-block">
-											<input type="submit" class="p-2" value="comentar" style="width: 309px"/>
-											<input type="submit" class="p-2" value="ver comentarios" style="width: 309px"/>										
-										</div>
-									</div>
+									</c:forEach>
 								</div>
 								<hr>
 							</div>
