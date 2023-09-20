@@ -223,6 +223,7 @@ body {
 	padding: 10px;
 	border-radius: 20px; /* Aplica esquinas curvas al bloque de texto */
 }
+
 .rounded-image3 {
 	position: relative;
 	left: -270px;
@@ -232,7 +233,21 @@ body {
 	/* Opcional: limita la altura al 100% para mantener la proporción */
 	height: auto;
 	/* Opcional: ajusta automáticamente la altura para mantener la proporción */
-	border-radius: 20px; /* Aplica esquinas curvas a la imagen */
+	border-radius: 20px;
+	max-height: 100%; /* Aplica esquinas curvas a la imagen */
+}
+
+.rounded-box {
+	border-radius: 70px;
+	padding: 20px;
+	background-color: #ffffff;
+	text-align: center;
+	width: 90%; /* Ajusta el ancho del bloque según tus necesidades */
+	height: 150px; /* Ajusta la altura del bloque según tus necesidades */
+	margin: 0 auto; /* Centra horizontalmente el bloque */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 </style>
 </head>
@@ -346,19 +361,21 @@ body {
 
 		<div class="col" style="margin-bottom: 100px; margin-top: 50px;">
 			<h2 class="text-center">
-				<span style="color: #2faa4c"><strong>¿Qué es
-						ECORESCATE?</strong></span>
+				<strong>¿Qué es </strong><strong style="color: #2faa4c">ECORESCATE</strong><strong>?</strong>
 			</h2>
-			<p class="my-4 text-center">
-				Somos una <strong>empresa que gestiona el reciclaje de los
-					residuos orgánicos</strong> generados por empresas y/o personas
-				individuales, <strong>trabajando como intermediarios.</strong> <br>
-				Trabajamos junto a ciudadanos y empresas, para que el reciclaje
-				orgánico se vuelva una realidad.<br> Queremos impulsar la <strong>conciencia
-					medioambiental</strong> hasta convertir el reciclaje en un hábito diario
-				para la población, contribuyendo a hacer de este<strong>
-					mundo un lugar mejor donde vivir.</strong>
-			</p>
+			<div class="rounded-box col p-3"
+				style="margin-top: 30px; margin-bottom: 20px;">
+				<p class="my-4 text-center">
+					Somos una <strong>empresa que gestiona el reciclaje de los
+						residuos orgánicos</strong> generados por empresas y/o personas
+					individuales, <strong>trabajando como intermediarios.</strong> <br>
+					Trabajamos junto a ciudadanos y empresas, para que el reciclaje
+					orgánico se vuelva una realidad.<br> Queremos impulsar la <strong>conciencia
+						medioambiental</strong> hasta convertir el reciclaje en un hábito diario
+					para la población, contribuyendo a hacer de este<strong>
+						mundo un lugar mejor donde vivir.</strong>
+				</p>
+			</div>
 		</div>
 		<div class="bloque" style="margin-bottom: 100px;">
 			<img id="masInformacion" class="rounded-image1"
@@ -400,10 +417,13 @@ body {
 					<span style="color: #2faa4c"><strong>Nuestra visión</strong></span><br>
 
 				</h2>
-				<p class="lead mt-4">Consolidar una <strong>economía circular</strong> eficiente,
+				<p class="lead mt-4">
+					Consolidar una <strong>economía circular</strong> eficiente,
 					cercana e involucrativa que priorice el cuidado del medioambiente
-					gracias a una <strong>sociedad activa</strong>, unas empresas responsables y
-					<strong>ciudadanos comprometidos con el reciclaje</strong>.</p>
+					gracias a una <strong>sociedad activa</strong>, unas empresas
+					responsables y <strong>ciudadanos comprometidos con el
+						reciclaje</strong>.
+				</p>
 			</div>
 		</div>
 	</div>
