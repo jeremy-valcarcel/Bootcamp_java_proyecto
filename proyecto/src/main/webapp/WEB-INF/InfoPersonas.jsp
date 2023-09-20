@@ -453,6 +453,7 @@ li {
 	z-index: 1;
 	max-width: 50%;
 }
+
 </style>
 </head>
 <body
@@ -699,7 +700,7 @@ li {
 
 	<div class="hola" style="margin-bottom: 320px;">
 		<img id="masInformacion4" class="rounded-image4"
-			src="imgs/chicos-de-reciclaje.jpg" alt="Imagen con esquinas curvas">
+			src="imgs/solidaridad.jpg" alt="Imagen con esquinas curvas" style="height:200px;">
 		<div class="text-block4">
 			<h2 class="featurette-heading">
 				<span style="color: #2faa4c"><strong>A QUIÉN AYUDAR</strong></span><br>
