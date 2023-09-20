@@ -430,6 +430,9 @@ li {
 	flex-direction: column;
 	justify-content: center;
 }
+.imagenBlock {
+	border-radius: 20px;
+}
 </style>
 </head>
 <body
@@ -507,7 +510,7 @@ li {
 		</div>
 		<div class="container">
 			<div class="block">
-				<img alt="block" src="imgs/basuraOrgánica.webp"
+				<img class="imagenBlock" alt="block" src="imgs/basuraOrgánica.webp"
 					style="width: 230px; height: 160px;">
 				<p class="text-center my-3" style="font-size: 20px; color: #3d4852;">
 					<strong>Importancia</strong>
@@ -523,7 +526,7 @@ li {
 					más</a>
 			</div>
 			<div class="block">
-				<img alt="block" src="imgs/personasManos.avif"
+				<img class="imagenBlock" alt="block" src="imgs/personasManos.avif"
 					style="width: 230px; height: 160px;">
 				<p class="text-center my-3" style="font-size: 20px; color: #3d4852;">
 					<strong>Roles</strong>
@@ -537,7 +540,7 @@ li {
 					más</a>
 			</div>
 			<div class="block">
-				<img alt="block" src="imgs/basuraOrgánica2.jpg"
+				<img class="imagenBlock" alt="block" src="imgs/basuraOrgánica2.jpg"
 					style="width: 230px; height: 160px;">
 				<p class="text-center my-3" style="font-size: 20px; color: #3d4852;">
 					<strong>Cantidad de desechos</strong>
@@ -552,7 +555,7 @@ li {
 					más</a>
 			</div>
 			<div class="block">
-				<img alt="block" src="imgs/chicos-de-reciclaje.jpg"
+				<img class="imagenBlock" alt="block" src="imgs/chicos-de-reciclaje.jpg"
 					style="width: 230px; height: 160px;">
 				<p class="text-center my-3" style="font-size: 20px; color: #3d4852;">
 					<strong>A quién ayudar</strong>
