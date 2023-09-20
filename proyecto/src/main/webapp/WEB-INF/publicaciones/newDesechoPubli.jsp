@@ -25,13 +25,13 @@
 
 <c:if test="${usuario.id == usuario.id }">
 <div class="container mx-auto col-3">
-		<h1>Nueva Ninja</h1>
+		<h1>Nueva publicacion</h1>
 		<form:form action="/crear/publicacion" method="POST" modelAttribute="publicacion">
 			<div class="form-group">
 				<form:input type="hidden" path="emisor" value="${usuario.id}" />
 				<form:input type="hidden" path="empresaEmisora" value="${empresa.id}" />
 				<div class="form-group">
-						<form:label path="categoria" class="col-lg-4 control-label" >Rol:</form:label>
+						<form:label path="categoria" class="col-lg-4 control-label" >Categoria:</form:label>
 						<form:select path="categoria" type="text" class="col-lg-4 form-control" items="${titulo}" itemLabel="categoria"  >
 						</form:select>
 
