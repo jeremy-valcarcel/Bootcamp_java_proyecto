@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.bootcamp.proyecto.models.DesechosPublicaciones;
 import com.bootcamp.proyecto.models.Empresas;
 import com.bootcamp.proyecto.models.Usuario;
+import com.bootcamp.proyecto.services.CategoriaDesechoService;
 import com.bootcamp.proyecto.services.DesechosPublicacionesService;
 import com.bootcamp.proyecto.services.EmpresaService;
 import com.bootcamp.proyecto.services.UsuarioService;
@@ -26,11 +27,14 @@ public class PublicacionesController {
 	private final DesechosPublicacionesService desechosPServ;
 	private final UsuarioService usuarioServ;
 	private final EmpresaService empresaServ;
+	private final CategoriaDesechoService categoriaServ;
 
-	public PublicacionesController(DesechosPublicacionesService dR, UsuarioService uS, EmpresaService eS) {
+	public PublicacionesController(DesechosPublicacionesService dR,
+			UsuarioService uS, EmpresaService eS, CategoriaDesechoService cDS) {
 		this.desechosPServ = dR;
 		this.usuarioServ = uS;
 		this.empresaServ = eS;
+		this.categoriaServ = cDS;
 	}
 
     //CREAR PUBLICACION
@@ -50,6 +54,7 @@ public class PublicacionesController {
 			boolean esGenerador = usuario.getRol().getId().equals(2L);
 			if (esGenerador) {
 				viewModel.addAttribute("usuario", usuario);
+				viewModel.addAttribute("titulo", categoriaServ.todasLasCategorias());
 				return "/publicaciones/newDesechoPubli.jsp";
 			} else {
 				return "redirect:/Inicio";
@@ -60,6 +65,7 @@ public class PublicacionesController {
 		boolean esGenerador = empresa.getRol().getId().equals(2L);
 		if (esGenerador) {
 			viewModel.addAttribute("empresa", empresa);
+			viewModel.addAttribute("titulo", categoriaServ.todasLasCategorias());
 			return "/publicaciones/newDesechoPubli.jsp";
 		} else {
 			return "redirect:/Inicio";
@@ -80,6 +86,7 @@ public class PublicacionesController {
 			if (resultado.hasErrors()) {
 				Usuario usuario = usuarioServ.encontrarUserPorId(userId);
 				viewModel.addAttribute("usuario", usuario);
+				viewModel.addAttribute("titulo", categoriaServ.todasLasCategorias());
 				return "/publicaciones/newDesechoPubli.jsp";
 			}
 			desechosPServ.crearPublicacion(publicacion);
@@ -88,6 +95,7 @@ public class PublicacionesController {
 		if (resultado.hasErrors()) {
 			Empresas empresa = empresaServ.encontrarEmpresaPorId(empresaId);
 			viewModel.addAttribute("empresa", empresa);
+			viewModel.addAttribute("titulo", categoriaServ.todasLasCategorias());
 			return "/publicaciones/newDesechoPubli.jsp";
 		}
 		desechosPServ.crearPublicacion(publicacion);
@@ -115,6 +123,7 @@ public class PublicacionesController {
 			if (esAutor) {
 				viewModel.addAttribute("usuario", usuario);
 				viewModel.addAttribute("publicacion", unaPublicacion);
+				viewModel.addAttribute("titulo", categoriaServ.todasLasCategorias());
 				return "publicaciones/editarPublicacion.jsp";
 			} else {
 				return "redirect:/inicio";
@@ -131,6 +140,7 @@ public class PublicacionesController {
 		if (esAutor) {
 			viewModel.addAttribute("empresa", empresa);
 			viewModel.addAttribute("publicacion", unaPublicacion);
+			viewModel.addAttribute("titulo", categoriaServ.todasLasCategorias());
 			return "publicaciones/editarPublicacion.jsp";
 		} else {
 			return "redirect:/inicio";
@@ -151,6 +161,7 @@ public class PublicacionesController {
 			Usuario usuario = usuarioServ.encontrarUserPorId(userId);
 			if (resultado.hasErrors()) {
 				viewModel.addAttribute("usuario", usuario);
+				viewModel.addAttribute("titulo", categoriaServ.todasLasCategorias());
 				return "publicaciones/editarPublicacion.jsp";
 			}
 			desechosPServ.actualizarPublicacion(publicacion);
@@ -159,6 +170,7 @@ public class PublicacionesController {
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresaId);
 		if (resultado.hasErrors()) {
 			viewModel.addAttribute("empresa", empresa);
+			viewModel.addAttribute("titulo", categoriaServ.todasLasCategorias());
 			return "publicaciones/editarPublicacion.jsp";
 		}
 		desechosPServ.actualizarPublicacion(publicacion);
