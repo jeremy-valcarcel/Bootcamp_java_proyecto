@@ -497,7 +497,36 @@ body {
 			</div>
 		</div>
 	</div>
-
+	<div class="socios-container">
+		<h3 class="my-4 mb-5">Socios</h3>
+		<div class="socios-row">
+			<div class="socio">
+				<img src="imgs/socio1.jpg" alt="Socio 1">
+				<p style="background-color: white; color: #626262;">Jeremy
+					Valcarcel</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio2.jpg" alt="Socio 2">
+				<p style="background-color: white; color: #626262;">Maria
+					Alderetes</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio3.jpg" alt="Socio 3">
+				<p style="background-color: white; color: #626262;">Thiago
+					Acosta</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio4.jpg" alt="Socio 4">
+				<p style="background-color: white; color: #626262;">Romina
+					Carbajal</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio5.jpg" alt="Socio 5">
+				<p style="background-color: white; color: #626262;">Alvaro
+					Cardozo</p>
+			</div>
+		</div>
+	</div>
 
 	<footer
 		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px;">

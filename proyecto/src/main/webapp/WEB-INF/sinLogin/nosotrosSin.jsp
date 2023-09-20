@@ -233,8 +233,7 @@ body {
 	/* Opcional: limita la altura al 100% para mantener la proporción */
 	height: auto;
 	/* Opcional: ajusta automáticamente la altura para mantener la proporción */
-	border-radius: 20px;
-	max-height: 100%; /* Aplica esquinas curvas a la imagen */
+	border-radius: 20px; /* Aplica esquinas curvas a la imagen */
 }
 
 .rounded-box {
@@ -252,7 +251,7 @@ body {
 </style>
 </head>
 <body
-	style="background-color: #f5f6f7; display: grid; grid-template-row: auto 1fr auto;">
+	style="background-color: #white; display: grid; grid-template-row: auto 1fr auto;">
 
 	<div class="fixed-top">
 		<header class="topbar">
@@ -424,6 +423,37 @@ body {
 					responsables y <strong>ciudadanos comprometidos con el
 						reciclaje</strong>.
 				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="socios-container">
+		<h3 class="my-4 mb-5">Socios</h3>
+		<div class="socios-row">
+			<div class="socio">
+				<img src="imgs/socio1.jpg" alt="Socio 1">
+				<p style="background-color: white; color: #626262;">Jeremy
+					Valcarcel</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio2.jpg" alt="Socio 2">
+				<p style="background-color: white; color: #626262;">Maria
+					Alderetes</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio3.jpg" alt="Socio 3">
+				<p style="background-color: white; color: #626262;">Thiago
+					Acosta</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio4.jpg" alt="Socio 4">
+				<p style="background-color: white; color: #626262;">Romina
+					Carbajal</p>
+			</div>
+			<div class="socio">
+				<img src="imgs/socio5.jpg" alt="Socio 5">
+				<p style="background-color: white; color: #626262;">Alvaro
+					Cardozo</p>
 			</div>
 		</div>
 	</div>
