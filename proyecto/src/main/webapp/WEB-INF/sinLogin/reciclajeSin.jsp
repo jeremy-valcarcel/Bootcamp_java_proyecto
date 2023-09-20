@@ -150,8 +150,8 @@ body {
 .register .action-button {
 	position: absolute;
 	right: -400px;
-	bottom: 20px; 
-	background : transparent;
+	bottom: 20px;
+	background: transparent;
 	border: 1px solid rgb(255, 255, 255);
 	border-radius: 40px;
 	color: #fff;
@@ -159,9 +159,21 @@ body {
 	background: transparent;
 }
 /* BOTÓN DE REGISTRO */
+.rounded-box {
+	border-radius: 70px;
+	padding: 20px;
+	background-color: #ffffff;
+	text-align: center;
+	width: 70%; /* Ajusta el ancho del bloque según tus necesidades */
+	height: 150px; /* Ajusta la altura del bloque según tus necesidades */
+	margin: 0 auto; /* Centra horizontalmente el bloque */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 </style>
 </head>
-<body>
+<body style="background-color:#f5f6f7;">
 	<div class="fixed-top">
 		<header class="topbar">
 			<nav
@@ -193,9 +205,9 @@ body {
 								aria-expanded="false">Publicaciones</a>
 								<div class="dropdown-content" style="color: black;"
 									aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="/Login">Publicaciones
-										de personas</a> <a class="dropdown-item"
-										href="/Login">Publicaciones de empresas</a>
+									<a class="dropdown-item" href="/Login">Publicaciones de
+										personas</a> <a class="dropdown-item" href="/Login">Publicaciones
+										de empresas</a>
 
 								</div></li>
 
@@ -209,10 +221,10 @@ body {
 								aria-expanded="false"> Nosotros </a>
 								<div class="dropdown-content" style="color: black;"
 									aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="/nosotrosSinSesion">¿Quienes somos?</a> <a
-										class="dropdown-item" href="/reciclajeSinSesion">Reciclaje orgánico</a>
-									<a class="dropdown-item" href="/preguntasFrecuentesSinSesion">Preguntas
-										frecuentes</a>
+									<a class="dropdown-item" href="/nosotrosSinSesion">¿Quienes
+										somos?</a> <a class="dropdown-item" href="/reciclajeSinSesion">Reciclaje
+										orgánico</a> <a class="dropdown-item"
+										href="/preguntasFrecuentesSinSesion">Preguntas frecuentes</a>
 								</div></li>
 						</ul>
 						<div class="register">
@@ -226,10 +238,10 @@ body {
 		</header>
 	</div>
 
-	<div class="content" style="margin-top: 150px">
+	<div class="content" style="margin-top: 140px">
 		<h2 class="text-center mt-5" style="color: #2faa4c; font-size: 50px;">RECICLAJE
 			DE RESIDUOS ORGÁNICOS</h2>
-		<div class="col p-3">
+		<div class="rounded-box col p-3" style="margin-top: 30px; margin-bottom: 20px;">
 			<h2 class="display-2 my-3 text-center"
 				style="text-align: left; color: #5a5a5a; font-size: 30px;">¿Qué
 				son los residuos orgánicos?</h2>
@@ -270,8 +282,7 @@ body {
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-8 text-center">
-					<img alt="logo"
-						src="imgs/proceso_de_reciclaje.png"
+					<img alt="logo" src="imgs/proceso_de_reciclaje.png"
 						class="img-fluid" style="max-width: 100%;">
 				</div>
 			</div>
