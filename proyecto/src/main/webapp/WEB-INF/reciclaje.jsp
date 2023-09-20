@@ -296,10 +296,11 @@ body {
 		</header>
 	</div>
 
-	<div class="content" style="margin-top: 150px">
+	<div class="content" style="margin-top: 140px">
 		<h2 class="text-center mt-5" style="color: #2faa4c; font-size: 50px;">RECICLAJE
 			DE RESIDUOS ORGÁNICOS</h2>
-		<div class="col p-3">
+		<div class="rounded-box col p-3"
+			style="margin-top: 30px; margin-bottom: 20px;">
 			<h2 class="display-2 my-3 text-center"
 				style="text-align: left; color: #5a5a5a; font-size: 30px;">¿Qué
 				son los residuos orgánicos?</h2>

@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>AQUI EL TITULO DE TU PLNATILLA</title>
+<title>Preguntas Frecuentes</title>
 <!-- BOOTSTRAP  -->
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
@@ -336,8 +336,8 @@ li {
 .register .action-button {
 	position: absolute;
 	right: -400px;
-	bottom: 20px; 
-	background : transparent;
+	bottom: 20px;
+	background: transparent;
 	border: 1px solid rgb(255, 255, 255);
 	border-radius: 40px;
 	color: #fff;
@@ -345,6 +345,18 @@ li {
 	background: transparent;
 }
 /* BOTÓN DE REGISTRO */
+.rounded-box {
+	border-radius: 70px;
+	padding: 20px;
+	background-color: #ffffff;
+	text-align: center;
+	width: 70%; /* Ajusta el ancho del bloque según tus necesidades */
+	height: 150px; /* Ajusta la altura del bloque según tus necesidades */
+	margin: 0 auto; /* Centra horizontalmente el bloque */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 </style>
 </head>
 <body
@@ -413,11 +425,14 @@ li {
 			</nav>
 		</header>
 	</div>
-	<div class="content" style="margin-top: 100px; margin-bottom: 20px;">
-		<h2 class="text-center mt-5 mb-3"
-			style="color: #2faa4c; font-size: 50px;">PREGUNTAS FRECUENTES</h2>
+	<div class="content"
+		style="margin-top: 100px; margin-bottom: 20px; padding: 30px;">
+		<div class="rounded-box">
+			<h2 style="color: #2faa4c; font-size: 50px;">PREGUNTAS
+				FRECUENTES</h2>
+		</div>
 
-		<div class="accordion" id="faqAccordion">
+		<div class="accordion mt-4 p-4" id="faqAccordion">
 			<!-- PREGUNTA UNO -->
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="faqHeading1">
