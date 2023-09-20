@@ -264,6 +264,7 @@ li {
 	width: 230px;
 	height: 160px;
 	margin-right: 20px;
+	text-align: center;
 	/* Agregamos margen a la derecha para separar los bloques */
 }
 
@@ -435,6 +436,29 @@ li {
 .imagenBlock {
 	border-radius: 20px;
 }
+.custom-button {
+	background-color: #44b15e; /* Color de fondo del botón */
+	color: white; /* Color del texto del botón */
+	border: none; /* Sin borde */
+	border-radius: 50%; /* Forma redonda */
+	width: 50px; /* Ancho del botón */
+	height: 50px; /* Altura del botón */
+	font-size: 24px; /* Tamaño del texto */
+	text-align: center; /* Alinea el texto en el centro */
+	line-height: 50px; /* Alinea verticalmente el texto en el centro */
+	text-decoration: none; /* Quita el subrayado de enlace */
+	display: inline-block;
+	/* Hace que el botón se comporte como un bloque en línea */
+	cursor: pointer; /* Cambia el cursor al pasar el ratón */
+	transition: background-color 0.3s ease, color 0.3s ease;
+	/* Transición suave del color de fondo y el color del texto */
+}
+
+.custom-button:hover {
+	background-color: #238c40;
+	/* Cambia el color de fondo al pasar el ratón */
+	color: #fff; /* Cambia el color del texto al pasar el ratón */
+}
 </style>
 </head>
 <body
@@ -520,9 +544,7 @@ li {
 				</p>
 				<p class="text-center">¿Qué tan importante es que una empresa se
 					una a nuestro proceso de reciclaje?</p>
-				<a href="#masInformacion" class="btn"
-					style="background-color: #44b15e; color: white; margin-left: 65px">Ver
-					más</a>
+				<a href="#masInformacion" class="custom-button">+</a>
 			</div>
 			<div class="block">
 				<img class="imagenBlock" alt="block" src="imgs/empresasResiduos.jpg"
@@ -534,9 +556,7 @@ li {
 					¿Sabías los <strong style="color: rgb(88, 86, 86)">roles</strong>
 					que puede tener una <strong style="color: rgb(88, 86, 86)">empresa</strong>?
 				</p>
-				<a href="#masInformacion2" class="btn"
-					style="background-color: #44b15e; color: white; margin-left: 70px">Ver
-					más</a>
+				<a href="#masInformacion2" class="custom-button">+</a>
 			</div>
 			<div class="block">
 				<img class="imagenBlock" alt="block"
@@ -550,9 +570,7 @@ li {
 					desechos puedo <strong style="color: rgb(88, 86, 86)">pedir</strong>
 					siendo <strong style="color: rgb(88, 86, 86)">empresa-recolector</strong>?
 				</p>
-				<a href="#masInformacion3" class="btn"
-					style="background-color: #44b15e; color: white; margin-left: 75px">Ver
-					más</a>
+				<a href="#masInformacion3" class="custom-button">+</a>
 			</div>
 			<div class="block">
 				<img class="imagenBlock" alt="block"
@@ -566,9 +584,7 @@ li {
 					residuos, ¿A qué <strong style="color: rgb(88, 86, 86)">entidades</strong>
 					puedo <strong style="color: rgb(88, 86, 86)">ayudar</strong>?
 				</p>
-				<a href="#masInformacion4" class="btn"
-					style="background-color: #44b15e; color: white; margin-left: 72px">Ver
-					más</a>
+				<a href="#masInformacion4" class="custom-button">+</a>
 			</div>
 		</div>
 	</div>
