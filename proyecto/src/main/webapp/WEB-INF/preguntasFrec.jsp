@@ -444,7 +444,7 @@ li {
 						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
 							src="img/usuario.png" class="d-inline-block"
 							style="height: 60px;">
-						</a> <
+						</a>
 						<div id="perfilModal" class="modal">
 							<div class="modal-content">
 								<c:if test="${usuario.id == usuario.id && empresa.id == null }">

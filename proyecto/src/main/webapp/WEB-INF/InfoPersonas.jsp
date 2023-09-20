@@ -353,7 +353,7 @@ li {
 .text-block1 {
 	width: 90%;
 	position: absolute;
-	bottom: 300px;
+	bottom: 350px;
 	left: -250px;
 	/* Cambiamos "right" a "left" para posicionarlo en la esquina inferior izquierda */
 	background-color: white;
@@ -453,7 +453,6 @@ li {
 	z-index: 1;
 	max-width: 50%;
 }
-
 </style>
 </head>
 <body
@@ -513,38 +512,46 @@ li {
 								</div></li>
 						</ul>
 					</div>
-					<div id="perfilModal" class="modal">
-						<div class="modal-content">
-							<c:if test="${usuario.id == usuario.id && empresa.id == null }">
-								<p class="text-black my-2">
-									<c:out value="${usuario.email}"></c:out>
-								</p>
-								<span class="cerrar" id="cerrarPerfil">&times;</span>
-								<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
-									class="perfil-imagen">
-								<h2>
-									¡Hola,
-									<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
-								</h2>
-							</c:if>
-							<c:if test="${empresa.id == empresa.id && usuario.id == null}">
-								<p class="text-black my-2">
-									<c:out value="${empresa.email}"></c:out>
-								</p>
-								<span class="cerrar" id="cerrarPerfil">&times;</span>
-								<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
-									class="perfil-imagen">
-								<h2>
-									¡Hola,
-									<c:out value="${empresa.nombre}!"></c:out>
-								</h2>
-							</c:if>
-							<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
-								style="width: 350px">Ir a perfil</a> <a href="/logout"
-								class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
-								Sesión</a>
+					<
+					<div class="register">
+						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
+							src="img/usuario.png" class="d-inline-block"
+							style="height: 60px;">
+						</a>
+						<div id="perfilModal" class="modal">
+							<div class="modal-content">
+								<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+									<p class="text-black my-2">
+										<c:out value="${usuario.email}"></c:out>
+									</p>
+									<span class="cerrar" id="cerrarPerfil">&times;</span>
+									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+										class="perfil-imagen">
+									<h2>
+										¡Hola,
+										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+									</h2>
+								</c:if>
+								<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+									<p class="text-black my-2">
+										<c:out value="${empresa.email}"></c:out>
+									</p>
+									<span class="cerrar" id="cerrarPerfil">&times;</span>
+									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+										class="perfil-imagen">
+									<h2>
+										¡Hola,
+										<c:out value="${empresa.nombre}!"></c:out>
+									</h2>
+								</c:if>
+								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
+									style="width: 350px">Ir a perfil</a> <a href="/logout"
+									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
+									Sesión</a>
 
+							</div>
 						</div>
+
 					</div>
 				</div>
 			</nav>
@@ -698,9 +705,10 @@ li {
 		</div>
 	</div>
 
-	<div class="hola" style="margin-bottom: 320px;">
+	<div class="hola" style="margin-top: -130px; margin-bottom: 320px;">
 		<img id="masInformacion4" class="rounded-image4"
-			src="imgs/solidaridad.jpg" alt="Imagen con esquinas curvas" style="height:200px;">
+			src="imgs/solidaridad.jpg" alt="Imagen con esquinas curvas"
+			style="height: 500px;">
 		<div class="text-block4">
 			<h2 class="featurette-heading">
 				<span style="color: #2faa4c"><strong>A QUIÉN AYUDAR</strong></span><br>

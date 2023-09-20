@@ -253,10 +253,175 @@ li {
 	background: transparent;
 }
 /* BOTÓN DE REGISTRO */
+.container {
+	display: flex; /* Usamos flexbox para colocar los bloques en una fila */
+	justify-content: space-between;
+	margin-top: 50px;
+	/* Distribuye los bloques uniformemente en la fila */
+}
+
+.block {
+	width: 230px;
+	height: 160px;
+	margin-right: 20px;
+	/* Agregamos margen a la derecha para separar los bloques */
+}
+
+.hola {
+	position: relative;
+	max-width: 100%; /* Cambiamos el ancho máximo al 100% */
+	margin: 0 auto;
+	text-align: center;
+}
+
+.rounded-image {
+	position: relative;
+	right: 150px;
+	width: 110%; /* La imagen ocupa todo el ancho del contenedor */
+	max-height: 100%;
+	/* Opcional: limita la altura al 100% para mantener la proporción */
+	height: auto;
+	/* Opcional: ajusta automáticamente la altura para mantener la proporción */
+	border-radius: 20px; /* Aplica esquinas curvas a la imagen */
+}
+
+.text-block {
+	width: 70%; /* Ajusta el ancho del bloque de texto al 80% */
+	position: absolute;
+	bottom: -100px;
+	right: 20px;
+	left: 450px;
+	/* Eliminamos la propiedad left para centrar el bloque en la esquina derecha */
+	background-color: white;
+	padding: 10px;
+	border-radius: 20px; /* Aplica esquinas curvas al bloque de texto */
+}
+
+.rounded-image1 {
+	position: relative;
+	left: 200px;
+	width: 130%;
+	max-height: 100%;
+	height: auto;
+	border-radius: 20px;
+}
+
+.rounded-image4 {
+	position: relative;
+	right: 100px;
+	width: 140%;
+	max-height: 100%;
+	height: auto;
+	border-radius: 20px;
+}
+
+.text-block1 {
+	width: 90%;
+	position: absolute;
+	bottom: 350px;
+	left: -250px;
+	/* Cambiamos "right" a "left" para posicionarlo en la esquina inferior izquierda */
+	background-color: white;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+.text-block4 {
+	width: 90%;
+	position: absolute;
+	bottom: -220px;
+	left: 60px;
+	/* Cambiamos "right" a "left" para posicionarlo en la esquina inferior izquierda */
+	background-color: white;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+.con {
+	position: relative;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.1erBlock {
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent; /* Ancho izquierdo */
+	border-right: 100px solid transparent; /* Ancho derecho */
+	margin: 0 auto;
+}
+
+.2doBlock {
+	position: absolute;
+	right: 2000px;
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent; /* Ancho izquierdo */
+	border-right: 100px solid transparent; /* Ancho derecho */
+	margin: 0 auto;
+	width: 0;
+	width: 0;
+}
+
+.3erBlock {
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent; /* Ancho izquierdo */
+	border-right: 100px solid transparent; /* Ancho derecho */
+	margin: 0 auto;
+}
+
+.bloc {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	position: relative;
+	z-index: 2;
+}
+
+.bloc1 {
+	width: 70%;
+	background-color: white;
+	padding: 20px;
+	border-radius: 20px;
+	position: relative;
+	bottom: 150px;
+	right: -550px;
+	z-index: 3;
+}
+
+.bloc2 {
+	width: 70%;
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	position: relative;
+	bottom: 400px;
+	right: 250px;
+	z-index: 2;
+}
+
+.image1 {
+	position: relative;
+	top: -100px;
+	right: 400px;
+	z-index: 1;
+	max-width: 50%;
+}
+
+.image2 {
+	position: relative;
+	top: -965px;
+	left: 400px;
+	z-index: 1;
+	max-width: 50%;
+}
 </style>
 </head>
 <body
-	style="background-color: #ffffff; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+	style="background-color: #f5f6f7; display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 	<div class="fixed-top">
 		<header class="topbar">
 			<nav
@@ -322,77 +487,74 @@ li {
 	</div>
 
 
-	<div class="content" style="margin-top: 150px;">
-		<h2></h2>
-		<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-			<!-- Indicadores -->
-			<ol class="carousel-indicators">
-				<li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-				<li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-				<!-- Agrega más indicadores según la cantidad de imágenes -->
-			</ol>
-
-			<!-- Imágenes del carrusel -->
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<div class="row">
-						<div class="col-md-6 text-center">
-							<img src="imgs/restauranteResiduo2.jpg" alt="Imagen 1"
-								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Importancia del residuo</h3>
-							<p>¿Qué tan importante es que una empresa se una a nuestro
-								proceso de reciclaje?</p>
-							<a href="#masInformacion" class="btn"
-								style="background-color: #44b15e; color: white;">Ver más</a>
-						</div>
-						<div class="col-md-6 text-center">
-							<img src="imgs/empresasResiduos.jpg" alt="Imagen 2"
-								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Roles</h3>
-							<p>¿Sabías los roles que puede tener una empresa?</p>
-							<a href="#masInformacion2" class="btn"
-								style="background-color: #44b15e; color: white;">Ver más</a>
-						</div>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<div class="row">
-						<div class="col-md-6 text-center">
-							<img src="imgs/restauranteResiduo.jpg" alt="Imagen 3"
-								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">Cantidad de desechos</h3>
-							<p>¿Hasta cuántos desechos puedo pedir siendo
-								empresa-recolector?</p>
-							<a href="#masInformacion3" class="btn"
-								style="background-color: #44b15e; color: white;">Ver más</a>
-						</div>
-						<div class="col-md-6 text-center">
-							<img src="imgs/empresasResiduos2.jpg" alt="Imagen 4"
-								style="height: 400px" class="rounded-image">
-							<h3 class="m-2">A quién ayudar</h3>
-							<p>Siendo generador de residuos, ¿A qué entidades puedo
-								ayudar?</p>
-							<a href="#masInformacion4" class="btn"
-								style="background-color: #44b15e; color: white;">Ver más</a>
-						</div>
-					</div>
-				</div>
+	<div class="content" style="margin-top: 150px; margin-bottom: 250px;">
+		<h1 class="text-center my-5" style="color: #2faa4c">EMPRESAS</h1>
+		<h2 class="text-center" style="color: #3d4852;">¿Qué tienes que
+			saber sobre las empresas?</h2>
+		<div class="container">
+			<div class="block">
+				<img alt="block" src="imgs/restauranteResiduo2.jpg"
+					style="width: 230px; height: 160px;">
+				<p class="text-center my-3" style="font-size: 20px; color: #3d4852;">
+					<strong>Importancia</strong>
+				</p>
+				<p class="text-center">¿Qué tan importante es que una empresa se
+					una a nuestro proceso de reciclaje?</p>
+				<a href="#masInformacion" class="btn"
+					style="background-color: #44b15e; color: white; margin-left: 65px">Ver
+					más</a>
+			</div>
+			<div class="block">
+				<img alt="block" src="imgs/empresasResiduos.jpg"
+					style="width: 230px; height: 160px;">
+				<p class="text-center my-3" style="font-size: 20px; color: #3d4852;">
+					<strong>Roles</strong>
+				</p>
+				<p class="text-center">
+					¿Sabías los <strong style="color: rgb(88, 86, 86)">roles</strong>
+					que puede tener una <strong style="color: rgb(88, 86, 86)">empresa</strong>?
+				</p>
+				<a href="#masInformacion2" class="btn"
+					style="background-color: #44b15e; color: white; margin-left: 70px">Ver
+					más</a>
+			</div>
+			<div class="block">
+				<img alt="block" src="imgs/restauranteResiduo.jpg"
+					style="width: 230px; height: 160px;">
+				<p class="text-center my-3" style="font-size: 20px; color: #3d4852;">
+					<strong>Cantidad de desechos</strong>
+				</p>
+				<p class="text-center">
+					¿Hasta <strong style="color: rgb(88, 86, 86)">cuántos</strong>
+					desechos puedo <strong style="color: rgb(88, 86, 86)">pedir</strong>
+					siendo <strong style="color: rgb(88, 86, 86)">empresa-recolector</strong>?
+				</p>
+				<a href="#masInformacion3" class="btn"
+					style="background-color: #44b15e; color: white; margin-left: 75px">Ver
+					más</a>
+			</div>
+			<div class="block">
+				<img alt="block" src="imgs/empresasResiduos2.jpg"
+					style="width: 230px; height: 160px;">
+				<p class="text-center my-3" style="font-size: 20px; color: #3d4852;">
+					<strong>A quién ayudar</strong>
+				</p>
+				<p class="text-center">
+					Siendo <strong style="color: rgb(88, 86, 86)">generador</strong> de
+					residuos, ¿A qué <strong style="color: rgb(88, 86, 86)">entidades</strong>
+					puedo <strong style="color: rgb(88, 86, 86)">ayudar</strong>?
+				</p>
+				<a href="#masInformacion4" class="btn"
+					style="background-color: #44b15e; color: white; margin-left: 72px">Ver
+					más</a>
 			</div>
 		</div>
-
-		<!-- Controles de navegación -->
-		<a class="carousel-control-prev" href="#myCarousel" role="button"
-			data-bs-slide="prev"> <span class="carousel-control-prev-icon"
-			aria-hidden="true"></span> <span class="visually-hidden">Anterior</span>
-		</a> <a class="carousel-control-next" href="#myCarousel" role="button"
-			data-bs-slide="next"> <span class="carousel-control-next-icon"
-			aria-hidden="true"></span> <span class="visually-hidden">Siguiente</span>
-		</a>
 	</div>
 
-	<!-- Sección de información "ver más" -->
-	<div id="masInformacion" class=" row m-0 featurette mt-5">
-		<div class="col-8 border border-light border-2 rounded">
+	<div class="hola " style="margin-bottom: 190px;">
+		<img id="masInformacion" class="rounded-image"
+			src="imgs/empresasResiduos2.jpg" alt="Imagen con esquinas curvas">
+		<div class="text-block">
 			<h2 class="featurette-heading mt-5">
 				<span style="color: #2faa4c"><strong>IMPORTANCIA</strong></span><br>
 				<span class="text-muted" style="font-size: 25px;">Importancia
@@ -405,47 +567,49 @@ li {
 				el impacto que podemos lograr si todos nos unimos a esta causa.
 			</p>
 		</div>
-		<div class="col">
-			<img alt="imagen" src="imgs/importancia-residuo.webp"
-				style="height: 350px;">
+	</div>
+
+	<div id="masInformacion2" class="con">
+		<div class="1erBlock">
+			<div class="bloc">
+				<h2 class="featurette-heading text-center">
+					<span style="color: #2faa4c"><strong>ROLES</strong></span><br>
+					<span class="text-muted" style="font-size: 25px;">¿Sabias
+						que puedes formar parte como RECOLECTOR o GENEREADOR de residuos?</span>
+				</h2>
+			</div>
+		</div>
+		<img class="image1" src="imgs/deco.png" alt="Imagen 1">
+
+		<div class="2doBlock">
+			<div class="bloc1">
+				<h2 style="color: #2faa4c">RECOLECTOR:</h2>
+				<p>Se dedican a reunir una variedad de residuos orgánicos con el
+					propósito de transformarlos en nuevos productos útiles. Su labor no
+					solo reduce la cantidad de residuos que terminan en vertederos,
+					sino que también contribuye a la creación de recursos valiosos.
+					Desempeñan un rol invaluable en la promoción de la sostenibilidad y
+					la gestión responsable de residuos orgánicos.</p>
+			</div>
+		</div>
+
+		<div class="3erBlock">
+			<div class="bloc2">
+				<h2 style="color: #2faa4c">GENERADOR:</h2>
+				<p>Son un componente esencial y un punto de partida clave. Son
+					responsables de producir los residuos orgánicos que posteriormente
+					se reciclan y transforman en nuevos recursos valiosos. Su papel en
+					el ciclo de vida de los desechos es fundamental para fomentar
+					prácticas de gestión sostenible y reducir el impacto ambiental.</p>
+			</div>
+			<img class="image2" src="imgs/deco.png" alt="Imagen 3">
 		</div>
 	</div>
 
-	<hr class="featurette-divider">
-	<div id="masInformacion2" class="row m-0 featurette">
-		<div class="col border border-light border-2 rounded">
-			<h2 class="featurette-heading text-center">
-				<span style="color: #2faa4c"><strong>ROLES</strong></span><br>
-				<span class="text-muted" style="font-size: 25px;">¿Sabias que
-					puedes formar parte como RECOLECTOR o GENEREADOR de residuos?</span>
-			</h2>
-			<table style="border-collapse: collapse;">
-				<tr>
-					<td style="border: 1px solid #2faa4c; padding: 20px;"><span
-						style="color: #2faa4c">RECOLECTOR:</span> Se dedican a reunir una
-						variedad de residuos orgánicos con el propósito de transformarlos
-						en nuevos productos útiles. Su labor no solo reduce la cantidad de
-						residuos que terminan en vertederos, sino que también contribuye a
-						la creación de recursos valiosos. Desempeñan un rol invaluable en
-						la promoción de la sostenibilidad y la gestión responsable de
-						residuos orgánicos.</td>
-					<td style="border: 1px solid #2faa4c; padding: 20px;"><span
-						style="color: #2faa4c">GENERADOR:</span> Son un componente
-						esencial y un punto de partida clave. Son responsables de producir
-						los residuos orgánicos que posteriormente se reciclan y
-						transforman en nuevos recursos valiosos. Su papel en el ciclo de
-						vida de los desechos es fundamental para fomentar prácticas de
-						gestión sostenible y reducir el impacto ambiental.</td>
-				</tr>
-			</table>
-		</div>
-
-	</div>
-
-	<hr class="featurette-divider">
-	<div id="masInformacion3" class="row m-0 featurette "
-		style="margin-botton: 10%">
-		<div class="col-8 border border-light border-2 rounded">
+	<div class="hola" style="margin-top: -800px;">
+		<img id="masInformacion3" class="rounded-image1"
+			src="imgs/bolsaBasura.png" alt="Imagen con esquinas curvas">
+		<div class="text-block1">
 			<h2 class="featurette-heading mt-5">
 
 				<span style="color: #2faa4c"><strong>CANTIDAD MÁXIMA
@@ -458,14 +622,12 @@ li {
 					7kg</strong> de desechos y no tiene un máximo específico.
 			</p>
 		</div>
-		<div class="col ">
-			<img alt="cc" src="imgs/bolsaBasura.png" style="height: 400px;">
-		</div>
 	</div>
 
-	<hr class="featurette-divider">
-	<div id="masInformacion4" class="row m-0 my-3 featurette">
-		<div class="col order-md-2 border border-light border-2 rounded">
+	<div class="hola" style="margin-top: -250px; margin-bottom: 320px;">
+		<img id="masInformacion4" class="rounded-image4"
+			src="imgs/chicos-de-reciclaje.jpg" alt="Imagen con esquinas curvas">
+		<div class="text-block4">
 			<h2 class="featurette-heading">
 				<span style="color: #2faa4c"><strong>A QUIEN AYUDAR</strong></span><br>
 				<span class="text-muted" style="font-size: 25px;">¿A que
@@ -477,9 +639,6 @@ li {
 				reciben los desechos mediante los puntos de ubicación de las
 				empresas generadoras.
 			</p>
-		</div>
-		<div class="col order-md-1">
-			<img alt="c" src="imgs/chicos-de-reciclaje.jpg">
 		</div>
 	</div>
 

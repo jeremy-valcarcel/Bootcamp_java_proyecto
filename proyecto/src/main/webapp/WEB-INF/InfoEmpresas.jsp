@@ -354,7 +354,7 @@ li {
 .text-block1 {
 	width: 90%;
 	position: absolute;
-	bottom: 300px;
+	bottom: 350px;
 	left: -250px;
 	/* Cambiamos "right" a "left" para posicionarlo en la esquina inferior izquierda */
 	background-color: white;
@@ -513,38 +513,45 @@ li {
 								</div></li>
 						</ul>
 					</div>
-					<div id="perfilModal" class="modal">
-						<div class="modal-content">
-							<c:if test="${usuario.id == usuario.id && empresa.id == null }">
-								<p class="text-black my-2">
-									<c:out value="${usuario.email}"></c:out>
-								</p>
-								<span class="cerrar" id="cerrarPerfil">&times;</span>
-								<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
-									class="perfil-imagen">
-								<h2>
-									¡Hola,
-									<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
-								</h2>
-							</c:if>
-							<c:if test="${empresa.id == empresa.id && usuario.id == null}">
-								<p class="text-black my-2">
-									<c:out value="${empresa.email}"></c:out>
-								</p>
-								<span class="cerrar" id="cerrarPerfil">&times;</span>
-								<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
-									class="perfil-imagen">
-								<h2>
-									¡Hola,
-									<c:out value="${empresa.nombre}!"></c:out>
-								</h2>
-							</c:if>
-							<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
-								style="width: 350px">Ir a perfil</a> <a href="/logout"
-								class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
-								Sesión</a>
+					<div class="register">
+						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
+							src="img/usuario.png" class="d-inline-block"
+							style="height: 60px;">
+						</a>
+						<div id="perfilModal" class="modal">
+							<div class="modal-content">
+								<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+									<p class="text-black my-2">
+										<c:out value="${usuario.email}"></c:out>
+									</p>
+									<span class="cerrar" id="cerrarPerfil">&times;</span>
+									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+										class="perfil-imagen">
+									<h2>
+										¡Hola,
+										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+									</h2>
+								</c:if>
+								<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+									<p class="text-black my-2">
+										<c:out value="${empresa.email}"></c:out>
+									</p>
+									<span class="cerrar" id="cerrarPerfil">&times;</span>
+									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+										class="perfil-imagen">
+									<h2>
+										¡Hola,
+										<c:out value="${empresa.nombre}!"></c:out>
+									</h2>
+								</c:if>
+								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
+									style="width: 350px">Ir a perfil</a> <a href="/logout"
+									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
+									Sesión</a>
 
+							</div>
 						</div>
+
 					</div>
 				</div>
 			</nav>
@@ -552,7 +559,7 @@ li {
 	</div>
 
 
-	<div class="content" style="margin-top: 150px; margin-bottom:250px;">
+	<div class="content" style="margin-top: 150px; margin-bottom: 250px;">
 		<h1 class="text-center my-5" style="color: #2faa4c">EMPRESAS</h1>
 		<h2 class="text-center" style="color: #3d4852;">¿Qué tienes que
 			saber sobre las empresas?</h2>
@@ -618,7 +625,7 @@ li {
 
 	<div class="hola " style="margin-bottom: 190px;">
 		<img id="masInformacion" class="rounded-image"
-			src="imgs/importancia-residuo.webp" alt="Imagen con esquinas curvas">
+			src="imgs/empresasResiduos2.jpg" alt="Imagen con esquinas curvas">
 		<div class="text-block">
 			<h2 class="featurette-heading mt-5">
 				<span style="color: #2faa4c"><strong>IMPORTANCIA</strong></span><br>
@@ -689,7 +696,7 @@ li {
 		</div>
 	</div>
 
-	<div class="hola" style="margin-bottom: 320px;">
+	<div class="hola" style="margin-top: -100px; margin-bottom: 320px;">
 		<img id="masInformacion4" class="rounded-image4"
 			src="imgs/chicos-de-reciclaje.jpg" alt="Imagen con esquinas curvas">
 		<div class="text-block4">
