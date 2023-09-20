@@ -105,11 +105,12 @@ public class MainController {
 		} else if (userId != null && userId != empresasId) {
 			Usuario usuario = userServ.encontrarUserPorId(userId);
 			viewModel.addAttribute("usuario", usuario);
+			viewModel.addAttribute("publicaciones", desechosPServ.todasPublicaciones());
 			return "perfil_v2.jsp";
 		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
-
+		viewModel.addAttribute("publicaciones", desechosPServ.todasPublicaciones());
 		return "perfil_v2.jsp";
 	}
 

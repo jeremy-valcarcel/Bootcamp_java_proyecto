@@ -376,7 +376,7 @@
 								</div></li>
 
 							<li class="nav-item" role="presentation"><a class="nav-link"
-								href="/Login">Empresas</a></li>
+								href="/empresas">Empresas</a></li>
 							<li class="dropdown nav-item"><a class="nav-link" href="#">Nosotros</a>
 								<div class="dropdown-content">
 									<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje

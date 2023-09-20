@@ -543,8 +543,8 @@ li {
 										<p>
 										<c:out value="${publicacion.descripcion }"></c:out>
 									</p>
-									<p>
-										<c:out value="${publicacion.tamano }"></c:out>
+									<p>Cantidad:
+										<c:out value="${publicacion.tamano }"></c:out> kg
 									</p>
 									</div>
 									<div class="row mb-4" style="height: 40px">

@@ -24,14 +24,14 @@ public class CategoriaDesecho {
 	  
 INSERT INTO categoria_desechos (categoria) VALUES ('Aceites de cocina usados');
 INSERT INTO categoria_desechos (categoria) VALUES ('Aserrín');
-INSERT INTO categoria_desechos (descripcion) VALUES ('Bolsas de té usadas');
-INSERT INTO categoria_desechos (descripcion) VALUES ('Cáscaras de frutas y verduras');
-INSERT INTO categoria_desechos (descripcion) VALUES ('Cáscaras de huevo');
-INSERT INTO categoria_desechos (descripcion) VALUES ('Café molido usado');
-INSERT INTO categoria_desechos (descripcion) VALUES ('Estiércol animal');
-INSERT INTO categoria_desechos (descripcion) VALUES ('Restos de poda');
-INSERT INTO categoria_desechos (descripcion) VALUES ('Suero de leche');
-INSERT INTO categoria_desechos (descripcion) VALUES ('Virutas de madera');
+INSERT INTO categoria_desechos (categoria) VALUES ('Bolsas de té usadas');
+INSERT INTO categoria_desechos (categoria) VALUES ('Cáscaras de frutas y verduras');
+INSERT INTO categoria_desechos (categoria) VALUES ('Cáscaras de huevo');
+INSERT INTO categoria_desechos (categoria) VALUES ('Café molido usado');
+INSERT INTO categoria_desechos (categoria) VALUES ('Estiércol animal');
+INSERT INTO categoria_desechos (categoria) VALUES ('Restos de poda');
+INSERT INTO categoria_desechos (categoria) VALUES ('Suero de leche');
+INSERT INTO categoria_desechos (categoria) VALUES ('Virutas de madera');
 
 	 */
 	
