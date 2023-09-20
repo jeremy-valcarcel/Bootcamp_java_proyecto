@@ -243,8 +243,8 @@ li {
 .register .action-button {
 	position: absolute;
 	right: -400px;
-	bottom: 20px; 
-	background : transparent;
+	bottom: 20px;
+	background: transparent;
 	border: 1px solid rgb(255, 255, 255);
 	border-radius: 40px;
 	color: #fff;
@@ -418,6 +418,18 @@ li {
 	max-width: 50%;
 }
 
+.rounded-box {
+	border-radius: 70px;
+	padding: 20px;
+	background-color: #ffffff;
+	text-align: center;
+	width: 70%; /* Ajusta el ancho del bloque según tus necesidades */
+	height: 150px; /* Ajusta la altura del bloque según tus necesidades */
+	margin: 0 auto; /* Centra horizontalmente el bloque */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 </style>
 </head>
 <body
@@ -487,10 +499,12 @@ li {
 	</div>
 
 
-		<div class="content" style="margin-top: 150px; margin-bottom: 250px;">
-		<h1 class="text-center my-5" style="color: #2faa4c">PERSONAS</h1>
-		<h2 class="text-center" style="color: #3d4852;">¿Qué tienes que
-			saber sobre las personas?</h2>
+	<div class="content" style="margin-top: 150px; margin-bottom: 250px;">
+		<div class="rounded-box">
+			<h2>
+				¿Qué tienes que saber sobre las <strong style="color: #2faa4c">personas</strong>?
+			</h2>
+		</div>
 		<div class="container">
 			<div class="block">
 				<img alt="block" src="imgs/basuraOrgánica.webp"
@@ -633,9 +647,10 @@ li {
 		</div>
 	</div>
 
-	<div class="hola" style=" margin-top: -130px; margin-bottom: 320px;">
+	<div class="hola" style="margin-top: -130px; margin-bottom: 320px;">
 		<img id="masInformacion4" class="rounded-image4"
-			src="imgs/solidaridad.jpg" alt="Imagen con esquinas curvas" style="height:500px;">
+			src="imgs/solidaridad.jpg" alt="Imagen con esquinas curvas"
+			style="height: 500px;">
 		<div class="text-block4">
 			<h2 class="featurette-heading">
 				<span style="color: #2faa4c"><strong>A QUIÉN AYUDAR</strong></span><br>

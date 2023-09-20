@@ -418,6 +418,19 @@ li {
 	z-index: 1;
 	max-width: 50%;
 }
+
+.rounded-box {
+	border-radius: 70px;
+	padding: 20px;
+	background-color: #ffffff;
+	text-align: center;
+	width: 70%; /* Ajusta el ancho del bloque según tus necesidades */
+	height: 150px; /* Ajusta la altura del bloque según tus necesidades */
+	margin: 0 auto; /* Centra horizontalmente el bloque */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 </style>
 </head>
 <body
@@ -488,9 +501,11 @@ li {
 
 
 	<div class="content" style="margin-top: 150px; margin-bottom: 250px;">
-		<h1 class="text-center my-5" style="color: #2faa4c">EMPRESAS</h1>
-		<h2 class="text-center" style="color: #3d4852;">¿Qué tienes que
-			saber sobre las empresas?</h2>
+		<div class="rounded-box">
+			<h2>
+				¿Qué tienes que saber sobre las <strong style="color: #2faa4c">empresas</strong>?
+			</h2>
+		</div>
 		<div class="container">
 			<div class="block">
 				<img alt="block" src="imgs/restauranteResiduo2.jpg"
