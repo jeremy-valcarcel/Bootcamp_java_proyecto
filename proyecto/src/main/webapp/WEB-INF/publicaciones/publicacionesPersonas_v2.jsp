@@ -524,19 +524,22 @@ li {
 								<c:forEach items="${publicacionEmpresa }" var="publicacion">
 									<div class="row m-0 mb-2">
 										<div class="col" style="height: 52px">
-											<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg" style="border-radius: 300px; height: 50px; width:50px; margin-left: -10px; position: static">
+											<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg" 
+											style="border-radius: 300px; height: 50px; width:50px; margin-left: -10px; position: static">
 											<p class="float-end p-2"><fmt:formatDate value="${publicacion.createdAt }"
 											pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
 										<c:out value="${fechaFormateada }"></c:out></p>
 											<div style="display: inline-block; margin-left: 10px">
-												<h5 class="m-0">Usuario</h5>
-												<p class="text-secondary" style="margin-top: -3px">barrio, ciudad</p>
+												<h5 class="m-0"> <c:out value="${publicacion.emisor.nombre }"></c:out>
+												<c:out value="${publicacion.empresaEmisora.nombre }"></c:out> </h5>
+												<p class="text-secondary" style="margin-top: -3px">
+												<c:out value="${publicacion.empresaEmisora.direccion }"></c:out></p>
 											</div>
 										</div>
 									</div>
 									
 									<div class="row">
-									<h4 class="text-secondary mt-2">Title</h4>
+									<h4 class="text-secondary mt-2"> <c:out value="${publicacion.categoria.categoria }"></c:out> </h4>
 										<p>
 										<c:out value="${publicacion.descripcion }"></c:out>
 									</p>

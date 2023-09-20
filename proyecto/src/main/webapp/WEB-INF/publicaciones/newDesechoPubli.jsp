@@ -31,6 +31,12 @@
 				<form:input type="hidden" path="emisor" value="${usuario.id}" />
 				<form:input type="hidden" path="empresaEmisora" value="${empresa.id}" />
 				<div class="form-group">
+						<form:label path="categoria" class="col-lg-4 control-label" >Rol:</form:label>
+						<form:select path="categoria" type="text" class="col-lg-4 form-control" items="${titulo}" itemLabel="categoria"  >
+						</form:select>
+
+					</div>
+				<div class="form-group">
 					<form:label class="form-label" path="descripcion">Descripcion: </form:label>
 					<form:errors class="text-danger" path="descripcion" />
 					<form:input type="text" class="form-control" path="descripcion" />

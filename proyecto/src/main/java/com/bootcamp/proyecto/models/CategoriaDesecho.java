@@ -16,8 +16,24 @@ public class CategoriaDesecho {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotBlank(message=" Por favor ingresa una descripcion")
-	private String descripcion;
+	@NotBlank(message=" Por favor ingresa un titulo")
+	private String categoria;
+	
+	/* CODIGOS PARA INSERTEAR LAS DIFERENTES CATEGORIAS
+	 
+	  
+INSERT INTO categoria_desechos (categoria) VALUES ('Aceites de cocina usados');
+INSERT INTO categoria_desechos (categoria) VALUES ('Aserrín');
+INSERT INTO categoria_desechos (descripcion) VALUES ('Bolsas de té usadas');
+INSERT INTO categoria_desechos (descripcion) VALUES ('Cáscaras de frutas y verduras');
+INSERT INTO categoria_desechos (descripcion) VALUES ('Cáscaras de huevo');
+INSERT INTO categoria_desechos (descripcion) VALUES ('Café molido usado');
+INSERT INTO categoria_desechos (descripcion) VALUES ('Estiércol animal');
+INSERT INTO categoria_desechos (descripcion) VALUES ('Restos de poda');
+INSERT INTO categoria_desechos (descripcion) VALUES ('Suero de leche');
+INSERT INTO categoria_desechos (descripcion) VALUES ('Virutas de madera');
+
+	 */
 	
 	@Column(updatable = false)
 	private Date createdAt;
@@ -71,12 +87,12 @@ public class CategoriaDesecho {
 		this.id = id;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public String getCategoria() {
+		return categoria;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 	public Date getCreatedAt() {
