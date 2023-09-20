@@ -109,7 +109,7 @@ header, footer {
 
 /* ESTILOS BODY */
 body {
-	background-color: #white;
+	background-color: #f5f6f7;
 	display: grid;
 	min-height: 100vh;
 	grid-template-row: auto 1fr auto;
@@ -192,9 +192,22 @@ body {
 	height: 200px;
 	border-radius: 500%;
 }
+
+.rounded-box {
+	border-radius: 70px;
+	padding: 20px;
+	background-color: #ffffff;
+	text-align: center;
+	width: 70%; /* Ajusta el ancho del bloque según tus necesidades */
+	height: 150px; /* Ajusta la altura del bloque según tus necesidades */
+	margin: 0 auto; /* Centra horizontalmente el bloque */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 </style>
 </head>
-<body>
+<body style="background-color: #f5f6f7">
 	<div class="fixed-top">
 		<header class="topbar">
 			<nav
