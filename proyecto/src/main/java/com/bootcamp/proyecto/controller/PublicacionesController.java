@@ -165,8 +165,7 @@ public class PublicacionesController {
 		return "redirect:/perfil";
 	}
 
-//	MOSTRAR PUBLICACIONES DE USUARIO 
-
+    //MOSTRAR PUBLICACIONES DE USUARIO 
 	@GetMapping("/publicacionesPersonas")
 
 	public String publicacionesPersonas(@ModelAttribute("publicacionEmpresa") DesechosPublicaciones publicacion,
@@ -180,18 +179,17 @@ public class PublicacionesController {
 			Usuario usuario = usuarioServ.encontrarUserPorId(userId);
 			viewModel.addAttribute("usuario", usuario);
 			viewModel.addAttribute("publicacionEmpresa", desechosPServ.desechosUsuario());
-			return "/publicaciones/publicacionesPersonas.jsp";
+			return "/publicaciones/publicacionesPersonas_v2.jsp";
 		}
 
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
 		viewModel.addAttribute("publicacionEmpresa", desechosPServ.desechosUsuario());
-		return "/publicaciones/publicacionesPersonas.jsp";
+		return "/publicaciones/publicacionesPersonas_v2.jsp";
 	}
 
 	
-//	MOSTRAR PUBLICACIONES DE EMPRESA 
-	
+    //MOSTRAR PUBLICACIONES DE EMPRESA 
 	@GetMapping("/publicacionesEmpresas")
 
 	public String publicacionesEmpresas(@ModelAttribute("publicacionEmpresa") DesechosPublicaciones publicacion,

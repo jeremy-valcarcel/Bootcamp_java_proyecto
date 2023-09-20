@@ -485,7 +485,7 @@ li {
 			</nav>
 		</header>
 	</div>
-	<div class="content" style="margin-top: 100px; margin-bottom: 20px;">
+	<div class="content" style="margin-top: 100px; margin-bottom: 20px; padding: 30px;">
 		<h2 class="text-center mt-5 mb-3"
 			style="color: #2faa4c; font-size: 50px;">PREGUNTAS FRECUENTES</h2>
 
