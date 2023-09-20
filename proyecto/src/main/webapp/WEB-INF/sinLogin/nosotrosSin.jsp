@@ -161,8 +161,8 @@ body {
 .register .action-button {
 	position: absolute;
 	right: -400px;
-	bottom: 20px; 
-	background : transparent;
+	bottom: 20px;
+	background: transparent;
 	border: 1px solid rgb(255, 255, 255);
 	border-radius: 40px;
 	color: #fff;
@@ -170,10 +170,74 @@ body {
 	background: transparent;
 }
 /* BOTÓN DE REGISTRO */
+.bloque {
+	position: relative;
+	max-width: 100%; /* Cambiamos el ancho máximo al 100% */
+	margin: 0 auto;
+	text-align: center;
+}
+
+.rounded-image1 {
+	position: relative;
+	right: 270px;
+	width: 40%; /* La imagen ocupa todo el ancho del contenedor */
+	max-height: 100%;
+	/* Opcional: limita la altura al 100% para mantener la proporción */
+	height: auto;
+	/* Opcional: ajusta automáticamente la altura para mantener la proporción */
+	border-radius: 20px; /* Aplica esquinas curvas a la imagen */
+}
+
+.text-block1 {
+	width: 40%; /* Ajusta el ancho del bloque de texto al 80% */
+	height: 70%;
+	position: absolute;
+	bottom: 50px;
+	right: 90px;
+	left: 750px;
+	/* Eliminamos la propiedad left para centrar el bloque en la esquina derecha */
+	background-color: white;
+	padding: 10px;
+	border-radius: 20px; /* Aplica esquinas curvas al bloque de texto */
+}
+
+.rounded-image2 {
+	position: relative;
+	left: 270px;
+	width: 40%; /* La imagen ocupa todo el ancho del contenedor */
+	max-height: 100%;
+	/* Opcional: limita la altura al 100% para mantener la proporción */
+	height: auto;
+	/* Opcional: ajusta automáticamente la altura para mantener la proporción */
+	border-radius: 20px; /* Aplica esquinas curvas a la imagen */
+}
+
+.text-block2 {
+	width: 40%; /* Ajusta el ancho del bloque de texto al 80% */
+	height: 70%;
+	position: absolute;
+	bottom: 50px;
+	left: 150px;
+	/* Eliminamos la propiedad left para centrar el bloque en la esquina derecha */
+	background-color: white;
+	padding: 10px;
+	border-radius: 20px; /* Aplica esquinas curvas al bloque de texto */
+}
+.rounded-image3 {
+	position: relative;
+	left: -270px;
+	width: 45%; /* La imagen ocupa todo el ancho del contenedor */
+	height: 40%;
+	max-height: 100%;
+	/* Opcional: limita la altura al 100% para mantener la proporción */
+	height: auto;
+	/* Opcional: ajusta automáticamente la altura para mantener la proporción */
+	border-radius: 20px; /* Aplica esquinas curvas a la imagen */
+}
 </style>
 </head>
 <body
-	style="background-color: #white; display: grid; grid-template-row: auto 1fr auto;">
+	style="background-color: #f5f6f7; display: grid; grid-template-row: auto 1fr auto;">
 
 	<div class="fixed-top">
 		<header class="topbar">
@@ -280,7 +344,7 @@ body {
 
 
 
-		<div class="col">
+		<div class="col" style="margin-bottom: 100px; margin-top: 50px;">
 			<h2 class="text-center">
 				<span style="color: #2faa4c"><strong>¿Qué es
 						ECORESCATE?</strong></span>
@@ -296,74 +360,50 @@ body {
 					mundo un lugar mejor donde vivir.</strong>
 			</p>
 		</div>
-
-
-		<div class="row ms-5">
-			<div class="col-md-6">
-				<h2>
+		<div class="bloque" style="margin-bottom: 100px;">
+			<img id="masInformacion" class="rounded-image1"
+				src="imgs/cuidadoMedioAmbiente.jpg" alt="Imagen con esquinas curvas">
+			<div class="text-block1">
+				<h2 class="featurette-heading mt-5">
 					<span style="color: #2faa4c"><strong>Nuestro
-							propósito</strong></span>
+							propósito</strong></span><br>
+
 				</h2>
-				<p>Contribuir al cuidado del medioambiente promoviendo la
-					circularidad de todos los productos orgánicos mediante su
-					reciclaje.</p>
-			</div>
-			<div class="col-md-6">
-				<img src="imgs/organico.jpg" alt="organico" class="img-fluid"
-					style="height: 200px">
+				<p class="lead mt-4">
+					Contribuir al <strong>cuidado del medioambiente</strong>
+					promoviendo la circularidad de todos los <strong>productos
+						orgánicos mediante su reciclaje</strong>.
+				</p>
 			</div>
 		</div>
-	</div>
+		<div class="bloque " style="margin-bottom: 100px;">
+			<img id="masInformacion" class="rounded-image2" src="imgs/mision.jpg"
+				alt="Imagen con esquinas curvas">
+			<div class="text-block2">
+				<h2 class="featurette-heading mt-5">
+					<span style="color: #2faa4c"><strong>Nuestra misión</strong></span><br>
 
-	<div class="ms-5">
-
-		<h2>
-			<span style="color: #2faa4c"><strong>Misión</strong></span>
-		</h2>
-		<p>Gestionar, desarrollar e intermediar en el sistema de reciclaje
-			de residuos orgánicos de forma eficiente, transparente e innovadora
-			trabajando para los ciudadanos y empresas en colaboración con los
-			mismos.</p>
-	</div>
-
-	<div class="m-5">
-
-		<h2>
-			<span style="color: #2faa4c"><strong>Visión</strong></span>
-		</h2>
-		<p>Consolidar una economía circular eficiente, cercana e
-			involucrativa que priorice el cuidado del medioambiente gracias a una
-			sociedad activa, unas empresas responsables y ciudadanos
-			comprometidos con el reciclaje.</p>
-	</div>
-
-	<div class="socios-container">
-		<h3 class="my-4 mb-5">Socios</h3>
-		<div class="socios-row">
-			<div class="socio">
-				<img src="imgs/socio1.jpg" alt="Socio 1">
-				<p style="background-color: white; color: #626262;">Jeremy
-					Valcarcel</p>
+				</h2>
+				<p class="lead mt-4">
+					<strong>Gestionar, desarrollar e intermediar</strong> en el sistema
+					de reciclaje de residuos orgánicos de forma eficiente, transparente
+					e innovadora <strong>trabajando para los ciudadanos y
+						empresas</strong> en colaboración con los mismos.
+				</p>
 			</div>
-			<div class="socio">
-				<img src="imgs/socio2.jpg" alt="Socio 2">
-				<p style="background-color: white; color: #626262;">Maria
-					Alderetes</p>
-			</div>
-			<div class="socio">
-				<img src="imgs/socio3.jpg" alt="Socio 3">
-				<p style="background-color: white; color: #626262;">Thiago
-					Acosta</p>
-			</div>
-			<div class="socio">
-				<img src="imgs/socio4.jpg" alt="Socio 4">
-				<p style="background-color: white; color: #626262;">Romina
-					Carbajal</p>
-			</div>
-			<div class="socio">
-				<img src="imgs/socio5.jpg" alt="Socio 5">
-				<p style="background-color: white; color: #626262;">Alvaro
-					Cardozo</p>
+		</div>
+		<div class="bloque " style="margin-bottom: 100px;">
+			<img id="masInformacion" class="rounded-image3"
+				src="imgs/mundoCircular.png" alt="Imagen con esquinas curvas">
+			<div class="text-block1">
+				<h2 class="featurette-heading mt-5">
+					<span style="color: #2faa4c"><strong>Nuestra visión</strong></span><br>
+
+				</h2>
+				<p class="lead mt-4">Consolidar una <strong>economía circular</strong> eficiente,
+					cercana e involucrativa que priorice el cuidado del medioambiente
+					gracias a una <strong>sociedad activa</strong>, unas empresas responsables y
+					<strong>ciudadanos comprometidos con el reciclaje</strong>.</p>
 			</div>
 		</div>
 	</div>

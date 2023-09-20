@@ -171,9 +171,10 @@ body {
 	flex-direction: column;
 	justify-content: center;
 }
+
 </style>
 </head>
-<body style="background-color:#f5f6f7;">
+<body style="background-color: #f5f6f7;">
 	<div class="fixed-top">
 		<header class="topbar">
 			<nav
@@ -241,7 +242,8 @@ body {
 	<div class="content" style="margin-top: 140px">
 		<h2 class="text-center mt-5" style="color: #2faa4c; font-size: 50px;">RECICLAJE
 			DE RESIDUOS ORGÁNICOS</h2>
-		<div class="rounded-box col p-3" style="margin-top: 30px; margin-bottom: 20px;">
+		<div class="rounded-box col p-3"
+			style="margin-top: 30px; margin-bottom: 20px;">
 			<h2 class="display-2 my-3 text-center"
 				style="text-align: left; color: #5a5a5a; font-size: 30px;">¿Qué
 				son los residuos orgánicos?</h2>
@@ -250,6 +252,8 @@ body {
 				fue parte de un ser vivo y que es susceptible de degradarse
 				biológicamente.</p>
 		</div>
+
+		
 		<div class="row border-top-bottom m-3">
 			<div class="col-md-6 p-4 ">
 				<h2 class="display-2 my-3"
