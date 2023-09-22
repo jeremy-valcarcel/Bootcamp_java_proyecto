@@ -530,7 +530,7 @@ li {
 											pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
 										<c:out value="${fechaFormateada }"></c:out></p>
 											<div style="display: inline-block; margin-left: 10px">
-												<h5 class="m-0"> <c:out value="${publicacion.emisor.nombre }"></c:out>
+												<h5 class="m-0"> <c:out value="${publicacion.emisor.nombre } ${publicacion.emisor.apellido }"></c:out>
 												<c:out value="${publicacion.empresaEmisora.nombre }"></c:out> </h5>
 												<p class="text-secondary" style="margin-top: -3px">
 												<c:out value="${publicacion.empresaEmisora.direccion }"></c:out></p>

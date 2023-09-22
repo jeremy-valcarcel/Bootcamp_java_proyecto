@@ -251,7 +251,7 @@ body {
 </style>
 </head>
 <body
-	style="background-color: #white; display: grid; grid-template-row: auto 1fr auto;">
+	style="background-color: #f5f6f7; display: grid; grid-template-row: auto 1fr auto;">
 
 	<div class="fixed-top">
 		<header class="topbar">
