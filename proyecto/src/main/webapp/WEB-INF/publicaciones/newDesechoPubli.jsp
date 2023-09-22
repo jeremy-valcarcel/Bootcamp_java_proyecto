@@ -42,46 +42,6 @@
 </head>
 <body class="header-green" style="padding: 77px;">
 
-	<%-- 	<c:if test="${usuario.id == usuario.id }"> --%>
-	<!-- 		<div class="container mx-auto col-3"> -->
-	<!-- 			<h1>Nueva publicacion</h1> -->
-	<%-- 			<form:form action="/crear/publicacion" method="POST" --%>
-	<%-- 				modelAttribute="publicacion"> --%>
-	<!-- 				<div class="form-group"> -->
-	<%-- 					<form:input type="hidden" path="emisor" value="${usuario.id}" /> --%>
-	<%-- 					<form:input type="hidden" path="empresaEmisora" --%>
-	<%-- 						value="${empresa.id}" /> --%>
-	<!-- 					<div class="form-group"> -->
-	<%-- 						<form:label path="categoria" class="col-lg-4 control-label">Categoria:</form:label> --%>
-	<%-- 						<form:select path="categoria" type="text" --%>
-	<%-- 							class="col-lg-4 form-control" items="${titulo}" --%>
-	<%-- 							itemLabel="categoria"> --%>
-	<%-- 						</form:select> --%>
-
-	<!-- 					</div> -->
-	<!-- 					<div class="form-group"> -->
-	<%-- 						<form:label class="form-label" path="descripcion">Descripcion: </form:label> --%>
-	<%-- 						<form:errors class="text-danger" path="descripcion" /> --%>
-	<%-- 						<form:input type="text" class="form-control" path="descripcion" /> --%>
-
-	<!-- 					</div> -->
-	<!-- 					<div> -->
-	<%-- 						<form:label class="form-label" path="tamano">Tamaño en KL del desecho: </form:label> --%>
-	<%-- 						<form:errors class="form-control" path="tamano" /> --%>
-	<%-- 						<form:input path="tamano" type="number" class="form-control" /> --%>
-
-	<!-- 					</div> -->
-
-	<!-- 				</div> -->
-	<!-- 				<div class="my-2"> -->
-	<!-- 					<button class="btn btn-success">Publicar</button> -->
-	<!-- 					<a href="/perfil" class="btn btn-danger">Cancel</a> -->
-	<!-- 				</div> -->
-
-	<%-- 			</form:form> --%>
-	<!-- 		</div> -->
-	<%-- 	</c:if> --%>
-
 	<c:if test="${usuario.id == usuario.id }">
 		<section class="vh-200">
 			<div class="inicio text-end">

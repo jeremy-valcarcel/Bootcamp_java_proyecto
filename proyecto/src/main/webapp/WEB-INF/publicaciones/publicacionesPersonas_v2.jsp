@@ -499,74 +499,84 @@ li {
 			<div class="col border border-dark m-2">
 				<p>Publicidad</p>
 			</div>
-			
-				<div class="col-8 m-2">
-					<section style="height: 100vh">
-						<article class="border border-dark p-4 overflow-auto"
-							style="height: 100vh;">
-							<div class="row">
-<%-- 								<c:forEach items="${publicacionEmpresa }" var="publicacion"> --%>
-<!-- 									<h4 class="text-secondary col-4">Title</h4> -->
-<!-- 									<p class=" col mx-2 text-end"> -->
-<%-- 										<fmt:formatDate value="${publicacion.createdAt }" --%>
-<%-- 											pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" /> --%>
-<%-- 										<c:out value="${fechaFormateada }"></c:out> --%>
-<!-- 									</p> -->
-<!-- 									<p> -->
-<%-- 										<c:out value="${publicacion.descripcion }"></c:out> --%>
-<!-- 									</p> -->
-<!-- 									<p> -->
-<%-- 										<c:out value="${publicacion.tamano }"></c:out> --%>
-<!-- 									</p> -->
-<%-- 									<a href="publicaciones/${publicacion.id}">comentario</a> --%>
-<%-- 								</c:forEach> --%>
-								<div class="row mt-4 mb-4">
-								<c:forEach items="${publicacionEmpresa }" var="publicacion">
+
+			<div class="col-8 m-2">
+				<section style="height: 100vh">
+					<article class="border border-dark p-4 overflow-auto"
+						style="height: 100vh;">
+						<div class="row">
+							<div class="row mt-4 mb-4">
+								<c:forEach items="${publicacionEmpresa}" var="publicacion">
 									<div class="row m-0 mb-2">
 										<div class="col" style="height: 52px">
-											<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg" 
-											style="border-radius: 300px; height: 50px; width:50px; margin-left: -10px; position: static">
-											<p class="float-end p-2"><fmt:formatDate value="${publicacion.createdAt }"
-											pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
-										<c:out value="${fechaFormateada }"></c:out></p>
+											<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg"
+												style="border-radius: 300px; height: 50px; width: 50px; margin-left: -10px; position: static">
+											<p class="float-end p-2">
+												<fmt:formatDate value="${publicacion.createdAt}"
+													pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
+												<c:out value="${fechaFormateada}"></c:out>
+											</p>
 											<div style="display: inline-block; margin-left: 10px">
-												<h5 class="m-0"> <c:out value="${publicacion.emisor.nombre } ${publicacion.emisor.apellido }"></c:out>
-												<c:out value="${publicacion.empresaEmisora.nombre }"></c:out> </h5>
+												<h5 class="m-0">
+													<c:out
+														value="${publicacion.emisor.nombre} ${publicacion.emisor.apellido}"></c:out>
+													<c:out value="${publicacion.empresaEmisora.nombre}"></c:out>
+												</h5>
 												<p class="text-secondary" style="margin-top: -3px">
-												<c:out value="${publicacion.empresaEmisora.direccion }"></c:out></p>
+													<c:out value="${publicacion.empresaEmisora.direccion}"></c:out>
+												</p>
 											</div>
 										</div>
 									</div>
-									
+
 									<div class="row">
-									<h4 class="text-secondary mt-2"> <c:out value="${publicacion.categoria.categoria }"></c:out> </h4>
+										<h4 class="text-secondary mt-2">
+											<c:out value="${publicacion.categoria.categoria}"></c:out>
+										</h4>
 										<p>
-										<c:out value="${publicacion.descripcion }"></c:out>
-									</p>
-									<p>Cantidad:
-										<c:out value="${publicacion.tamano }"></c:out> kg
-									</p>
+											<c:out value="${publicacion.descripcion}"></c:out>
+										</p>
+										<p>
+											Cantidad:
+											<c:out value="${publicacion.tamano}"></c:out>
+											kg
+										</p>
 									</div>
 									<div class="row mb-4" style="height: 40px">
 										<div class="col mx-0 m-0" style="display: inline-block">
-										<a class="p-2 btn btn-primary" style="width: 309px" href="publicaciones/${publicacion.id}">comentarios</a>
-										<a class="p-2 btn btn-primary"  style="width: 309px" href="publicaciones/${publicacion.id}">comentar</a>
-											</div>
+											<a class="p-2 btn btn-primary" style="width: 309px"
+												href="publicaciones/${publicacion.id}">comentarios</a> <a
+												class="p-2 btn btn-primary" style="width: 309px"
+												href="publicaciones/${publicacion.id}">comentar</a>
+										</div>
 									</div>
-									</c:forEach>
-								</div>
-								<hr>
+
+									<!-- Mostrar los comentarios de esta publicación -->
+									<div class="row">
+										<h3>Comentarios:</h3>
+										<ul>
+											<c:forEach var="comentario"
+												items="${publicacion.comentarios}">
+												<c:out value="${comentario.usuarioCreador.nombre } ${comentario.usuarioCreador.apellido }">¡</c:out> ha comentado:
+												<c:out value="${comentario.empresaCreador.nombre }"></c:out>
+												<li>${comentario.contenido}</li>
+											</c:forEach>
+										</ul>
+									</div>
+								</c:forEach>
 							</div>
-						</article>
-					</section>
-				</div>
-				
+							<hr>
+						</div>
+					</article>
+				</section>
+			</div>
+
 			<div class="col border border-dark m-2">
 				<p>Publicidad</p>
 			</div>
-			
+
 		</div>
-		
+
 	</main>
 
 

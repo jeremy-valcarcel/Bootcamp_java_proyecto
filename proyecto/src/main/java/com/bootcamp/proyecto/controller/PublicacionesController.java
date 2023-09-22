@@ -179,7 +179,6 @@ public class PublicacionesController {
 
     //MOSTRAR PUBLICACIONES DE USUARIO 
 	@GetMapping("/publicacionesPersonas")
-
 	public String publicacionesPersonas(@ModelAttribute("publicacionEmpresa") DesechosPublicaciones publicacion,
 			BindingResult resultado, HttpSession sesion, Model viewModel) {
 		// validar si la sesion del usuario o empresa esta activa
@@ -198,6 +197,7 @@ public class PublicacionesController {
 		viewModel.addAttribute("empresa", empresa);
 		viewModel.addAttribute("publicacionEmpresa", desechosPServ.desechosUsuario());
 		return "/publicaciones/publicacionesPersonas_v2.jsp";
+
 	}
 
 	
@@ -226,7 +226,6 @@ public class PublicacionesController {
 	}
 
 //	MOSTRAR UNA PUBLICACION PARA PODER AGREGAR COMENTARIO
-
 	@GetMapping("publicaciones/{idPublicacion}")
 	public String unaPublicacion(@PathVariable("idPublicacion") Long idPublicacion, HttpSession sesion,
 			RedirectAttributes errores, Model viewModel) {
