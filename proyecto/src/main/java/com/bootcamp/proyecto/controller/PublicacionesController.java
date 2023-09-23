@@ -215,13 +215,13 @@ public class PublicacionesController {
 			Usuario usuario = usuarioServ.encontrarUserPorId(userId);
 			viewModel.addAttribute("usuario", usuario);
 			viewModel.addAttribute("publicacionEmpresa", desechosPServ.desechosEmpresas());
-			return "/publicaciones/publicacionesEmpresas.jsp";
+			return "/publicaciones/publicacionesEmpresas_v2.jsp";
 		}
 
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
 		viewModel.addAttribute("publicacionEmpresa", desechosPServ.desechosEmpresas());
-		return "/publicaciones/publicacionesEmpresas.jsp";
+		return "/publicaciones/publicacionesEmpresas_v2.jsp";
 
 	}
 

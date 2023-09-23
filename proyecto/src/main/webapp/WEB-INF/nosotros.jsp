@@ -282,6 +282,34 @@ body {
 	flex-direction: column;
 	justify-content: center;
 }
+
+/*ESTILOS PARA FOOTER*/
+.site-footer {
+	background-color: #104724;
+	padding: 45px 0 20px;
+	font-size: 15px;
+	line-height: 24px;
+	color: #737373;
+}
+
+.site-footer hr {
+	border-top-color: #bbb;
+	opacity: 0.5
+}
+
+.site-footer h6 {
+	color: #fff;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-top: 5px;
+	letter-spacing: 2px
+}
+
+.footer-links {
+	padding-left: 0;
+	list-style: none
+}
+/*ESTILOS PARA FOOTER*/
 </style>
 </head>
 <body
@@ -528,23 +556,55 @@ body {
 		</div>
 	</div>
 
-	<footer
-		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
-		<div style="display: flex; align-items: center;">
-			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height: 100px;">
-			<p class="text-white ml-2 mb-0">EcoRescate</p>
-		</div>
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-3">
+					<h6>Acerca</h6>
+					<p class="text-justify">
+						<i>ECORESCATE</i> gestiona el reciclaje de los residuos orgánicos
+						generados por empresas y/o personas individuales. Queremos
+						impulsar la conciencia medioambiental hasta convertir el reciclaje
+						en un hábito diario para la población, contribuyendo a hacer de
+						este mundo un lugar mejor donde vivir.
+					</p>
+				</div>
 
-		<div class="my-auto">
-			<ul class="nav">
-				<li class="nav-item"><a class="nav-link active text-white"
-					aria-current="page" href="#">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">Empresas</a></li>
-				<li class="nav-item"><a class="nav-link disabled text-white"
-					aria-disabled="true">Nosotros</a></li>
-			</ul>
+				<div class="col-xs-6 col-md-3">
+					<h6>Publicaciones</h6>
+					<ul class="footer-links">
+						<li><a class="nav-link text-white"
+							href="/publicacionesPersonas">Publicaciones de personas</a></li>
+						<li><a class="nav-link text-white"
+							href="/publicacionesEmpresas">Publicaciones de empresas</a></li>
+					</ul>
+				</div>
+
+				<div class="col-xs-6 col-md-3">
+					<h6>Nosotros</h6>
+					<ul class="footer-links">
+						<li><a class="nav-link text-white" href="/nosotros">¿Quienes
+								sómos?</a></li>
+						<li><a class="nav-link text-white" href="/reciclaje">Reciclaje
+								Orgánico</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<h6>Preguntas frecuentes</h6>
+					<ul class="footer-links">
+						<li><a class="nav-link text-white"
+							href="/preguntasFrecuentea">¿Puedo aportar otro residuo que
+								no sea orgánico?</a></li>
+						<li><a class="nav-link text-white"
+							href="/preguntasFrecuentea">¿Cuáles son los errores comunes
+								que debemos evitar al reciclar orgánicos?</a></li>
+						<li><a class="nav-link text-white"
+							href="/preguntasFrecuentea">¿Tengo alguna manera de
+								publicitar mis productos creados a base de los residuos?</a></li>
+					</ul>
+				</div>
+			</div>
+			<hr>
 		</div>
 	</footer>
 

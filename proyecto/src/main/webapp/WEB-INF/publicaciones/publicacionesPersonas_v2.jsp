@@ -380,6 +380,38 @@ li {
 	height: 200px;
 	border-radius: 500%;
 }
+
+#comentarios-container {
+	display: none;
+}
+
+/*ESTILOS PARA FOOTER*/
+.site-footer {
+	background-color: #104724;
+	padding: 45px 0 20px;
+	font-size: 15px;
+	line-height: 24px;
+	color: #737373;
+}
+
+.site-footer hr {
+	border-top-color: #bbb;
+	opacity: 0.5
+}
+
+.site-footer h6 {
+	color: #fff;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-top: 5px;
+	letter-spacing: 2px
+}
+
+.footer-links {
+	padding-left: 0;
+	list-style: none
+}
+/*ESTILOS PARA FOOTER*/
 </style>
 </head>
 <body
@@ -544,24 +576,27 @@ li {
 									</div>
 									<div class="row mb-4" style="height: 40px">
 										<div class="col mx-0 m-0" style="display: inline-block">
+											<button id="ver-comentarios">Ver Comentarios</button>
 											<a class="p-2 btn btn-primary" style="width: 309px"
-												href="publicaciones/${publicacion.id}">comentarios</a> <a
-												class="p-2 btn btn-primary" style="width: 309px"
 												href="publicaciones/${publicacion.id}">comentar</a>
 										</div>
 									</div>
 
 									<!-- Mostrar los comentarios de esta publicación -->
-									<div class="row">
-										<h3>Comentarios:</h3>
-										<ul>
-											<c:forEach var="comentario"
-												items="${publicacion.comentarios}">
-												<c:out value="${comentario.usuarioCreador.nombre } ${comentario.usuarioCreador.apellido }">¡</c:out> ha comentado:
+									<div id="comentarios-container">
+										<div class="row">
+											<h3>Comentarios:</h3>
+											<ul>
+												<c:forEach var="comentario"
+													items="${publicacion.comentarios}">
+													<c:out
+														value="${comentario.usuarioCreador.nombre } ${comentario.usuarioCreador.apellido }">¡</c:out> ha comentado:
 												<c:out value="${comentario.empresaCreador.nombre }"></c:out>
-												<li>${comentario.contenido}</li>
-											</c:forEach>
-										</ul>
+													<li>${comentario.contenido}</li>
+												</c:forEach>
+											</ul>
+										</div>
+
 									</div>
 								</c:forEach>
 							</div>
@@ -580,25 +615,55 @@ li {
 	</main>
 
 
-	<footer class="mt-5"
-		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
-		<div style="display: flex; align-items: center;">
-			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height: 100px;">
-			<p class="text-white ml-2 mb-0">EcoRescate</p>
-		</div>
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-3">
+					<h6>About</h6>
+					<p class="text-justify">
+						<i>ECORESCATE</i> gestiona el reciclaje de los residuos orgánicos
+						generados por empresas y/o personas individuales. Queremos
+						impulsar la conciencia medioambiental hasta convertir el reciclaje
+						en un hábito diario para la población, contribuyendo a hacer de
+						este mundo un lugar mejor donde vivir.
+					</p>
+				</div>
 
-		<div class="my-auto">
-			<ul class="nav">
-				<li class="nav-item"><a class="nav-link active text-white"
-					aria-current="page" href="#">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="#">Publicaciones</a>
-				</li>
-				<li class="nav-item "><a class="nav-link text-white" href="#">Empresas</a>
-				</li>
-				<li class="nav-item"><a class="nav-link disabled text-white"
-					aria-disabled="true">Nosotros</a></li>
-			</ul>
+				<div class="col-xs-6 col-md-3">
+					<h6>Publicaciones</h6>
+					<ul class="footer-links">
+						<li><a class="nav-link text-white"
+							href="/publicacionesPersonas">Publicaciones de personas</a></li>
+						<li><a class="nav-link text-white"
+							href="/publicacionesEmpresas">Publicaciones de empresas</a></li>
+					</ul>
+				</div>
+
+				<div class="col-xs-6 col-md-3">
+					<h6>Nosotros</h6>
+					<ul class="footer-links">
+						<li><a class="nav-link text-white" href="/nosotros">¿Quienes
+								sómos?</a></li>
+						<li><a class="nav-link text-white" href="/reciclaje">Reciclaje
+								Orgánico</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<h6>Preguntas frecuentes</h6>
+					<ul class="footer-links">
+						<li><a class="nav-link text-white"
+							href="/preguntasFrecuentea">¿Puedo aportar otro residuo que
+								no sea orgánico?</a></li>
+						<li><a class="nav-link text-white"
+							href="/preguntasFrecuentea">¿Cuáles son los errores comunes
+								que debemos evitar al reciclar orgánicos?</a></li>
+						<li><a class="nav-link text-white"
+							href="/preguntasFrecuentea">¿Tengo alguna manera de
+								publicitar mis productos creados a base de los residuos?</a></li>
+					</ul>
+				</div>
+			</div>
+			<hr>
 		</div>
 	</footer>
 
@@ -623,6 +688,22 @@ li {
 			if (event.target === perfilModal) {
 				perfilModal.style.display = "none";
 			}
+		});
+
+		document.addEventListener("DOMContentLoaded", function() {
+			const botonVerComentarios = document
+					.getElementById("ver-comentarios");
+			const comentariosContainer = document
+					.getElementById("comentarios-container");
+
+			botonVerComentarios.addEventListener("click", function() {
+				// Toggle (mostrar/ocultar) los comentarios al hacer clic en el botón
+				if (comentariosContainer.style.display === "none") {
+					comentariosContainer.style.display = "block";
+				} else {
+					comentariosContainer.style.display = "none";
+				}
+			});
 		});
 	</script>
 </body>
