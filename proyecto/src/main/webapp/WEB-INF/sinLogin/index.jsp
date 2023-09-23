@@ -208,8 +208,33 @@
 	right: 20px;
 }
 /* BOTÓN DE REGISTRO */
+/*ESTILOS PARA FOOTER*/
+.site-footer {
+	background-color: #104724;
+	padding: 45px 0 20px;
+	font-size: 15px;
+	line-height: 24px;
+	color: #737373;
+}
 
+.site-footer hr {
+	border-top-color: #bbb;
+	opacity: 0.5
+}
 
+.site-footer h6 {
+	color: #fff;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-top: 5px;
+	letter-spacing: 2px
+}
+
+.footer-links {
+	padding-left: 0;
+	list-style: none
+}
+/*ESTILOS PARA FOOTER*/
 </style>
 </head>
 <body
@@ -236,17 +261,17 @@
 							<li class="dropdown nav-item"><a class="nav-link" href="#">Publicaciones</a>
 
 								<div class="dropdown-content">
-									<a href="/Login">Publicaciones de personas</a> 
-									<a href="/Login">Publicaciones de empresas</a>
+									<a href="/Login">Publicaciones de personas</a> <a href="/Login">Publicaciones
+										de empresas</a>
 								</div></li>
 
 							<li class="nav-item" role="presentation"><a class="nav-link"
 								href="/Login">Empresas</a></li>
-							<li class="dropdown nav-item"><a class="nav-link" href="#" >Nosotros</a>
+							<li class="dropdown nav-item"><a class="nav-link" href="#">Nosotros</a>
 								<div class="dropdown-content">
-									<a href="nosotrosSinSesion">¿Quienes somos?</a> <a href="reciclajeSinSesion">Reciclaje
-										orgánico</a> <a href="preguntasFrecuentesSinSesion">Preguntas
-										frecuentes</a>
+									<a href="nosotrosSinSesion">¿Quienes somos?</a> <a
+										href="reciclajeSinSesion">Reciclaje orgánico</a> <a
+										href="preguntasFrecuentesSinSesion">Preguntas frecuentes</a>
 								</div></li>
 						</ul>
 						<%-- 						<form class="form-inline mr-auto" target="_self"> --%>
@@ -258,7 +283,9 @@
 						<!-- 							</div> -->
 						<%-- 						</form> --%>
 						<div class="register">
-							<span class="navbar-text"></span> <a class="btn btn-light action-button" role="button" href="/Login">Iniciar Sesión</a>
+							<span class="navbar-text"></span> <a
+								class="btn btn-light action-button" role="button" href="/Login">Iniciar
+								Sesión</a>
 						</div>
 					</div>
 				</div>
@@ -271,9 +298,9 @@
 						<p>
 							Desbloquea el potencial de los residuos orgánicos.<br>
 						</p>
-						<a href="nosotrosSinSesion" class="btn btn-light btn-lg action-button"
-							role="button"> Conoce más <i
-							class="fa fa-long-arrow-right ml-2"></i>
+						<a href="nosotrosSinSesion"
+							class="btn btn-light btn-lg action-button" role="button">
+							Conoce más <i class="fa fa-long-arrow-right ml-2"></i>
 						</a>
 					</div>
 					<div
@@ -360,25 +387,57 @@
 		</div>
 	</div>
 
-	<footer
-		style="background-color: #104724; display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 0;">
-		<div style="display: flex; align-items: center;">
-			<img alt="logo" src="imgs/mapache_logo-removebg-preview.png"
-				class="d-inline-block" style="height: 120px;">
-			<p class="text-white ml-2 mb-0">EcoRescate</p>
-		</div>
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-3">
+					<h6>Acerca</h6>
+					<p class="text-justify">
+						<i>ECORESCATE</i> gestiona el reciclaje de los residuos orgánicos
+						generados por empresas y/o personas individuales. Queremos
+						impulsar la conciencia medioambiental hasta convertir el reciclaje
+						en un hábito diario para la población, contribuyendo a hacer de
+						este mundo un lugar mejor donde vivir.
+					</p>
+				</div>
 
-		<div class="my-auto">
-			<ul class="nav">
-				<li class="nav-item"><a class="nav-link active text-white"
-					aria-current="page" href="Login">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="Login">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="Login">Empresas</a></li>
-				<li class="nav-item"><a class="nav-link disabled text-white" href="Login">Nosotros</a></li>
-			</ul>
+				<div class="col-xs-6 col-md-3">
+					<h6>Publicaciones</h6>
+					<ul class="footer-links">
+						<li><a class="nav-link text-white"
+							href="/publicacionesPersonas">Publicaciones de personas</a></li>
+						<li><a class="nav-link text-white"
+							href="/publicacionesEmpresas">Publicaciones de empresas</a></li>
+					</ul>
+				</div>
+
+				<div class="col-xs-6 col-md-3">
+					<h6>Nosotros</h6>
+					<ul class="footer-links">
+						<li><a class="nav-link text-white" href="/nosotros">¿Quienes
+								sómos?</a></li>
+						<li><a class="nav-link text-white" href="/reciclaje">Reciclaje
+								Orgánico</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<h6>Preguntas frecuentes</h6>
+					<ul class="footer-links">
+						<li><a class="nav-link text-white"
+							href="/preguntasFrecuentes">¿Puedo aportar otro residuo que
+								no sea orgánico?</a></li>
+						<li><a class="nav-link text-white"
+							href="/preguntasFrecuentes">¿Cuáles son los errores comunes
+								que debemos evitar al reciclar orgánicos?</a></li>
+						<li><a class="nav-link text-white"
+							href="/preguntasFrecuentes">¿Tengo alguna manera de
+								publicitar mis productos creados a base de los residuos?</a></li>
+					</ul>
+				</div>
+			</div>
+			<hr>
 		</div>
 	</footer>
-
 	<script
 		src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 

@@ -760,13 +760,13 @@ li {
 					<h6>Preguntas frecuentes</h6>
 					<ul class="footer-links">
 						<li><a class="nav-link text-white"
-							href="/preguntasFrecuentea">¿Puedo aportar otro residuo que
+							href="/preguntasFrecuentes">¿Puedo aportar otro residuo que
 								no sea orgánico?</a></li>
 						<li><a class="nav-link text-white"
-							href="/preguntasFrecuentea">¿Cuáles son los errores comunes
+							href="/preguntasFrecuentes">¿Cuáles son los errores comunes
 								que debemos evitar al reciclar orgánicos?</a></li>
 						<li><a class="nav-link text-white"
-							href="/preguntasFrecuentea">¿Tengo alguna manera de
+							href="/preguntasFrecuentes">¿Tengo alguna manera de
 								publicitar mis productos creados a base de los residuos?</a></li>
 					</ul>
 				</div>

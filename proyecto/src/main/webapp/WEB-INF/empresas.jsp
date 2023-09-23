@@ -416,6 +416,18 @@ li {
 	list-style: none
 }
 /*ESTILOS PARA FOOTER*/
+.rounded-box {
+	border-radius: 70px;
+	padding: 20px;
+	background-color: #ffffff;
+	text-align: center;
+	width: 70%; /* Ajusta el ancho del bloque según tus necesidades */
+	height: 150px; /* Ajusta la altura del bloque según tus necesidades */
+	margin: 0 auto; /* Centra horizontalmente el bloque */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 </style>
 
 </head>
@@ -525,8 +537,13 @@ li {
 		</header>
 	</div>
 
+	<div class="rounded-box" style="margin-top: 120px;">
+		<h2>
+			¡Enterate de nuestras <strong style="color: #2faa4c">empresas destacadas</strong>!
+		</h2>
+	</div>
 	<main
-		style="display: flex; justify-content: space-around; margin-top: 200px;"
+		style="display: flex; justify-content: space-around; margin-top: 50px;"
 		class="container ">
 		<div class="container">
 			<div class="profile-wrapper">
@@ -816,7 +833,7 @@ li {
 	</main>
 
 
-	<footer class="site-footer">
+	<footer class="site-footer mt-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
@@ -853,13 +870,13 @@ li {
 					<h6>Preguntas frecuentes</h6>
 					<ul class="footer-links">
 						<li><a class="nav-link text-white"
-							href="/preguntasFrecuentea">¿Puedo aportar otro residuo que
+							href="/preguntasFrecuentes">¿Puedo aportar otro residuo que
 								no sea orgánico?</a></li>
 						<li><a class="nav-link text-white"
-							href="/preguntasFrecuentea">¿Cuáles son los errores comunes
+							href="/preguntasFrecuentes">¿Cuáles son los errores comunes
 								que debemos evitar al reciclar orgánicos?</a></li>
 						<li><a class="nav-link text-white"
-							href="/preguntasFrecuentea">¿Tengo alguna manera de
+							href="/preguntasFrecuentes">¿Tengo alguna manera de
 								publicitar mis productos creados a base de los residuos?</a></li>
 					</ul>
 				</div>
