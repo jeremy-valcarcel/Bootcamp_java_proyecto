@@ -90,7 +90,6 @@ p {
 
 
 	<div class="container row">
-
 		<a href="/perfil"> Go back</a>
 
 	</div>
@@ -129,6 +128,9 @@ p {
 						method="post">
 						<div class="form-group my-3">
 							<label> Agregar un comentario...</label>
+							<p class="text-danger">
+								<c:out value="${error }"></c:out>
+							</p>
 							<textarea name="comment" class="form-control"> </textarea>
 							<button class="my-2">Enviar Comentario</button>
 						</div>
@@ -139,6 +141,6 @@ p {
 			</div>
 		</div>
 	</div>
-	
+
 </body>
 </html>

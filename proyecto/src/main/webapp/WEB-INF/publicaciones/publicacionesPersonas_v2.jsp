@@ -574,7 +574,6 @@ li {
 											kg
 										</p>
 									</div>
-									
 									<div class="row mb-4" style="height: 40px">
 										<div class="col mx-0 m-0 " style="display: inline-block">
 											<button id="ver-comentarios" class="p-2 btn btn-primary">Ver Comentarios</button>
@@ -593,7 +592,7 @@ li {
 													<c:out
 														value="${comentario.usuarioCreador.nombre } ${comentario.usuarioCreador.apellido }">¡</c:out> ha comentado:
 												<c:out value="${comentario.empresaCreador.nombre }"></c:out>
-													<li>${comentario.contenido}</li>
+													<li><c:out value="${comentario.contenido}"></c:out></li>
 												</c:forEach>
 											</ul>
 										</div>
