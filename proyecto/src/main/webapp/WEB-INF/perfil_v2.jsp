@@ -361,7 +361,7 @@ body {
 		<div class="row mb-4">
 			<div class="col-sm-3 mt-4">
 				<aside class="col">
-					<a href="/perfil/${usuario.id}/edit"
+					<a href="/perfil-${usuario.id}-edit"
 						class="btn btn-success d-block col-6 mb-2" style="width: 210px">Editar
 						Perfil</a> <a href="/crear/publicacion"
 						class="btn btn-success d-block col-6 mt-2 mb-2"
@@ -419,7 +419,7 @@ body {
 										<div class="row mb-4" style="height: 40px">
 											<div class="col mx-0 m-0" style="display: inline-block">
 												<a class="p-2 btn btn-success" style="width: 309px"
-													href="publicaciones/${publicacion.id}">comentar</a>
+													href="publicaciones-${publicacion.id}">comentar</a>
 											</div>
 										</div>
 
