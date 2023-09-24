@@ -574,10 +574,11 @@ li {
 											kg
 										</p>
 									</div>
+									
 									<div class="row mb-4" style="height: 40px">
-										<div class="col mx-0 m-0" style="display: inline-block">
-											<button id="ver-comentarios">Ver Comentarios</button>
-											<a class="p-2 btn btn-primary" style="width: 309px"
+										<div class="col mx-0 m-0 " style="display: inline-block">
+											<button id="ver-comentarios" class="p-2 btn btn-primary">Ver Comentarios</button>
+											<a class="p-2 btn btn-primary" 
 												href="publicaciones/${publicacion.id}">comentar</a>
 										</div>
 									</div>

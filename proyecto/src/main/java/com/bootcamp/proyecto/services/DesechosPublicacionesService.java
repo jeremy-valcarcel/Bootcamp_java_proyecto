@@ -45,6 +45,17 @@ public class DesechosPublicacionesService {
 		return desechosPR.desechosTamañoMayor();
 	}
 
+//	Publicaciones del usuarios logueado
+	public List<DesechosPublicaciones> 	publicacionesDelUsuario(Usuario emisor){
+		return desechosPR.findByEmisor(emisor);
+	}
+	
+//	Publicaciones de la empresa logueada
+	public List<DesechosPublicaciones> 	publicacionesDeLaEmpresa(Empresas emisora){
+		return desechosPR.findByEmpresaEmisora(emisora);
+	}
+	
+
 //	Borrar publicacion
 	public void borrarPublicacion(Long id) {
 		desechosPR.deleteById(id);

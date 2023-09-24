@@ -259,7 +259,7 @@ public class PublicacionesController {
 //	AGREGAR COMENTARIO
 
 	@PostMapping("publicaciones/{idPublicacion}/comentario")
-	public String agregarComentario(@PathVariable("idPublicacion") Long idPublicacion,
+	public String agregarComentariosEmpresas(@PathVariable("idPublicacion") Long idPublicacion,
 			@RequestParam("comment") String comentario, HttpSession sesion, RedirectAttributes errores) {
 		// validar si la sesion del usuario esta activa
 		Long empresasId = (Long) sesion.getAttribute("empresaID");
@@ -288,6 +288,38 @@ public class PublicacionesController {
 		desechosPServ.comentarioEmpresa(empresa, unaPublicacion, comentario);
 
 		return "redirect:/publicaciones/" + idPublicacion;
+	}
+	
+	@PostMapping("publicaciones/{idPublicacion}/comentar")
+	public String agregarComentariosUsuarios(@PathVariable("idPublicacion") Long idPublicacion,
+			@RequestParam("comentario") String comentario, HttpSession sesion, RedirectAttributes errores) {
+		// validar si la sesion del usuario esta activa
+		Long empresasId = (Long) sesion.getAttribute("empresaID");
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null && empresasId == null) {
+			return "redirect:/";
+		} else if (userId != null) {
+			if (comentario.isEmpty() || comentario.isBlank()) {
+				errores.addFlashAttribute("error", "Por favor no envias comentarios vacios");
+				return "redirect:/publicaciones/{idPublicacion}";
+			}
+			DesechosPublicaciones unaPublicacion = desechosPServ.unaPublicacion(idPublicacion);
+			Usuario usuario = usuarioServ.encontrarUserPorId(userId);
+
+			desechosPServ.comentarioUsuario(usuario, unaPublicacion, comentario);
+
+			return "redirect:/publicacionesPersonas";
+		}
+		if (comentario.isEmpty() || comentario.isBlank()) {
+			errores.addFlashAttribute("error", "Por favor no envias comentarios vacios");
+			return "redirect:/publicaciones/" + idPublicacion;
+		}
+		DesechosPublicaciones unaPublicacion = desechosPServ.unaPublicacion(idPublicacion);
+		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
+
+		desechosPServ.comentarioEmpresa(empresa, unaPublicacion, comentario);
+
+		return "redirect:/publicacionesPersonas";
 	}
 
 }
