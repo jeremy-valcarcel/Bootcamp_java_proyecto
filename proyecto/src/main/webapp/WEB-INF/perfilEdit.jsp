@@ -347,8 +347,8 @@ body {
 			</div>
 			<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 				<div class="col mt-5 ml-2">
-					<form:form method="POST" action="/perfil-${usuario.id}-edit"
-						modelAttribute="usuario">
+					<form:form method="POST" action="/perfil-${user.id}-edit"
+						modelAttribute="user">
 						<input type="hidden" name="_method" value="put" />
 						<div>
 							<form:errors class="text-danger form-control is-invalid"
@@ -362,6 +362,12 @@ body {
 								path="apellido" />
 							<form:label path="apellido">Apellido:</form:label>
 							<form:input type="text" path="apellido" />
+						</div>
+						<div>
+							<form:errors class="text-danger form-control is-invalid"
+								path="email" />
+							<form:label path="email">email:</form:label>
+							<form:input type="text" path="email" />
 						</div>
 						<div>
 							<form:errors class="text-danger form-control is-invalid"
@@ -383,97 +389,51 @@ body {
 			</c:if>
 			<c:if test="${empresa.id == empresa.id && usuario.id == null}">
 				<div class="col mt-5 ml-2">
-					<h2 class="text-secondary">
-						¡Hola,
-						<c:out value="${empresa.nombre}!"></c:out>
-					</h2>
-					<p class="text-secondary">
-						Email:
-						<c:out value="${empresa.email}"></c:out>
-					</p>
-					<p class="text-secondary">
-						Contacto:
-						<c:out value="${empresa.telefono}"></c:out>
-					</p>
-					<p class="text-secondary">
-						Direccion:
-						<c:out value="${empresa.direccion}"></c:out>
-					</p>
-					<p class="text-secondary">
-						Razon social:
-						<c:out value="${empresa.razonSocial}"></c:out>
-					</p>
-					<p class="text-secondary">
-						Tipo de cuenta:
-						<c:out value="${empresa.rol.name}"></c:out>
-					</p>
+					<form:form method="POST" action="/perfil-${empresas.id}-editar"
+						modelAttribute="empresas">
+						<input type="hidden" name="_method" value="put" />
+						<div>
+							<form:errors class="text-danger form-control is-invalid"
+								path="nombre" />
+							<form:label path="nombre">Nombre:</form:label>
+							<form:input type="text" path="nombre" />
+
+						</div>
+						<div>
+							<form:errors class="text-danger form-control is-invalid"
+								path="email" />
+							<form:label path="email">email:</form:label>
+							<form:input type="text" path="email" />
+						</div>
+						<div>
+							<form:errors class="text-danger form-control is-invalid"
+								path="direccion" />
+							<form:label path="direccion">Direccion:</form:label>
+							<form:input type="text" path="direccion" />
+						</div>
+						<div>
+						<form:input type="hidden" path="razonSocial" />
+						</div>
+						<div>
+							<form:errors class="text-danger form-control is-invalid"
+								path="telefono" />
+							<form:label path="telefono">Contacto:</form:label>
+							<form:input type="text" path="telefono" />
+
+						</div>
+						<div>
+							<form:label path="rol" class="col-lg-4 control-label">Rol:</form:label>
+							<form:select path="rol" type="text" class="col-lg-8"
+								items="${roles}" itemLabel="name">
+							</form:select>
+
+						</div>
+						<input type="submit" value="Editar perfil" class="my-3" />
+					</form:form>
 				</div>
 			</c:if>
 		</div>
 
-
-		<div class="row mb-4">
-			<div class="col mt-4">
-				<section style="border: 1px solid #000000; padding: 1em;">
-					<h3 class="text-center text-secondary">Tus Publicaciones:</h3>
-					<article>
-						<div class="col mt-4">
-							<c:forEach items="${publicaciones }" var="publicacion">
-
-								<div class="row">
-									<div class="row mt-4 mb-4">
-										<%-- 								<c:forEach items="${publicacionEmpresa}" var="publicacion"> --%>
-										<div class="row m-0 mb-2">
-											<div class="col" style="height: 52px">
-												<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg"
-													style="border-radius: 300px; height: 50px; width: 50px; margin-left: -10px; position: static">
-												<p class="float-end p-2">
-													<fmt:formatDate value="${publicacion.createdAt}"
-														pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
-													<c:out value="${fechaFormateada}"></c:out>
-												</p>
-												<div style="display: inline-block; margin-left: 10px">
-													<h5 class="m-0">
-														<c:out
-															value="${publicacion.emisor.nombre} ${publicacion.emisor.apellido}"></c:out>
-														<c:out value="${publicacion.empresaEmisora.nombre}"></c:out>
-													</h5>
-													<p class="text-secondary" style="margin-top: -3px">
-														<c:out value="${publicacion.empresaEmisora.direccion}"></c:out>
-													</p>
-												</div>
-											</div>
-										</div>
-
-										<div class="row">
-											<h4 class="text-secondary mt-2">
-												<c:out value="${publicacion.categoria.categoria}"></c:out>
-											</h4>
-											<p>
-												<c:out value="${publicacion.descripcion}"></c:out>
-											</p>
-											<p>
-												Cantidad:
-												<c:out value="${publicacion.tamano}"></c:out>
-												kg
-											</p>
-										</div>
-										<div class="row mb-4" style="height: 40px">
-											<div class="col mx-0 m-0" style="display: inline-block">
-												<a class="p-2 btn btn-primary" style="width: 309px"
-													href="publicaciones/${publicacion.id}">comentarios</a> <a
-													class="p-2 btn btn-primary" style="width: 309px"
-													href="publicaciones/${publicacion.id}">comentar</a>
-											</div>
-										</div>
-									</div>
-							</c:forEach>
-						</div>
-
-					</article>
-				</section>
-			</div>
-		</div>
 	</main>
 
 	<footer class="site-footer">

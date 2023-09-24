@@ -29,6 +29,11 @@ public class EmpresaService {
 	public List<Empresas> todasEmpresas() {
 		return empresaRepo.findAll();
 	}
+	
+//	una empresa
+	public Empresas unaEmpresa(Long id) {
+		return empresaRepo.findById(id).orElse(null);
+	}
 
 	//EmpresasPorId---------------------------------------------------------------------------------------------
 	public Empresas encontrarEmpresaPorId(Long id) {

@@ -30,6 +30,12 @@ public class UsuarioService {
 		return userRepo.findAll();
 	}
 	
+	// un usuario
+	public Usuario unUsuario(Long id) {
+		return userRepo.findById(id).orElse(null);
+	}
+	
+	
 	//UsuarioPorId-----------------------------------------------------------------------------------------------
 	public Usuario encontrarUserPorId(Long id) {
 		Optional<Usuario> user = userRepo.findById(id);
