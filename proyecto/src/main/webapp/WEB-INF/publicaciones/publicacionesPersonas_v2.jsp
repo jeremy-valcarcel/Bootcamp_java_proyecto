@@ -539,9 +539,9 @@ li {
 						<div class="row">
 							<div class="row mt-4 mb-4">
 								<c:forEach items="${publicacionEmpresa}" var="publicacion">
-									<div class="row m-0 mb-2">
-										<div class="col" style="height: 52px">
-											<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg"
+									<div class="row m-0 mb-4 border-top">
+										<div class="col mt-3" style="height: 52px">
+											<img class="mb-3" alt="foto perfil" src="img/perfil.jpeg"
 												style="border-radius: 300px; height: 50px; width: 50px; margin-left: -10px; position: static">
 											<p class="float-end p-2">
 												<fmt:formatDate value="${publicacion.createdAt}"
@@ -560,9 +560,6 @@ li {
 											</div>
 										</div>
 									</div>
-									
-									
-
 									<div class="row">
 										<h4 class="text-secondary mt-2">
 											<c:out value="${publicacion.categoria.categoria}"></c:out>
@@ -578,30 +575,12 @@ li {
 									</div>
 									<div class="row mb-4" style="height: 40px">
 										<div class="col mx-0 m-0 " style="display: inline-block">
-											<a class="p-2 btn btn-primary"
-												href="publicaciones/${publicacion.id}">comentar</a>
+											<a class="p-2 btn btn-success"
+												href="publicaciones-${publicacion.id}">comentar</a>
 										</div>
 									</div>
-
-<!-- 									Mostrar los comentarios de esta publicación -->
-<!-- 									<div id="comentarios-container"> -->
-<!-- 										<div class="row"> -->
-<!-- 											<h3>Comentarios:</h3> -->
-<!-- 											<ul> -->
-<%-- 												<c:forEach var="comentario" --%>
-<%-- 													items="${publicacion.comentarios}"> --%>
-<%-- 													<c:out --%>
-<%-- 														value="${comentario.usuarioCreador.nombre } ${comentario.usuarioCreador.apellido }">¡</c:out> ha comentado: --%>
-<%-- 												<c:out value="${comentario.empresaCreador.nombre }"></c:out> --%>
-<%-- 													<li><c:out value="${comentario.contenido}"></c:out></li> --%>
-<%-- 												</c:forEach> --%>
-<!-- 											</ul> -->
-<!-- 										</div> -->
-
-<!-- 									</div> -->
 								</c:forEach>
 							</div>
-							<hr>
 						</div>
 					</article>
 				</section>
@@ -690,7 +669,6 @@ li {
 				perfilModal.style.display = "none";
 			}
 		});
-		
 	</script>
 </body>
 </html>

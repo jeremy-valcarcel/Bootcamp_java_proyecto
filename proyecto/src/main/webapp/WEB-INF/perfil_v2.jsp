@@ -222,7 +222,8 @@ body {
 
 						<ul class="navbar-nav ml-auto">
 
-							<li class="nav-item active"><a class="nav-link" href="/Inicio">Inicio</a></li>
+							<li class="nav-item active"><a class="nav-link"
+								href="/Inicio">Inicio</a></li>
 
 							<li class="dropdown nav-item"><a
 								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -371,8 +372,7 @@ body {
 			</div>
 			<div class="col mt-4">
 
-				<section
-					style="border: 1px solid #000000; padding: 1em;">
+				<section style="border: 1px solid #000000; padding: 1em;">
 					<h3 class="text-center text-secondary">Tus Publicaciones:</h3>
 					<article>
 						<div class="col mt-4">
@@ -418,9 +418,7 @@ body {
 										</div>
 										<div class="row mb-4" style="height: 40px">
 											<div class="col mx-0 m-0" style="display: inline-block">
-												<a class="p-2 btn btn-primary" style="width: 309px"
-													href="publicaciones/${publicacion.id}">comentarios</a> <a
-													class="p-2 btn btn-primary" style="width: 309px"
+												<a class="p-2 btn btn-success" style="width: 309px"
 													href="publicaciones/${publicacion.id}">comentar</a>
 											</div>
 										</div>

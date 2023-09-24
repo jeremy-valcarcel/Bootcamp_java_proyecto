@@ -115,7 +115,7 @@ public class MainController {
 	}
 
 	// PerfilEditar-------------------------------------------------------------------------
-	@GetMapping("/perfil/{userID}/edit")
+	@GetMapping("/perfil-{userID}-edit")
 	public String formEditPerfil(@PathVariable("userID") Long usuarioId, @ModelAttribute("usuario") Usuario Usuario,
 			HttpSession sesion, Model viewModel) {
 
@@ -140,7 +140,7 @@ public class MainController {
 		return "perfilEdit.jsp";
 	}
 
-	@PutMapping("/perfil/{id}/edit")
+	@PutMapping("/perfil-{id}-edit")
 	public String editarSong(@Valid @ModelAttribute("usuario") Usuario Usuario, BindingResult resultado,
 			@PathVariable("id") Long usuarioId, HttpSession sesion, Model viewModel) {
 

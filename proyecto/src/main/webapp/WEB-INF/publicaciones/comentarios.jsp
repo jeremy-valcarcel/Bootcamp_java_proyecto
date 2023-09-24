@@ -91,7 +91,6 @@ p {
 
 	<div class="container row">
 		<a href="/perfil"> Go back</a>
-
 	</div>
 	<div class="container">
 		<div class="post-container">
@@ -124,7 +123,7 @@ p {
 				</div>
 				<div class="col-7">
 
-					<form action="/publicaciones/${publicacion.id }/comentario"
+					<form action="/publicaciones-${publicacion.id }-comentario"
 						method="post">
 						<div class="form-group my-3">
 							<label> Agregar un comentario...</label>

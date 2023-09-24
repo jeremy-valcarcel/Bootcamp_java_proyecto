@@ -38,7 +38,7 @@ public class PublicacionesController {
 	}
 
     //CREAR PUBLICACION
-	@GetMapping("/crear/publicacion")
+	@GetMapping("/crear-publicacion")
 	public String nuevaPublicacionEmpresa(@ModelAttribute("publicacion") DesechosPublicaciones publicacion,
 			BindingResult resultado, HttpSession sesion, Model viewModel) {
 
@@ -72,7 +72,7 @@ public class PublicacionesController {
 		}
 	}
 
-	@PostMapping("/crear/publicacion")
+	@PostMapping("/crear-publicacion")
 	public String crearPublicacionEmpresa(@Valid @ModelAttribute("publicacion") DesechosPublicaciones publicacion,
 			BindingResult resultado, HttpSession sesion, Model viewModel) {
 
@@ -103,7 +103,7 @@ public class PublicacionesController {
 	}
 
 	// EDITAR PUBLICACION
-	@GetMapping("/Publicacion/{idPublicacion}/edicion")
+	@GetMapping("/Publicacion-{idPublicacion}-edicion")
 	public String editarpublicacion(@PathVariable("idPublicacion") Long idPublicacion,
 			@ModelAttribute("publicacion") DesechosPublicaciones publicacion, HttpSession sesion, Model viewModel) {
 		// validar si la sesion del usuario esta activa
@@ -148,7 +148,7 @@ public class PublicacionesController {
 
 	}
 
-	@PutMapping("/Publicacion/{id}/edicion")
+	@PutMapping("/Publicacion-{id}-edicion")
 	public String edicionPublicacion(@Valid @ModelAttribute("publicacion") DesechosPublicaciones publicacion,
 			BindingResult resultado, @PathVariable("id") Long idEvento, HttpSession sesion, Model viewModel) {
 		// validar si la sesion del usuario esta activa
@@ -226,7 +226,7 @@ public class PublicacionesController {
 	}
 
 //	MOSTRAR UNA PUBLICACION PARA PODER AGREGAR COMENTARIO
-	@GetMapping("publicaciones/{idPublicacion}")
+	@GetMapping("publicaciones-{idPublicacion}")
 	public String unaPublicacion(@PathVariable("idPublicacion") Long idPublicacion, HttpSession sesion,
 			RedirectAttributes errores, Model viewModel) {
 		// validar si la sesion del usuario esta activa
@@ -258,7 +258,7 @@ public class PublicacionesController {
 
 //	AGREGAR COMENTARIO
 
-	@PostMapping("publicaciones/{idPublicacion}/comentario")
+	@PostMapping("publicaciones-{idPublicacion}-comentario")
 	public String agregarComentariosEmpresas(@PathVariable("idPublicacion") Long idPublicacion,
 			@RequestParam("comment") String comentario, HttpSession sesion, RedirectAttributes errores) {
 		// validar si la sesion del usuario esta activa
@@ -290,7 +290,7 @@ public class PublicacionesController {
 		return "redirect:/publicaciones/" + idPublicacion;
 	}
 	
-	@PostMapping("publicaciones/{idPublicacion}/comentar")
+	@PostMapping("publicaciones-{idPublicacion}-comentar")
 	public String agregarComentariosUsuarios(@PathVariable("idPublicacion") Long idPublicacion,
 			@RequestParam("comentario") String comentario, HttpSession sesion, RedirectAttributes errores) {
 		// validar si la sesion del usuario esta activa

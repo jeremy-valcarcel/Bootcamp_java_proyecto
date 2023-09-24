@@ -347,7 +347,7 @@ body {
 			</div>
 			<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 				<div class="col mt-5 ml-2">
-					<form:form method="POST" action="/perfil/${usuario.id}/edit"
+					<form:form method="POST" action="/perfil-${usuario.id}-edit"
 						modelAttribute="usuario">
 						<input type="hidden" name="_method" value="put" />
 						<div>
