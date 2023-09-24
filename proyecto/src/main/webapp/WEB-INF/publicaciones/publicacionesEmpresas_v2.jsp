@@ -570,28 +570,27 @@ li {
 										</p>
 									</div>
 									<div class="row mb-4" style="height: 40px">
-										<div class="col mx-0 m-0 " style="display: inline-block">
-											<button id="ver-comentarios" class="p-2 btn btn-primary">Ver Comentarios</button>
-											<a class="p-2 btn btn-primary" 
+										<div class="col mx-0 m-0" style="display: inline-block">
+											<a class="p-2 btn btn-primary" style="width: 309px"
+												href="publicaciones/${publicacion.id}">comentarios</a> <a
+												class="p-2 btn btn-primary" style="width: 309px"
 												href="publicaciones/${publicacion.id}">comentar</a>
 										</div>
 									</div>
 
 									<!-- Mostrar los comentarios de esta publicación -->
-									<div id="comentarios-container">
-										<div class="row">
-											<h3>Comentarios:</h3>
-											<ul>
-												<c:forEach var="comentario"
-													items="${publicacion.comentarios}">
-													<c:out
-														value="${comentario.usuarioCreador.nombre } ${comentario.usuarioCreador.apellido }">¡</c:out> ha comentado:
+									<div class="row">
+										<h3>Comentarios:</h3>
+										<ul>
+											<c:forEach var="comentario"
+												items="${publicacion.comentarios}">
+												<c:out
+													value="${comentario.usuarioCreador.nombre } ${comentario.usuarioCreador.apellido }">¡</c:out> ha comentado:
 												<c:out value="${comentario.empresaCreador.nombre }"></c:out>
-													<li><c:out value="${comentario.contenido}"></c:out></li>
-												</c:forEach>
-											</ul>
-										</div>
-
+												<li>${comentario.contenido}</li>
+											</c:forEach>
+										</ul>
+									</div>
 								</c:forEach>
 							</div>
 							<hr>
@@ -682,22 +681,6 @@ li {
 			if (event.target === perfilModal) {
 				perfilModal.style.display = "none";
 			}
-		});
-
-		document.addEventListener("DOMContentLoaded", function() {
-			const botonVerComentarios = document
-					.getElementById("ver-comentarios");
-			const comentariosContainer = document
-					.getElementById("comentarios-container");
-
-			botonVerComentarios.addEventListener("click", function() {
-				// Toggle (mostrar/ocultar) los comentarios al hacer clic en el botón
-				if (comentariosContainer.style.display === "none") {
-					comentariosContainer.style.display = "block";
-				} else {
-					comentariosContainer.style.display = "none";
-				}
-			});
 		});
 	</script>
 </body>
