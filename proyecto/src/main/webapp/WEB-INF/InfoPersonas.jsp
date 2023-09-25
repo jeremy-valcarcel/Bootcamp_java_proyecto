@@ -605,7 +605,7 @@ li {
 								</div></li>
 						</ul>
 					</div>
-					<
+
 					<div class="register">
 						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
 							src="img/usuario.png" class="d-inline-block"
