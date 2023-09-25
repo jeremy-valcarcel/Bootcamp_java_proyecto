@@ -406,8 +406,6 @@ li {
 	margin-top: 5px;
 	letter-spacing: 2px
 }
-.secondary {background-color: white; border: 2px solid #e7e7e7;} 
-.secondary:hover {background: #ddd; color: white;}
 
 .footer-links {
 	padding-left: 0;
@@ -596,7 +594,7 @@ li {
 	</main>
 
 
-	<footer class="site-footer">
+	<footer class="site-footer mt-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-3">
