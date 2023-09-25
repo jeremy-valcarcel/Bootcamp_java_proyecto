@@ -309,11 +309,11 @@ body {
 					</div>
 					<div class="col p-4">
 						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
-							<h2 class="text-secondary">
+							<h4 class="text-secondary">
 								¡Hola,
 								<c:out value="${usuario.nombre}"></c:out>
 								<c:out value="${usuario.apellido}!"></c:out>
-							</h2>
+							</h4>
 							<p class="text-secondary">
 								Email:
 								<c:out value="${usuario.email}"></c:out>
@@ -328,11 +328,11 @@ body {
 							</p>
 						</c:if>
 						<c:if test="${empresa.id == empresa.id && usuario.id == null}">
-							<h2 class="text-secondary">
+							<h4 class="text-secondary">
 								¡Hola,
 								<c:out value="${empresa.nombre}!"></c:out>
 
-							</h2>
+							</h4>
 							<p class="text-secondary">
 								Email:
 								<c:out value="${empresa.email}"></c:out>
@@ -356,12 +356,24 @@ body {
 						</c:if>
 					</div>
 					<div class="card-footer text-center">
-						<a href="/perfil-${usuario.id}-edit" class="btn btn-success"
-							style="width: 100%">Editar Perfil</a><a href="/crear-publicacion"
-							class="btn btn-success d-block col-6 mt-2 mb-2"
-							style="width: 100%">Nueva publicación</a> <a href="/logout"
-							class="btn btn-success d-block col-6 mt-2" style="width: 100%">Cerrar
-							Sesión</a>
+						<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+							<a href="/perfil-${empresa.id}-editar" class="btn btn-success"
+								style="width: 100%">Editar Perfil</a>
+							<a href="/crear-publicacion"
+								class="btn btn-success d-block col-6 mt-2 mb-2"
+								style="width: 100%">Nueva publicación</a>
+							<a href="/logout" class="btn btn-success d-block col-6 mt-2"
+								style="width: 100%">Cerrar Sesión</a>
+						</c:if>
+						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+							<a href="/perfil-${usuario.id}-edit" class="btn btn-success"
+								style="width: 100%">Editar Perfil</a>
+							<a href="/crear-publicacion"
+								class="btn btn-success d-block col-6 mt-2 mb-2"
+								style="width: 100%">Nueva publicación</a>
+							<a href="/logout" class="btn btn-success d-block col-6 mt-2"
+								style="width: 100%">Cerrar Sesión</a>
+						</c:if>
 					</div>
 				</div>
 			</div>
@@ -405,7 +417,8 @@ body {
 									</div>
 									<div class="card-footer">
 										<a class="btn btn-success" style="width: 100%;"
-											href="publicaciones-${publicacion.id}">Agregar un comentario</a>
+											href="publicaciones-${publicacion.id}">Agregar un
+											comentario</a>
 									</div>
 								</div>
 							</div>
@@ -416,7 +429,7 @@ body {
 		</div>
 	</main>
 
-	<footer class="site-footer">
+	<footer class="site-footer mt-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-3">

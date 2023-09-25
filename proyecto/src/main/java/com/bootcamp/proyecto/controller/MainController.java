@@ -163,8 +163,8 @@ public class MainController {
 	}
 
 	// PerfilEditar-------------------------------------------------------------------------
-	@GetMapping("/perfil-{emrpesaId}-editar")
-	public String editPerfil(@PathVariable("emrpesaId") Long emrpesaId, @ModelAttribute("empresas") Empresas empresas,
+	@GetMapping("/perfil-{empresaId}-editar")
+	public String editPerfil(@PathVariable("empresaId") Long empresaId, @ModelAttribute("empresas") Empresas empresas,
 			HttpSession sesion, Model viewModel) {
 
 		// validar si la sesion de la empresa esta activa
@@ -173,7 +173,7 @@ public class MainController {
 			return "redirect:/";
 		}
 
-		Empresas unaEmpresa = empresaServ.unaEmpresa(emrpesaId);
+		Empresas unaEmpresa = empresaServ.unaEmpresa(empresaId);
 		viewModel.addAttribute("empresas", unaEmpresa);
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
