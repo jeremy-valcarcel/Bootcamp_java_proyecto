@@ -479,7 +479,7 @@ body {
 										</p>
 									</div>
 									<div class="card-footer">
-										<a class="btn btn-success" style="width: 100%;"
+										<a class="btn btn-white" style="width: 100%;"
 											href="publicaciones-${publicacion.id}">Agregar un
 											comentario</a>
 									</div>
