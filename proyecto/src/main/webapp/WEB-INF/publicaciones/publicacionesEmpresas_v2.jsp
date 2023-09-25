@@ -536,7 +536,7 @@ li {
 								<c:forEach items="${publicacionEmpresa}" var="publicacion">
 									<div class="card mb-4">
 										<div class="card-header">
-											<img class="rounded-circle" src="img/perfil.jpeg"
+											<img class="rounded-circle img-thumbnail" src="img/perfil.jpeg"
 												alt="foto perfil" style="width: 50px; height: 50px;">
 
 											<div class="d-inline-block ml-3"
