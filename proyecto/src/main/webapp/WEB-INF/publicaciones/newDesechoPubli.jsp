@@ -60,7 +60,7 @@
 									¡Crea una nueva<span class="text-success"> publicación</span>!
 								</h3>
 								<hr class="mb-4">
-								<form:form action="/crear/publicacion" method="POST"
+								<form:form action="/crear-publicacion" method="POST"
 									modelAttribute="publicacion">
 
 									<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">

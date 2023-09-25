@@ -309,48 +309,66 @@ body {
 					</div>
 					<div class="col p-4">
 						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
-							<h4 class="text-secondary">
+							<h4 class="text-secondary text-center mb-3">
 								¡Hola,
 								<c:out value="${usuario.nombre}"></c:out>
 								<c:out value="${usuario.apellido}!"></c:out>
 							</h4>
 							<p class="text-secondary">
-								Email:
+								<strong><img src="imgs/email.png"  style="width: 25px; height: 25px;"
+									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
+									Email:</strong>
 								<c:out value="${usuario.email}"></c:out>
 							</p>
 							<p class="text-secondary">
-								Contacto:
+								<strong><img src="imgs/contacto.png" style="width: 25px; height: 25px;"
+									alt="Logotipo" class="logo"> Contacto:</strong>
 								<c:out value="${usuario.telefono}"></c:out>
 							</p>
 							<p class="text-secondary">
-								Tipo de cuenta:
+								<strong> <img src="imgs/rol.png"  style="width: 25px; height: 25px;"
+									alt="Logotipo" class="logo">Tipo de cuenta:</strong>
 								<c:out value="${usuario.rol.name}"></c:out>
 							</p>
 						</c:if>
 						<c:if test="${empresa.id == empresa.id && usuario.id == null}">
-							<h4 class="text-secondary">
+							<h4 class="text-secondary text-center mb-3">
 								¡Hola,
-								<c:out value="${empresa.nombre}!"></c:out>
-
+								<c:out value="${empresa.nombre}"></c:out>
 							</h4>
 							<p class="text-secondary">
-								Email:
+								<strong> <img src="imgs/email.png"  style="width: 25px; height: 25px;"
+									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
+									Email:
+								</strong>
 								<c:out value="${empresa.email}"></c:out>
 							</p>
 							<p class="text-secondary">
-								Contacto:
+								<strong> <img src="imgs/contacto.png" style="width: 25px; height: 25px;"
+									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
+									Contacto:
+								</strong>
 								<c:out value="${empresa.telefono}"></c:out>
 							</p>
 							<p class="text-secondary">
-								Razón social:
+								<strong> <img src="imgs/rol.png"  style="width: 25px; height: 25px;"
+									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
+									Tipo de cuenta:
+								</strong>
 								<c:out value="${empresa.rol.name}"></c:out>
 							</p>
 							<p class="text-secondary">
-								Dirección:
+								<strong> <img src="imgs/razon_social.png"  style="width: 25px; height: 25px;"
+									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
+									Razón social:
+								</strong>
 								<c:out value="${empresa.razonSocial}"></c:out>
 							</p>
 							<p class="text-secondary">
-								Tipo de cuenta:
+								<strong> <img src="imgs/direccion.png"  style="width: 25px; height: 25px;"
+									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
+									Dirección:
+								</strong>
 								<c:out value="${empresa.direccion}"></c:out>
 							</p>
 						</c:if>
