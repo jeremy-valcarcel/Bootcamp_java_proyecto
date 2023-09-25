@@ -193,6 +193,28 @@ body {
 	list-style: none
 }
 /*ESTILOS PARA FOOTER*/
+.link-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.link-style {
+	color: #6c757d; /* Color del texto del enlace */
+	text-decoration: none; /* Quita el subrayado del enlace */
+	transition: color 0.3s; /* Animación de cambio de color */
+	font-weight: bold;
+	/* Puedes cambiar el peso de la fuente según tus preferencias */
+}
+
+.link-container:hover {
+	background-color: #e74c3c;
+	/* Cambio de color de fondo al pasar el mouse */
+}
+
+.link-container:hover .link-style {
+	color: #fff; /* Cambio de color del texto al pasar el mouse */
+}
 </style>
 </head>
 
@@ -257,42 +279,62 @@ body {
 					<div class="register">
 						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
 							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
+							style="height: 60px; width: 60px;">
 						</a>
 
-						<div id="perfilModal" class="modal">
+						<div id="perfilModal" class="modal" style="width: 370px;">
 							<div class="modal-content">
 								<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 									<p class="text-black my-2">
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									<img alt="Usuario" src="img/usuario.png"
+										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
-									<h2>
-										¡Hola,
-										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
-									</h2>
+									<div>
+										<h2>
+											¡Hola,
+											<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+										</h2>
+									</div>
 								</c:if>
 								<c:if test="${empresa.id == empresa.id && usuario.id == null}">
 									<p class="text-black my-2">
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									<img alt="Usuario" src="img/usuario.png"
+										style="height: 150px; width: 150px; margin-left: 90px;"
 										class="perfil-imagen">
-									<h2>
-										¡Hola,
-										<c:out value="${empresa.nombre}!"></c:out>
-									</h2>
+									<div>
+										<h2>
+											¡Hola,
+											<c:out value="${empresa.nombre}!"></c:out>
+										</h2>
+									</div>
 								</c:if>
-								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
-									style="width: 350px">Ir a perfil</a> <a href="/logout"
-									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
-									Sesión</a>
 
+								<div style="margin-left: -230px" class="mb-2 mt-3">
+									<img src="imgs/profile.png" alt="Logo 1"
+										style="height: 20px; width: 20px; margin-right: 10px;">
+									<a href="/perfil" class="text-decoration-none link-style">Ir
+										a perfil</a>
+								</div>
+								<div style="margin-left: -200px">
+									<img src="imgs/cerrar.png" alt="Logo 3"
+										style="height: 20px; width: 20px; margin-right: 10px;">
+									<a href="/logout" class="text-decoration-none link-style">Cerrar
+										Sesión</a>
+								</div>
 							</div>
 						</div>
+
+
+
+
+
+
 
 					</div>
 				</div>
@@ -315,19 +357,22 @@ body {
 								<c:out value="${usuario.apellido}!"></c:out>
 							</h4>
 							<p class="text-secondary">
-								<strong><img src="imgs/email.png"  style="width: 25px; height: 25px;"
-									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
-									Email:</strong>
+								<strong><img src="imgs/email.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Email:</strong>
 								<c:out value="${usuario.email}"></c:out>
 							</p>
 							<p class="text-secondary">
-								<strong><img src="imgs/contacto.png" style="width: 25px; height: 25px;"
-									alt="Logotipo" class="logo"> Contacto:</strong>
+								<strong><img src="imgs/contacto.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									Contacto:</strong>
 								<c:out value="${usuario.telefono}"></c:out>
 							</p>
 							<p class="text-secondary">
-								<strong> <img src="imgs/rol.png"  style="width: 25px; height: 25px;"
-									alt="Logotipo" class="logo">Tipo de cuenta:</strong>
+								<strong> <img src="imgs/rol.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">Tipo
+									de cuenta:
+								</strong>
 								<c:out value="${usuario.rol.name}"></c:out>
 							</p>
 						</c:if>
@@ -337,37 +382,37 @@ body {
 								<c:out value="${empresa.nombre}"></c:out>
 							</h4>
 							<p class="text-secondary">
-								<strong> <img src="imgs/email.png"  style="width: 25px; height: 25px;"
-									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
-									Email:
+								<strong> <img src="imgs/email.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Email:
 								</strong>
 								<c:out value="${empresa.email}"></c:out>
 							</p>
 							<p class="text-secondary">
-								<strong> <img src="imgs/contacto.png" style="width: 25px; height: 25px;"
-									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
-									Contacto:
+								<strong> <img src="imgs/contacto.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Contacto:
 								</strong>
 								<c:out value="${empresa.telefono}"></c:out>
 							</p>
 							<p class="text-secondary">
-								<strong> <img src="imgs/rol.png"  style="width: 25px; height: 25px;"
-									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
-									Tipo de cuenta:
+								<strong> <img src="imgs/rol.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Tipo de cuenta:
 								</strong>
 								<c:out value="${empresa.rol.name}"></c:out>
 							</p>
 							<p class="text-secondary">
-								<strong> <img src="imgs/razon_social.png"  style="width: 25px; height: 25px;"
-									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
-									Razón social:
+								<strong> <img src="imgs/razon_social.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Razón social:
 								</strong>
 								<c:out value="${empresa.razonSocial}"></c:out>
 							</p>
 							<p class="text-secondary">
-								<strong> <img src="imgs/direccion.png"  style="width: 25px; height: 25px;"
-									alt="Logotipo" class="logo"> <!-- Agrega tu logotipo aquí -->
-									Dirección:
+								<strong> <img src="imgs/direccion.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Dirección:
 								</strong>
 								<c:out value="${empresa.direccion}"></c:out>
 							</p>
