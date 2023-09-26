@@ -422,10 +422,19 @@ body {
 			<div class="post">
 
 				<div class="card-header">
-					<img class="img-thumbnail  rounded-circle" src="img/perfil.jpeg"
-						alt="foto perfil" style="width: 50px; height: 50px;">
+					<c:if test="${publicacion.emisor.nombre != null}">
+						<img alt="foto perfil"
+							src="/imagen/usuario/${publicacion.emisor.id}"
+							style="height: 50px; width: 50px; border-radius: 50%;">
+					</c:if>
+					<c:if test="${publicacion.empresaEmisora != null}">
+						<img alt="foto perfil"
+							src="/imagen/empresa/${publicacion.empresaEmisora.id}"
+							style="height: 50px; width: 50px; border-radius: 50%;">
+					</c:if>
 					<div class="d-inline-block ml-3" style="vertical-align: middle;">
 						<h5 class="card-title m-0 my-2">
+
 							<c:out
 								value="${publicacion.emisor.nombre} ${publicacion.emisor.apellido}"></c:out>
 							<c:out value="${publicacion.empresaEmisora.nombre}"></c:out>
@@ -455,12 +464,30 @@ body {
 				<div class="comments comment-scroll">
 					<div class="comment">
 						<c:forEach items="${publicacion.comentarios}" var="comenta">
-							<h5>
-								<c:out value="${comenta.usuarioCreador.nombre}"></c:out>
-								<c:out value="${comenta.empresaCreador.nombre}"></c:out>
-								ha comentado:
-							</h5>
-							<p>
+									<c:if test="${comenta.usuarioCreador.nombre != null}">
+										<img alt="foto perfil"
+											src="/imagen/usuario/${comenta.usuarioCreador.id}"
+											style="height: 40px; width: 40px; border-radius: 50%;">
+									</c:if>
+									<c:if test="${comenta.empresaCreador.nombre != null}">
+										<img alt="foto perfil"
+											src="/imagen/empresa/${comenta.empresaCreador.id}"
+											style="height: 40px; width: 40px; border-radius: 50%;">
+									</c:if>
+							<div class="d-inline-block ml-3" style="vertical-align: middle;">
+								<p>
+									<c:out value="${comenta.usuarioCreador.nombre}"></c:out>
+									<c:out value="${comenta.empresaCreador.nombre}"></c:out>
+									ha comentado:
+								</p>
+								<p class="card-subtitle text-muted"
+									style="font-size: 14px; margin-top: -10px;">
+									<fmt:formatDate value="${comenta.createdAt}"
+										pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
+									<c:out value="${fechaFormateada}"></c:out>
+								</p>
+							</div>
+							<p style="font-size:20px;">
 								<c:out value="${comenta.contenido}"></c:out>
 							</p>
 						</c:forEach>

@@ -598,55 +598,53 @@ li {
 					<article class="border border-dark p-4 overflow-auto"
 						style="height: 100vh;">
 						<div class="row">
-							<!-- 							<div class="rounded-box"> -->
-							<!-- 								<h2 class="text-center mb-2 my-2"> -->
-							<!-- 									¡Haz una nueva publicacion!<a href="/crear-publicacion" -->
-							<!-- 										class="btn btn-success d-block col-6 mt-3 mb-2 borde-curvo" -->
-							<!-- 										style="width: 30%; margin-left:170px;">Publicar</a> -->
-							<!-- 								</h2> -->
+							<div class="rounded-box">
+								<h2 class="text-center mb-2 my-2">
+									¡Haz una nueva publicacion!<a href="/crear-publicacion"
+										class="btn btn-success d-block col-6 mt-3 mb-2 borde-curvo"
+										style="width: 30%; margin-left: 170px;">Publicar</a>
+								</h2>
 
-							<!-- 							</div> -->
-							<div class="row mt-4 mb-4">
+							</div>
+							<div class="row mt-3">
 								<c:forEach items="${publicacionEmpresa}" var="publicacion">
-									<div class="card mb-4">
-										<div class="card-header">
-											<c:if test="${publicacion.emisor.nombre != null}">
-												<img alt="foto perfil"
-													src="/imagen/usuario/${publicacion.emisor.id}"
-													style="height: 50px; width: 50px; border-radius: 50%;">
-											</c:if>
-											<div class="d-inline-block ml-3"
-												style="vertical-align: middle;">
-												<h5 class="card-title m-0 my-2">
-													<c:out
-														value="${publicacion.emisor.nombre} ${publicacion.emisor.apellido}"></c:out>
-												</h5>
-												<p class="card-subtitle text-muted">
-													<fmt:formatDate value="${publicacion.createdAt}"
-														pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
-													<c:out value="${fechaFormateada}"></c:out>
+									<div class="col-12 mb-4">
+										<div class="card">
+											<div class="card-header">
+												<c:if test="${publicacion.emisor.nombre != null}">
+													<img src="/imagen/usuario/${publicacion.emisor.id}"
+														alt="foto perfil" class="rounded-circle"
+														style="width: 50px; height: 50px;">
+												</c:if>
+												<div class="d-inline-block ml-3"
+													style="vertical-align: middle;">
+													<h5 class="card-title m-0 my-2">
+														<c:out
+															value="${publicacion.emisor.nombre} ${publicacion.emisor.apellido}"></c:out>
+													</h5>
+													<p class="card-subtitle text-muted">
+														<fmt:formatDate value="${publicacion.createdAt}"
+															pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
+														<c:out value="${fechaFormateada}"></c:out>
+													</p>
+												</div>
+											</div>
+											<div class="card-body">
+												<h6 class="card-subtitle mb-2 text-muted">
+													<c:out value="${publicacion.categoria.categoria}"></c:out>
+												</h6>
+												<p class="card-text">
+													<c:out value="${publicacion.descripcion}"></c:out>
+												</p>
+												<p class="card-text text-secondary">
+													Cantidad:
+													<c:out value="${publicacion.tamano}"></c:out>
+													kg
 												</p>
 											</div>
-										</div>
-										<div class="card-body">
-											<h6 class="card-subtitle mb-2 text-muted">
-												<c:out value="${publicacion.categoria.categoria}"></c:out>
-											</h6>
-											<p class="card-text">
-												<c:out value="${publicacion.descripcion}"></c:out>
-											</p>
-											<p class="card-text text-secondary">
-												Cantidad:
-												<c:out value="${publicacion.tamano}"></c:out>
-												kg
-											</p>
-										</div>
-										<div class="row mt-4 mb-4">
-											<!-- ... (código anterior) ... -->
 											<div class="card-footer">
-												<a class="btn btn-white" style="width: 100%;"
-													href="publicaciones-${publicacion.id}"> Agregar un
-													comentario </a>
+												<a href="publicaciones-${publicacion.id}"
+													class="btn btn-white w-100"> Agregar un comentario </a>
 											</div>
 										</div>
 									</div>
