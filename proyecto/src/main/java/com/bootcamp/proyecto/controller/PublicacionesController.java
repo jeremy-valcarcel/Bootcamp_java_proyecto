@@ -193,25 +193,25 @@ public class PublicacionesController {
 		} else if (userId != null) {
 			if (comentario.isEmpty() || comentario.isBlank()) {
 				errores.addFlashAttribute("error", "Por favor no envias comentarios vacios");
-				return "redirect:/publicaciones/{idPublicacion}";
+				return "redirect:/publicaciones-{idPublicacion}";
 			}
 			DesechosPublicaciones unaPublicacion = desechosPServ.unaPublicacion(idPublicacion);
 			Usuario usuario = usuarioServ.encontrarUserPorId(userId);
 
 			desechosPServ.comentarioUsuario(usuario, unaPublicacion, comentario);
 
-			return "redirect:/publicaciones/" + idPublicacion;
+			return "redirect:/publicaciones-" + idPublicacion;
 		}
 		if (comentario.isEmpty() || comentario.isBlank()) {
 			errores.addFlashAttribute("error", "Por favor no envias comentarios vacios");
-			return "redirect:/publicaciones/" + idPublicacion;
+			return "redirect:/publicaciones-" + idPublicacion;
 		}
 		DesechosPublicaciones unaPublicacion = desechosPServ.unaPublicacion(idPublicacion);
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 
 		desechosPServ.comentarioEmpresa(empresa, unaPublicacion, comentario);
 
-		return "redirect:/publicaciones/" + idPublicacion;
+		return "redirect:/publicaciones-" + idPublicacion;
 	}
 	
 	@PostMapping("publicaciones-{idPublicacion}-comentar")
@@ -225,7 +225,7 @@ public class PublicacionesController {
 		} else if (userId != null) {
 			if (comentario.isEmpty() || comentario.isBlank()) {
 				errores.addFlashAttribute("error", "Por favor no envias comentarios vacios");
-				return "redirect:/publicaciones/{idPublicacion}";
+				return "redirect:/publicaciones-{idPublicacion}";
 			}
 			DesechosPublicaciones unaPublicacion = desechosPServ.unaPublicacion(idPublicacion);
 			Usuario usuario = usuarioServ.encontrarUserPorId(userId);
@@ -236,7 +236,7 @@ public class PublicacionesController {
 		}
 		if (comentario.isEmpty() || comentario.isBlank()) {
 			errores.addFlashAttribute("error", "Por favor no envias comentarios vacios");
-			return "redirect:/publicaciones/" + idPublicacion;
+			return "redirect:/publicaciones-" + idPublicacion;
 		}
 		DesechosPublicaciones unaPublicacion = desechosPServ.unaPublicacion(idPublicacion);
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);

@@ -610,9 +610,11 @@ li {
 								<c:forEach items="${publicacionEmpresa}" var="publicacion">
 									<div class="card mb-4">
 										<div class="card-header">
-											<img class="img-thumbnail  rounded-circle"
-												src="imagen/usuario/${usuario.id }" alt="foto perfil"
-												style="width: 50px; height: 50px;">
+											<c:if test="${publicacion.emisor.nombre != null}">
+												<img alt="foto perfil"
+													src="/imagen/usuario/${publicacion.emisor.id}"
+													style="height: 50px; width: 50px; border-radius: 50%;">
+											</c:if>
 											<div class="d-inline-block ml-3"
 												style="vertical-align: middle;">
 												<h5 class="card-title m-0 my-2">

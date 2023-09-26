@@ -79,20 +79,6 @@ public class MainController {
 	        }
 	    }
 	}
-	
-//	@GetMapping("/imagen-{empresaId}")
-//	public void mostrarImagenEmpresa(@PathVariable Long empresaId, HttpServletResponse response) throws IOException {
-//		Empresas empresa = empresaServ.unaEmpresa(empresaId);
-//
-//
-//		if (empresa != null && empresa.getFoto() != null) {
-//			response.setContentType("image/jpeg"); // Establece el tipo de contenido
-//			InputStream is = new ByteArrayInputStream(empresa.getFoto());
-//
-//			
-//			IOUtils.copy(is, response.getOutputStream());
-//		}
-//	}
 
 	@GetMapping("/cargar-imagen")
 	public String mostrarFormularioCarga() {

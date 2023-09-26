@@ -579,14 +579,14 @@ li {
 								<c:forEach items="${publicacionEmpresa}" var="publicacion">
 									<div class="card mb-4">
 										<div class="card-header">
-											<c:if
-												test="${usuario.id == usuario.id && empresa.id == null }">
-												<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+											<c:if test="${publicacion.emisor.nombre != null}">
+												<img alt="foto perfil"
+													src="/imagen/usuario/${publicacion.emisor.id}"
 													style="height: 50px; width: 50px; border-radius: 50%;">
 											</c:if>
-											<c:if
-												test="${empresa.id == empresa.id && usuario.id == null}">
-												<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+											<c:if test="${publicacion.empresaEmisora != null}">
+												<img alt="foto perfil"
+													src="/imagen/empresa/${publicacion.empresaEmisora.id}"
 													style="height: 50px; width: 50px; border-radius: 50%;">
 											</c:if>
 
