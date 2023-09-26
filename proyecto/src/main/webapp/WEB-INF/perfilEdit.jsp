@@ -229,7 +229,6 @@ body {
 	list-style: none
 }
 /*ESTILOS PARA FOOTER*/
-
 .link-container {
 	display: flex;
 	justify-content: space-between;
@@ -311,9 +310,14 @@ body {
 						</ul>
 					</div>
 					<div class="register">
-						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
+						<a href="#" id="mostrarPerfil"> <c:if
+								test="${usuario.id == usuario.id && empresa.id == null }">
+								<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+									style="height: 60px; width: 60px; border-radius: 50%;">
+							</c:if> <c:if test="${empresa.id == empresa.id && usuario.id == null}">
+								<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+									style="height: 60px; width: 60px; border-radius: 50%;">
+							</c:if>
 						</a>
 
 						<div id="perfilModal" class="modal" style="width: 370px;">
@@ -323,7 +327,7 @@ body {
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="imagen/usuario/${usuario.id }"
 										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
 									<div>
@@ -338,7 +342,7 @@ body {
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="imagen/empresa/${empresa.id }"
 										style="height: 150px; width: 150px; margin-left: 90px;"
 										class="perfil-imagen">
 									<div>
@@ -385,8 +389,14 @@ body {
 				<!-- Contenido de la segunda columna (centro) -->
 				<div class="card">
 					<div class="card-body text-center">
-						<img alt="foto perfil" src="img/perfil.jpeg"
-							style="border-radius: 50%; height: 150px;">
+						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+							<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+								style="height: 170px; width: 170px; border-radius: 50%;">
+						</c:if>
+						<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+							<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+								style="height: 170px; width: 170px; border-radius: 50%;">
+						</c:if>
 					</div>
 					<div class="card-body">
 						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
@@ -464,8 +474,9 @@ body {
 										<form:input type="text" path="email" class="form-control" />
 									</div>
 									<div>
-									<form:input type="hidden" path="razonSocial" class="form-control" />
-									<form:input type="hidden" path="password" class="form-control" />
+										<form:input type="hidden" path="razonSocial"
+											class="form-control" />
+										<form:input type="hidden" path="password" class="form-control" />
 									</div>
 									<div class="form-group">
 										<form:errors class="text-danger form-control is-invalid"

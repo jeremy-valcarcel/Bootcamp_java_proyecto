@@ -491,9 +491,14 @@ li {
 					</div>
 
 					<div class="register">
-						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
+						<a href="#" id="mostrarPerfil"> <c:if
+								test="${usuario.id == usuario.id && empresa.id == null }">
+								<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+									style="height: 60px; width: 60px; border-radius: 50%;">
+							</c:if> <c:if test="${empresa.id == empresa.id && usuario.id == null}">
+								<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+									style="height: 60px; width: 60px; border-radius: 50%;">
+							</c:if>
 						</a>
 
 						<div id="perfilModal" class="modal" style="width: 370px;">
@@ -503,7 +508,7 @@ li {
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="imagen/usuario/${usuario.id }"
 										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
 									<div>
@@ -518,7 +523,7 @@ li {
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="imagen/empresa/${empresa.id }"
 										style="height: 150px; width: 150px; margin-left: 90px;"
 										class="perfil-imagen">
 									<div>
@@ -555,12 +560,14 @@ li {
 
 		<div class="row p-2" style="margin-bottom: 10%">
 			<div class="col" style="height: 80px">
-				<img alt="publicidad-4-Uruplac" src="/img/Publicidad-4-Uruplac.jpg" style="width: 103%; height: 230%; margin-left: -16px">
+				<img alt="publicidad-4-Uruplac" src="/img/Publicidad-4-Uruplac.jpg"
+					style="width: 103%; height: 230%; margin-left: -16px">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col m-2">
-				<img alt="publicidad-1-Ecoplas" src="/img/Publicidad-1-Ecoplas.jpg" style="width: 128%; height: 100%; margin-left: -12px">
+				<img alt="publicidad-1-Ecoplas" src="/img/Publicidad-1-Ecoplas.jpg"
+					style="width: 128%; height: 100%; margin-left: -12px">
 			</div>
 
 			<div class="col-8 m-2">
@@ -572,9 +579,16 @@ li {
 								<c:forEach items="${publicacionEmpresa}" var="publicacion">
 									<div class="card mb-4">
 										<div class="card-header">
-											<img class="rounded-circle img-thumbnail"
-												src="img/perfil.jpeg" alt="foto perfil"
-												style="width: 50px; height: 50px;">
+											<c:if
+												test="${usuario.id == usuario.id && empresa.id == null }">
+												<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+													style="height: 50px; width: 50px; border-radius: 50%;">
+											</c:if>
+											<c:if
+												test="${empresa.id == empresa.id && usuario.id == null}">
+												<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+													style="height: 50px; width: 50px; border-radius: 50%;">
+											</c:if>
 
 											<div class="d-inline-block ml-3"
 												style="vertical-align: middle;">
@@ -618,7 +632,9 @@ li {
 			</div>
 
 			<div class="col m-2">
-				<img alt="publicidad-3-Empresa_Verdes" src="/img/Publicidad-3-Empresa_Verdes.jpg" style="width: 128%; height: 100%; margin-left: -27px">
+				<img alt="publicidad-3-Empresa_Verdes"
+					src="/img/Publicidad-3-Empresa_Verdes.jpg"
+					style="width: 128%; height: 100%; margin-left: -27px">
 			</div>
 		</div>
 	</main>

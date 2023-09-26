@@ -220,7 +220,8 @@ input[type="file"]::-webkit-file-upload-button {
 	background: #4CAF50;
 	color: white;
 	padding: 10px 15px;
-	margin-left: 30px; border : none;
+	margin-left: 30px;
+	border: none;
 	border-radius: 5px;
 	cursor: pointer;
 	display: block;
@@ -232,8 +233,6 @@ input[type="file"]::-webkit-file-upload-button {
 input[type="file"]::after {
 	content: none; /* Cambia el texto antes de seleccionar un archivo */
 }
-
-
 </style>
 </head>
 
@@ -295,11 +294,18 @@ input[type="file"]::after {
 								</div></li>
 						</ul>
 					</div>
+
 					<div class="register">
-						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-							src="/imagen/${usuario.id}" class="d-inline-block"
-							style="height: 60px; width: 60px; border-radius: 50%;">
+						<a href="#" id="mostrarPerfil"> <c:if
+								test="${usuario.id == usuario.id && empresa.id == null }">
+								<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+									style="border-radius: 50%; height: 60px; width: 60px;">
+							</c:if> <c:if test="${empresa.id == empresa.id && usuario.id == null}">
+								<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+									style="border-radius: 50%; height: 60px; width: 60px;">
+							</c:if>
 						</a>
+
 
 						<div id="perfilModal" class="modal" style="width: 370px;">
 							<div class="modal-content">
@@ -308,7 +314,7 @@ input[type="file"]::after {
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="/imagen/${usuario.id}"
+									<img alt="Usuario" src="/imagen/usuario/${usuario.id}"
 										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
 									<div>
@@ -323,7 +329,7 @@ input[type="file"]::after {
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="/imagen/empresa/${empresa.id}"
 										style="height: 150px; width: 150px; margin-left: 90px;"
 										class="perfil-imagen">
 									<div>
@@ -358,8 +364,14 @@ input[type="file"]::after {
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img alt="foto perfil" src="/imagen/${usuario.id}"
-							style="border-radius: 50%; height: 160px; width: 160px;">
+						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+							<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+								style="border-radius: 50%; height: 160px; width: 160px;">
+						</c:if>
+						<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+							<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+								style="border-radius: 50%; height: 160px; width: 160px;">
+						</c:if>
 					</div>
 					<div class="col p-4">
 						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
@@ -434,9 +446,28 @@ input[type="file"]::after {
 						<c:if test="${empresa.id == empresa.id && usuario.id == null}">
 							<a href="/perfil-${empresa.id}-editar" class="btn btn-success"
 								style="width: 100%">Editar Perfil</a>
+							<div class="card-body text-center">
+								<div class="row">
+									<button id="mostrarFormulario" class="btn btn-success">
+										Cambiar la foto de perfil</button>
+									<div class="centered-form">
+										<form action="/cargar-imagen" method="post"
+											enctype="multipart/form-data" class="bordermy-2 p-2">
+											<div class="form-group">
+												<label for="archivo"></label> <input type="file"
+													id="archivo" name="archivo" accept="image/*">
+											</div>
+											<div class="form-group">
+												<button type="submit" class="btn btn-success"
+													style="width: 50%">Cargar Foto</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
 							<a href="/crear-publicacion"
-								class="btn btn-success d-block col-6 mt-2 mb-2"
-								style="width: 100%">Nueva publicación</a>
+								class="btn btn-success d-block col-6  mb-2" style="width: 100%">Nueva
+								publicación</a>
 							<a href="/logout" class="btn btn-success d-block col-6 mt-2"
 								style="width: 100%">Cerrar Sesión</a>
 						</c:if>
@@ -482,9 +513,15 @@ input[type="file"]::after {
 							<div class="col-md-12 mb-4">
 								<div class="card">
 									<div class="card-header">
-										<img class="img-thumbnail rounded-circle"
-											src="/imagen/${usuario.id}" alt="foto perfil"
-											style="width: 50px; height: 50px;">
+										<c:if
+											test="${usuario.id == usuario.id && empresa.id == null }">
+											<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+												style=" height: 50px; width: 50px;  border-radius: 50%;">
+										</c:if>
+										<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+											<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+												style=" height: 50px; width: 50px; border-radius: 50%;">
+										</c:if>
 										<div class="d-inline-block ml-3"
 											style="vertical-align: middle;">
 											<h5 class="card-title m-0 my-2">

@@ -233,7 +233,6 @@ body {
 	list-style: none
 }
 /*ESTILOS PARA FOOTER*/
-
 .link-container {
 	display: flex;
 	justify-content: space-between;
@@ -315,9 +314,14 @@ body {
 						</ul>
 					</div>
 					<div class="register">
-						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
+						<a href="#" id="mostrarPerfil"> <c:if
+								test="${usuario.id == usuario.id && empresa.id == null }">
+								<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+									style="height: 60px; width: 60px; border-radius: 50%;">
+							</c:if> <c:if test="${empresa.id == empresa.id && usuario.id == null}">
+								<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+									style="height: 60px; width: 60px; border-radius: 50%;">
+							</c:if>
 						</a>
 
 						<div id="perfilModal" class="modal" style="width: 370px;">
@@ -327,7 +331,7 @@ body {
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="imagen/usuario/${usuario.id }"
 										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
 									<div>
@@ -342,7 +346,7 @@ body {
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="imagen/empresa/${empresa.id }"
 										style="height: 150px; width: 150px; margin-left: 90px;"
 										class="perfil-imagen">
 									<div>

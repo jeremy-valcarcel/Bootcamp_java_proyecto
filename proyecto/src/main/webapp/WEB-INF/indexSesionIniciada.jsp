@@ -339,6 +339,15 @@
 	max-height: 100%;
 	overflow-y: auto;
 }
+.cerrar {
+	color: #aaa;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
 
 /* Estilo para la imagen de perfil (ajustar el tamaño según lo deseado) */
 .perfil-imagen {
@@ -442,9 +451,14 @@
 							</div>
 						</form>
 						<div class="register">
-							<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-								src="img/usuario.png" class="d-inline-block"
-								style="height: 60px;">
+							<a href="#" id="mostrarPerfil"> <c:if
+									test="${usuario.id == usuario.id && empresa.id == null }">
+									<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+										style="height: 60px; width: 60px; border-radius: 50%;">
+								</c:if> <c:if test="${empresa.id == empresa.id && usuario.id == null}">
+									<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+										style="height: 60px; width: 60px; border-radius: 50%;">
+								</c:if>
 							</a>
 
 							<div id="perfilModal" class="modal" style="width: 370px;">
@@ -454,7 +468,7 @@
 											<c:out value="${usuario.email}"></c:out>
 										</p>
 										<span class="cerrar" id="cerrarPerfil">&times;</span>
-										<img alt="Usuario" src="img/usuario.png"
+										<img alt="Usuario" src="imagen/usuario/${usuario.id }"
 											style="height: 150px; width: 150px; margin-left: 85px;"
 											class="perfil-imagen">
 										<div>
@@ -469,11 +483,11 @@
 											<c:out value="${empresa.email}"></c:out>
 										</p>
 										<span class="cerrar" id="cerrarPerfil">&times;</span>
-										<img alt="Usuario" src="img/usuario.png"
+										<img alt="Usuario" src="imagen/empresa/${empresa.id }"
 											style="height: 150px; width: 150px; margin-left: 90px;"
 											class="perfil-imagen">
 										<div>
-											<h2  class="text-black">
+											<h2 class="text-black">
 												¡Hola,
 												<c:out value="${empresa.nombre}!"></c:out>
 											</h2>

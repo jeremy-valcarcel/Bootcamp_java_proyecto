@@ -447,8 +447,10 @@ li {
 	flex-direction: column;
 	justify-content: center;
 }
+
 .borde-curvo {
-    border-radius: 100px; /* Puedes ajustar el valor para controlar el radio de los bordes */
+	border-radius: 100px;
+	/* Puedes ajustar el valor para controlar el radio de los bordes */
 }
 </style>
 </head>
@@ -512,9 +514,14 @@ li {
 					</div>
 
 					<div class="register">
-						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
+						<a href="#" id="mostrarPerfil"> <c:if
+								test="${usuario.id == usuario.id && empresa.id == null }">
+								<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+									style="height: 60px; width: 60px; border-radius: 50%;">
+							</c:if> <c:if test="${empresa.id == empresa.id && usuario.id == null}">
+								<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+									style="height: 60px; width: 60px; border-radius: 50%;">
+							</c:if>
 						</a>
 
 						<div id="perfilModal" class="modal" style="width: 370px;">
@@ -524,7 +531,7 @@ li {
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="imagen/usuario/${usuario.id }"
 										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
 									<div>
@@ -539,7 +546,7 @@ li {
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="imagen/empresa/${empresa.id }"
 										style="height: 150px; width: 150px; margin-left: 90px;"
 										class="perfil-imagen">
 									<div>
@@ -575,12 +582,15 @@ li {
 	<main class="container" style="margin-top: 100px;">
 		<div class="row p-2" style="margin-bottom: 10%">
 			<div class="col" style="height: 80px">
-				<img alt="publicidad-6-Kolibri" src="/img/Publicidad-6-Kolibri.jpg" style="width: 103%; height: 230%; margin-left: -16px">
+				<img alt="publicidad-6-Kolibri" src="/img/Publicidad-6-Kolibri.jpg"
+					style="width: 103%; height: 230%; margin-left: -16px">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col m-2">
-				<img alt="publicidad-5-Aborgama" src="/img/Publicidad-5-Aborgama.jpg" style="width: 128%; height: 100%; margin-left: -12px">
+				<img alt="publicidad-5-Aborgama"
+					src="/img/Publicidad-5-Aborgama.jpg"
+					style="width: 128%; height: 100%; margin-left: -12px">
 			</div>
 
 			<div class="col-8 m-2">
@@ -588,20 +598,20 @@ li {
 					<article class="border border-dark p-4 overflow-auto"
 						style="height: 100vh;">
 						<div class="row">
-<!-- 							<div class="rounded-box"> -->
-<!-- 								<h2 class="text-center mb-2 my-2"> -->
-<!-- 									¡Haz una nueva publicacion!<a href="/crear-publicacion" -->
-<!-- 										class="btn btn-success d-block col-6 mt-3 mb-2 borde-curvo" -->
-<!-- 										style="width: 30%; margin-left:170px;">Publicar</a> -->
-<!-- 								</h2> -->
+							<!-- 							<div class="rounded-box"> -->
+							<!-- 								<h2 class="text-center mb-2 my-2"> -->
+							<!-- 									¡Haz una nueva publicacion!<a href="/crear-publicacion" -->
+							<!-- 										class="btn btn-success d-block col-6 mt-3 mb-2 borde-curvo" -->
+							<!-- 										style="width: 30%; margin-left:170px;">Publicar</a> -->
+							<!-- 								</h2> -->
 
-<!-- 							</div> -->
+							<!-- 							</div> -->
 							<div class="row mt-4 mb-4">
 								<c:forEach items="${publicacionEmpresa}" var="publicacion">
 									<div class="card mb-4">
 										<div class="card-header">
 											<img class="img-thumbnail  rounded-circle"
-												src="img/perfil.jpeg" alt="foto perfil"
+												src="imagen/usuario/${usuario.id }" alt="foto perfil"
 												style="width: 50px; height: 50px;">
 											<div class="d-inline-block ml-3"
 												style="vertical-align: middle;">
@@ -646,7 +656,8 @@ li {
 			</div>
 
 			<div class="col m-2">
-				<img alt="publicidad-2-Cempre" src="/img/Publicidad-2-Cempre.jpg" style="width: 128%; height: 100%; margin-left: -27px">
+				<img alt="publicidad-2-Cempre" src="/img/Publicidad-2-Cempre.jpg"
+					style="width: 128%; height: 100%; margin-left: -27px">
 			</div>
 
 		</div>

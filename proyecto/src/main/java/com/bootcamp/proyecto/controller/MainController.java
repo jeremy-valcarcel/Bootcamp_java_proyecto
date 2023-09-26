@@ -47,16 +47,52 @@ public class MainController {
 		this.RolesServices = rS;
 	}
 
-	@GetMapping("/imagen/{usuarioId}")
-	public void mostrarImagen(@PathVariable Long usuarioId, HttpServletResponse response) throws IOException {
-		Usuario usuario = userServ.unUsuario(usuarioId);
-
-		if (usuario != null && usuario.getFoto() != null) {
-			response.setContentType("image/jpeg"); // Establece el tipo de contenido
-			InputStream is = new ByteArrayInputStream(usuario.getFoto());
-			IOUtils.copy(is, response.getOutputStream());
-		}
+//	@GetMapping("/imagen/{usuarioId}")
+//	public void mostrarImagen(@PathVariable Long usuarioId, HttpServletResponse response) throws IOException {
+//		Usuario usuario = userServ.unUsuario(usuarioId);
+//		Empresas empresa = empresaServ.unaEmpresa(empresaId);
+//
+//		if (usuario != null && usuario.getFoto() != null) {
+//			response.setContentType("image/jpeg"); // Establece el tipo de contenido
+//			InputStream is = new ByteArrayInputStream(usuario.getFoto());
+//
+//			
+//			IOUtils.copy(is, response.getOutputStream());
+//		}
+//	}
+	
+	@GetMapping("/imagen/{tipo}/{id}")
+	public void mostrarImagen(@PathVariable String tipo, @PathVariable Long id, HttpServletResponse response) throws IOException {
+	    if ("usuario".equals(tipo)) {
+	        Usuario usuario = userServ.unUsuario(id);
+	        if (usuario != null && usuario.getFoto() != null) {
+	            response.setContentType("image/jpeg");
+	            InputStream is = new ByteArrayInputStream(usuario.getFoto());
+	            IOUtils.copy(is, response.getOutputStream());
+	        }
+	    } else if ("empresa".equals(tipo)) {
+	        Empresas empresa = empresaServ.encontrarEmpresaPorId(id);
+	        if (empresa != null && empresa.getFoto() != null) {
+	            response.setContentType("image/jpeg");
+	            InputStream is = new ByteArrayInputStream(empresa.getFoto());
+	            IOUtils.copy(is, response.getOutputStream());
+	        }
+	    }
 	}
+	
+//	@GetMapping("/imagen-{empresaId}")
+//	public void mostrarImagenEmpresa(@PathVariable Long empresaId, HttpServletResponse response) throws IOException {
+//		Empresas empresa = empresaServ.unaEmpresa(empresaId);
+//
+//
+//		if (empresa != null && empresa.getFoto() != null) {
+//			response.setContentType("image/jpeg"); // Establece el tipo de contenido
+//			InputStream is = new ByteArrayInputStream(empresa.getFoto());
+//
+//			
+//			IOUtils.copy(is, response.getOutputStream());
+//		}
+//	}
 
 	@GetMapping("/cargar-imagen")
 	public String mostrarFormularioCarga() {

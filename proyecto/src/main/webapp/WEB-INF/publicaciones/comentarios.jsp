@@ -282,9 +282,10 @@ body {
 	overflow-y: auto;
 	/* Agrega la barra de desplazamiento vertical si el contenido es demasiado grande */
 }
+
 .post-container-small {
-    max-width: 400px; /* Define el ancho máximo que desees */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+	max-width: 400px; /* Define el ancho máximo que desees */
+	margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 </style>
 </head>
@@ -347,9 +348,14 @@ body {
 						</ul>
 					</div>
 					<div class="register">
-						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px; width: 60px;">
+						<a href="#" id="mostrarPerfil"> <c:if
+								test="${usuario.id == usuario.id && empresa.id == null }">
+								<img alt="foto perfil" src="/imagen/usuario/${usuario.id}"
+									style="height: 60px; width: 60px; border-radius: 50%;">
+							</c:if> <c:if test="${empresa.id == empresa.id && usuario.id == null}">
+								<img alt="foto perfil" src="/imagen/empresa/${empresa.id}"
+									style="height: 60px; width: 60px; border-radius: 50%;">
+							</c:if>
 						</a>
 
 						<div id="perfilModal" class="modal" style="width: 370px;">
@@ -359,7 +365,7 @@ body {
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="imagen/usuario/${usuario.id }"
 										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
 									<div>
@@ -374,7 +380,7 @@ body {
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="imagen/empresa/${empresa.id }"
 										style="height: 150px; width: 150px; margin-left: 90px;"
 										class="perfil-imagen">
 									<div>
@@ -460,7 +466,7 @@ body {
 						</c:forEach>
 					</div>
 				</div>
-				<div class="col-7" style="margin-left:200px;">
+				<div class="col-7" style="margin-left: 200px;">
 					<form action="/publicaciones-${publicacion.id}-comentario"
 						method="post">
 						<div class="form-group my-3">
@@ -471,7 +477,8 @@ body {
 							<div>
 								<textarea name="comment" class="form-control"></textarea>
 							</div>
-							<button class="btn btn-success my-2" style="margin-left: 200px;">Enviar Comentario</button>
+							<button class="btn btn-success my-2" style="margin-left: 200px;">Enviar
+								Comentario</button>
 						</div>
 					</form>
 				</div>
