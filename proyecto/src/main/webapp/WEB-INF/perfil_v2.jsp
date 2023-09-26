@@ -277,14 +277,22 @@ body {
 						</ul>
 					</div>
 					<div class="register">
-						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-							src="/imagen/${usuario.id}" class="d-inline-block"
-							style="height: 60px; width: 60px; border-radius: 50%;">
-						</a>
+						<c:if test="${usuario.id == usuario.id && empresa.id == null}">
+							<a href="#" id="mostrarPerfil"> <img alt="Usuario"
+								src="/imagen/${usuario.id}" class="d-inline-block"
+								style="height: 60px; width: 60px; border-radius: 50%;">
+							</a>
+						</c:if>
+						<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+							<a href="#" id="mostrarPerfil"> <img alt="Usuario"
+								src="/imagen/${empresa.id}" class="d-inline-block"
+								style="height: 60px; width: 60px; border-radius: 50%;">
+							</a>
+						</c:if>
 
 						<div id="perfilModal" class="modal" style="width: 370px;">
 							<div class="modal-content">
-								<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+								<c:if test="${usuario.id == usuario.id && empresa.id == null}">
 									<p class="text-black my-2">
 										<c:out value="${usuario.email}"></c:out>
 									</p>
@@ -304,8 +312,8 @@ body {
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
-										style="height: 150px; width: 150px; margin-left: 90px;"
+									<img alt="Usuario" src="/imagen/${empresa.id}"
+										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
 									<div>
 										<h2>
@@ -338,13 +346,19 @@ body {
 		<div class="row mt-4">
 			<div class="col-md-3">
 				<div class="card">
-					<div class="card-body text-center">
-						<img alt="foto perfil" src="/imagen/${usuario.id}"
-							style="border-radius: 50%; height: 160px; width:160px;">
-					</div>
-					<img alt="foto perfil" src="/imagen/${empresa.id}"
-							style="border-radius: 50%; height: 150px;">
-					</div>
+
+					<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+						<div class="card-body text-center">
+							<img alt="foto perfil" src="/imagen/${usuario.id}"
+								style="border-radius: 50%; height: 160px; width: 160px;">
+						</div>
+					</c:if>
+					<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+						<div class="card-body text-center">
+							<img alt="foto perfil" src="/imagen/${empresa.id}"
+								style="border-radius: 50%; height: 150px;">
+						</div>
+					</c:if>
 					<div class="col p-4">
 						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 							<h4 class="text-secondary text-center mb-3">
@@ -455,7 +469,7 @@ body {
 							</div>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 			<div class="col-md-9">
@@ -466,9 +480,17 @@ body {
 							<div class="col-md-12 mb-4">
 								<div class="card">
 									<div class="card-header">
-										<img class="img-thumbnail rounded-circle"
-											src="/imagen/${usuario.id}" alt="foto perfil"
-											style="width: 50px; height: 50px;">
+										<c:if
+											test="${usuario.id == usuario.id && empresa.id == null }">
+											<img class="img-thumbnail rounded-circle"
+												src="/imagen/${usuario.id}" alt="foto perfil"
+												style="width: 50px; height: 50px;">
+										</c:if>
+										<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+											<img class="img-thumbnail rounded-circle"
+												src="/imagen/${empresa.id}" alt="foto perfil"
+												style="width: 50px; height: 50px;">
+										</c:if>
 										<div class="d-inline-block ml-3"
 											style="vertical-align: middle;">
 											<h5 class="card-title m-0 my-2">
