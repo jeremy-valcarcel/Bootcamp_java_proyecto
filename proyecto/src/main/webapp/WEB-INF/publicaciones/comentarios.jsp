@@ -21,7 +21,7 @@
 <script type="text/javascript" src="/js/app.js"></script>
 <style>
 .contain {
-	max-width: 800px;
+	width: 1000px;
 	margin: 20px auto;
 	background-color: #fff;
 	padding: 20px;
@@ -33,7 +33,7 @@ h1 {
 	text-align: center;
 }
 
-.post-container {
+.post-contain {
 	margin-top: 20px;
 }
 
@@ -276,9 +276,20 @@ body {
 .link-container:hover .link-style {
 	color: #fff; /* Cambio de color del texto al pasar el mouse */
 }
+
+.comment-scroll {
+	max-height: 300px; /* Tamaño máximo del área de comentarios */
+	overflow-y: auto;
+	/* Agrega la barra de desplazamiento vertical si el contenido es demasiado grande */
+}
+.post-container-small {
+    max-width: 400px; /* Define el ancho máximo que desees */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
 </style>
 </head>
-<body style="display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
+<body
+	style="display: grid; min-height: 100vh; grid-template-row: auto 1fr auto;">
 
 	<div class="fixed-top">
 		<header class="topbar">
@@ -389,12 +400,6 @@ body {
 							</div>
 						</div>
 
-
-
-
-
-
-
 					</div>
 				</div>
 			</nav>
@@ -403,53 +408,73 @@ body {
 
 
 	<div class="contain row">
-		<a href="/perfil"> Go back</a>
+		<a href="/perfil">Go back</a>
 	</div>
-	<div class="container">
-		<div class="post-container">
+	<div class="contain">
+		<div class="post-contain">
 			<!-- Publicación 1 -->
 			<div class="post">
-				<h2>
-					<c:out
-						value="${publicacion.emisor.nombre } ${publicacion.emisor.apellido }"></c:out>
-					ha publicado:
-					<c:out value="${publicacion.empresaEmisora.nombre }"></c:out>
-				</h2>
-				<h1 class="my-2">
-					<c:out value="${publicacion.descripcion }"></c:out>
-					.
-				</h1>
+
+				<div class="card-header">
+					<img class="img-thumbnail  rounded-circle" src="img/perfil.jpeg"
+						alt="foto perfil" style="width: 50px; height: 50px;">
+					<div class="d-inline-block ml-3" style="vertical-align: middle;">
+						<h5 class="card-title m-0 my-2">
+							<c:out
+								value="${publicacion.emisor.nombre} ${publicacion.emisor.apellido}"></c:out>
+							<c:out value="${publicacion.empresaEmisora.nombre}"></c:out>
+							ha publicado:
+						</h5>
+						<p class="card-subtitle text-muted" style="margin-top: -5px;">
+							<fmt:formatDate value="${publicacion.createdAt}"
+								pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
+							<c:out value="${fechaFormateada}"></c:out>
+						</p>
+					</div>
+					<div class="card-body my-3">
+						<h4 class="card-subtitle mb-2 text-muted">
+							<c:out value="${publicacion.categoria.categoria}"></c:out>
+						</h4>
+						<p class="card-text" style="font-size: 20px;">
+							<c:out value="${publicacion.descripcion}"></c:out>
+						</p>
+						<p class="card-text text-secondary">
+							Cantidad:
+							<c:out value="${publicacion.tamano}"></c:out>
+							kg
+						</p>
+					</div>
+				</div>
 				<!-- Comentarios de la Publicación 1 -->
-				<div class="comments">
+				<div class="comments comment-scroll">
 					<div class="comment">
-						<c:forEach items="${publicacion.comentarios }" var="comenta">
+						<c:forEach items="${publicacion.comentarios}" var="comenta">
 							<h5>
-								<c:out value="${comenta.usuarioCreador.nombre }"></c:out>
-								<c:out value="${comenta.empresaCreador.nombre }"></c:out>
+								<c:out value="${comenta.usuarioCreador.nombre}"></c:out>
+								<c:out value="${comenta.empresaCreador.nombre}"></c:out>
 								ha comentado:
 							</h5>
 							<p>
-								<c:out value="${comenta.contenido }"></c:out>
+								<c:out value="${comenta.contenido}"></c:out>
 							</p>
 						</c:forEach>
 					</div>
 				</div>
-				<div class="col-7">
-
-					<form action="/publicaciones-${publicacion.id }-comentario"
+				<div class="col-7" style="margin-left:200px;">
+					<form action="/publicaciones-${publicacion.id}-comentario"
 						method="post">
 						<div class="form-group my-3">
-							<label> Agregar un comentario...</label>
+							<label>Agregar un comentario...</label>
 							<p class="text-danger">
-								<c:out value="${error }"></c:out>
+								<c:out value="${error}"></c:out>
 							</p>
-							<textarea name="comment" class="form-control"> </textarea>
-							<button class="my-2">Enviar Comentario</button>
+							<div>
+								<textarea name="comment" class="form-control"></textarea>
+							</div>
+							<button class="btn btn-success my-2" style="margin-left: 200px;">Enviar Comentario</button>
 						</div>
 					</form>
-
 				</div>
-
 			</div>
 		</div>
 	</div>

@@ -434,6 +434,22 @@ li {
 .link-container:hover .link-style {
 	color: #fff; /* Cambio de color del texto al pasar el mouse */
 }
+
+.rounded-box {
+	border-radius: 70px;
+	padding: 20px;
+	background-color: #ffffff;
+	text-align: center;
+	width: 70%; /* Ajusta el ancho del bloque según tus necesidades */
+	height: 150px; /* Ajusta la altura del bloque según tus necesidades */
+	margin: 0 auto; /* Centra horizontalmente el bloque */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.borde-curvo {
+    border-radius: 100px; /* Puedes ajustar el valor para controlar el radio de los bordes */
+}
 </style>
 </head>
 <body
@@ -574,6 +590,14 @@ li {
 					<article class="border border-dark p-4 overflow-auto"
 						style="height: 100vh;">
 						<div class="row">
+<!-- 							<div class="rounded-box"> -->
+<!-- 								<h2 class="text-center mb-2 my-2"> -->
+<!-- 									¡Haz una nueva publicacion!<a href="/crear-publicacion" -->
+<!-- 										class="btn btn-success d-block col-6 mt-3 mb-2 borde-curvo" -->
+<!-- 										style="width: 30%; margin-left:170px;">Publicar</a> -->
+<!-- 								</h2> -->
+
+<!-- 							</div> -->
 							<div class="row mt-4 mb-4">
 								<c:forEach items="${publicacionEmpresa}" var="publicacion">
 									<div class="card mb-4">
