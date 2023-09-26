@@ -193,6 +193,28 @@ body {
 	list-style: none
 }
 /*ESTILOS PARA FOOTER*/
+.link-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.link-style {
+	color: #6c757d; /* Color del texto del enlace */
+	text-decoration: none; /* Quita el subrayado del enlace */
+	transition: color 0.3s; /* Animación de cambio de color */
+	font-weight: bold;
+	/* Puedes cambiar el peso de la fuente según tus preferencias */
+}
+
+.link-container:hover {
+	background-color: #e74c3c;
+	/* Cambio de color de fondo al pasar el mouse */
+}
+
+.link-container:hover .link-style {
+	color: #fff; /* Cambio de color del texto al pasar el mouse */
+}
 </style>
 </head>
 
@@ -256,207 +278,234 @@ body {
 					</div>
 					<div class="register">
 						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px;">
+							src="/imagen/${usuario.id}" class="d-inline-block"
+							style="height: 60px; width: 60px; border-radius: 50%;">
 						</a>
 
-						<div id="perfilModal" class="modal">
+						<div id="perfilModal" class="modal" style="width: 370px;">
 							<div class="modal-content">
 								<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 									<p class="text-black my-2">
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									<img alt="Usuario" src="/imagen/${usuario.id}"
+										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
-									<h2>
-										¡Hola,
-										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
-									</h2>
+									<div>
+										<h2>
+											¡Hola,
+											<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+										</h2>
+									</div>
 								</c:if>
 								<c:if test="${empresa.id == empresa.id && usuario.id == null}">
 									<p class="text-black my-2">
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									<img alt="Usuario" src="img/usuario.png"
+										style="height: 150px; width: 150px; margin-left: 90px;"
 										class="perfil-imagen">
-									<h2>
-										¡Hola,
-										<c:out value="${empresa.nombre}!"></c:out>
-									</h2>
+									<div>
+										<h2>
+											¡Hola,
+											<c:out value="${empresa.nombre}!"></c:out>
+										</h2>
+									</div>
 								</c:if>
-								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
-									style="width: 350px">Ir a perfil</a> <a href="/logout"
-									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
-									Sesión</a>
 
+								<div style="margin-left: -230px" class="mb-2 mt-3">
+									<img src="imgs/profile.png" alt="Logo 1"
+										style="height: 20px; width: 20px; margin-right: 10px;">
+									<a href="/perfil" class="text-decoration-none link-style">Ir
+										a perfil</a>
+								</div>
+								<div style="margin-left: -200px">
+									<img src="imgs/cerrar.png" alt="Logo 3"
+										style="height: 20px; width: 20px; margin-right: 10px;">
+									<a href="/logout" class="text-decoration-none link-style">Cerrar
+										Sesión</a>
+								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</nav>
 		</header>
 	</div>
-
 	<main class="container" style="margin-top: 100px;">
 		<div class="row mt-4">
-			<div class="col-sm-3">
-				<img alt="foto perfil" src="img/perfil.jpeg"
-					style="border-radius: 300px; height: 13em; position: relative;">
-			</div>
-			<c:if test="${usuario.id == usuario.id && empresa.id == null }">
-				<div class="col mt-5 ml-2">
-					<h2 class="text-secondary">
-						¡Hola,
-						<c:out value="${usuario.nombre}"></c:out>
-						<c:out value="${usuario.apellido}!"></c:out>
-					</h2>
-					<p class="text-secondary">
-						Email:
-						<c:out value="${usuario.email}"></c:out>
-					</p>
-					<p class="text-secondary">
-						Contacto:
-						<c:out value="${usuario.telefono}"></c:out>
-					</p>
-					<p class="text-secondary">
-						Tipo de cuenta:
-						<c:out value="${usuario.rol.name}"></c:out>
-					</p>
-				</div>
-			</c:if>
-			<c:if test="${empresa.id == empresa.id && usuario.id == null}">
-				<div class="col mt-5 ml-2">
-					<h2 class="text-secondary">
-						¡Hola,
-						<c:out value="${empresa.nombre}!"></c:out>
-					</h2>
-					<p class="text-secondary">
-						Email:
-						<c:out value="${empresa.email}"></c:out>
-					</p>
-					<p class="text-secondary">
-						Contacto:
-						<c:out value="${empresa.telefono}"></c:out>
-					</p>
-					<p class="text-secondary">
-						Direccion:
-						<c:out value="${empresa.direccion}"></c:out>
-					</p>
-					<p class="text-secondary">
-						Razon social:
-						<c:out value="${empresa.razonSocial}"></c:out>
-					</p>
-					<p class="text-secondary">
-						Tipo de cuenta:
-						<c:out value="${empresa.rol.name}"></c:out>
-					</p>
-				</div>
-			</c:if>
-		</div>
-
-
-		<div class="row mb-4">
-			<div class="col-sm-3 mt-4">
-				<aside class="col">
-				
-				<c:if test="${usuario.id == usuario.id && empresa.id == null }">
-					<a href="/perfil-${usuario.id}-edit"
-						class="btn btn-success d-block col-6 mb-2" style="width: 210px">Editar
-						Perfil</a>
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-body text-center">
+						<img alt="foto perfil" src="/imagen/${usuario.id}"
+							style="border-radius: 50%; height: 150px;">
+					</div>
+					<div class="col p-4">
+						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+							<h4 class="text-secondary text-center mb-3">
+								¡Hola,
+								<c:out value="${usuario.nombre}"></c:out>
+								<c:out value="${usuario.apellido}!"></c:out>
+							</h4>
+							<p class="text-secondary">
+								<strong><img src="imgs/email.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Email:</strong>
+								<c:out value="${usuario.email}"></c:out>
+							</p>
+							<p class="text-secondary">
+								<strong><img src="imgs/contacto.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									Contacto:</strong>
+								<c:out value="${usuario.telefono}"></c:out>
+							</p>
+							<p class="text-secondary">
+								<strong> <img src="imgs/rol.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">Tipo
+									de cuenta:
+								</strong>
+								<c:out value="${usuario.rol.name}"></c:out>
+							</p>
 						</c:if>
-			<c:if test="${empresa.id == empresa.id && usuario.id == null}">
-						<a href="/perfil-${empresa.id}-editar"
-						class="btn btn-success d-block col-6 mb-2" style="width: 210px">Editar
-						Perfil</a>
+						<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+							<h4 class="text-secondary text-center mb-3">
+								¡Hola,
+								<c:out value="${empresa.nombre}"></c:out>
+							</h4>
+							<p class="text-secondary">
+								<strong> <img src="imgs/email.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Email:
+								</strong>
+								<c:out value="${empresa.email}"></c:out>
+							</p>
+							<p class="text-secondary">
+								<strong> <img src="imgs/contacto.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Contacto:
+								</strong>
+								<c:out value="${empresa.telefono}"></c:out>
+							</p>
+							<p class="text-secondary">
+								<strong> <img src="imgs/rol.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Tipo de cuenta:
+								</strong>
+								<c:out value="${empresa.rol.name}"></c:out>
+							</p>
+							<p class="text-secondary">
+								<strong> <img src="imgs/razon_social.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Razón social:
+								</strong>
+								<c:out value="${empresa.razonSocial}"></c:out>
+							</p>
+							<p class="text-secondary">
+								<strong> <img src="imgs/direccion.png"
+									style="width: 25px; height: 25px;" alt="Logotipo" class="logo">
+									<!-- Agrega tu logotipo aquí --> Dirección:
+								</strong>
+								<c:out value="${empresa.direccion}"></c:out>
+							</p>
 						</c:if>
-						 <a href="/crear/publicacion"
-						class="btn btn-success d-block col-6 mt-2 mb-2"
-						style="width: 210px">Nueva publicacion</a> <a href="/logout"
-						class="btn btn-success d-block col-6 mt-2" style="width: 210px">Cerrar
-						Sesion</a>
-				</aside>
-			</div>
-			<div class="col mt-4">
+					</div>
+					<div class="card-footer text-center">
+						<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+							<a href="/perfil-${empresa.id}-editar" class="btn btn-success"
+								style="width: 100%">Editar Perfil</a>
+							<a href="/crear-publicacion"
+								class="btn btn-success d-block col-6 mt-2 mb-2"
+								style="width: 100%">Nueva publicación</a>
+							<a href="/logout" class="btn btn-success d-block col-6 mt-2"
+								style="width: 100%">Cerrar Sesión</a>
+						</c:if>
+						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+							<a href="/perfil-${usuario.id}-edit" class="btn btn-success"
+								style="width: 100%">Editar Perfil</a>
+							<a href="/crear-publicacion"
+								class="btn btn-success d-block col-6 mt-2 mb-2"
+								style="width: 100%">Nueva publicación</a>
+							<a href="/logout" class="btn btn-success d-block col-6 mt-2"
+								style="width: 100%">Cerrar Sesión</a>
+						</c:if>
+					</div>
 
+
+					<div class="card-body text-center">
+						<div class="row">
+							<div class="col">
+								<form action="/cargar-imagen" method="post"
+									enctype="multipart/form-data">
+									<div class="form-group my-3">
+										<label for="archivo">Cambiar la foto de perfil:</label> <input
+											type="file" id="archivo" name="archivo" accept="image/*"
+											class="form-control-file">
+									</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-success"
+											style="width: 100%">Cargar Foto</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
 				<section style="border: 1px solid #000000; padding: 1em;">
 					<h3 class="text-center text-secondary">Tus Publicaciones:</h3>
-					<article>
-						<div class="col mt-4">
-							<c:forEach items="${publicaciones }" var="publicacion">
-
-								<div class="row">
-									<div class="row mt-4 mb-4">
-										<%-- 								<c:forEach items="${publicacionEmpresa}" var="publicacion"> --%>
-										<div class="row m-0 mb-2">
-											<div class="col" style="height: 52px">
-												<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg"
-													style="border-radius: 300px; height: 50px; width: 50px; margin-left: -10px; position: static">
-												<p class="float-end p-2">
-													<fmt:formatDate value="${publicacion.createdAt}"
-														pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
-													<c:out value="${fechaFormateada}"></c:out>
-												</p>
-												<div style="display: inline-block; margin-left: 10px">
-													<h5 class="m-0">
-														<c:out
-															value="${publicacion.emisor.nombre} ${publicacion.emisor.apellido}"></c:out>
-														<c:out value="${publicacion.empresaEmisora.nombre}"></c:out>
-													</h5>
-													<p class="text-secondary" style="margin-top: -3px">
-														<c:out value="${publicacion.empresaEmisora.direccion}"></c:out>
-													</p>
-												</div>
-											</div>
-										</div>
-
-										<div class="row">
-											<h4 class="text-secondary mt-2">
-												<c:out value="${publicacion.categoria.categoria}"></c:out>
-											</h4>
-											<p>
-												<c:out value="${publicacion.descripcion}"></c:out>
-											</p>
-											<p>
-												Cantidad:
-												<c:out value="${publicacion.tamano}"></c:out>
-												kg
+					<div class="row mt-4">
+						<c:forEach items="${publicaciones}" var="publicacion">
+							<div class="col-md-12 mb-4">
+								<div class="card">
+									<div class="card-header">
+										<img class="img-thumbnail rounded-circle"
+											src="/imagen/${usuario.id}" alt="foto perfil"
+											style="width: 50px; height: 50px;">
+										<div class="d-inline-block ml-3"
+											style="vertical-align: middle;">
+											<h5 class="card-title m-0 my-2">
+												<c:out
+													value="${publicacion.emisor.nombre} ${publicacion.emisor.apellido}"></c:out>
+												<c:out value="${publicacion.empresaEmisora.nombre}"></c:out>
+											</h5>
+											<p class="card-subtitle text-muted">
+												<fmt:formatDate value="${publicacion.createdAt}"
+													pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
+												<c:out value="${fechaFormateada}"></c:out>
 											</p>
 										</div>
-										<div class="row mb-4" style="height: 40px">
-											<div class="col mx-0 m-0" style="display: inline-block">
-												<a class="p-2 btn btn-success" style="width: 309px"
-													href="publicaciones-${publicacion.id}">comentar</a>
-											</div>
-										</div>
-
-										<!-- 									Mostrar los comentarios de esta publicación -->
-										<!-- 									<div class="row"> -->
-										<!-- 										<h3>Comentarios:</h3> -->
-										<!-- 										<ul> -->
-										<%-- 											<c:forEach var="comentario" --%>
-										<%-- 												items="${publicacion.comentarios}"> --%>
-										<%-- 												<c:out --%>
-										<%-- 													value="${comentario.usuarioCreador.nombre } ${comentario.usuarioCreador.apellido }">¡</c:out> ha comentado: --%>
-										<%-- 												<c:out value="${comentario.empresaCreador.nombre }"></c:out> --%>
-										<%-- 												<li>${comentario.contenido}</li> --%>
-										<%-- 											</c:forEach> --%>
-										<!-- 										</ul> -->
-										<!-- 									</div> -->
-										<%-- 								</c:forEach> --%>
 									</div>
-							</c:forEach>
-						</div>
-
-					</article>
+									<div class="card-body">
+										<h4 class="text-secondary mt-2">
+											<c:out value="${publicacion.categoria.categoria}"></c:out>
+										</h4>
+										<p>
+											<c:out value="${publicacion.descripcion}"></c:out>
+										</p>
+										<p>
+											Cantidad:
+											<c:out value="${publicacion.tamano}"></c:out>
+											kg
+										</p>
+									</div>
+									<div class="card-footer">
+										<a class="btn btn-white" style="width: 100%;"
+											href="publicaciones-${publicacion.id}">Agregar un
+											comentario</a>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
+					</div>
 				</section>
 			</div>
 		</div>
 	</main>
 
-	<footer class="site-footer">
+	<footer class="site-footer mt-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-3">

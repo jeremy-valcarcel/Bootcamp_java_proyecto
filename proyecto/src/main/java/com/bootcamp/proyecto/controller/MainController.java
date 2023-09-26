@@ -1,14 +1,22 @@
 package com.bootcamp.proyecto.controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.security.Principal;
 import java.util.List;
 
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.bootcamp.proyecto.models.Empresas;
 import com.bootcamp.proyecto.models.Roles;
@@ -18,6 +26,7 @@ import com.bootcamp.proyecto.services.EmpresaService;
 import com.bootcamp.proyecto.services.RolesServices;
 import com.bootcamp.proyecto.services.UsuarioService;
 
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
@@ -37,6 +46,46 @@ public class MainController {
 		this.desechosPServ = dPS;
 		this.RolesServices = rS;
 	}
+
+	@GetMapping("/imagen/{usuarioId}")
+	public void mostrarImagen(@PathVariable Long usuarioId, HttpServletResponse response) throws IOException {
+		Usuario usuario = userServ.unUsuario(usuarioId);
+
+		if (usuario != null && usuario.getFoto() != null) {
+			response.setContentType("image/jpeg"); // Establece el tipo de contenido
+			InputStream is = new ByteArrayInputStream(usuario.getFoto());
+			IOUtils.copy(is, response.getOutputStream());
+		}
+	}
+
+	@GetMapping("/cargar-imagen")
+	public String mostrarFormularioCarga() {
+		return "perfilEdit.jsp"; // Nombre de la vista JSP
+	}
+
+	@PostMapping("/cargar-imagen")
+	public String cargarImagen(@RequestParam("archivo") MultipartFile archivo, Principal principal,
+			HttpSession sesion) {
+		// Validar si la sesión del usuario está activa
+		Long userId = (Long) sesion.getAttribute("userID");
+		if (userId == null) {
+			return "redirect:/"; // Redirige al inicio si no hay una sesión de usuario activa
+		}
+
+		try {
+			Usuario usuario = userServ.encontrarUserPorId(userId);
+			byte[] imagenBytes = archivo.getBytes();
+			usuario.setFoto(imagenBytes);
+			userServ.guardar(usuario);
+		} catch (IOException e) {
+			// Manejar errores de lectura del archivo
+			// Puedes registrar el error o mostrar un mensaje de error al usuario
+			return "redirect:/cargar-imagen"; // Redirige nuevamente al formulario de carga
+		}
+
+		return "redirect:/perfil"; // Redirige a la página de perfil después de cargar la imagen
+
+}
 
 	// PaginasSinInicioDeSesion------------------------------------------------------------------------
 
@@ -163,8 +212,8 @@ public class MainController {
 	}
 
 	// PerfilEditar-------------------------------------------------------------------------
-	@GetMapping("/perfil-{emrpesaId}-editar")
-	public String editPerfil(@PathVariable("emrpesaId") Long emrpesaId, @ModelAttribute("empresas") Empresas empresas,
+	@GetMapping("/perfil-{empresaId}-editar")
+	public String editPerfil(@PathVariable("empresaId") Long empresaId, @ModelAttribute("empresas") Empresas empresas,
 			HttpSession sesion, Model viewModel) {
 
 		// validar si la sesion de la empresa esta activa
@@ -173,7 +222,7 @@ public class MainController {
 			return "redirect:/";
 		}
 
-		Empresas unaEmpresa = empresaServ.unaEmpresa(emrpesaId);
+		Empresas unaEmpresa = empresaServ.unaEmpresa(empresaId);
 		viewModel.addAttribute("empresas", unaEmpresa);
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);

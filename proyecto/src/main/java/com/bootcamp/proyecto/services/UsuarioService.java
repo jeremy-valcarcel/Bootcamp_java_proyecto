@@ -92,6 +92,12 @@ public class UsuarioService {
 	public void borrarUsuario(Long id) {
 		userRepo.deleteById(id);
 	}
+	
+	public void guardar(Usuario usuario) {
+        userRepo.save(usuario);
+    }
+
+
 
 
 }

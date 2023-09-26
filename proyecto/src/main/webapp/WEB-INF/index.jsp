@@ -209,6 +209,7 @@
 }
 /* BOTÓN DE REGISTRO */
 
+
 </style>
 </head>
 <body

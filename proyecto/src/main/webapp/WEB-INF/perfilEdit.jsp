@@ -229,6 +229,29 @@ body {
 	list-style: none
 }
 /*ESTILOS PARA FOOTER*/
+
+.link-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.link-style {
+	color: #6c757d; /* Color del texto del enlace */
+	text-decoration: none; /* Quita el subrayado del enlace */
+	transition: color 0.3s; /* Animación de cambio de color */
+	font-weight: bold;
+	/* Puedes cambiar el peso de la fuente según tus preferencias */
+}
+
+.link-container:hover {
+	background-color: #e74c3c;
+	/* Cambio de color de fondo al pasar el mouse */
+}
+
+.link-container:hover .link-style {
+	color: #fff; /* Cambio de color del texto al pasar el mouse */
+}
 </style>
 </head>
 <body style="background-color: #f5f6f7">
@@ -293,37 +316,51 @@ body {
 							style="height: 60px;">
 						</a>
 
-						<div id="perfilModal" class="modal">
+						<div id="perfilModal" class="modal" style="width: 370px;">
 							<div class="modal-content">
 								<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 									<p class="text-black my-2">
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									<img alt="Usuario" src="img/usuario.png"
+										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
-									<h2>
-										¡Hola,
-										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
-									</h2>
+									<div>
+										<h2>
+											¡Hola,
+											<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+										</h2>
+									</div>
 								</c:if>
 								<c:if test="${empresa.id == empresa.id && usuario.id == null}">
 									<p class="text-black my-2">
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									<img alt="Usuario" src="img/usuario.png"
+										style="height: 150px; width: 150px; margin-left: 90px;"
 										class="perfil-imagen">
-									<h2>
-										¡Hola,
-										<c:out value="${empresa.nombre}!"></c:out>
-									</h2>
+									<div>
+										<h2>
+											¡Hola,
+											<c:out value="${empresa.nombre}!"></c:out>
+										</h2>
+									</div>
 								</c:if>
-								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
-									style="width: 350px">Ir a perfil</a> <a href="/logout"
-									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
-									Sesión</a>
 
+								<div style="margin-left: -230px" class="mb-2 mt-3">
+									<img src="imgs/profile.png" alt="Logo 1"
+										style="height: 20px; width: 20px; margin-right: 10px;">
+									<a href="/perfil" class="text-decoration-none link-style">Ir
+										a perfil</a>
+								</div>
+								<div style="margin-left: -200px">
+									<img src="imgs/cerrar.png" alt="Logo 3"
+										style="height: 20px; width: 20px; margin-right: 10px;">
+									<a href="/logout" class="text-decoration-none link-style">Cerrar
+										Sesión</a>
+								</div>
 							</div>
 						</div>
 
@@ -340,103 +377,131 @@ body {
 		<a href="/Inicio">Volver a perfil</a>
 	</div>
 	<main class="container" style="margin-top: 100px;">
-		<div class="row mt-4">
-			<div class="col-sm-3">
-				<img alt="foto perfil" src="img/perfil.jpeg"
-					style="border-radius: 300px; height: 13em; position: relative;">
+		<div class="row">
+			<div class="col-md-3">
+				<!-- Contenido de la primera columna (izquierda) -->
 			</div>
-			<c:if test="${usuario.id == usuario.id && empresa.id == null }">
-				<div class="col mt-5 ml-2">
-					<form:form method="POST" action="/perfil-${user.id}-edit"
-						modelAttribute="user">
-						<input type="hidden" name="_method" value="put" />
-						<div>
-							<form:errors class="text-danger form-control is-invalid"
-								path="nombre" />
-							<form:label path="nombre">Nombre:</form:label>
-							<form:input type="text" path="nombre" />
+			<div class="col-md-6">
+				<!-- Contenido de la segunda columna (centro) -->
+				<div class="card">
+					<div class="card-body text-center">
+						<img alt="foto perfil" src="img/perfil.jpeg"
+							style="border-radius: 50%; height: 150px;">
+					</div>
+					<div class="card-body">
+						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
+							<h2 class="text-secondary text-center">
+								¡Hola,
+								<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
 
-						</div>
-						<div>
-							<form:errors class="text-danger form-control is-invalid"
-								path="apellido" />
-							<form:label path="apellido">Apellido:</form:label>
-							<form:input type="text" path="apellido" />
-						</div>
-						<div>
-							<form:errors class="text-danger form-control is-invalid"
-								path="email" />
-							<form:label path="email">email:</form:label>
-							<form:input type="text" path="email" />
-						</div>
-						<div>
-							<form:errors class="text-danger form-control is-invalid"
-								path="telefono" />
-							<form:label path="telefono">Contacto:</form:label>
-							<form:input type="text" path="telefono" />
+							</h2>
+							<form:form method="POST" action="/perfil-${user.id}-edit"
+								modelAttribute="user">
+								<input type="hidden" name="_method" value="put" />
 
-						</div>
-						<div>
-							<form:label path="rol" class="col-lg-4 control-label">Rol:</form:label>
-							<form:select path="rol" type="text" class="col-lg-8"
-								items="${roles}" itemLabel="name">
-							</form:select>
+								<div class="form-group">
+									<form:errors class="text-danger form-control is-invalid"
+										path="nombre" />
+									<form:label path="nombre">Nombre:</form:label>
+									<form:input type="text" path="nombre" class="form-control" />
+								</div>
 
-						</div>
-						<input type="submit" value="Editar perfil" class="my-3" />
-					</form:form>
+								<div class="form-group">
+									<form:errors class="text-danger form-control is-invalid"
+										path="apellido" />
+									<form:label path="apellido">Apellido:</form:label>
+									<form:input type="text" path="apellido" class="form-control" />
+								</div>
+
+								<div class="form-group">
+									<form:errors class="text-danger form-control is-invalid"
+										path="email" />
+									<form:label path="email">Email:</form:label>
+									<form:input type="text" path="email" class="form-control" />
+								</div>
+
+								<div class="form-group">
+									<form:errors class="text-danger form-control is-invalid"
+										path="telefono" />
+									<form:label path="telefono">Contacto:</form:label>
+									<form:input type="text" path="telefono" class="form-control" />
+								</div>
+
+								<div class="form-group">
+									<form:label path="rol" class="col-lg-4 control-label">Rol:</form:label>
+									<form:select path="rol" class="col-lg-8 form-control"
+										items="${roles}" itemLabel="name">
+									</form:select>
+								</div>
+
+								<div class="form-group">
+									<input type="submit" value="Editar perfil"
+										class="btn btn-success my-3 text-center" />
+								</div>
+							</form:form>
+						</c:if>
+						<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+							<h2 class="text-secondary text-center">
+								¡Hola,
+								<c:out value="${empresa.nombre}!"></c:out>
+
+							</h2>
+							<div class="col mt-5 ml-2">
+								<form:form method="POST" action="/perfil-${empresa.id}-editar"
+									modelAttribute="empresas">
+									<input type="hidden" name="_method" value="put" />
+									<div class="form-group">
+										<form:errors class="text-danger form-control is-invalid"
+											path="nombre" />
+										<form:label path="nombre">Nombre:</form:label>
+										<form:input type="text" path="nombre" class="form-control" />
+
+									</div>
+									<div class="form-group">
+										<form:errors class="text-danger form-control is-invalid"
+											path="email" />
+										<form:label path="email">email:</form:label>
+										<form:input type="text" path="email" class="form-control" />
+									</div>
+									<div class="form-group">
+										<form:errors class="text-danger form-control is-invalid"
+											path="direccion" />
+										<form:label path="direccion">Direccion:</form:label>
+										<form:input type="text" path="direccion" class="form-control" />
+									</div>
+
+									<div class="form-group">
+										<form:errors class="text-danger form-control is-invalid"
+											path="telefono" />
+										<form:label path="telefono">Contacto:</form:label>
+										<form:input type="text" path="telefono" class="form-control" />
+
+									</div>
+									<div class="form-group">
+										<form:label path="rol" class="col-lg-4 control-label">Rol:</form:label>
+										<form:select path="rol" type="text"
+											class="col-lg-8 form-control" items="${roles}"
+											itemLabel="name">
+										</form:select>
+
+									</div>
+									<div class="form-group text-center">
+										<input type="submit" value="Editar perfil"
+											class="btn btn-success my-3" />
+									</div>
+								</form:form>
+							</div>
+						</c:if>
+
+					</div>
 				</div>
-			</c:if>
-			<c:if test="${empresa.id == empresa.id && usuario.id == null}">
-				<div class="col mt-5 ml-2">
-					<form:form method="POST" action="/perfil-${empresas.id}-editar"
-						modelAttribute="empresas">
-						<input type="hidden" name="_method" value="put" />
-						<div>
-							<form:errors class="text-danger form-control is-invalid"
-								path="nombre" />
-							<form:label path="nombre">Nombre:</form:label>
-							<form:input type="text" path="nombre" />
-
-						</div>
-						<div>
-							<form:errors class="text-danger form-control is-invalid"
-								path="email" />
-							<form:label path="email">email:</form:label>
-							<form:input type="text" path="email" />
-						</div>
-						<div>
-							<form:errors class="text-danger form-control is-invalid"
-								path="direccion" />
-							<form:label path="direccion">Direccion:</form:label>
-							<form:input type="text" path="direccion" />
-						</div>
-						<div>
-						<form:input type="hidden" path="razonSocial" />
-						</div>
-						<div>
-							<form:errors class="text-danger form-control is-invalid"
-								path="telefono" />
-							<form:label path="telefono">Contacto:</form:label>
-							<form:input type="text" path="telefono" />
-
-						</div>
-						<div>
-							<form:label path="rol" class="col-lg-4 control-label">Rol:</form:label>
-							<form:select path="rol" type="text" class="col-lg-8"
-								items="${roles}" itemLabel="name">
-							</form:select>
-
-						</div>
-						<input type="submit" value="Editar perfil" class="my-3" />
-					</form:form>
-				</div>
-			</c:if>
+			</div>
+			<div class="col-md-3">
+				<!-- Contenido de la tercera columna (derecha) -->
+			</div>
 		</div>
-
 	</main>
-
-	<footer class="site-footer">
+	<footer class="site-footer mt-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-3">

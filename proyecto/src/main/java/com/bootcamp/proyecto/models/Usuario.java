@@ -1,7 +1,6 @@
 package com.bootcamp.proyecto.models;
 
 import java.util.Date;
-
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -12,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -27,31 +27,35 @@ import jakarta.validation.constraints.Size;
 @Table(name = "usuarios")
 public class Usuario {
 
-	//DatosTabla-----------------------------------------------------------------------------------
-	
+	// DatosTabla-----------------------------------------------------------------------------------
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotBlank(message=" Por favor ingresa un Nombre")
+	@NotBlank(message = " Por favor ingresa un Nombre")
 	private String nombre;
-	
-	@NotBlank(message=" Por favor ingresa un Apellido")
+
+	@NotBlank(message = " Por favor ingresa un Apellido")
 	private String apellido;
-	
-	@NotBlank(message=" Por favor ingresa un numero de telefono")
+
+	@NotBlank(message = " Por favor ingresa un numero de telefono")
 	private String telefono;
-	
-	@NotBlank(message=" Por favor ingresa un correo electronico")
-	@Email(message="El correo ingresado no es correcto")
+
+	@NotBlank(message = " Por favor ingresa un correo electronico")
+	@Email(message = "El correo ingresado no es correcto")
 	private String email;
 
-	//@NotBlank(message = "Por favor, ingresa el password")
+	@Lob
+	@Column(name = "foto", columnDefinition = "LONGBLOB")
+	private byte[] foto;
+
+	// @NotBlank(message = "Por favor, ingresa el password")
 	@Size(min = 8, max = 64, message = "Por favor, ingresa una contraseña")
 	private String password;
 
 	@Transient
-	//@NotBlank(message = "Por favor confirma la contrasenia")
+	// @NotBlank(message = "Por favor confirma la contrasenia")
 	@Size(min = 8, message = "Por favor confirma la contraseña")
 	private String passwordConfirmation;
 
@@ -59,12 +63,12 @@ public class Usuario {
 	private Date createdAt;
 	private Date updatedAt;
 
-	//RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
-	
-	//relacion 1:n hacia comentarios
+	// RelacionesHaciaOtrasTablas-----------------------------------------------------------------------------------
+
+	// relacion 1:n hacia comentarios
 	@OneToMany(mappedBy = "emisor", fetch = FetchType.LAZY)
 	private List<DesechosPublicaciones> publicadosUsuarios;
-	
+
 	// relacion n:1 hacia roles
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "rol_id")
@@ -72,21 +76,20 @@ public class Usuario {
 
 	// relacion n:m hacia categoriaDesecho
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "interesesUsuarios", 
-	joinColumns = @JoinColumn(name = "usuario_id"), 
-	inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
+	@JoinTable(name = "interesesUsuarios", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
 	private List<CategoriaDesecho> categoriaDesecho;
-	
-	//relacion 1:n hacia comentarios
+
+	// relacion 1:n hacia comentarios
 	@OneToMany(mappedBy = "usuarioCreador", fetch = FetchType.LAZY)
 	private List<Comentarios> comentariosUser;
-	
-	//ConstructorVacio-----------------------------------------------------------------------------------------------
-	
-	public Usuario() {}
 
-	//SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
-	
+	// ConstructorVacio-----------------------------------------------------------------------------------------------
+
+	public Usuario() {
+	}
+
+	// SetterYGetterDeRelacionesHaciaOtrasTablas-----------------------------------------------------------------------
+
 	public List<Comentarios> getComentariosUser() {
 		return comentariosUser;
 	}
@@ -102,7 +105,7 @@ public class Usuario {
 	public void setPublicadosUsuarios(List<DesechosPublicaciones> publicadosUsuarios) {
 		this.publicadosUsuarios = publicadosUsuarios;
 	}
-	
+
 	public Roles getRol() {
 		return rol;
 	}
@@ -118,9 +121,9 @@ public class Usuario {
 	public void setCategoriaDesecho(List<CategoriaDesecho> categoriaDesecho) {
 		this.categoriaDesecho = categoriaDesecho;
 	}
-	
-	//SetterYGetterDeDatosTabla--------------------------------------------------------------------------------------
-	
+
+	// SetterYGetterDeDatosTabla--------------------------------------------------------------------------------------
+
 	public Long getId() {
 		return id;
 	}
@@ -192,7 +195,7 @@ public class Usuario {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
+
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();
@@ -201,6 +204,14 @@ public class Usuario {
 	@PreUpdate
 	protected void onUpdate() {
 		this.updatedAt = new Date();
-	}	
+	}
+
+	public byte[] getFoto() {
+		return foto;
+	}
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
+	}
 
 }

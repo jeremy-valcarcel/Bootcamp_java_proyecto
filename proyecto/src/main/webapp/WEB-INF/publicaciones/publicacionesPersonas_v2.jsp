@@ -412,6 +412,44 @@ li {
 	list-style: none
 }
 /*ESTILOS PARA FOOTER*/
+.link-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.link-style {
+	color: #6c757d; /* Color del texto del enlace */
+	text-decoration: none; /* Quita el subrayado del enlace */
+	transition: color 0.3s; /* Animación de cambio de color */
+	font-weight: bold;
+	/* Puedes cambiar el peso de la fuente según tus preferencias */
+}
+
+.link-container:hover {
+	background-color: #e74c3c;
+	/* Cambio de color de fondo al pasar el mouse */
+}
+
+.link-container:hover .link-style {
+	color: #fff; /* Cambio de color del texto al pasar el mouse */
+}
+
+.rounded-box {
+	border-radius: 70px;
+	padding: 20px;
+	background-color: #ffffff;
+	text-align: center;
+	width: 70%; /* Ajusta el ancho del bloque según tus necesidades */
+	height: 150px; /* Ajusta la altura del bloque según tus necesidades */
+	margin: 0 auto; /* Centra horizontalmente el bloque */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.borde-curvo {
+    border-radius: 100px; /* Puedes ajustar el valor para controlar el radio de los bordes */
+}
 </style>
 </head>
 <body
@@ -479,37 +517,51 @@ li {
 							style="height: 60px;">
 						</a>
 
-						<div id="perfilModal" class="modal">
+						<div id="perfilModal" class="modal" style="width: 370px;">
 							<div class="modal-content">
 								<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 									<p class="text-black my-2">
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									<img alt="Usuario" src="img/usuario.png"
+										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
-									<h2>
-										¡Hola,
-										<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
-									</h2>
+									<div>
+										<h2>
+											¡Hola,
+											<c:out value="${usuario.nombre} ${usuario.apellido}!"></c:out>
+										</h2>
+									</div>
 								</c:if>
 								<c:if test="${empresa.id == empresa.id && usuario.id == null}">
 									<p class="text-black my-2">
 										<c:out value="${empresa.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png" style="weight: 1000px"
+									<img alt="Usuario" src="img/usuario.png"
+										style="height: 150px; width: 150px; margin-left: 90px;"
 										class="perfil-imagen">
-									<h2>
-										¡Hola,
-										<c:out value="${empresa.nombre}!"></c:out>
-									</h2>
+									<div>
+										<h2>
+											¡Hola,
+											<c:out value="${empresa.nombre}!"></c:out>
+										</h2>
+									</div>
 								</c:if>
-								<a href="/perfil" class="btn btn-success d-block col-6 mb-2"
-									style="width: 350px">Ir a perfil</a> <a href="/logout"
-									class="btn btn-success d-block col-6 mb-2" style="width: 350px">Cerrar
-									Sesión</a>
 
+								<div style="margin-left: -230px" class="mb-2 mt-3">
+									<img src="imgs/profile.png" alt="Logo 1"
+										style="height: 20px; width: 20px; margin-right: 10px;">
+									<a href="/perfil" class="text-decoration-none link-style">Ir
+										a perfil</a>
+								</div>
+								<div style="margin-left: -200px">
+									<img src="imgs/cerrar.png" alt="Logo 3"
+										style="height: 20px; width: 20px; margin-right: 10px;">
+									<a href="/logout" class="text-decoration-none link-style">Cerrar
+										Sesión</a>
+								</div>
 							</div>
 						</div>
 
@@ -536,12 +588,21 @@ li {
 					<article class="border border-dark p-4 overflow-auto"
 						style="height: 100vh;">
 						<div class="row">
+<!-- 							<div class="rounded-box"> -->
+<!-- 								<h2 class="text-center mb-2 my-2"> -->
+<!-- 									¡Haz una nueva publicacion!<a href="/crear-publicacion" -->
+<!-- 										class="btn btn-success d-block col-6 mt-3 mb-2 borde-curvo" -->
+<!-- 										style="width: 30%; margin-left:170px;">Publicar</a> -->
+<!-- 								</h2> -->
+
+<!-- 							</div> -->
 							<div class="row mt-4 mb-4">
 								<c:forEach items="${publicacionEmpresa}" var="publicacion">
 									<div class="card mb-4">
 										<div class="card-header">
-											<img class="rounded-circle" src="img/perfil.jpeg"
-												alt="foto perfil" style="width: 50px; height: 50px;">
+											<img class="img-thumbnail  rounded-circle"
+												src="img/perfil.jpeg" alt="foto perfil"
+												style="width: 50px; height: 50px;">
 											<div class="d-inline-block ml-3"
 												style="vertical-align: middle;">
 												<h5 class="card-title m-0 my-2">
@@ -569,12 +630,12 @@ li {
 											</p>
 										</div>
 										<div class="row mt-4 mb-4">
-													<!-- ... (código anterior) ... -->
-													<div class="card-footer">
-														<a class="btn btn-success" style="width: 100%;"
-															href="publicaciones-${publicacion.id}"> Agregar
-															un comentario </a>
-												</div>
+											<!-- ... (código anterior) ... -->
+											<div class="card-footer">
+												<a class="btn btn-white" style="width: 100%;"
+													href="publicaciones-${publicacion.id}"> Agregar un
+													comentario </a>
+											</div>
 										</div>
 									</div>
 								</c:forEach>
