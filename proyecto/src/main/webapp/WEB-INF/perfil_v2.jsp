@@ -278,8 +278,8 @@ body {
 					</div>
 					<div class="register">
 						<a href="#" id="mostrarPerfil"> <img alt="Usuario"
-							src="img/usuario.png" class="d-inline-block"
-							style="height: 60px; width: 60px;">
+							src="/imagen/${usuario.id}" class="d-inline-block"
+							style="height: 60px; width: 60px; border-radius: 50%;">
 						</a>
 
 						<div id="perfilModal" class="modal" style="width: 370px;">
@@ -289,7 +289,7 @@ body {
 										<c:out value="${usuario.email}"></c:out>
 									</p>
 									<span class="cerrar" id="cerrarPerfil">&times;</span>
-									<img alt="Usuario" src="img/usuario.png"
+									<img alt="Usuario" src="/imagen/${usuario.id}"
 										style="height: 150px; width: 150px; margin-left: 85px;"
 										class="perfil-imagen">
 									<div>
@@ -329,13 +329,6 @@ body {
 								</div>
 							</div>
 						</div>
-
-
-
-
-
-
-
 					</div>
 				</div>
 			</nav>
@@ -346,7 +339,7 @@ body {
 			<div class="col-md-3">
 				<div class="card">
 					<div class="card-body text-center">
-						<img alt="foto perfil" src="img/perfil.jpeg"
+						<img alt="foto perfil" src="/imagen/${usuario.id}"
 							style="border-radius: 50%; height: 150px;">
 					</div>
 					<div class="col p-4">
@@ -438,6 +431,26 @@ body {
 								style="width: 100%">Cerrar Sesión</a>
 						</c:if>
 					</div>
+
+
+					<div class="card-body text-center">
+						<div class="row">
+							<div class="col">
+								<form action="/cargar-imagen" method="post"
+									enctype="multipart/form-data">
+									<div class="form-group my-3">
+										<label for="archivo">Cambiar la foto de perfil:</label> <input
+											type="file" id="archivo" name="archivo" accept="image/*"
+											class="form-control-file">
+									</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-success"
+											style="width: 100%">Cargar Foto</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-9">
@@ -449,7 +462,7 @@ body {
 								<div class="card">
 									<div class="card-header">
 										<img class="img-thumbnail rounded-circle"
-											src="img/perfil.jpeg" alt="foto perfil"
+											src="/imagen/${usuario.id}" alt="foto perfil"
 											style="width: 50px; height: 50px;">
 										<div class="d-inline-block ml-3"
 											style="vertical-align: middle;">
