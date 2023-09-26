@@ -551,16 +551,16 @@ li {
 		</header>
 	</div>
 
-	<main class="container"
-		style="margin-top: 110px; background-color: #f5f6f7;">
-		<div class="row p-2 mb-2">
-			<div class="col border border-dark" style="height: 80px">
-				<p>Publicidad</p>
+	<main class="container" style="margin-top: 100px;">
+
+		<div class="row p-2" style="margin-bottom: 10%">
+			<div class="col" style="height: 80px">
+				<img alt="publicidad-4-Uruplac" src="/img/Publicidad-4-Uruplac.jpg" style="width: 103%; height: 230%; margin-left: -16px">
 			</div>
 		</div>
 		<div class="row">
-			<div class="col border border-dark m-2">
-				<p>Publicidad</p>
+			<div class="col m-2">
+				<img alt="publicidad-1-Ecoplas" src="/img/Publicidad-1-Ecoplas.jpg" style="width: 128%; height: 100%; margin-left: -12px">
 			</div>
 
 			<div class="col-8 m-2">
@@ -617,8 +617,8 @@ li {
 				</section>
 			</div>
 
-			<div class="col border border-dark m-2">
-				<p>Publicidad</p>
+			<div class="col m-2">
+				<img alt="publicidad-3-Empresa_Verdes" src="/img/Publicidad-3-Empresa_Verdes.jpg" style="width: 128%; height: 100%; margin-left: -27px">
 			</div>
 		</div>
 	</main>
