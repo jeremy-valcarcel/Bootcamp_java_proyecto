@@ -361,9 +361,6 @@ input[type="file"]::after {
 						<img alt="foto perfil" src="/imagen/${usuario.id}"
 							style="border-radius: 50%; height: 160px; width: 160px;">
 					</div>
-					<img alt="foto perfil" src="/imagen/${empresa.id}"
-							style="border-radius: 50%; height: 150px;">
-					</div>
 					<div class="col p-4">
 						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 							<h4 class="text-secondary text-center mb-3">
@@ -475,28 +472,6 @@ input[type="file"]::after {
 
 
 
-<<<<<<< HEAD
-=======
-					<div class="card-body text-center">
-						<div class="row">
-							<div class="col">
-								<form action="/cargar-imagen" method="post"
-									enctype="multipart/form-data">
-									<div class="form-group my-3">
-										<label for="archivo">Cambiar la foto de perfil:</label> <input
-											type="file" id="archivo" name="archivo" accept="image/*"
-											class="form-control-file">
-									</div>
-									<div class="form-group">
-										<button type="submit" class="btn btn-success"
-											style="width: 50%">Cargar Foto</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-					
->>>>>>> 7a4cd4a1798662f53e877283bdb0b7fb7e3d67c7
 				</div>
 			</div>
 			<div class="col-md-9">
