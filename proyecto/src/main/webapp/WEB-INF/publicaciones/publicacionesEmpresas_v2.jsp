@@ -534,65 +534,47 @@ li {
 						<div class="row">
 							<div class="row mt-4 mb-4">
 								<c:forEach items="${publicacionEmpresa}" var="publicacion">
-									<div class="row m-0 mb-2">
-										<div class="col" style="height: 52px">
-											<img class="mb-4" alt="foto perfil" src="img/perfil.jpeg"
-												style="border-radius: 300px; height: 50px; width: 50px; margin-left: -10px; position: static">
-											<p class="float-end p-2">
-												<fmt:formatDate value="${publicacion.createdAt}"
-													pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
-												<c:out value="${fechaFormateada}"></c:out>
-											</p>
-											<div style="display: inline-block; margin-left: 10px">
-												<h5 class="m-0">
-													<c:out
-														value="${publicacion.emisor.nombre} ${publicacion.emisor.apellido}"></c:out>
+									<div class="card mb-4">
+										<div class="card-header">
+											<img class="rounded-circle" src="img/perfil.jpeg"
+												alt="foto perfil" style="width: 50px; height: 50px;">
+
+											<div class="d-inline-block ml-3"
+												style="vertical-align: middle;">
+												<h5 class="card-title m-0 my-2">
 													<c:out value="${publicacion.empresaEmisora.nombre}"></c:out>
 												</h5>
-												<p class="text-secondary" style="margin-top: -3px">
-													<c:out value="${publicacion.empresaEmisora.direccion}"></c:out>
+												<p class="card-subtitle text-muted">
+													<fmt:formatDate value="${publicacion.createdAt}"
+														pattern="MMMM dd, yyyy HH:mm" var="fechaFormateada" />
+													<c:out value="${fechaFormateada}"></c:out>
 												</p>
 											</div>
 										</div>
-									</div>
-
-									<div class="row">
-										<h4 class="text-secondary mt-2">
-											<c:out value="${publicacion.categoria.categoria}"></c:out>
-										</h4>
-										<p>
-											<c:out value="${publicacion.descripcion}"></c:out>
-										</p>
-										<p>
-											Cantidad:
-											<c:out value="${publicacion.tamano}"></c:out>
-											kg
-										</p>
-									</div>
-									<div class="row mb-4" style="height: 40px">
-										<div class="col mx-0 m-0" style="display: inline-block">
-
-											<a class="p-2 btn btn-success" style="width: 309px"
-												href="publicaciones-${publicacion.id}">comentar</a>
+										<div class="card-body">
+											<h6 class="card-subtitle mb-2 text-muted">
+												<c:out value="${publicacion.categoria.categoria}"></c:out>
+											</h6>
+											<p class="card-text">
+												<c:out value="${publicacion.descripcion}"></c:out>
+											</p>
+											<p class="card-text text-secondary">
+												Cantidad:
+												<c:out value="${publicacion.tamano}"></c:out>
+												kg
+											</p>
+										</div>
+										<div class="row mt-4 mb-4">
+											<!-- ... (código anterior) ... -->
+											<div class="card-footer">
+												<a class="btn btn-success" style="width: 100%;"
+													href="publicaciones-${publicacion.id}"> Agregar un
+													comentario </a>
+											</div>
 										</div>
 									</div>
-
-									<!-- 									Mostrar los comentarios de esta publicación -->
-									<!-- 									<div class="row"> -->
-									<!-- 										<h3>Comentarios:</h3> -->
-									<!-- 										<ul> -->
-									<%-- 											<c:forEach var="comentario" --%>
-									<%-- 												items="${publicacion.comentarios}"> --%>
-									<%-- 												<c:out --%>
-									<%-- 													value="${comentario.usuarioCreador.nombre } ${comentario.usuarioCreador.apellido }">¡</c:out> ha comentado: --%>
-									<%-- 												<c:out value="${comentario.empresaCreador.nombre }"></c:out> --%>
-									<%-- 												<li>${comentario.contenido}</li> --%>
-									<%-- 											</c:forEach> --%>
-									<!-- 										</ul> -->
-									<!-- 									</div> -->
 								</c:forEach>
 							</div>
-							<hr>
 						</div>
 					</article>
 				</section>
@@ -601,11 +583,8 @@ li {
 			<div class="col m-2">
 				<img alt="publicidad-3-Empresa_Verdes" src="/img/Publicidad-3-Empresa_Verdes.jpg" style="width: 128%; height: 100%; margin-left: -27px">
 			</div>
-
 		</div>
-
 	</main>
-
 
 	<footer class="site-footer">
 		<div class="container">

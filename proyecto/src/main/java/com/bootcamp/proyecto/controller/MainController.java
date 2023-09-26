@@ -115,33 +115,27 @@ public class MainController {
 	}
 
 	// PerfilEditar-------------------------------------------------------------------------
-	@GetMapping("/perfil-{userID}-edit")
-	public String formEditPerfil(@PathVariable("userID") Long usuarioId, @ModelAttribute("usuario") Usuario Usuario,
+	@GetMapping("/perfil-{userId}-edit")
+	public String formEditPerfil(@PathVariable("userId") Long usuarioId, @ModelAttribute("user") Usuario user,
 			HttpSession sesion, Model viewModel) {
 
 		// validar si la sesion del usuario o empresa esta activa
-		Long empresasId = (Long) sesion.getAttribute("empresaID");
 		Long userId = (Long) sesion.getAttribute("userID");
-		if (userId == null && empresasId == null) {
+		if (userId == null) {
 			return "redirect:/";
 		}
 
-		else if (userId != null && userId != empresasId) {
-			
-			Usuario usuario = userServ.encontrarUserPorId(userId);
-			viewModel.addAttribute("usuario", usuario);
-			List<Roles> rol = RolesServices.todosRoles();
-			viewModel.addAttribute("roles", rol);
-			return "perfilEdit.jsp";
-		}
-		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
-		viewModel.addAttribute("empresa", empresa);
-
+		Usuario unUser = userServ.unUsuario(usuarioId);
+		viewModel.addAttribute("user", unUser);
+		Usuario usuario = userServ.encontrarUserPorId(userId);
+		viewModel.addAttribute("usuario", usuario);
+		List<Roles> rol = RolesServices.todosRoles();
+		viewModel.addAttribute("roles", rol);
 		return "perfilEdit.jsp";
 	}
 
 	@PutMapping("/perfil-{id}-edit")
-	public String editarSong(@Valid @ModelAttribute("usuario") Usuario Usuario, BindingResult resultado,
+	public String editarUsuario(@Valid @ModelAttribute("user") Usuario user, BindingResult resultado,
 			@PathVariable("id") Long usuarioId, HttpSession sesion, Model viewModel) {
 
 		// validar si la sesion del usuario esta activa
@@ -149,28 +143,67 @@ public class MainController {
 		Long empresaId = (Long) sesion.getAttribute("empresaID");
 		if (userId == null && empresaId == null) {
 			return "redirect:/Login";
-
 		}
-		
-		else if (userId != null && userId != empresaId) {
-			Usuario usuario = userServ.encontrarUserPorId(userId);
-			if (resultado.hasErrors()) {
-				List<Roles> rol = RolesServices.todosRoles();
-				viewModel.addAttribute("roles", rol);
-				return "perfilEdit.jsp";
-			}
-				userServ.actualizarUsuario(usuario);
-				return "redirect:/perfil";
-			
-			
 
-		}
-		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresaId);
+//		else if (userId != null && userId != empresaId) {
+		Usuario usuario = userServ.encontrarUserPorId(userId);
+		Usuario unUser = userServ.unUsuario(usuarioId);
 		if (resultado.hasErrors()) {
-			viewModel.addAttribute("empresa", empresa);
+			List<Roles> rol = RolesServices.todosRoles();
+			viewModel.addAttribute("roles", rol);
+			viewModel.addAttribute("user", unUser);
+			viewModel.addAttribute("usuario", usuario);
+
 			return "perfilEdit.jsp";
 		}
-		empresaServ.actualizarEmpresa(empresa);
+		user.setPassword(unUser.getPassword());
+		userServ.actualizarUsuario(user);
+		return "redirect:/perfil";
+
+	}
+
+	// PerfilEditar-------------------------------------------------------------------------
+	@GetMapping("/perfil-{emrpesaId}-editar")
+	public String editPerfil(@PathVariable("emrpesaId") Long emrpesaId, @ModelAttribute("empresas") Empresas empresas,
+			HttpSession sesion, Model viewModel) {
+
+		// validar si la sesion de la empresa esta activa
+		Long empresasId = (Long) sesion.getAttribute("empresaID");
+		if (empresasId == null) {
+			return "redirect:/";
+		}
+
+		Empresas unaEmpresa = empresaServ.unaEmpresa(emrpesaId);
+		viewModel.addAttribute("empresas", unaEmpresa);
+		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
+		viewModel.addAttribute("empresa", empresa);
+		List<Roles> rol = RolesServices.todosRoles();
+		viewModel.addAttribute("roles", rol);
+		return "perfilEdit.jsp";
+	}
+
+	@PutMapping("/perfil-{id}-editar")
+	public String editarEmpresa(@Valid @ModelAttribute("empresas") Empresas empresas, BindingResult resultado,
+			@PathVariable("id") Long emrpesaId, HttpSession sesion, Model viewModel) {
+
+		// validar si la sesion del usuario esta activa
+		Long empresaId = (Long) sesion.getAttribute("empresaID");
+		if (empresaId == null) {
+			return "redirect:/Login";
+		}
+
+		Empresas unaEmpresa = empresaServ.unaEmpresa(emrpesaId);
+		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresaId);
+		if (resultado.hasErrors()) {
+			List<Roles> rol = RolesServices.todosRoles();
+			viewModel.addAttribute("roles", rol);
+			viewModel.addAttribute("empresa", empresa);
+			viewModel.addAttribute("empresas", unaEmpresa);
+
+			return "perfilEdit.jsp";
+		}
+		empresas.setPassword(unaEmpresa.getPassword());
+		empresaServ.actualizarEmpresa(empresas);
 		return "redirect:/perfil";
 	}
 
@@ -189,7 +222,7 @@ public class MainController {
 		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
-		
+
 		return "empresas.jsp";
 	}
 
@@ -208,7 +241,7 @@ public class MainController {
 		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
-		
+
 		return "InfoPersonas.jsp";
 	}
 
@@ -227,7 +260,7 @@ public class MainController {
 		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
-		
+
 		return "InfoEmpresas.jsp";
 	}
 
@@ -246,7 +279,7 @@ public class MainController {
 		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
-		
+
 		return "nosotros.jsp";
 	}
 
@@ -265,7 +298,7 @@ public class MainController {
 		}
 		Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 		viewModel.addAttribute("empresa", empresa);
-		
+
 		return "reciclaje.jsp";
 	}
 

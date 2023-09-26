@@ -361,9 +361,18 @@ body {
 		<div class="row mb-4">
 			<div class="col-sm-3 mt-4">
 				<aside class="col">
+				
+				<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 					<a href="/perfil-${usuario.id}-edit"
 						class="btn btn-success d-block col-6 mb-2" style="width: 210px">Editar
-						Perfil</a> <a href="/crear/publicacion"
+						Perfil</a>
+						</c:if>
+			<c:if test="${empresa.id == empresa.id && usuario.id == null}">
+						<a href="/perfil-${empresa.id}-editar"
+						class="btn btn-success d-block col-6 mb-2" style="width: 210px">Editar
+						Perfil</a>
+						</c:if>
+						 <a href="/crear/publicacion"
 						class="btn btn-success d-block col-6 mt-2 mb-2"
 						style="width: 210px">Nueva publicacion</a> <a href="/logout"
 						class="btn btn-success d-block col-6 mt-2" style="width: 210px">Cerrar
