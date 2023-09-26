@@ -565,45 +565,19 @@ li {
 				</div>
 			</div>
 
-			<!-- PREGUNTA SIETE -->
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="faqHeading6">
-					<button class="accordion-button collapsed" type="button"
-						data-bs-toggle="collapse" data-bs-target="#faqCollapse6"
-						aria-expanded="false" aria-controls="faqCollapse6">¿Cómo
-						puedo promover el reciclaje orgánico en mi empresa o lugar de
-						trabajo?</button>
-				</h2>
-				<div id="faqCollapse6" class="accordion-collapse collapse"
-					aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
-					<div class="accordion-body">Para promover el reciclaje
-						orgánico en tu empresa, puedes asegurarte de que haya contenedores
-						específicos para materiales orgánicos en áreas de almuerzo y
-						cocina, fomentar la reducción de desperdicios orgánicos y
-						considerar implementar un sistema de recompensas o reconocimiento
-						para motivar a los empleados a participar activamente en el
-						reciclaje orgánico.</div>
-				</div>
-			</div>
-
 			<!-- PREGUNTA OCHO -->
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="faqHeading6">
 					<button class="accordion-button collapsed" type="button"
 						data-bs-toggle="collapse" data-bs-target="#faqCollapse6"
-						aria-expanded="false" aria-controls="faqCollapse6">¿Cómo
-						puedo promover el reciclaje orgánico en mi empresa o lugar de
-						trabajo?</button>
+						aria-expanded="false" aria-controls="faqCollapse6">¿Qué
+						se hace con los residuos orgánicos reciclados?</button>
 				</h2>
 				<div id="faqCollapse6" class="accordion-collapse collapse"
 					aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
-					<div class="accordion-body">Para promover el reciclaje
-						orgánico en tu empresa, puedes asegurarte de que haya contenedores
-						específicos para materiales orgánicos en áreas de almuerzo y
-						cocina, fomentar la reducción de desperdicios orgánicos y
-						considerar implementar un sistema de recompensas o reconocimiento
-						para motivar a los empleados a participar activamente en el
-						reciclaje orgánico.</div>
+					<div class="accordion-body">Los residuos orgánicos reciclados
+						se convierten en un nuevo producto que la persona/empresa
+						recolector frabrique.</div>
 				</div>
 			</div>
 
@@ -613,18 +587,15 @@ li {
 					<button class="accordion-button collapsed" type="button"
 						data-bs-toggle="collapse" data-bs-target="#faqCollapse6"
 						aria-expanded="false" aria-controls="faqCollapse6">¿Cómo
-						puedo promover el reciclaje orgánico en mi empresa o lugar de
-						trabajo?</button>
+						se recolectan los residuos orgánicos?</button>
 				</h2>
 				<div id="faqCollapse6" class="accordion-collapse collapse"
 					aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
-					<div class="accordion-body">Para promover el reciclaje
-						orgánico en tu empresa, puedes asegurarte de que haya contenedores
-						específicos para materiales orgánicos en áreas de almuerzo y
-						cocina, fomentar la reducción de desperdicios orgánicos y
-						considerar implementar un sistema de recompensas o reconocimiento
-						para motivar a los empleados a participar activamente en el
-						reciclaje orgánico.</div>
+					<div class="accordion-body">Los residuos orgánicos se
+						recolectan por medio de una comunicacion entre las partes
+						generadores y recolectores, donde la mayoria de veces, la entidad
+						recolector se dirige hacia la ubicación del generador y recoge los
+						residuos.</div>
 				</div>
 			</div>
 			<!-- PREGUNTA DIEZ -->
@@ -632,24 +603,19 @@ li {
 				<h2 class="accordion-header" id="faqHeading6">
 					<button class="accordion-button collapsed" type="button"
 						data-bs-toggle="collapse" data-bs-target="#faqCollapse6"
-						aria-expanded="false" aria-controls="faqCollapse6">¿Cómo
-						puedo promover el reciclaje orgánico en mi empresa o lugar de
-						trabajo?</button>
+						aria-expanded="false" aria-controls="faqCollapse6">¿Cuáles
+						son los beneficios ambientales del reciclaje orgánico?</button>
 				</h2>
 				<div id="faqCollapse6" class="accordion-collapse collapse"
 					aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
-					<div class="accordion-body">Para promover el reciclaje
-						orgánico en tu empresa, puedes asegurarte de que haya contenedores
-						específicos para materiales orgánicos en áreas de almuerzo y
-						cocina, fomentar la reducción de desperdicios orgánicos y
-						considerar implementar un sistema de recompensas o reconocimiento
-						para motivar a los empleados a participar activamente en el
-						reciclaje orgánico.</div>
+					<div class="accordion-body">El reciclaje orgánico reduce la
+						generación de metano en vertederos, disminuye la necesidad de
+						incineración y conserva recursos naturales al reutilizar residuos
+						para enriquecer el suelo.</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<footer class="site-footer">
 		<div class="container">
 			<div class="row">

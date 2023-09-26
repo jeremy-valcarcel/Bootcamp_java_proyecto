@@ -208,8 +208,6 @@
 	right: 20px;
 }
 /* BOTÓN DE REGISTRO */
-
-
 </style>
 </head>
 <body
@@ -236,13 +234,13 @@
 							<li class="dropdown nav-item"><a class="nav-link" href="#">Publicaciones</a>
 
 								<div class="dropdown-content">
-									<a href="/Login">Publicaciones de personas</a> 
-									<a href="/Login">Publicaciones de empresas</a>
+									<a href="/Login">Publicaciones de personas</a> <a href="/Login">Publicaciones
+										de empresas</a>
 								</div></li>
 
 							<li class="nav-item" role="presentation"><a class="nav-link"
 								href="/Login">Empresas</a></li>
-							<li class="dropdown nav-item"><a class="nav-link" href="#" >Nosotros</a>
+							<li class="dropdown nav-item"><a class="nav-link" href="#">Nosotros</a>
 								<div class="dropdown-content">
 									<a href="/nosotros">¿Quienes somos?</a> <a href="/reciclaje">Reciclaje
 										orgánico</a> <a href="/preguntasFrecuentes">Preguntas
@@ -258,7 +256,9 @@
 						<!-- 							</div> -->
 						<%-- 						</form> --%>
 						<div class="register">
-							<span class="navbar-text"></span> <a class="btn btn-light action-button" role="button" href="/Login">Iniciar Sesión</a>
+							<span class="navbar-text"></span> <a
+								class="btn btn-light action-button" role="button" href="/Login">Iniciar
+								Sesión</a>
 						</div>
 					</div>
 				</div>
@@ -307,16 +307,16 @@
 					<h4 class="titulo-destacado">Publicaciones Destacadas</h4>
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<h3>titulo de la publicacion</h3>
-							<p>contenido de la publicación</p>
+							<img alt="Conaprole" src="imgs/ConaproleDestacada.png"
+								style="height: 276px; width: 385px;">
 						</div>
 						<div class="swiper-slide">
-							<h3>titulo de la publicacion</h3>
-							<p>contenido de la publicación</p>
+							<img alt="restFood" src="imgs/restFoodDestacada.png"
+								style="height: 276px; width: 385px;">
 						</div>
 						<div class="swiper-slide">
-							<h3>titulo de la publicacion</h3>
-							<p>contenido de la publicación</p>
+							<img alt="Andrea" src="imgs/AndreaDestacada.png"
+								style="height: 276px; width: 385px;">
 						</div>
 					</div>
 					<div class="swiper-pagination"></div>
@@ -372,9 +372,12 @@
 			<ul class="nav">
 				<li class="nav-item"><a class="nav-link active text-white"
 					aria-current="page" href="Login">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="Login">Publicaciones</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="Login">Empresas</a></li>
-				<li class="nav-item"><a class="nav-link disabled text-white" href="Login">Nosotros</a></li>
+				<li class="nav-item"><a class="nav-link text-white"
+					href="Login">Publicaciones</a></li>
+				<li class="nav-item"><a class="nav-link text-white"
+					href="Login">Empresas</a></li>
+				<li class="nav-item"><a class="nav-link disabled text-white"
+					href="Login">Nosotros</a></li>
 			</ul>
 		</div>
 	</footer>

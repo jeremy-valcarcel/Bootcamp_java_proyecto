@@ -37,13 +37,11 @@
 .swiper-slide {
 	background-position: center;
 	background-size: cover;
-	width: 300px;
-	height: 300px;
+	width: 280px;
+	height: 280px;
 	border: 2px solid #181212;
 	display: inline-block;
-	/* Hace que los elementos se muestren en línea */
 	width: 30%;
-	/* Ajusta el ancho de cada elemento según tus necesidades */
 	margin: 10px;
 }
 
@@ -334,16 +332,16 @@
 					<h4 class="titulo-destacado">Publicaciones Destacadas</h4>
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<h3>titulo de la publicacion</h3>
-							<p>contenido de la publicación</p>
+							<img alt="Conaprole" src="imgs/ConaproleDestacada.png"
+								style="height: 276px; width: 385px;">
 						</div>
 						<div class="swiper-slide">
-							<h3>titulo de la publicacion</h3>
-							<p>contenido de la publicación</p>
+							<img alt="restFood" src="imgs/restFoodDestacada.png"
+								style="height: 276px; width: 385px;">
 						</div>
 						<div class="swiper-slide">
-							<h3>titulo de la publicacion</h3>
-							<p>contenido de la publicación</p>
+							<img alt="Andrea" src="imgs/AndreaDestacada.png"
+								style="height: 276px; width: 385px;">
 						</div>
 					</div>
 					<div class="swiper-pagination"></div>
