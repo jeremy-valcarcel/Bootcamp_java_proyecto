@@ -76,7 +76,9 @@ public class Usuario {
 
 	// relacion n:m hacia categoriaDesecho
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "interesesUsuarios", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "categoria_desecho_id"))
+	@JoinTable(name = "interesesUsuarios", joinColumns =
+	@JoinColumn(name = "usuario_id"), inverseJoinColumns =
+	@JoinColumn(name = "categoria_desecho_id"))
 	private List<CategoriaDesecho> categoriaDesecho;
 
 	// relacion 1:n hacia comentarios

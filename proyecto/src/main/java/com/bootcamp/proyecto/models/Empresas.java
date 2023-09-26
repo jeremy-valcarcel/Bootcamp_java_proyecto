@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -54,6 +55,10 @@ public class Empresas {
 	@Transient
 	@Size(min=8, message= "Por favor confirma la contraseña ")
 	private String passwordConfirmation;
+	
+	@Lob
+	@Column(name = "foto", columnDefinition = "LONGBLOB")
+	private byte[] foto;
 	
 	@Column(updatable = false)
 	private Date createdAt;
@@ -171,6 +176,14 @@ public class Empresas {
 
 	public void setPasswordConfirmation(String passwordConfirmation) {
 		this.passwordConfirmation = passwordConfirmation;
+	}
+
+	public byte[] getFoto() {
+		return foto;
+	}
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
 	}
 
 	public Date getCreatedAt() {

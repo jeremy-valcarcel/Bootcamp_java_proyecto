@@ -342,6 +342,9 @@ body {
 						<img alt="foto perfil" src="/imagen/${usuario.id}"
 							style="border-radius: 50%; height: 150px;">
 					</div>
+					<img alt="foto perfil" src="/imagen/${empresa.id}"
+							style="border-radius: 50%; height: 150px;">
+					</div>
 					<div class="col p-4">
 						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 							<h4 class="text-secondary text-center mb-3">
@@ -433,6 +436,7 @@ body {
 					</div>
 
 
+
 					<div class="card-body text-center">
 						<div class="row">
 							<div class="col">
@@ -451,6 +455,7 @@ body {
 							</div>
 						</div>
 					</div>
+					
 				</div>
 			</div>
 			<div class="col-md-9">

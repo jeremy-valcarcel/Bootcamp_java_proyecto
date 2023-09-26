@@ -463,6 +463,10 @@ body {
 										<form:label path="email">email:</form:label>
 										<form:input type="text" path="email" class="form-control" />
 									</div>
+									<div>
+									<form:input type="hidden" path="razonSocial" class="form-control" />
+									<form:input type="hidden" path="password" class="form-control" />
+									</div>
 									<div class="form-group">
 										<form:errors class="text-danger form-control is-invalid"
 											path="direccion" />
