@@ -340,7 +340,7 @@ body {
 				<div class="card">
 					<div class="card-body text-center">
 						<img alt="foto perfil" src="/imagen/${usuario.id}"
-							style="border-radius: 50%; height: 150px;">
+							style="border-radius: 50%; height: 160px; width:160px;">
 					</div>
 					<div class="col p-4">
 						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
@@ -445,7 +445,7 @@ body {
 									</div>
 									<div class="form-group">
 										<button type="submit" class="btn btn-success"
-											style="width: 100%">Cargar Foto</button>
+											style="width: 50%">Cargar Foto</button>
 									</div>
 								</form>
 							</div>
