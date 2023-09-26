@@ -215,6 +215,25 @@ body {
 .link-container:hover .link-style {
 	color: #fff; /* Cambio de color del texto al pasar el mouse */
 }
+/* Estiliza el botón "Seleccionar archivo" */
+input[type="file"]::-webkit-file-upload-button {
+	background: #4CAF50;
+	color: white;
+	padding: 10px 15px;
+	margin-left: 30px; border : none;
+	border-radius: 5px;
+	cursor: pointer;
+	display: block;
+	border: none;
+	/* Cambia el flujo del contenido a bloque para que aparezca debajo */
+}
+
+/* Estiliza el texto "Sin archivos seleccionados" */
+input[type="file"]::after {
+	content: none; /* Cambia el texto antes de seleccionar un archivo */
+}
+
+
 </style>
 </head>
 
@@ -340,7 +359,7 @@ body {
 				<div class="card">
 					<div class="card-body text-center">
 						<img alt="foto perfil" src="/imagen/${usuario.id}"
-							style="border-radius: 50%; height: 160px; width:160px;">
+							style="border-radius: 50%; height: 160px; width: 160px;">
 					</div>
 					<div class="col p-4">
 						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
@@ -424,33 +443,35 @@ body {
 						<c:if test="${usuario.id == usuario.id && empresa.id == null }">
 							<a href="/perfil-${usuario.id}-edit" class="btn btn-success"
 								style="width: 100%">Editar Perfil</a>
+							<div class="card-body text-center">
+								<div class="row">
+									<button id="mostrarFormulario" class="btn btn-success">
+										Cambiar la foto de perfil</button>
+									<div class="centered-form">
+										<form action="/cargar-imagen" method="post"
+											enctype="multipart/form-data" class="bordermy-2 p-2">
+											<div class="form-group">
+												<label for="archivo"></label> <input type="file"
+													id="archivo" name="archivo" accept="image/*">
+											</div>
+											<div class="form-group">
+												<button type="submit" class="btn btn-success"
+													style="width: 50%">Cargar Foto</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
 							<a href="/crear-publicacion"
-								class="btn btn-success d-block col-6 mt-2 mb-2"
-								style="width: 100%">Nueva publicación</a>
+								class="btn btn-success d-block col-6  mb-2" style="width: 100%">Nueva
+								publicación</a>
 							<a href="/logout" class="btn btn-success d-block col-6 mt-2"
 								style="width: 100%">Cerrar Sesión</a>
 						</c:if>
 					</div>
 
 
-					<div class="card-body text-center">
-						<div class="row">
-							<div class="col">
-								<form action="/cargar-imagen" method="post"
-									enctype="multipart/form-data">
-									<div class="form-group my-3">
-										<label for="archivo">Cambiar la foto de perfil:</label> <input
-											type="file" id="archivo" name="archivo" accept="image/*"
-											class="form-control-file">
-									</div>
-									<div class="form-group">
-										<button type="submit" class="btn btn-success"
-											style="width: 50%">Cargar Foto</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
+
 				</div>
 			</div>
 			<div class="col-md-9">
@@ -578,6 +599,15 @@ body {
 				perfilModal.style.display = "none";
 			}
 		});
+		document.getElementById("mostrarFormulario").addEventListener("click",
+				function() {
+					var formulario = document.querySelector("form");
+					if (formulario.style.display === "none") {
+						formulario.style.display = "block";
+					} else {
+						formulario.style.display = "none";
+					}
+				});
 	</script>
 </body>
 </html>
