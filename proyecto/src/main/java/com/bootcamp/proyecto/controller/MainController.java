@@ -68,15 +68,29 @@ public class MainController {
 			HttpSession sesion) {
 		// Validar si la sesión del usuario está activa
 		Long userId = (Long) sesion.getAttribute("userID");
-		if (userId == null) {
+		Long empresasId = (Long) sesion.getAttribute("empresaID");
+		if (userId == null && empresasId == null) {
 			return "redirect:/"; // Redirige al inicio si no hay una sesión de usuario activa
+		} else if (userId != null && userId != empresasId) {
+			try {
+				Usuario usuario = userServ.encontrarUserPorId(userId);
+				byte[] imagenBytes = archivo.getBytes();
+				usuario.setFoto(imagenBytes);
+				userServ.guardar(usuario);
+			} catch (IOException e) {
+				// Manejar errores de lectura del archivo
+				// Puedes registrar el error o mostrar un mensaje de error al usuario
+				return "redirect:/cargar-imagen"; // Redirige nuevamente al formulario de carga
+			}
+
+			return "redirect:/perfil"; // Redirige a la página de perfil después de cargar la imagen
 		}
 
 		try {
-			Usuario usuario = userServ.encontrarUserPorId(userId);
+			Empresas empresa = empresaServ.encontrarEmpresaPorId(empresasId);
 			byte[] imagenBytes = archivo.getBytes();
-			usuario.setFoto(imagenBytes);
-			userServ.guardar(usuario);
+			empresa.setFoto(imagenBytes);
+			empresaServ.guardar(empresa);
 		} catch (IOException e) {
 			// Manejar errores de lectura del archivo
 			// Puedes registrar el error o mostrar un mensaje de error al usuario
@@ -248,10 +262,11 @@ public class MainController {
 			viewModel.addAttribute("roles", rol);
 			viewModel.addAttribute("empresa", empresa);
 			viewModel.addAttribute("empresas", unaEmpresa);
-
 			return "perfilEdit.jsp";
 		}
 		empresas.setPassword(unaEmpresa.getPassword());
+		empresas.setFoto(empresa.getFoto());
+		empresas.setRazonSocial(empresa.getRazonSocial());
 		empresaServ.actualizarEmpresa(empresas);
 		return "redirect:/perfil";
 	}

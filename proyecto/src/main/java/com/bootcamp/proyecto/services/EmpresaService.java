@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import com.bootcamp.proyecto.models.Empresas;
+import com.bootcamp.proyecto.models.Usuario;
 import com.bootcamp.proyecto.repositories.EmpresaRepo;
 
 @Service
@@ -91,5 +92,9 @@ public class EmpresaService {
 	public void borrarEmpresa(Long id) {
 		empresaRepo.deleteById(id);
 	}
+	
+	public void guardar(Empresas empresa) {
+        empresaRepo.save(empresa);
+    }
 	
 }
